@@ -57,12 +57,6 @@
     <Compile Include="CrossPlatform\NCASConstants.cs" />
     <Compile Include="PlatformCE\Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\IwQuick\IwQuickCF.csproj">
-      <Project>{ADD9AAB8-D3B4-4A89-9D1B-5A1A6FBEFAC1}</Project>
-      <Name>IwQuickCF</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>

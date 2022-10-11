@@ -68,6 +68,22 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="IwQuick.CF35, Version=2.9.7815.12474, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IwQuick.CF35.dll</HintPath>
+    </Reference>
+    <Reference Include="LPC3250Drivers, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\LPC3250Drivers.dll</HintPath>
+    </Reference>
+    <Reference Include="LwRemoting2.CF35, Version=1.0.8319.15862, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\LwRemoting2.CF35.dll</HintPath>
+    </Reference>
+    <Reference Include="LwSerialization2.CF35, Version=1.0.8319.15622, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\LwSerialization2.CF35.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -87,22 +103,6 @@
     <ProjectReference Include="..\Cgp\Cgp.Globals\Cgp.GlobalsCF.csproj">
       <Project>{97389416-25F1-4AE3-98D7-D45934DD7F98}</Project>
       <Name>Cgp.GlobalsCF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IwQuick\IwQuickCF.csproj">
-      <Project>{ADD9AAB8-D3B4-4A89-9D1B-5A1A6FBEFAC1}</Project>
-      <Name>IwQuickCF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LPC3250Drivers\LPC3250Drivers.csproj">
-      <Project>{7CA5C345-EF94-4CE8-A0E8-469ED55AE8EF}</Project>
-      <Name>LPC3250Drivers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LwRemoting2\LwRemoting2CF.csproj">
-      <Project>{7AC01A43-B672-4623-8FFE-F0B78841D8AE}</Project>
-      <Name>LwRemoting2CF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LwSerialization2\LwSerialization2CF.csproj">
-      <Project>{95ED6626-1398-4AE3-9E22-5428C73FE02A}</Project>
-      <Name>LwSerialization2CF</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -45,6 +45,18 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CardReaderDrivers.CF35, Version=1.5.8319.15038, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\CardReaderDrivers.CF35.dll</HintPath>
+    </Reference>
+    <Reference Include="CardReaderDriversDefinitions.CF35, Version=1.0.8319.15037, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\CardReaderDriversDefinitions.CF35.dll</HintPath>
+    </Reference>
+    <Reference Include="IwQuick.CF35, Version=2.9.7815.12474, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IwQuick.CF35.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -116,20 +128,6 @@
     <Compile Include="Scenes\CrWaitForCodeScene.cs" />
     <Compile Include="Scenes\CrWaitForPinScene.cs" />
     <Compile Include="Scenes\ICrAuthorizationSceneGroup.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CardReaderDrivers\CardReaderDrivers.csproj">
-      <Project>{2083084F-559D-4C3C-A4A0-A4B9A5E77BEC}</Project>
-      <Name>CardReaderDrivers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CardReaderDrivers\CardReaderDriversDefinitions.csproj">
-      <Project>{0C2C72AB-24FA-439F-839C-E32D31B26D06}</Project>
-      <Name>CardReaderDriversDefinitions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IwQuick\IwQuickCF.csproj">
-      <Project>{ADD9AAB8-D3B4-4A89-9D1B-5A1A6FBEFAC1}</Project>
-      <Name>IwQuickCF</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
   <ProjectExtensions>

@@ -68,6 +68,22 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClspDrivers.CF35, Version=1.0.8319.16428, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\ClspDrivers.CF35.dll</HintPath>
+    </Reference>
+    <Reference Include="ClspDriversDefinitions, Version=1.0.8319.16401, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\ClspDriversDefinitions.dll</HintPath>
+    </Reference>
+    <Reference Include="ClspHwCommDrivers, Version=1.0.8319.16076, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\ClspHwCommDrivers.dll</HintPath>
+    </Reference>
+    <Reference Include="IwQuick.CF35, Version=2.9.7815.12474, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IwQuick.CF35.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -76,44 +92,6 @@
     <Compile Include="Communicator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CardReaderDrivers\CardReaderDrivers.csproj">
-      <Project>{2083084F-559D-4C3C-A4A0-A4B9A5E77BEC}</Project>
-      <Name>CardReaderDrivers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cgp.NCAS.Definitions\Cgp.NCAS.DefinitionsCF.csproj">
-      <Project>{7A441AF7-53A8-4D8B-A9E7-4E6BC8671E45}</Project>
-      <Name>Cgp.NCAS.DefinitionsCF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cgp.NCAS.Globals\Cgp.NCAS.GlobalsCF.csproj">
-      <Project>{09782216-EB53-4E3E-8DE0-33B7672618E0}</Project>
-      <Name>Cgp.NCAS.GlobalsCF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ClspDrivers\ClspDriversDefinitions.csproj">
-      <Project>{DD7714D8-C1A8-446F-9244-727EFBD2D284}</Project>
-      <Name>ClspDriversDefinitions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ClspDrivers\ClspDrivers.csproj">
-      <Project>{8040B269-5B1B-4F10-82FF-555E3379B060}</Project>
-      <Name>ClspDrivers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\InterCommDrivers\InterCommDrivers.csproj">
-      <Project>{8240E6B3-6283-4C68-B2A2-8FEDD3C6D121}</Project>
-      <Name>InterCommDrivers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IwQuick\IwQuickCF.csproj">
-      <Project>{ADD9AAB8-D3B4-4A89-9D1B-5A1A6FBEFAC1}</Project>
-      <Name>IwQuickCF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LPC3250Drivers\LPC3250Drivers.csproj">
-      <Project>{7CA5C345-EF94-4CE8-A0E8-469ED55AE8EF}</Project>
-      <Name>LPC3250Drivers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NodeDataProtocol\NodeDataProtocol.csproj">
-      <Project>{3D6CFE32-CED7-4BAC-97E7-FE41E1339234}</Project>
-      <Name>NodeDataProtocol</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
   <ProjectExtensions>

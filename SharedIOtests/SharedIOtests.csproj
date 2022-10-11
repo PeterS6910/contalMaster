@@ -57,16 +57,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\IwQuick\IwQuickCF.csproj">
-      <Project>{ADD9AAB8-D3B4-4A89-9D1B-5A1A6FBEFAC1}</Project>
-      <Name>IwQuickCF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LPC3250Drivers\LPC3250Drivers.csproj">
-      <Project>{7CA5C345-EF94-4CE8-A0E8-469ED55AE8EF}</Project>
-      <Name>LPC3250Drivers</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>

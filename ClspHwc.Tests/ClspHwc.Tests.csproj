@@ -54,24 +54,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClspDrivers\ClspDriversDefinitions.csproj">
-      <Project>{DD7714D8-C1A8-446F-9244-727EFBD2D284}</Project>
-      <Name>ClspDriversDefinitions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\InterCommDrivers\InterCommDrivers.csproj">
-      <Project>{8240E6B3-6283-4C68-B2A2-8FEDD3C6D121}</Project>
-      <Name>InterCommDrivers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IwQuick\IwQuickCF.csproj">
-      <Project>{ADD9AAB8-D3B4-4A89-9D1B-5A1A6FBEFAC1}</Project>
-      <Name>IwQuickCF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LPC3250Drivers\LPC3250Drivers.csproj">
-      <Project>{7CA5C345-EF94-4CE8-A0E8-469ED55AE8EF}</Project>
-      <Name>LPC3250Drivers</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>

@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{EC67C840-3C7F-470E-9E50-1F8598E038F9}</ProjectGuid>
     <OutputType>Exe</OutputType>
@@ -91,6 +91,58 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BoolExpressions, Version=1.0.8319.15969, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\BoolExpressions.dll</HintPath>
+    </Reference>
+    <Reference Include="CardReaderDrivers.CF35, Version=1.5.8319.15038, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\CardReaderDrivers.CF35.dll</HintPath>
+    </Reference>
+    <Reference Include="CardReaderDriversDefinitions.CF35, Version=1.0.8319.15037, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\CardReaderDriversDefinitions.CF35.dll</HintPath>
+    </Reference>
+    <Reference Include="CatCom.CF35, Version=1.0.8319.15759, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\CatCom.CF35.dll</HintPath>
+    </Reference>
+    <Reference Include="ClspDrivers.CF35, Version=1.0.8319.16428, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\ClspDrivers.CF35.dll</HintPath>
+    </Reference>
+    <Reference Include="ClspDriversDefinitions, Version=1.0.8319.16401, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\ClspDriversDefinitions.dll</HintPath>
+    </Reference>
+    <Reference Include="ClspHwCommDrivers, Version=1.0.8319.16076, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\ClspHwCommDrivers.dll</HintPath>
+    </Reference>
+    <Reference Include="DoorStateMachine.CF35, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\DoorStateMachine.CF35.dll</HintPath>
+    </Reference>
+    <Reference Include="IwQuick.CF35, Version=2.9.7815.12474, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IwQuick.CF35.dll</HintPath>
+    </Reference>
+    <Reference Include="LPC3250Drivers, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\LPC3250Drivers.dll</HintPath>
+    </Reference>
+    <Reference Include="LwMessaging.CF35, Version=1.0.8319.15717, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\LwMessaging.CF35.dll</HintPath>
+    </Reference>
+    <Reference Include="LwRemoting2.CF35, Version=1.0.8319.15862, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\LwRemoting2.CF35.dll</HintPath>
+    </Reference>
+    <Reference Include="LwSerialization2.CF35, Version=1.0.8319.15622, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\LwSerialization2.CF35.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -171,22 +223,6 @@
     <Compile Include="UPSMonitor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BoolExpressions\BoolExpressionsCF.csproj">
-      <Project>{80EF090E-16FC-42B6-9B90-28E730D325D1}</Project>
-      <Name>BoolExpressionsCF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CardReaderDrivers\CardReaderDrivers.csproj">
-      <Project>{2083084F-559D-4C3C-A4A0-A4B9A5E77BEC}</Project>
-      <Name>CardReaderDrivers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CardReaderDrivers\CardReaderDriversDefinitions.csproj">
-      <Project>{0C2C72AB-24FA-439F-839C-E32D31B26D06}</Project>
-      <Name>CardReaderDriversDefinitions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CatCom\CatCom.CF35.csproj">
-      <Project>{CF2102F6-FABF-453C-B37B-A9C8EAF85243}</Project>
-      <Name>CatCom.CF35</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Cgp.NCAS.Definitions\Cgp.NCAS.DefinitionsCF.csproj">
       <Project>{7A441AF7-53A8-4D8B-A9E7-4E6BC8671E45}</Project>
       <Name>Cgp.NCAS.DefinitionsCF</Name>
@@ -199,53 +235,13 @@
       <Project>{97389416-25F1-4AE3-98D7-D45934DD7F98}</Project>
       <Name>Cgp.GlobalsCF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ClspDrivers\ClspDriversDefinitions.csproj">
-      <Project>{DD7714D8-C1A8-446F-9244-727EFBD2D284}</Project>
-      <Name>ClspDriversDefinitions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ClspDrivers\ClspDrivers.csproj">
-      <Project>{8040B269-5B1B-4F10-82FF-555E3379B060}</Project>
-      <Name>ClspDrivers</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CrSceneFramework\CrSceneFrameworkCF.csproj">
       <Project>{ADA63675-FC96-4F70-9D77-5381171C35C0}</Project>
       <Name>CrSceneFrameworkCF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DoorStateMachine\DoorStateMachineCF.csproj">
-      <Project>{10484868-FAA2-480D-9F94-84E35D7E2112}</Project>
-      <Name>DoorStateMachineCF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\InterCommDrivers\InterCommDrivers.csproj">
-      <Project>{8240E6B3-6283-4C68-B2A2-8FEDD3C6D121}</Project>
-      <Name>InterCommDrivers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IwQuick\IwQuickCF.csproj">
-      <Project>{ADD9AAB8-D3B4-4A89-9D1B-5A1A6FBEFAC1}</Project>
-      <Name>IwQuickCF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LPC3250Drivers\LPC3250Drivers.csproj">
-      <Project>{7CA5C345-EF94-4CE8-A0E8-469ED55AE8EF}</Project>
-      <Name>LPC3250Drivers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LwMessaging\LwMessaging.CF35.csproj">
-      <Project>{65D9FD20-FD7D-46F7-8874-CB4185C7C98A}</Project>
-      <Name>LwMessaging.CF35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LwRemoting2\LwRemoting2CF.csproj">
-      <Project>{7AC01A43-B672-4623-8FFE-F0B78841D8AE}</Project>
-      <Name>LwRemoting2CF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LwSerialization2\LwSerialization2CF.csproj">
-      <Project>{95ED6626-1398-4AE3-9E22-5428C73FE02A}</Project>
-      <Name>LwSerialization2CF</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NodeDataProtocol\NodeDataProtocol.csproj">
       <Project>{3D6CFE32-CED7-4BAC-97E7-FE41E1339234}</Project>
       <Name>NodeDataProtocol</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\uTcp\uTcp.CF35.csproj">
-      <Project>{7B914D18-D24A-4D1B-A4F0-FB6BE82958F9}</Project>
-      <Name>uTcp.CF35</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
