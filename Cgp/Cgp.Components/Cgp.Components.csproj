@@ -46,6 +46,9 @@
     <Reference Include="ComponentFactory.Krypton.Toolkit">
       <HintPath>.\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
+    <Reference Include="IwQuick.PC45">
+      <HintPath>..\..\lib\IwQuick.PC45.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
@@ -130,10 +133,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\IwQuick\IwQuick.PC45.csproj">
-      <Project>{5775202e-96b4-44e8-904d-625154d7d524}</Project>
-      <Name>IwQuick.PC45</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Cgp.Globals\Cgp.Globals.csproj">
       <Project>{869f99af-fefa-43d9-98a0-6d8cf0987074}</Project>
       <Name>Cgp.Globals</Name>

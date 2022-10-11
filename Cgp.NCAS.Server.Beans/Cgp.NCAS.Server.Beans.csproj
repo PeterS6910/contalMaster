@@ -62,6 +62,18 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CardReaderDrivers.PC45">
+      <HintPath>..\lib\CardReaderDrivers.PC45.dll</HintPath>
+    </Reference>
+    <Reference Include="CardReaderDriversDefinitions.PC45">
+      <HintPath>..\lib\CardReaderDriversDefinitions.PC45.dll</HintPath>
+    </Reference>
+    <Reference Include="IwQuick.PC45">
+      <HintPath>..\lib\IwQuick.PC45.dll</HintPath>
+    </Reference>
+    <Reference Include="LwSerialization2.PC45">
+      <HintPath>..\lib\LwSerialization2.PC45.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -132,10 +144,6 @@
     <Compile Include="GraphicsView.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CardReaderDrivers\CardReaderDriversDefinitionsPC45.csproj">
-      <Project>{1a9ee04d-0908-467e-a5ee-25a40c61dcc2}</Project>
-      <Name>CardReaderDriversDefinitionsPC45</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Cgp\Cgp.BaseLib\Cgp.BaseLib.csproj">
       <Project>{4B649633-3110-4CBD-AC66-43685FFDC808}</Project>
       <Name>Cgp.BaseLib</Name>
@@ -159,10 +167,6 @@
     <ProjectReference Include="..\Cgp\Cgp.Server.Beans\Cgp.Server.Beans.csproj">
       <Project>{0A152990-C767-4D19-ABD5-9CC4FDDDBC95}</Project>
       <Name>Cgp.Server.Beans</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IwQuick\IwQuick.PC45.csproj">
-      <Project>{5775202e-96b4-44e8-904d-625154d7d524}</Project>
-      <Name>IwQuick.PC45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

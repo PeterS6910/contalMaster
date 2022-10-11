@@ -43,6 +43,15 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CardReaderDrivers.PC45">
+      <HintPath>..\lib\CardReaderDrivers.PC45.dll</HintPath>
+    </Reference>
+    <Reference Include="CardReaderDriversDefinitions.PC45">
+      <HintPath>..\lib\CardReaderDriversDefinitions.PC45.dll</HintPath>
+    </Reference>
+    <Reference Include="IwQuick.PC45">
+      <HintPath>..\lib\IwQuick.PC45.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -56,14 +65,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CardReaderDrivers\CardReaderDriversDefinitionsPC45.csproj">
-      <Project>{1a9ee04d-0908-467e-a5ee-25a40c61dcc2}</Project>
-      <Name>CardReaderDriversDefinitionsPC45</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CardReaderDrivers\CardReaderDriversPC45.csproj">
-      <Project>{2a3c3ecf-5b90-4a14-a4ff-514629738201}</Project>
-      <Name>CardReaderDriversPC45</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Cgp\Cgp.Client.Common\Cgp.Client.Common.csproj">
       <Project>{F13A1A13-4773-4744-820B-43DA34DFAE7B}</Project>
       <Name>Cgp.Client.Common</Name>
@@ -87,10 +88,6 @@
     <ProjectReference Include="..\Cgp\Cgp.Server.Beans\Cgp.Server.Beans.csproj">
       <Project>{0A152990-C767-4D19-ABD5-9CC4FDDDBC95}</Project>
       <Name>Cgp.Server.Beans</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IwQuick\IwQuick.PC45.csproj">
-      <Project>{5775202e-96b4-44e8-904d-625154d7d524}</Project>
-      <Name>IwQuick.PC45</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

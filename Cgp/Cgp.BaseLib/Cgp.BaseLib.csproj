@@ -73,6 +73,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="IwQuick.PC45">
+      <HintPath>..\..\lib\IwQuick.PC45.dll</HintPath>
+    </Reference>
+    <Reference Include="LwSerialization2.PC45">
+      <HintPath>..\..\lib\LwSerialization2.PC45.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -81,10 +87,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\IwQuick\IwQuick.PC45.csproj">
-      <Project>{5775202e-96b4-44e8-904d-625154d7d524}</Project>
-      <Name>IwQuick.PC45</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Cgp.Components\Cgp.Components.csproj">
       <Project>{c192e586-21cb-45ca-86c7-9ce602f4726e}</Project>
       <Name>Cgp.Components</Name>

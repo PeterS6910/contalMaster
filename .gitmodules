@@ -1,43 +1,16 @@
 [submodule "LPC3250Drivers"]
 	path = LPC3250Drivers
-	url = https://gitlab1.contal.sk/drivers/lpc32xxdrivers/lpc32xxdrivers.git
-[submodule "LwSerialization2"]
-	path = LwSerialization2
-	url = https://gitlab1.contal.sk/frameworks/lwserialization/lwserialization2.git
-[submodule "LwRemoting2"]
-	path = LwRemoting2
-	url = https://gitlab1.contal.sk/frameworks/lwremoting/lwremoting2.git
-[submodule "LwMessaging"]
-	path = LwMessaging
-	url = https://gitlab1.contal.sk/frameworks/lwmessaging/lwmessaging.git
-[submodule "CardReaderDrivers"]
-	path = CardReaderDrivers
-	url = https://gitlab1.contal.sk/drivers/cardreaderdrivers/cardreaderdrivers.git
-[submodule "CatCom"]
-	path = CatCom
-	url = https://gitlab1.contal.sk/frameworks/catcom/catcom.git
+url=https://gitlab.contal.sk/drivers/lpc32xxdrivers/lpc32xxdrivers.git
 [submodule "DoorStateMachine"]
 	path = DoorStateMachine
-	url = https://gitlab1.contal.sk/frameworks/doorstatemachine/doorstatemachine.git
-[submodule "LwDhcp"]
-	path = LwDhcp
-	url = https://gitlab1.contal.sk/frameworks/lwdhcp/lwdhcp.git
+url=https://gitlab.contal.sk/frameworks/doorstatemachine/doorstatemachine.git
 [submodule "ClspDrivers"]
 	path = ClspDrivers
-	url = https://gitlab1.contal.sk/drivers/clspdrivers/clspdrivers.git
-[submodule "SLA.Client"]
-	path = SLA.Client
-	url = https://gitlab1.contal.sk/utility/sla/sla.client.git
-[submodule "uTcp"]
-	path = uTcp
-	url = https://gitlab1.contal.sk/frameworks/utcp/utcp.git
+url=https://gitlab.contal.sk/drivers/clspdrivers/clspdrivers.git
 [submodule "BoolExpressions"]
 	path = BoolExpressions
-	url = https://gitlab1.contal.sk/frameworks/boolexpressions/boolexpressions.git
+url=https://gitlab.contal.sk/frameworks/boolexpressions/boolexpressions.git
 [submodule "InterCommDrivers"]
 	path = InterCommDrivers
-	url = https://gitlab1.contal.sk/drivers/intercommdrivers/intercommdrivers.git
+url=https://gitlab.contal.sk/drivers/intercommdrivers/intercommdrivers.git
 
-[submodule "IwQuick"]
-	path = IwQuick
-	url = https://gitlab1.contal.sk/frameworks/IwQuick-dotnet/IwQuick.git
