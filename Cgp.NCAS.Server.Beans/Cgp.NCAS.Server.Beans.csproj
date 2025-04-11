@@ -33,10 +33,14 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -84,6 +88,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AACardReader.cs" />
+    <Compile Include="ExcelReportOutput.cs" />
+    <Compile Include="PersonAttributeOutput.cs" />
     <Compile Include="PersonAttribute.cs" />
     <Compile Include="AccessZone.cs" />
     <Compile Include="ACLGroup.cs" />
@@ -275,6 +281,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ReportSetting.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PersonAttributeOutput.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExcelReportOutput.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

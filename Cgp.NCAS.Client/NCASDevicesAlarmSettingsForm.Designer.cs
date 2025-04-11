@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.NCAS.Client
+namespace Contal.Cgp.NCAS.Client
 {
     partial class NCASDevicesAlarmSettingsForm
     {
@@ -42,9 +42,44 @@
             this._cbOpenAllDcuAlarms = new System.Windows.Forms.CheckBox();
             this._accordionDcuAlarms = new Contal.IwQuick.PlatformPC.UI.Accordion.Accordion();
             this._tpDoorEnvironmentAlarms = new System.Windows.Forms.TabPage();
+            this.grDoorRep = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbDoorReport = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbYear2 = new System.Windows.Forms.RadioButton();
+            this.rbMonth2 = new System.Windows.Forms.RadioButton();
+            this.rbDay2 = new System.Windows.Forms.RadioButton();
+            this.tbDoorFilename = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbmTimeZoneReportDoor = new Contal.IwQuick.UI.TextBoxMenu();
+            this._tsiModify2 = new System.Windows.Forms.ToolStripMenuItem();
+            this._tsiCreate2 = new System.Windows.Forms.ToolStripMenuItem();
+            this._tsiRemove2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbDoorDir = new System.Windows.Forms.TextBox();
+            this.bDoorExportDir = new System.Windows.Forms.Button();
             this._cbOpenAllDsmAlarms = new System.Windows.Forms.CheckBox();
             this._accordionDsmAlarms = new Contal.IwQuick.PlatformPC.UI.Accordion.Accordion();
             this._tpCrAlarms = new System.Windows.Forms.TabPage();
+            this.grAccessDeniedReport = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this._cbADEnabled = new System.Windows.Forms.CheckBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this._tbADFileName = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbYearAD = new System.Windows.Forms.RadioButton();
+            this.rbMonthAD = new System.Windows.Forms.RadioButton();
+            this.rbDayAD = new System.Windows.Forms.RadioButton();
+            this._tbADDir = new System.Windows.Forms.TextBox();
+            this.bADDir = new System.Windows.Forms.Button();
+            this.nmFailsCount = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this._tbmReportTimeZone = new Contal.IwQuick.UI.TextBoxMenu();
+            this._tsiModify1 = new System.Windows.Forms.ToolStripMenuItem();
+            this._tsiCreate1 = new System.Windows.Forms.ToolStripMenuItem();
+            this._tsiRemove1 = new System.Windows.Forms.ToolStripMenuItem();
             this._gbSlForEnterToMenu = new System.Windows.Forms.GroupBox();
             this._lGin2 = new System.Windows.Forms.Label();
             this._lSecurityDailyPlanTimeZone = new System.Windows.Forms.Label();
@@ -72,16 +107,26 @@
             this._eInvalidPinRetriesCount = new System.Windows.Forms.NumericUpDown();
             this._chbInvalidPinRetriesLimitEnabled = new System.Windows.Forms.CheckBox();
             this._tpPersons = new System.Windows.Forms.TabPage();
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.buttonPersonsUnselectAll = new System.Windows.Forms.Button();
             this.buttonPersonsSelectAll = new System.Windows.Forms.Button();
-            this._bApply = new System.Windows.Forms.Button();
             this.checkedListBoxPersons = new System.Windows.Forms.CheckedListBox();
+            this._bApply = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label1 = new System.Windows.Forms.Label();
             this._tcDevicesAlarmSetting.SuspendLayout();
             this._tpAlarmAreaAlarms.SuspendLayout();
             this._tpCcuAlarms.SuspendLayout();
             this._tpDcuAlarms.SuspendLayout();
             this._tpDoorEnvironmentAlarms.SuspendLayout();
+            this.grDoorRep.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this._tpCrAlarms.SuspendLayout();
+            this.grAccessDeniedReport.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmFailsCount)).BeginInit();
             this._gbSlForEnterToMenu.SuspendLayout();
             this._tpInvalidPinGinRetriesLimits.SuspendLayout();
             this._gbInvalidGinRetriesLimit.SuspendLayout();
@@ -91,12 +136,13 @@
             ((System.ComponentModel.ISupportInitialize)(this._eInvalidPinRetriesLimitReachedTimeout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._eInvalidPinRetriesCount)).BeginInit();
             this._tpPersons.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // _bSave
             // 
             this._bSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._bSave.Location = new System.Drawing.Point(771, 386);
+            this._bSave.Location = new System.Drawing.Point(783, 514);
             this._bSave.Name = "_bSave";
             this._bSave.Size = new System.Drawing.Size(75, 23);
             this._bSave.TabIndex = 101;
@@ -107,7 +153,7 @@
             // _bClose
             // 
             this._bClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._bClose.Location = new System.Drawing.Point(852, 386);
+            this._bClose.Location = new System.Drawing.Point(864, 514);
             this._bClose.Name = "_bClose";
             this._bClose.Size = new System.Drawing.Size(75, 23);
             this._bClose.TabIndex = 102;
@@ -130,7 +176,7 @@
             this._tcDevicesAlarmSetting.Location = new System.Drawing.Point(12, 12);
             this._tcDevicesAlarmSetting.Name = "_tcDevicesAlarmSetting";
             this._tcDevicesAlarmSetting.SelectedIndex = 0;
-            this._tcDevicesAlarmSetting.Size = new System.Drawing.Size(915, 368);
+            this._tcDevicesAlarmSetting.Size = new System.Drawing.Size(927, 496);
             this._tcDevicesAlarmSetting.TabIndex = 0;
             // 
             // _tpAlarmAreaAlarms
@@ -141,7 +187,7 @@
             this._tpAlarmAreaAlarms.Controls.Add(this._chbAlarmAreaReportingToCRs);
             this._tpAlarmAreaAlarms.Location = new System.Drawing.Point(4, 22);
             this._tpAlarmAreaAlarms.Name = "_tpAlarmAreaAlarms";
-            this._tpAlarmAreaAlarms.Size = new System.Drawing.Size(907, 342);
+            this._tpAlarmAreaAlarms.Size = new System.Drawing.Size(919, 470);
             this._tpAlarmAreaAlarms.TabIndex = 3;
             this._tpAlarmAreaAlarms.Text = "Alarm area alarms";
             // 
@@ -203,7 +249,7 @@
             this._accordionAlarmAreaAlarms.ShowToolMenuOnHoverWhenClosed = false;
             this._accordionAlarmAreaAlarms.ShowToolMenuOnRightClick = true;
             this._accordionAlarmAreaAlarms.ShowToolMenuRequiresPositiveFillWeight = false;
-            this._accordionAlarmAreaAlarms.Size = new System.Drawing.Size(901, 312);
+            this._accordionAlarmAreaAlarms.Size = new System.Drawing.Size(2345, 125);
             this._accordionAlarmAreaAlarms.TabIndex = 9;
             this._accordionAlarmAreaAlarms.UpArrow = null;
             // 
@@ -230,7 +276,7 @@
             this._tpCcuAlarms.Location = new System.Drawing.Point(4, 22);
             this._tpCcuAlarms.Name = "_tpCcuAlarms";
             this._tpCcuAlarms.Padding = new System.Windows.Forms.Padding(3);
-            this._tpCcuAlarms.Size = new System.Drawing.Size(907, 342);
+            this._tpCcuAlarms.Size = new System.Drawing.Size(919, 470);
             this._tpCcuAlarms.TabIndex = 0;
             this._tpCcuAlarms.Text = "CCU alarms";
             // 
@@ -238,7 +284,7 @@
             // 
             this._cbOpenAllCcuAlarms.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._cbOpenAllCcuAlarms.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this._cbOpenAllCcuAlarms.Location = new System.Drawing.Point(701, 6);
+            this._cbOpenAllCcuAlarms.Location = new System.Drawing.Point(2510, 6);
             this._cbOpenAllCcuAlarms.Name = "_cbOpenAllCcuAlarms";
             this._cbOpenAllCcuAlarms.Size = new System.Drawing.Size(200, 17);
             this._cbOpenAllCcuAlarms.TabIndex = 3;
@@ -305,7 +351,7 @@
             this._accordionCcuAlarms.ShowToolMenuOnHoverWhenClosed = false;
             this._accordionCcuAlarms.ShowToolMenuOnRightClick = true;
             this._accordionCcuAlarms.ShowToolMenuRequiresPositiveFillWeight = false;
-            this._accordionCcuAlarms.Size = new System.Drawing.Size(901, 310);
+            this._accordionCcuAlarms.Size = new System.Drawing.Size(2710, 123);
             this._accordionCcuAlarms.TabIndex = 2;
             this._accordionCcuAlarms.UpArrow = null;
             // 
@@ -319,7 +365,7 @@
             this._tpDcuAlarms.Location = new System.Drawing.Point(4, 22);
             this._tpDcuAlarms.Name = "_tpDcuAlarms";
             this._tpDcuAlarms.Padding = new System.Windows.Forms.Padding(3);
-            this._tpDcuAlarms.Size = new System.Drawing.Size(907, 342);
+            this._tpDcuAlarms.Size = new System.Drawing.Size(919, 470);
             this._tpDcuAlarms.TabIndex = 1;
             this._tpDcuAlarms.Text = "DCUs alarms";
             // 
@@ -327,7 +373,7 @@
             // 
             this._cbOpenAllDcuAlarms.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._cbOpenAllDcuAlarms.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this._cbOpenAllDcuAlarms.Location = new System.Drawing.Point(701, 6);
+            this._cbOpenAllDcuAlarms.Location = new System.Drawing.Point(2510, 6);
             this._cbOpenAllDcuAlarms.Name = "_cbOpenAllDcuAlarms";
             this._cbOpenAllDcuAlarms.Size = new System.Drawing.Size(200, 17);
             this._cbOpenAllDcuAlarms.TabIndex = 1;
@@ -394,7 +440,7 @@
             this._accordionDcuAlarms.ShowToolMenuOnHoverWhenClosed = false;
             this._accordionDcuAlarms.ShowToolMenuOnRightClick = true;
             this._accordionDcuAlarms.ShowToolMenuRequiresPositiveFillWeight = false;
-            this._accordionDcuAlarms.Size = new System.Drawing.Size(901, 310);
+            this._accordionDcuAlarms.Size = new System.Drawing.Size(2710, 123);
             this._accordionDcuAlarms.TabIndex = 0;
             this._accordionDcuAlarms.UpArrow = null;
             // 
@@ -403,20 +449,263 @@
             this._tpDoorEnvironmentAlarms.AutoScroll = true;
             this._tpDoorEnvironmentAlarms.AutoScrollMinSize = new System.Drawing.Size(907, 0);
             this._tpDoorEnvironmentAlarms.BackColor = System.Drawing.SystemColors.Control;
+            this._tpDoorEnvironmentAlarms.Controls.Add(this.grDoorRep);
             this._tpDoorEnvironmentAlarms.Controls.Add(this._cbOpenAllDsmAlarms);
             this._tpDoorEnvironmentAlarms.Controls.Add(this._accordionDsmAlarms);
             this._tpDoorEnvironmentAlarms.Location = new System.Drawing.Point(4, 22);
             this._tpDoorEnvironmentAlarms.Name = "_tpDoorEnvironmentAlarms";
             this._tpDoorEnvironmentAlarms.Padding = new System.Windows.Forms.Padding(3);
-            this._tpDoorEnvironmentAlarms.Size = new System.Drawing.Size(907, 342);
+            this._tpDoorEnvironmentAlarms.Size = new System.Drawing.Size(919, 470);
             this._tpDoorEnvironmentAlarms.TabIndex = 4;
             this._tpDoorEnvironmentAlarms.Text = "Door environment alarms";
+            this._tpDoorEnvironmentAlarms.Resize += new System.EventHandler(this._tpDoorEnvironmentAlarms_Resize);
+            // 
+            // grDoorRep
+            // 
+            this.grDoorRep.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grDoorRep.Controls.Add(this.tableLayoutPanel1);
+            this.grDoorRep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grDoorRep.Location = new System.Drawing.Point(552, 20);
+            this.grDoorRep.Margin = new System.Windows.Forms.Padding(4);
+            this.grDoorRep.Name = "grDoorRep";
+            this.grDoorRep.Size = new System.Drawing.Size(360, 315);
+            this.grDoorRep.TabIndex = 22;
+            this.grDoorRep.TabStop = false;
+            this.grDoorRep.Text = "Excel export ";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 214F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel1.Controls.Add(this.cbDoorReport, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tbDoorDir, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tbmTimeZoneReportDoor, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tbDoorFilename, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bDoorExportDir, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 30);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.70422F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.29578F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(334, 253);
+            this.tableLayoutPanel1.TabIndex = 21;
+            // 
+            // cbDoorReport
+            // 
+            this.cbDoorReport.AutoSize = true;
+            this.cbDoorReport.Location = new System.Drawing.Point(3, 3);
+            this.cbDoorReport.Name = "cbDoorReport";
+            this.cbDoorReport.Size = new System.Drawing.Size(59, 17);
+            this.cbDoorReport.TabIndex = 17;
+            this.cbDoorReport.Text = "Enabled";
+            this.cbDoorReport.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbYear2);
+            this.groupBox2.Controls.Add(this.rbMonth2);
+            this.groupBox2.Controls.Add(this.rbDay2);
+            this.groupBox2.Location = new System.Drawing.Point(68, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(194, 40);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Interval";
+            // 
+            // rbYear2
+            // 
+            this.rbYear2.AutoSize = true;
+            this.rbYear2.Location = new System.Drawing.Point(141, 19);
+            this.rbYear2.Name = "rbYear2";
+            this.rbYear2.Size = new System.Drawing.Size(47, 17);
+            this.rbYear2.TabIndex = 15;
+            this.rbYear2.TabStop = true;
+            this.rbYear2.Text = "Year";
+            this.rbYear2.UseVisualStyleBackColor = true;
+            // 
+            // rbMonth2
+            // 
+            this.rbMonth2.AutoSize = true;
+            this.rbMonth2.Location = new System.Drawing.Point(68, 19);
+            this.rbMonth2.Name = "rbMonth2";
+            this.rbMonth2.Size = new System.Drawing.Size(55, 17);
+            this.rbMonth2.TabIndex = 14;
+            this.rbMonth2.TabStop = true;
+            this.rbMonth2.Text = "Month";
+            this.rbMonth2.UseVisualStyleBackColor = true;
+            // 
+            // rbDay2
+            // 
+            this.rbDay2.AutoSize = true;
+            this.rbDay2.Location = new System.Drawing.Point(6, 19);
+            this.rbDay2.Name = "rbDay2";
+            this.rbDay2.Size = new System.Drawing.Size(44, 17);
+            this.rbDay2.TabIndex = 13;
+            this.rbDay2.TabStop = true;
+            this.rbDay2.Text = "Day";
+            this.rbDay2.UseVisualStyleBackColor = true;
+            // 
+            // tbDoorFilename
+            // 
+            this.tbDoorFilename.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbDoorFilename.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbDoorFilename.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.tbDoorFilename.Location = new System.Drawing.Point(68, 49);
+            this.tbDoorFilename.Multiline = true;
+            this.tbDoorFilename.Name = "tbDoorFilename";
+            this.tbDoorFilename.Size = new System.Drawing.Size(208, 28);
+            this.tbDoorFilename.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 46);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 26);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Report name";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 171);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Time zone";
+            // 
+            // tbmTimeZoneReportDoor
+            // 
+            this.tbmTimeZoneReportDoor.AllowDrop = true;
+            this.tbmTimeZoneReportDoor.AutoSize = true;
+            this.tbmTimeZoneReportDoor.BackColor = System.Drawing.SystemColors.Control;
+            // 
+            // 
+            // 
+            this.tbmTimeZoneReportDoor.Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbmTimeZoneReportDoor.Button.BackColor = System.Drawing.SystemColors.Control;
+            this.tbmTimeZoneReportDoor.Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tbmTimeZoneReportDoor.Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.tbmTimeZoneReportDoor.Button.Image = ((System.Drawing.Image)(resources.GetObject("tbmTimeZoneReportDoor.Button.Image")));
+            this.tbmTimeZoneReportDoor.Button.Location = new System.Drawing.Point(94, 0);
+            this.tbmTimeZoneReportDoor.Button.Name = "_bMenu";
+            this.tbmTimeZoneReportDoor.Button.Size = new System.Drawing.Size(20, 20);
+            this.tbmTimeZoneReportDoor.Button.TabIndex = 3;
+            this.tbmTimeZoneReportDoor.Button.UseVisualStyleBackColor = false;
+            this.tbmTimeZoneReportDoor.ButtonBaseColor = System.Drawing.SystemColors.Control;
+            this.tbmTimeZoneReportDoor.ButtonDefaultBehaviour = true;
+            this.tbmTimeZoneReportDoor.ButtonHoverColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.tbmTimeZoneReportDoor.ButtonImage = ((System.Drawing.Image)(resources.GetObject("tbmTimeZoneReportDoor.ButtonImage")));
+            // 
+            // 
+            // 
+            this.tbmTimeZoneReportDoor.ButtonPopupMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._tsiModify2,
+            this._tsiCreate2,
+            this._tsiRemove2});
+            this.tbmTimeZoneReportDoor.ButtonPopupMenu.Name = "";
+            this.tbmTimeZoneReportDoor.ButtonPopupMenu.Size = new System.Drawing.Size(118, 70);
+            this.tbmTimeZoneReportDoor.ButtonPosition = Contal.IwQuick.UI.MenuPosition.Right;
+            this.tbmTimeZoneReportDoor.ButtonShowImage = true;
+            this.tbmTimeZoneReportDoor.ButtonSizeHeight = 20;
+            this.tbmTimeZoneReportDoor.ButtonSizeWidth = 20;
+            this.tbmTimeZoneReportDoor.ButtonText = "";
+            this.tbmTimeZoneReportDoor.HoverTime = 500;
+            // 
+            // 
+            // 
+            this.tbmTimeZoneReportDoor.ImageTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbmTimeZoneReportDoor.ImageTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.tbmTimeZoneReportDoor.ImageTextBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tbmTimeZoneReportDoor.ImageTextBox.ContextMenuStrip = this.tbmTimeZoneReportDoor.ButtonPopupMenu;
+            this.tbmTimeZoneReportDoor.ImageTextBox.Image = ((System.Drawing.Image)(resources.GetObject("tbmTimeZoneReportDoor.ImageTextBox.Image")));
+            this.tbmTimeZoneReportDoor.ImageTextBox.Location = new System.Drawing.Point(0, 0);
+            this.tbmTimeZoneReportDoor.ImageTextBox.Name = "_textBox";
+            this.tbmTimeZoneReportDoor.ImageTextBox.NoTextNoImage = true;
+            this.tbmTimeZoneReportDoor.ImageTextBox.ReadOnly = true;
+            this.tbmTimeZoneReportDoor.ImageTextBox.Size = new System.Drawing.Size(94, 20);
+            this.tbmTimeZoneReportDoor.ImageTextBox.TabIndex = 0;
+            // 
+            // 
+            // 
+            this.tbmTimeZoneReportDoor.ImageTextBox.TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbmTimeZoneReportDoor.ImageTextBox.TextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.tbmTimeZoneReportDoor.ImageTextBox.TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbmTimeZoneReportDoor.ImageTextBox.TextBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tbmTimeZoneReportDoor.ImageTextBox.TextBox.Location = new System.Drawing.Point(1, 2);
+            this.tbmTimeZoneReportDoor.ImageTextBox.TextBox.Name = "_tbTextBox";
+            this.tbmTimeZoneReportDoor.ImageTextBox.TextBox.ReadOnly = true;
+            this.tbmTimeZoneReportDoor.ImageTextBox.TextBox.Size = new System.Drawing.Size(172, 13);
+            this.tbmTimeZoneReportDoor.ImageTextBox.TextBox.TabIndex = 2;
+            this.tbmTimeZoneReportDoor.ImageTextBox.UseImage = true;
+            this.tbmTimeZoneReportDoor.ImageTextBox.DoubleClick += new System.EventHandler(this.tbmTimeZoneReportDoor_ImageTextBox_Click);
+            this.tbmTimeZoneReportDoor.ImageTextBox.Click += new System.EventHandler(this.tbmTimeZoneReportDoor_ImageTextBox_Click);
+            this.tbmTimeZoneReportDoor.Location = new System.Drawing.Point(68, 174);
+            this.tbmTimeZoneReportDoor.MaximumSize = new System.Drawing.Size(1100, 55);
+            this.tbmTimeZoneReportDoor.MinimumSize = new System.Drawing.Size(30, 20);
+            this.tbmTimeZoneReportDoor.Name = "tbmTimeZoneReportDoor";
+            this.tbmTimeZoneReportDoor.Size = new System.Drawing.Size(443, 20);
+            this.tbmTimeZoneReportDoor.TabIndex = 1;
+            this.tbmTimeZoneReportDoor.TextImage = ((System.Drawing.Image)(resources.GetObject("tbmTimeZoneReportDoor.TextImage")));
+            this.tbmTimeZoneReportDoor.ButtonPopupMenuItemClick += new Contal.IwQuick.UI.TextBoxMenu.DPopupMenuHandler(this.tbmTimeZoneReportDoor_ButtonPopupMenuItemClick);
+            this.tbmTimeZoneReportDoor.DragDrop += new System.Windows.Forms.DragEventHandler(this.tbmTimeZoneReportDoor_DragDrop);
+            this.tbmTimeZoneReportDoor.DragOver += new System.Windows.Forms.DragEventHandler(this.tbmTimeZoneReportDoor_DragOver);
+            // 
+            // _tsiModify2
+            // 
+            this._tsiModify2.Name = "_tsiModify2";
+            this._tsiModify2.Size = new System.Drawing.Size(117, 22);
+            this._tsiModify2.Text = "Modify";
+            // 
+            // _tsiCreate2
+            // 
+            this._tsiCreate2.Name = "_tsiCreate2";
+            this._tsiCreate2.Size = new System.Drawing.Size(117, 22);
+            this._tsiCreate2.Text = "Create";
+            // 
+            // _tsiRemove2
+            // 
+            this._tsiRemove2.Name = "_tsiRemove2";
+            this._tsiRemove2.Size = new System.Drawing.Size(117, 22);
+            this._tsiRemove2.Text = "Remove";
+            // 
+            // tbDoorDir
+            // 
+            this.tbDoorDir.Location = new System.Drawing.Point(68, 93);
+            this.tbDoorDir.Multiline = true;
+            this.tbDoorDir.Name = "tbDoorDir";
+            this.tbDoorDir.ReadOnly = true;
+            this.tbDoorDir.Size = new System.Drawing.Size(208, 56);
+            this.tbDoorDir.TabIndex = 22;
+            // 
+            // bDoorExportDir
+            // 
+            this.bDoorExportDir.Location = new System.Drawing.Point(282, 93);
+            this.bDoorExportDir.Name = "bDoorExportDir";
+            this.bDoorExportDir.Size = new System.Drawing.Size(49, 56);
+            this.bDoorExportDir.TabIndex = 23;
+            this.bDoorExportDir.Text = "...";
+            this.bDoorExportDir.UseVisualStyleBackColor = true;
+            this.bDoorExportDir.Click += new System.EventHandler(this.bDoorExportDir_Click);
             // 
             // _cbOpenAllDsmAlarms
             // 
             this._cbOpenAllDsmAlarms.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._cbOpenAllDsmAlarms.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this._cbOpenAllDsmAlarms.Location = new System.Drawing.Point(701, 6);
+            this._cbOpenAllDsmAlarms.Location = new System.Drawing.Point(1979, 6);
             this._cbOpenAllDsmAlarms.Name = "_cbOpenAllDsmAlarms";
             this._cbOpenAllDsmAlarms.Size = new System.Drawing.Size(200, 17);
             this._cbOpenAllDsmAlarms.TabIndex = 2;
@@ -438,6 +727,7 @@
             this._accordionDsmAlarms.AnimateOpenMillis = 150;
             this._accordionDsmAlarms.AutoFixDockStyle = false;
             this._accordionDsmAlarms.AutoScroll = true;
+            this._accordionDsmAlarms.AutoSize = true;
             this._accordionDsmAlarms.CheckBoxFactory = null;
             this._accordionDsmAlarms.CheckBoxMargin = new System.Windows.Forms.Padding(0);
             this._accordionDsmAlarms.ContentBackColor = null;
@@ -452,12 +742,14 @@
             this._accordionDsmAlarms.FillModeGrowOnly = false;
             this._accordionDsmAlarms.FillResetOnCollapse = false;
             this._accordionDsmAlarms.FillWidth = true;
+            this._accordionDsmAlarms.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this._accordionDsmAlarms.GrabCursor = System.Windows.Forms.Cursors.SizeNS;
             this._accordionDsmAlarms.GrabRequiresPositiveFillWeight = true;
             this._accordionDsmAlarms.GrabWidth = 6;
             this._accordionDsmAlarms.GrowAndShrink = true;
             this._accordionDsmAlarms.Insets = new System.Windows.Forms.Padding(0);
-            this._accordionDsmAlarms.Location = new System.Drawing.Point(3, 29);
+            this._accordionDsmAlarms.Location = new System.Drawing.Point(6, 20);
+            this._accordionDsmAlarms.MaximumSize = new System.Drawing.Size(500, 1000);
             this._accordionDsmAlarms.Name = "_accordionDsmAlarms";
             this._accordionDsmAlarms.OpenOnAdd = false;
             this._accordionDsmAlarms.OpenOneOnly = false;
@@ -482,24 +774,309 @@
             this._accordionDsmAlarms.ShowToolMenuOnHoverWhenClosed = false;
             this._accordionDsmAlarms.ShowToolMenuOnRightClick = true;
             this._accordionDsmAlarms.ShowToolMenuRequiresPositiveFillWeight = false;
-            this._accordionDsmAlarms.Size = new System.Drawing.Size(901, 310);
+            this._accordionDsmAlarms.Size = new System.Drawing.Size(500, 49);
             this._accordionDsmAlarms.TabIndex = 0;
             this._accordionDsmAlarms.UpArrow = null;
+            this._accordionDsmAlarms.Resize += new System.EventHandler(this._accordionDsmAlarms_Resize);
             // 
             // _tpCrAlarms
             // 
             this._tpCrAlarms.AutoScroll = true;
             this._tpCrAlarms.AutoScrollMinSize = new System.Drawing.Size(907, 0);
             this._tpCrAlarms.BackColor = System.Drawing.SystemColors.Control;
+            this._tpCrAlarms.Controls.Add(this.grAccessDeniedReport);
             this._tpCrAlarms.Controls.Add(this._gbSlForEnterToMenu);
             this._tpCrAlarms.Controls.Add(this._cbOpenAllCrAlarms);
             this._tpCrAlarms.Controls.Add(this._accordionCrAlarms);
             this._tpCrAlarms.Location = new System.Drawing.Point(4, 22);
             this._tpCrAlarms.Name = "_tpCrAlarms";
             this._tpCrAlarms.Padding = new System.Windows.Forms.Padding(3);
-            this._tpCrAlarms.Size = new System.Drawing.Size(907, 342);
+            this._tpCrAlarms.Size = new System.Drawing.Size(919, 470);
             this._tpCrAlarms.TabIndex = 2;
             this._tpCrAlarms.Text = "Card readers alarms";
+            this._tpCrAlarms.Click += new System.EventHandler(this._tpCrAlarms_Click);
+            this._tpCrAlarms.Resize += new System.EventHandler(this._tpCrAlarms_Resize);
+            // 
+            // grAccessDeniedReport
+            // 
+            this.grAccessDeniedReport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grAccessDeniedReport.Controls.Add(this.tableLayoutPanel2);
+            this.grAccessDeniedReport.Location = new System.Drawing.Point(544, 110);
+            this.grAccessDeniedReport.Name = "grAccessDeniedReport";
+            this.grAccessDeniedReport.Size = new System.Drawing.Size(375, 354);
+            this.grAccessDeniedReport.TabIndex = 18;
+            this.grAccessDeniedReport.TabStop = false;
+            this.grAccessDeniedReport.Text = "Access Denied Report";
+            this.grAccessDeniedReport.Enter += new System.EventHandler(this.grAccessDeniedReport_Enter);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 230F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel2.Controls.Add(this._cbADEnabled, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label6, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this._tbADFileName, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this._tbADDir, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.bADDir, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.nmFailsCount, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label7, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label9, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.label10, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this._tbmReportTimeZone, 1, 4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 19);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 5;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(356, 256);
+            this.tableLayoutPanel2.TabIndex = 0;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
+            // 
+            // _cbADEnabled
+            // 
+            this._cbADEnabled.AutoSize = true;
+            this._cbADEnabled.Location = new System.Drawing.Point(3, 3);
+            this._cbADEnabled.Name = "_cbADEnabled";
+            this._cbADEnabled.Size = new System.Drawing.Size(65, 17);
+            this._cbADEnabled.TabIndex = 4;
+            this._cbADEnabled.Text = "Enabled";
+            this._cbADEnabled.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 70);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Report name";
+            // 
+            // _tbADFileName
+            // 
+            this._tbADFileName.Location = new System.Drawing.Point(83, 73);
+            this._tbADFileName.Name = "_tbADFileName";
+            this._tbADFileName.Size = new System.Drawing.Size(220, 20);
+            this._tbADFileName.TabIndex = 16;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbYearAD);
+            this.groupBox1.Controls.Add(this.rbMonthAD);
+            this.groupBox1.Controls.Add(this.rbDayAD);
+            this.groupBox1.Location = new System.Drawing.Point(83, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(181, 45);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Interval";
+            // 
+            // rbYearAD
+            // 
+            this.rbYearAD.AutoSize = true;
+            this.rbYearAD.Location = new System.Drawing.Point(122, 19);
+            this.rbYearAD.Name = "rbYearAD";
+            this.rbYearAD.Size = new System.Drawing.Size(47, 17);
+            this.rbYearAD.TabIndex = 15;
+            this.rbYearAD.TabStop = true;
+            this.rbYearAD.Text = "Year";
+            this.rbYearAD.UseVisualStyleBackColor = true;
+            // 
+            // rbMonthAD
+            // 
+            this.rbMonthAD.AutoSize = true;
+            this.rbMonthAD.Location = new System.Drawing.Point(56, 19);
+            this.rbMonthAD.Name = "rbMonthAD";
+            this.rbMonthAD.Size = new System.Drawing.Size(55, 17);
+            this.rbMonthAD.TabIndex = 14;
+            this.rbMonthAD.TabStop = true;
+            this.rbMonthAD.Text = "Month";
+            this.rbMonthAD.UseVisualStyleBackColor = true;
+            // 
+            // rbDayAD
+            // 
+            this.rbDayAD.AutoSize = true;
+            this.rbDayAD.Location = new System.Drawing.Point(6, 19);
+            this.rbDayAD.Name = "rbDayAD";
+            this.rbDayAD.Size = new System.Drawing.Size(44, 17);
+            this.rbDayAD.TabIndex = 13;
+            this.rbDayAD.TabStop = true;
+            this.rbDayAD.Text = "Day";
+            this.rbDayAD.UseVisualStyleBackColor = true;
+            // 
+            // _tbADDir
+            // 
+            this._tbADDir.Location = new System.Drawing.Point(83, 143);
+            this._tbADDir.Multiline = true;
+            this._tbADDir.Name = "_tbADDir";
+            this._tbADDir.ReadOnly = true;
+            this._tbADDir.Size = new System.Drawing.Size(220, 52);
+            this._tbADDir.TabIndex = 18;
+            // 
+            // bADDir
+            // 
+            this.bADDir.Location = new System.Drawing.Point(313, 143);
+            this.bADDir.Name = "bADDir";
+            this.bADDir.Size = new System.Drawing.Size(39, 52);
+            this.bADDir.TabIndex = 19;
+            this.bADDir.Text = "...";
+            this.bADDir.UseVisualStyleBackColor = true;
+            this.bADDir.Click += new System.EventHandler(this.bADDir_Click);
+            // 
+            // nmFailsCount
+            // 
+            this.nmFailsCount.Location = new System.Drawing.Point(83, 208);
+            this.nmFailsCount.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.nmFailsCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmFailsCount.Name = "nmFailsCount";
+            this.nmFailsCount.ReadOnly = true;
+            this.nmFailsCount.Size = new System.Drawing.Size(51, 20);
+            this.nmFailsCount.TabIndex = 20;
+            this.nmFailsCount.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 205);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 13);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Fails count";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 229);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(58, 13);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Time Zone";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 140);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(47, 26);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Report directory";
+            // 
+            // _tbmReportTimeZone
+            // 
+            this._tbmReportTimeZone.AllowDrop = true;
+            this._tbmReportTimeZone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._tbmReportTimeZone.AutoSize = true;
+            this._tbmReportTimeZone.BackColor = System.Drawing.SystemColors.Control;
+            // 
+            // 
+            // 
+            this._tbmReportTimeZone.Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._tbmReportTimeZone.Button.BackColor = System.Drawing.SystemColors.Control;
+            this._tbmReportTimeZone.Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this._tbmReportTimeZone.Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this._tbmReportTimeZone.Button.Image = ((System.Drawing.Image)(resources.GetObject("_tbmReportTimeZone.Button.Image")));
+            this._tbmReportTimeZone.Button.Location = new System.Drawing.Point(202, 0);
+            this._tbmReportTimeZone.Button.Name = "_bMenu";
+            this._tbmReportTimeZone.Button.Size = new System.Drawing.Size(20, 20);
+            this._tbmReportTimeZone.Button.TabIndex = 3;
+            this._tbmReportTimeZone.Button.UseVisualStyleBackColor = false;
+            this._tbmReportTimeZone.ButtonBaseColor = System.Drawing.SystemColors.Control;
+            this._tbmReportTimeZone.ButtonDefaultBehaviour = true;
+            this._tbmReportTimeZone.ButtonHoverColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this._tbmReportTimeZone.ButtonImage = ((System.Drawing.Image)(resources.GetObject("_tbmReportTimeZone.ButtonImage")));
+            // 
+            // 
+            // 
+            this._tbmReportTimeZone.ButtonPopupMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._tsiModify1,
+            this._tsiCreate1,
+            this._tsiRemove1});
+            this._tbmReportTimeZone.ButtonPopupMenu.Name = "";
+            this._tbmReportTimeZone.ButtonPopupMenu.Size = new System.Drawing.Size(118, 70);
+            this._tbmReportTimeZone.ButtonPosition = Contal.IwQuick.UI.MenuPosition.Right;
+            this._tbmReportTimeZone.ButtonShowImage = true;
+            this._tbmReportTimeZone.ButtonSizeHeight = 20;
+            this._tbmReportTimeZone.ButtonSizeWidth = 20;
+            this._tbmReportTimeZone.ButtonText = "";
+            this._tbmReportTimeZone.HoverTime = 500;
+            // 
+            // 
+            // 
+            this._tbmReportTimeZone.ImageTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._tbmReportTimeZone.ImageTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this._tbmReportTimeZone.ImageTextBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this._tbmReportTimeZone.ImageTextBox.ContextMenuStrip = this._tbmReportTimeZone.ButtonPopupMenu;
+            this._tbmReportTimeZone.ImageTextBox.Image = ((System.Drawing.Image)(resources.GetObject("_tbmReportTimeZone.ImageTextBox.Image")));
+            this._tbmReportTimeZone.ImageTextBox.Location = new System.Drawing.Point(0, 0);
+            this._tbmReportTimeZone.ImageTextBox.Name = "_textBox";
+            this._tbmReportTimeZone.ImageTextBox.NoTextNoImage = true;
+            this._tbmReportTimeZone.ImageTextBox.ReadOnly = true;
+            this._tbmReportTimeZone.ImageTextBox.Size = new System.Drawing.Size(202, 20);
+            this._tbmReportTimeZone.ImageTextBox.TabIndex = 0;
+            // 
+            // 
+            // 
+            this._tbmReportTimeZone.ImageTextBox.TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._tbmReportTimeZone.ImageTextBox.TextBox.BackColor = System.Drawing.SystemColors.Info;
+            this._tbmReportTimeZone.ImageTextBox.TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this._tbmReportTimeZone.ImageTextBox.TextBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this._tbmReportTimeZone.ImageTextBox.TextBox.Location = new System.Drawing.Point(1, 2);
+            this._tbmReportTimeZone.ImageTextBox.TextBox.Name = "_tbTextBox";
+            this._tbmReportTimeZone.ImageTextBox.TextBox.ReadOnly = true;
+            this._tbmReportTimeZone.ImageTextBox.TextBox.Size = new System.Drawing.Size(200, 13);
+            this._tbmReportTimeZone.ImageTextBox.TextBox.TabIndex = 2;
+            this._tbmReportTimeZone.ImageTextBox.UseImage = true;
+            this._tbmReportTimeZone.ImageTextBox.DoubleClick += new System.EventHandler(this._tbmReportTimeZone_TextBox_DoubleClick);
+            this._tbmReportTimeZone.Location = new System.Drawing.Point(84, 233);
+            this._tbmReportTimeZone.Margin = new System.Windows.Forms.Padding(4);
+            this._tbmReportTimeZone.MaximumSize = new System.Drawing.Size(1100, 55);
+            this._tbmReportTimeZone.MinimumSize = new System.Drawing.Size(30, 20);
+            this._tbmReportTimeZone.Name = "_tbmReportTimeZone";
+            this._tbmReportTimeZone.Size = new System.Drawing.Size(443, 20);
+            this._tbmReportTimeZone.TabIndex = 22;
+            this._tbmReportTimeZone.TextImage = ((System.Drawing.Image)(resources.GetObject("_tbmReportTimeZone.TextImage")));
+            this._tbmReportTimeZone.ButtonPopupMenuItemClick += new Contal.IwQuick.UI.TextBoxMenu.DPopupMenuHandler(this._tbmReportTimeZone_ButtonPopupMenuItemClick);
+            this._tbmReportTimeZone.DragDrop += new System.Windows.Forms.DragEventHandler(this._tbmReportTimeZone_DragDrop);
+            this._tbmReportTimeZone.DragOver += new System.Windows.Forms.DragEventHandler(this._tbmReportTimeZone_DragOver);
+            // 
+            // _tsiModify1
+            // 
+            this._tsiModify1.Name = "_tsiModify1";
+            this._tsiModify1.Size = new System.Drawing.Size(117, 22);
+            this._tsiModify1.Text = "Modify";
+            // 
+            // _tsiCreate1
+            // 
+            this._tsiCreate1.Name = "_tsiCreate1";
+            this._tsiCreate1.Size = new System.Drawing.Size(117, 22);
+            this._tsiCreate1.Text = "Create";
+            // 
+            // _tsiRemove1
+            // 
+            this._tsiRemove1.Name = "_tsiRemove1";
+            this._tsiRemove1.Size = new System.Drawing.Size(117, 22);
+            this._tsiRemove1.Text = "Remove";
             // 
             // _gbSlForEnterToMenu
             // 
@@ -513,7 +1090,7 @@
             this._gbSlForEnterToMenu.Controls.Add(this._lSecurityLevel);
             this._gbSlForEnterToMenu.Location = new System.Drawing.Point(3, 6);
             this._gbSlForEnterToMenu.Name = "_gbSlForEnterToMenu";
-            this._gbSlForEnterToMenu.Size = new System.Drawing.Size(901, 101);
+            this._gbSlForEnterToMenu.Size = new System.Drawing.Size(2710, 101);
             this._gbSlForEnterToMenu.TabIndex = 17;
             this._gbSlForEnterToMenu.TabStop = false;
             this._gbSlForEnterToMenu.Text = "Security level for enter to menu";
@@ -542,7 +1119,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this._eGinForEnterToMenu.Location = new System.Drawing.Point(250, 72);
             this._eGinForEnterToMenu.Name = "_eGinForEnterToMenu";
-            this._eGinForEnterToMenu.Size = new System.Drawing.Size(250, 20);
+            this._eGinForEnterToMenu.Size = new System.Drawing.Size(2059, 20);
             this._eGinForEnterToMenu.TabIndex = 13;
             this._eGinForEnterToMenu.UseSystemPasswordChar = true;
             this._eGinForEnterToMenu.TextChanged += new System.EventHandler(this.ValueChanged);
@@ -559,6 +1136,7 @@
             // 
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.Button.BackColor = System.Drawing.SystemColors.Control;
+            this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.Button.Image = ((System.Drawing.Image)(resources.GetObject("_tbmSecurityDailyPlanTimeZoneForEnterToMenu.Button.Image")));
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.Button.Location = new System.Drawing.Point(230, 0);
@@ -585,7 +1163,6 @@
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.ButtonSizeHeight = 20;
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.ButtonSizeWidth = 20;
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.ButtonText = "";
-            this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.HoverTime = 500;
             // 
             // 
@@ -595,7 +1172,6 @@
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.ImageTextBox.BackColor = System.Drawing.SystemColors.Info;
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.ImageTextBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.ImageTextBox.ContextMenuStrip = this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.ButtonPopupMenu;
-            this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.ImageTextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.ImageTextBox.Image = ((System.Drawing.Image)(resources.GetObject("_tbmSecurityDailyPlanTimeZoneForEnterToMenu.ImageTextBox.Image")));
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.ImageTextBox.Location = new System.Drawing.Point(0, 0);
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.ImageTextBox.Name = "_itbTextBox";
@@ -610,7 +1186,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.ImageTextBox.TextBox.BackColor = System.Drawing.SystemColors.Info;
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.ImageTextBox.TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.ImageTextBox.TextBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.ImageTextBox.TextBox.Cursor = System.Windows.Forms.Cursors.Default;
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.ImageTextBox.TextBox.Location = new System.Drawing.Point(1, 2);
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.ImageTextBox.TextBox.Name = "_tbTextBox";
             this._tbmSecurityDailyPlanTimeZoneForEnterToMenu.ImageTextBox.TextBox.Size = new System.Drawing.Size(228, 13);
@@ -633,13 +1209,11 @@
             // 
             this._tsiModify.Name = "_tsiModify";
             this._tsiModify.Size = new System.Drawing.Size(186, 22);
-            this._tsiModify.Text = "Modify";
             // 
             // _tsiRemove
             // 
             this._tsiRemove.Name = "_tsiRemove";
             this._tsiRemove.Size = new System.Drawing.Size(186, 22);
-            this._tsiRemove.Text = "Remove";
             // 
             // _tsiCreateSecTimeZone
             // 
@@ -661,7 +1235,7 @@
             this._cbSlForEnterToMenu.FormattingEnabled = true;
             this._cbSlForEnterToMenu.Location = new System.Drawing.Point(250, 19);
             this._cbSlForEnterToMenu.Name = "_cbSlForEnterToMenu";
-            this._cbSlForEnterToMenu.Size = new System.Drawing.Size(250, 21);
+            this._cbSlForEnterToMenu.Size = new System.Drawing.Size(2059, 21);
             this._cbSlForEnterToMenu.TabIndex = 11;
             this._cbSlForEnterToMenu.SelectedIndexChanged += new System.EventHandler(this.ValueChanged);
             // 
@@ -678,7 +1252,7 @@
             // 
             this._cbOpenAllCrAlarms.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._cbOpenAllCrAlarms.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this._cbOpenAllCrAlarms.Location = new System.Drawing.Point(701, 113);
+            this._cbOpenAllCrAlarms.Location = new System.Drawing.Point(2510, 113);
             this._cbOpenAllCrAlarms.Name = "_cbOpenAllCrAlarms";
             this._cbOpenAllCrAlarms.Size = new System.Drawing.Size(200, 17);
             this._cbOpenAllCrAlarms.TabIndex = 3;
@@ -700,6 +1274,7 @@
             this._accordionCrAlarms.AnimateOpenMillis = 150;
             this._accordionCrAlarms.AutoFixDockStyle = false;
             this._accordionCrAlarms.AutoScroll = true;
+            this._accordionCrAlarms.AutoSize = true;
             this._accordionCrAlarms.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this._accordionCrAlarms.CheckBoxFactory = null;
             this._accordionCrAlarms.CheckBoxMargin = new System.Windows.Forms.Padding(0);
@@ -720,7 +1295,7 @@
             this._accordionCrAlarms.GrabWidth = 6;
             this._accordionCrAlarms.GrowAndShrink = true;
             this._accordionCrAlarms.Insets = new System.Windows.Forms.Padding(0);
-            this._accordionCrAlarms.Location = new System.Drawing.Point(3, 136);
+            this._accordionCrAlarms.Location = new System.Drawing.Point(2, 113);
             this._accordionCrAlarms.Name = "_accordionCrAlarms";
             this._accordionCrAlarms.OpenOnAdd = false;
             this._accordionCrAlarms.OpenOneOnly = false;
@@ -745,9 +1320,10 @@
             this._accordionCrAlarms.ShowToolMenuOnHoverWhenClosed = false;
             this._accordionCrAlarms.ShowToolMenuOnRightClick = true;
             this._accordionCrAlarms.ShowToolMenuRequiresPositiveFillWeight = false;
-            this._accordionCrAlarms.Size = new System.Drawing.Size(901, 203);
+            this._accordionCrAlarms.Size = new System.Drawing.Size(0, 0);
             this._accordionCrAlarms.TabIndex = 2;
             this._accordionCrAlarms.UpArrow = null;
+            this._accordionCrAlarms.Resize += new System.EventHandler(this._accordionCrAlarms_Resize);
             // 
             // _tpInvalidPinGinRetriesLimits
             // 
@@ -758,7 +1334,7 @@
             this._tpInvalidPinGinRetriesLimits.Controls.Add(this._gbInvalidPinRetriesLimit);
             this._tpInvalidPinGinRetriesLimits.Location = new System.Drawing.Point(4, 22);
             this._tpInvalidPinGinRetriesLimits.Name = "_tpInvalidPinGinRetriesLimits";
-            this._tpInvalidPinGinRetriesLimits.Size = new System.Drawing.Size(907, 342);
+            this._tpInvalidPinGinRetriesLimits.Size = new System.Drawing.Size(919, 470);
             this._tpInvalidPinGinRetriesLimits.TabIndex = 5;
             this._tpInvalidPinGinRetriesLimits.Text = "Invalid PIN\\GIN retries limits";
             // 
@@ -940,23 +1516,36 @@
             this._chbInvalidPinRetriesLimitEnabled.UseVisualStyleBackColor = true;
             this._chbInvalidPinRetriesLimitEnabled.CheckedChanged += new System.EventHandler(this.ValueChanged);
             // 
-            // tabPagePersons
+            // _tpPersons
             // 
             this._tpPersons.BackColor = System.Drawing.SystemColors.Control;
+            this._tpPersons.Controls.Add(this.toolStripContainer1);
             this._tpPersons.Controls.Add(this.buttonPersonsUnselectAll);
             this._tpPersons.Controls.Add(this.buttonPersonsSelectAll);
             this._tpPersons.Controls.Add(this.checkedListBoxPersons);
             this._tpPersons.Location = new System.Drawing.Point(4, 22);
-            this._tpPersons.Name = "tabPagePersons";
+            this._tpPersons.Name = "_tpPersons";
             this._tpPersons.Padding = new System.Windows.Forms.Padding(3);
-            this._tpPersons.Size = new System.Drawing.Size(907, 342);
+            this._tpPersons.Size = new System.Drawing.Size(919, 470);
             this._tpPersons.TabIndex = 6;
             this._tpPersons.Text = "Persons";
+            // 
+            // toolStripContainer1
+            // 
+            // 
+            // toolStripContainer1.ContentPanel
+            // 
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(150, 150);
+            this.toolStripContainer1.Location = new System.Drawing.Point(538, 317);
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            this.toolStripContainer1.Size = new System.Drawing.Size(150, 175);
+            this.toolStripContainer1.TabIndex = 4;
+            this.toolStripContainer1.Text = "toolStripContainer1";
             // 
             // buttonPersonsUnselectAll
             // 
             this.buttonPersonsUnselectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonPersonsUnselectAll.Location = new System.Drawing.Point(87, 316);
+            this.buttonPersonsUnselectAll.Location = new System.Drawing.Point(87, 444);
             this.buttonPersonsUnselectAll.Name = "buttonPersonsUnselectAll";
             this.buttonPersonsUnselectAll.Size = new System.Drawing.Size(75, 23);
             this.buttonPersonsUnselectAll.TabIndex = 2;
@@ -967,7 +1556,7 @@
             // buttonPersonsSelectAll
             // 
             this.buttonPersonsSelectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonPersonsSelectAll.Location = new System.Drawing.Point(6, 316);
+            this.buttonPersonsSelectAll.Location = new System.Drawing.Point(6, 444);
             this.buttonPersonsSelectAll.Name = "buttonPersonsSelectAll";
             this.buttonPersonsSelectAll.Size = new System.Drawing.Size(75, 23);
             this.buttonPersonsSelectAll.TabIndex = 1;
@@ -975,11 +1564,21 @@
             this.buttonPersonsSelectAll.UseVisualStyleBackColor = true;
             this.buttonPersonsSelectAll.Click += new System.EventHandler(this.OnPersonsSelectAll);
             // 
+            // checkedListBoxPersons
+            // 
+            this.checkedListBoxPersons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkedListBoxPersons.FormattingEnabled = true;
+            this.checkedListBoxPersons.Location = new System.Drawing.Point(6, 3);
+            this.checkedListBoxPersons.Name = "checkedListBoxPersons";
+            this.checkedListBoxPersons.Size = new System.Drawing.Size(504, 424);
+            this.checkedListBoxPersons.TabIndex = 0;
+            // 
             // _bApply
             // 
             this._bApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._bApply.Enabled = false;
-            this._bApply.Location = new System.Drawing.Point(690, 386);
+            this._bApply.Location = new System.Drawing.Point(702, 514);
             this._bApply.Name = "_bApply";
             this._bApply.Size = new System.Drawing.Size(75, 23);
             this._bApply.TabIndex = 100;
@@ -987,22 +1586,20 @@
             this._bApply.UseVisualStyleBackColor = true;
             this._bApply.Click += new System.EventHandler(this._bApply_Click);
             // 
-            // checkedListBoxPersons
+            // label1
             // 
-            this.checkedListBoxPersons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkedListBoxPersons.FormattingEnabled = true;
-            this.checkedListBoxPersons.Location = new System.Drawing.Point(6, 6);
-            this.checkedListBoxPersons.Name = "checkedListBoxPersons";
-            this.checkedListBoxPersons.Size = new System.Drawing.Size(895, 304);
-            this.checkedListBoxPersons.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 26);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Report directory";
             // 
             // NCASDevicesAlarmSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 421);
+            this.ClientSize = new System.Drawing.Size(951, 549);
             this.Controls.Add(this._bApply);
             this.Controls.Add(this._tcDevicesAlarmSetting);
             this.Controls.Add(this._bClose);
@@ -1016,7 +1613,20 @@
             this._tpCcuAlarms.ResumeLayout(false);
             this._tpDcuAlarms.ResumeLayout(false);
             this._tpDoorEnvironmentAlarms.ResumeLayout(false);
+            this._tpDoorEnvironmentAlarms.PerformLayout();
+            this.grDoorRep.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this._tpCrAlarms.ResumeLayout(false);
+            this._tpCrAlarms.PerformLayout();
+            this.grAccessDeniedReport.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmFailsCount)).EndInit();
             this._gbSlForEnterToMenu.ResumeLayout(false);
             this._gbSlForEnterToMenu.PerformLayout();
             this._tpInvalidPinGinRetriesLimits.ResumeLayout(false);
@@ -1029,6 +1639,8 @@
             ((System.ComponentModel.ISupportInitialize)(this._eInvalidPinRetriesLimitReachedTimeout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._eInvalidPinRetriesCount)).EndInit();
             this._tpPersons.ResumeLayout(false);
+            this.toolStripContainer1.ResumeLayout(false);
+            this.toolStripContainer1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1082,5 +1694,43 @@
         private System.Windows.Forms.Button buttonPersonsUnselectAll;
         private System.Windows.Forms.Button buttonPersonsSelectAll;
         private System.Windows.Forms.CheckedListBox checkedListBoxPersons;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.ToolStripMenuItem _tsiModify2;
+        private System.Windows.Forms.ToolStripMenuItem _tsiCreate2;
+        private System.Windows.Forms.ToolStripMenuItem _tsiRemove2;
+        private IwQuick.UI.TextBoxMenu tbmTimeZoneReportDoor;
+        private System.Windows.Forms.CheckBox cbDoorReport;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tbDoorFilename;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton rbYear2;
+        private System.Windows.Forms.RadioButton rbMonth2;
+        private System.Windows.Forms.RadioButton rbDay2;
+        private System.Windows.Forms.ToolStripMenuItem _tsiModify1;
+        private System.Windows.Forms.ToolStripMenuItem _tsiCreate1;
+        private System.Windows.Forms.ToolStripMenuItem _tsiRemove1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbDoorDir;
+        private System.Windows.Forms.Button bDoorExportDir;
+        private System.Windows.Forms.GroupBox grDoorRep;
+        private System.Windows.Forms.GroupBox grAccessDeniedReport;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.CheckBox _cbADEnabled;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbYearAD;
+        private System.Windows.Forms.RadioButton rbMonthAD;
+        private System.Windows.Forms.RadioButton rbDayAD;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox _tbADFileName;
+        private System.Windows.Forms.TextBox _tbADDir;
+        private System.Windows.Forms.Button bADDir;
+        private System.Windows.Forms.NumericUpDown nmFailsCount;
+        private System.Windows.Forms.Label label7;
+        private IwQuick.UI.TextBoxMenu _tbmReportTimeZone;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label1;
     }
 }

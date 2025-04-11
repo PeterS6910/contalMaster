@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -273,6 +273,13 @@ namespace Contal.Cgp.NCAS.Client
 
         protected override void UnregisterEvents()
         {
+        }
+
+        private void bExportExcel_Click(object sender, EventArgs e)
+        {
+            var exportForm = new ExcelExportForm(false, FilterSettings);
+            exportForm.Show();
+
         }
     }
 }

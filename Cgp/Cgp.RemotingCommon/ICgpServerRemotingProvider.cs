@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Net;
 
@@ -8,6 +8,7 @@ using Contal.Cgp.Server.Beans;
 using Contal.LwDhcp;
 using Contal.IwQuick.Remoting;
 using Contal.Cgp.Globals;
+using Contal.Cgp.NCAS.RemotingCommon;
 
 namespace Contal.Cgp.RemotingCommon
 {
@@ -19,6 +20,7 @@ namespace Contal.Cgp.RemotingCommon
         IPresentationGroups PresentationGroups { get; }
         IPresentationFormatters PresentationFormatters { get; }
         IEventlogs Eventlogs { get; }
+        IConsecutiveEvent ConsecutiveEvents { get; }
         ISystemEvents SystemEvents { get; }
         ICisNGs CisNGs { get; }
         ICards Cards { get; }

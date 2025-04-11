@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -48,7 +48,10 @@ namespace Contal.Cgp.ORM
         {
             if (null == config || null == assemblies)
                 return;
-
+//#if DEBUG
+//            var _assembly = Assembly.LoadFrom("Cgp.NCAS.Server.Beans.dll");
+//            config.AddAssembly(_assembly);
+//#endif
             foreach (Assembly assembly in assemblies)
             {
                 config.AddAssembly(assembly);
@@ -71,7 +74,6 @@ namespace Contal.Cgp.ORM
             if (_sessionFactory == null)
             {
                 Configuration cfg = ConfigureNHibernate();
-
                 AddAssemblies(cfg, assemblies);
                 _sessionFactory = cfg.BuildSessionFactory();
             }
@@ -185,7 +187,7 @@ namespace Contal.Cgp.ORM
 
                 Configuration config = ConfigureNHibernate();
 
-                AddAssemblies(config, assemblies);
+               AddAssemblies(config, assemblies);
                 _sessionFactory = config.BuildSessionFactory();
             }
             catch (Exception error)

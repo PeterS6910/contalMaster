@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -204,6 +204,25 @@ namespace Contal.Cgp.Server.DB
                 }
             }
             return resultList;
+        }
+
+        public UserFoldersStructure FolderStructureSearchExactName(string name, UserFoldersStructure parent)
+        {
+            UserFoldersStructure outUfs = null;
+
+            if (string.IsNullOrEmpty(name)) return outUfs;
+
+            IList<UserFoldersStructure> resultList = new List<UserFoldersStructure>();
+
+            UserFoldersStructure linqResult =
+                SelectLinq<UserFoldersStructure>(ufs => ufs.FolderName == name && ufs.ParentFolder == parent).FirstOrDefault();
+
+            if (linqResult != null)
+            {
+                 outUfs = GetById(linqResult.IdUserFoldersStructure);
+
+            }
+            return outUfs;
         }
 
         private static IList<AOrmObject> ReturnAsListOrmObject(ICollection<UserFoldersStructure> linqResult)

@@ -6265,6 +6265,9 @@ Do you want to change the input control of {1} to forcefully blocked ?</value>
   <data name="NCASCardReadersForm_chbBlocked" xml:space="preserve">
     <value>Blocked (invalid CODE retries limit reached)</value>
   </data>
+  <data name="NCASCardReadersForm_bExportExcel" xml:space="preserve">
+    <value>Export to Excel</value>
+  </data>
   <data name="WarningNeedUpgradeWinCe" xml:space="preserve">
     <value>To ensure proper CCU functionality for version {0}, please upgrade your current CE image with version {1}, by cascading upgrade to 3091-transitional and then to your final 3092+ version of CE image</value>
   </data>
@@ -6762,5 +6765,17 @@ Do you want to change the input control of {1} to forcefully blocked ?</value>
   </data>
   <data name="NCASCardReaderEditForm_gbAccessScreen" xml:space="preserve">
     <value>Access screen</value>
+  </data>
+  <data name="ExcelExportForm_cbColumnBD" xml:space="preserve">
+    <value>Birthday</value>
+  </data>
+  <data name="ExcelExportForm_cbColumnDepartment" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="ExcelExportForm_cbColumnID" xml:space="preserve">
+    <value>Personal ID</value>
+  </data>
+  <data name="ExcelExportForm_cbColumnPhone" xml:space="preserve">
+    <value>Phone Number</value>
   </data>
 </root>

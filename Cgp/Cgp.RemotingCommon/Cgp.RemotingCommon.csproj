@@ -33,10 +33,14 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -86,6 +90,7 @@
     <Compile Include="ICardPairs.cs" />
     <Compile Include="ICardTemplates.cs" />
     <Compile Include="ICentralNameRegisters.cs" />
+    <Compile Include="IConsecutiveEvent.cs" />
     <Compile Include="ICSVImportSchemas.cs" />
     <Compile Include="IGlobalAlarmInstructions.cs" />
     <Compile Include="ILoginGroups.cs" />
@@ -118,6 +123,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Cgp.NCAS.RemotingCommon\Cgp.NCAS.RemotingCommon.csproj">
+      <Project>{7DA1465B-3029-43E8-801C-BAC87581B99C}</Project>
+      <Name>Cgp.NCAS.RemotingCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Cgp.NCAS.Server.Beans\Cgp.NCAS.Server.Beans.csproj">
+      <Project>{2EB9DDDF-0719-4A79-8CB7-FBD410743C92}</Project>
+      <Name>Cgp.NCAS.Server.Beans</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cgp.BaseLib\Cgp.BaseLib.csproj">
       <Project>{4B649633-3110-4CBD-AC66-43685FFDC808}</Project>
       <Name>Cgp.BaseLib</Name>

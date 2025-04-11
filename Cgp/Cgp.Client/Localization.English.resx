@@ -608,13 +608,13 @@
   </data>
   <data name="ColumnTimetecSync" xml:space="preserve">
     <value>CT Sync.</value>
-  </data> 
+  </data>
   <data name="ColumnTimetecValidFrom" xml:space="preserve">
     <value>Valid from</value>
   </data>
-    <data name="ColumnTimetecValidTo" xml:space="preserve">
+  <data name="ColumnTimetecValidTo" xml:space="preserve">
     <value>Valid to</value>
-  </data> 
+  </data>
   <data name="ColumnIdFormatter" xml:space="preserve">
     <value>Id formatter</value>
   </data>
@@ -6366,5 +6366,11 @@ Do you want to continue with person removal?</value>
   </data>
   <data name="GeneralOptionsForm_lIsPinConfirmationObligatory" xml:space="preserve">
     <value>PIN confirmation is obligatory</value>
+  </data>
+  <data name="ExportFailed" xml:space="preserve">
+    <value>Export Failed</value>
+  </data>
+  <data name="ExportSucceeded" xml:space="preserve">
+    <value>Export Succeeded</value>
   </data>
 </root>

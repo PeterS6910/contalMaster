@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
 using Cgp.Components;
 using Contal.Cgp.BaseLib;
 using Contal.Cgp.Components;
 using Contal.Cgp.Globals;
 using Contal.Cgp.Server.Beans;
 using Contal.IwQuick;
-using Contal.IwQuick.Threads;
-using Contal.IwQuick.Sys;
-using System.Reflection;
 using Contal.IwQuick.Data;
+using Contal.IwQuick.Sys;
+using Contal.IwQuick.Threads;
 using Contal.IwQuick.UI;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Windows.Forms;
 using SqlDeleteReferenceConstraintException = Contal.IwQuick.SqlDeleteReferenceConstraintException;
 
 namespace Contal.Cgp.Client

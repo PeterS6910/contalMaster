@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.NCAS.Client
+namespace Contal.Cgp.NCAS.Client
 {
     partial class NCASAccessControlListsForm
     {
@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NCASAccessControlListsForm));
             this._pFilter = new System.Windows.Forms.Panel();
+            this.bExportExcel = new System.Windows.Forms.Button();
             this._lNameFilter = new System.Windows.Forms.Label();
             this._eNameFilter = new System.Windows.Forms.TextBox();
             this._bFilterClear = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@
             // 
             // _pFilter
             // 
+            this._pFilter.Controls.Add(this.bExportExcel);
             this._pFilter.Controls.Add(this._lNameFilter);
             this._pFilter.Controls.Add(this._eNameFilter);
             this._pFilter.Controls.Add(this._bFilterClear);
@@ -52,6 +54,16 @@
             this._pFilter.Name = "_pFilter";
             this._pFilter.Size = new System.Drawing.Size(832, 53);
             this._pFilter.TabIndex = 20;
+            // 
+            // bExportExcel
+            // 
+            this.bExportExcel.Location = new System.Drawing.Point(309, 20);
+            this.bExportExcel.Name = "bExportExcel";
+            this.bExportExcel.Size = new System.Drawing.Size(125, 23);
+            this.bExportExcel.TabIndex = 21;
+            this.bExportExcel.Text = "Export to Excel"; 
+            this.bExportExcel.UseVisualStyleBackColor = true;
+            this.bExportExcel.Click += new System.EventHandler(this.bExportExcel_Click);
             // 
             // _lNameFilter
             // 
@@ -151,5 +163,6 @@
         private System.Windows.Forms.Button _bFilterClear;
         private System.Windows.Forms.Button _bRunFilter;
         private Contal.Cgp.Components.CgpDataGridView _cdgvData;
+        private System.Windows.Forms.Button bExportExcel;
     }
 }

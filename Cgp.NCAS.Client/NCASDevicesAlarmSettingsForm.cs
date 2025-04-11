@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -18,6 +18,9 @@ using Contal.IwQuick.Threads;
 using Contal.IwQuick.UI;
 using Contal.Cgp.NCAS.RemotingCommon;
 using System.Diagnostics;
+using System.IO;
+using Contal.Cgp.Server.DB;
+using System.Web.UI.WebControls.WebParts;
 
 namespace Contal.Cgp.NCAS.Client
 {
@@ -1521,6 +1524,8 @@ namespace Contal.Cgp.NCAS.Client
         private bool _textChanged;
 
         private static volatile NCASDevicesAlarmSettingsForm _singleton;
+        private Cgp.Server.Beans.TimeZone _actReportTimeZone;
+        private Cgp.Server.Beans.TimeZone _actDoorEnvirometReportTimeZone;
         private static readonly object _syncRoot = new object();
 
         public static NCASDevicesAlarmSettingsForm Singleton
@@ -1804,7 +1809,8 @@ namespace Contal.Cgp.NCAS.Client
 
             // SB
             LoadPersonAttributes();
-        }
+            LoadDoorEnvoromentReportsSettings()
+;        }
 
         private void ShowDeviceAlarmSetting()
         {
@@ -2456,6 +2462,8 @@ namespace Contal.Cgp.NCAS.Client
 
             // SB
             SavePersonAttributes();
+
+            SaveDoorEnvoromentReportsSettings();
 
             return true;
         }
@@ -4796,7 +4804,43 @@ namespace Contal.Cgp.NCAS.Client
             {
                 items.Add(personAttribute, personAttribute.IsWatched);
             }
+
+            var output = Plugin.MainServerProvider.PersonAttributeOutputs.GetPersonAttributeOutput();
+            if (output != null)
+            {
+                _cbADEnabled.Checked = output.IsEnabled;
+                nmFailsCount.Value = output.FailsCount;
+                SetInterval(output.Interval, new List<RadioButton> { rbDayAD, rbMonthAD, rbYearAD });
+                var parts=output.Output.Split('#');
+                if(parts!=null && parts.Length > 0)
+                _tbADDir.Text = parts[0];
+                if (parts != null && parts.Length > 1)
+                    _tbADFileName.Text = parts[1];
+
+                if (output.IdTimeZone != null)
+                {
+                    _actReportTimeZone=CgpClient.Singleton.MainServerProvider.TimeZones.GetObjectById(output.IdTimeZone);
+                    RefreshTimeZoneControls(_actReportTimeZone, ref _tbmReportTimeZone);
+                }
+            }
         }
+
+        private void LoadDoorEnvoromentReportsSettings()
+        {
+
+            var output = Plugin.MainServerProvider.ExcelReportOutputs.GetSettings();
+            if (output != null)
+            {
+                cbDoorReport.Checked = output.IsEnabled;
+                tbDoorFilename.Text = output.Filename;
+                SetInterval(output.Interval, new List<RadioButton> { rbDay2, rbMonth2, rbYear2 });
+                tbDoorDir.Text = output.Output;
+                if(output.TimeZone!=null && output.TimeZone.IdTimeZone != Guid.Empty)
+                   _actDoorEnvirometReportTimeZone = CgpClient.Singleton.MainServerProvider.TimeZones.GetObjectById(output.TimeZone.IdTimeZone);
+                RefreshTimeZoneControls(_actDoorEnvirometReportTimeZone, ref tbmTimeZoneReportDoor);
+            }
+        }
+
 
         private void SavePersonAttributes()
         {
@@ -4810,6 +4854,52 @@ namespace Contal.Cgp.NCAS.Client
             }
 
             Plugin.MainServerProvider.PersonAttributes.UpdatePersonAttributes(allPersonAttributes);
+
+            var fn = _tbADFileName.Text;
+            int fileExtPos = fn.LastIndexOf(".");
+            if (fileExtPos >= 0)
+                fn = fn.Substring(0, fileExtPos);
+            var output = new PersonAttributeOutput()
+            {
+                IsEnabled = _cbADEnabled.Checked,
+                Interval = GetInterval(new List<RadioButton> { rbDayAD, rbMonthAD, rbYearAD }),
+                FailsCount = ((int)nmFailsCount.Value),
+                Output = _tbADDir.Text.Replace(@"\\", @"\") + "#" + fn,
+                IdTimeZone = _actReportTimeZone != null ? _actReportTimeZone.IdTimeZone : Guid.Empty
+            };
+            Plugin.MainServerProvider.PersonAttributeOutputs.CreateOrUpdate(ref output);
+        }
+
+        private void SaveDoorEnvoromentReportsSettings()
+        {
+            var fn = tbDoorFilename.Text;
+            int fileExtPos = fn.LastIndexOf(".");
+            if (fileExtPos >= 0)
+                fn = fn.Substring(0, fileExtPos);
+
+            var output = new ExcelReportOutput()
+            {
+                IsEnabled = cbDoorReport.Checked,
+                Interval = GetInterval(new List<RadioButton> { rbDay2, rbMonth2, rbYear2 }),
+                Output = tbDoorDir.Text.Replace(@"\\", @"\"),
+                Filename = fn,
+                Type="DoorEnviroment_Ajar",
+                TimeZone = _actDoorEnvirometReportTimeZone 
+            };
+            Plugin.MainServerProvider.ExcelReportOutputs.CreateOrUpdate(ref output);
+        }
+
+        private int GetInterval(List<RadioButton> rbInetrval)
+        {
+            if (rbInetrval[0].Checked)  return 0;
+            if(rbInetrval[1].Checked) return 1;
+            if(rbInetrval[2].Checked) return 2;
+            return 0;
+        }
+
+        private void SetInterval(int interval, List<RadioButton> rbInetrval)
+        {
+            rbInetrval[interval].Checked =true;
         }
 
         private void ForAllPersonAttributes(bool isWatched)
@@ -4830,6 +4920,219 @@ namespace Contal.Cgp.NCAS.Client
         private void OnPersonsUnselectAll(object sender, EventArgs e)
         {
             ForAllPersonAttributes(false);
+        }
+
+
+        private void _tbmReportTimeZone_TextBox_DoubleClick(object sender, EventArgs e)
+        {
+            if (_actReportTimeZone != null)
+                TimeZonesForm.Singleton.OpenEditForm(_actReportTimeZone);
+
+        }
+
+        private void _tbmReportTimeZone_DragDrop(object sender, DragEventArgs e)
+        {
+            try
+            {
+                string[] output = e.Data.GetFormats();
+                if (output == null) return;
+                AddTimeZoneToControl((object)e.Data.GetData(output[0]), ref _actReportTimeZone, ref _tbmReportTimeZone);
+            }
+            catch
+            {
+            }
+        }
+
+        private void AddTimeZoneToControl(object newTimeZone, ref  Cgp.Server.Beans.TimeZone refTimeZone, ref TextBoxMenu tbm)
+        {
+            try
+            {
+                if (newTimeZone.GetType() == typeof(Cgp.Server.Beans.TimeZone))
+                {
+                    Cgp.Server.Beans.TimeZone timeZone = newTimeZone as Cgp.Server.Beans.TimeZone;
+                    refTimeZone = timeZone;
+                    RefreshTimeZoneControls(refTimeZone, ref tbm);
+                    CgpClientMainForm.Singleton.AddToRecentList(newTimeZone);
+                }
+                else
+                {
+                        ControlNotification.Singleton.Error(NotificationPriority.JustOne, _tbmReportTimeZone.ImageTextBox,
+                       CgpClient.Singleton.LocalizationHelper.GetString("ErrorWrongObjectType"), ControlNotificationSettings.Default);
+                }
+            }
+            catch
+            { }
+        }
+
+        private void RefreshTimeZoneControls(Cgp.Server.Beans.TimeZone refTimeZone, ref TextBoxMenu tbm)
+        {
+            if (refTimeZone != null)
+            {
+                tbm.Text = refTimeZone.ToString();
+                tbm.TextImage = ObjectImageList.Singleton.GetImageForAOrmObject(refTimeZone);
+            }
+
+            else
+                tbm.Text = string.Empty;
+        }
+        private void _tbmReportTimeZone_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+
+        private void _tbmReportTimeZone_ButtonPopupMenuItemClick(ToolStripItem item, int index)
+        {
+            if (item.Name == "_tsiModify1")
+            {
+                ModifyReportTimeZone(ref _actReportTimeZone, ref _tbmReportTimeZone);
+            }
+            else if (item.Name == "_tsiRemove1")
+            {
+                _actReportTimeZone = null;
+                RefreshTimeZoneControls(null, ref _tbmReportTimeZone);
+            }
+            else if (item.Name == "_tsiCreate1")
+            {
+                Contal.Cgp.Server.Beans.TimeZone timeZone = new Contal.Cgp.Server.Beans.TimeZone();
+                if (TimeZonesForm.Singleton.OpenInsertDialg(ref timeZone))
+                {
+                    _actReportTimeZone = timeZone;
+                    RefreshTimeZoneControls(_actReportTimeZone, ref _tbmReportTimeZone);
+                }
+            }
+        }
+
+        private void ModifyReportTimeZone(ref Cgp.Server.Beans.TimeZone refTimeZone, ref TextBoxMenu tbm)
+        {
+            if (CgpClient.Singleton.IsConnectionLost(true)) return;
+
+            Exception error = null;
+            try
+            {
+                List<IModifyObject> listObjects = new List<IModifyObject>();
+
+                IList<IModifyObject> listTz = CgpClient.Singleton.MainServerProvider.TimeZones.ListModifyObjects(out error);
+                if (error != null) throw error;
+                listObjects.AddRange(listTz);
+
+                ListboxFormAdd formAdd = new ListboxFormAdd(listObjects, CgpClient.Singleton.LocalizationHelper.GetString("TimeZonesFormTimeZonesForm"));
+                IModifyObject outModObj;
+                formAdd.ShowDialog(out outModObj);
+                if (outModObj != null)
+                {
+                    refTimeZone = CgpClient.Singleton.MainServerProvider.TimeZones.GetObjectById(outModObj.GetId);
+                    if (error != null) throw error;
+                    RefreshTimeZoneControls(refTimeZone, ref tbm);
+                    CgpClientMainForm.Singleton.AddToRecentList(_actReportTimeZone);
+                }
+            }
+            catch
+            {
+                Contal.IwQuick.UI.Dialog.Error(error);
+            }
+        }
+
+        private void tbmTimeZoneReportDoor_DragDrop(object sender, DragEventArgs e)
+        {
+            try
+            {
+                string[] output = e.Data.GetFormats();
+                if (output == null) return;
+                AddTimeZoneToControl((object)e.Data.GetData(output[0]), ref _actDoorEnvirometReportTimeZone, ref tbmTimeZoneReportDoor);
+            }
+            catch
+            {
+            }
+        }
+
+        private void tbmTimeZoneReportDoor_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+
+        private void tbmTimeZoneReportDoor_ButtonPopupMenuItemClick(ToolStripItem item, int index)
+        {
+            if (item.Name == "_tsiModify2")
+            {
+                ModifyReportTimeZone(ref _actDoorEnvirometReportTimeZone, ref tbmTimeZoneReportDoor);
+            }
+            else if (item.Name == "_tsiRemove2")
+            {
+                _actDoorEnvirometReportTimeZone = null;
+                RefreshTimeZoneControls(null, ref tbmTimeZoneReportDoor);
+            }
+            else if (item.Name == "_tsiCreate2")
+            {
+                Contal.Cgp.Server.Beans.TimeZone timeZone = new Contal.Cgp.Server.Beans.TimeZone();
+                if (TimeZonesForm.Singleton.OpenInsertDialg(ref timeZone))
+                {
+                    _actDoorEnvirometReportTimeZone = timeZone;
+                    RefreshTimeZoneControls(_actDoorEnvirometReportTimeZone, ref tbmTimeZoneReportDoor);
+                }
+            }
+        }
+
+        private void tbmTimeZoneReportDoor_ImageTextBox_Click(object sender, EventArgs e)
+        {
+            if (_actDoorEnvirometReportTimeZone != null)
+                TimeZonesForm.Singleton.OpenEditForm(_actDoorEnvirometReportTimeZone);
+        }
+
+        private void _tpDoorEnvironmentAlarms_Resize(object sender, EventArgs e)
+        {
+            grDoorRep.Left = _accordionDsmAlarms.Left + _accordionDsmAlarms.Width + 10;
+        }
+
+        private void bDoorExportDir_Click(object sender, EventArgs e)
+        {
+            ServerDirectory sd = new ServerDirectory();
+            string path;
+            sd.ShowDialog(out path);
+            if (!string.IsNullOrEmpty(path))
+            {
+                tbDoorDir.Text = path;
+            }
+        }
+
+        private void grAccessDeniedReport_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void bADDir_Click(object sender, EventArgs e)
+        {
+            ServerDirectory sd = new ServerDirectory();
+            string path;
+            sd.ShowDialog(out path);
+            if (!string.IsNullOrEmpty(path))
+            {
+                _tbADDir.Text = path;
+            }
+        }
+
+        private void _tpCrAlarms_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void _tpCrAlarms_Resize(object sender, EventArgs e)
+        {
+            grAccessDeniedReport.Left = _accordionCrAlarms.Left + _accordionCrAlarms.Width+10;
+        }
+
+        private void _accordionCrAlarms_Resize(object sender, EventArgs e)
+        {
+            grAccessDeniedReport.Left = _accordionCrAlarms.Left + _accordionCrAlarms.Width+10;
+        }
+
+        private void _accordionDsmAlarms_Resize(object sender, EventArgs e)
+        {
+            grDoorRep.Left = _accordionDsmAlarms.Left + _accordionDsmAlarms.Width + 10;
         }
     }
 }

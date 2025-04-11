@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Contal OK Ltd.")]
 [assembly: AssemblyProduct("Contal Nova Access Server Plugin")]
-[assembly: AssemblyCopyright("Copyright © Contal OK 2015")]
+[assembly: AssemblyCopyright("Copyright © Contal OK 2023")]
 [assembly: AssemblyTrademark("Contal Nova™")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion(Contal.Cgp.Globals.Versioning.NovaVersion.Version)]
-[assembly: AssemblyFileVersion(Contal.Cgp.Globals.Versioning.NovaVersion.Edition)]
+[assembly: AssemblyVersion(Contal.Cgp.Globals.Versioning.NovaVersionDay.Version)]
+[assembly: AssemblyFileVersion(Contal.Cgp.Globals.Versioning.NovaVersionDay.Edition)]

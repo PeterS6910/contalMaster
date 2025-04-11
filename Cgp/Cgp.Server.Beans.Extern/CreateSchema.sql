@@ -55,3 +55,10 @@ create table TimetecData (
 create table TimetecErrorEvents (
 	id int identity(1,1) not null primary key, 
 	ErrorEventId bigint);
+
+create table ConsecutiveEvents (
+	id int not null IDENTITY   primary key, 
+	LastEventlogId bigint null,
+    SourceId uniqueidentifier not null,
+    ReasonId uniqueidentifier not null ,
+    LastEventDateTime datetime2(3) null);

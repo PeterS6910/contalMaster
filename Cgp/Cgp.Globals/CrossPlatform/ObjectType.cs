@@ -1,4 +1,4 @@
-﻿using Contal.IwQuick.Data;
+using Contal.IwQuick.Data;
 
 namespace Contal.Cgp.Globals
 {
@@ -81,7 +81,9 @@ namespace Contal.Cgp.Globals
 
         PersonAttribute = 142,
         ReportSetting = 143,
-
+        ConsecutiveEvent= 144,
+        PersonAttributeOutput = 145,
+        ExcelReportOutput = 146,
         NotSupport = 201,
         AllObjectTypes = 202
     }   

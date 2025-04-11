@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -4689,5 +4689,23 @@ Nakupovaný čas: {1}, {2} čas: {3}</value>
   </data>
   <data name="NCASInputEditForm_lDCUName" xml:space="preserve">
     <value>Meno DCU</value>
+  </data>
+  <data name="ExcelExportForm_cbColumnBD" xml:space="preserve">
+    <value>Dátum narodenia</value>
+  </data>
+  <data name="ExcelExportForm_cbColumnDepartment" xml:space="preserve">
+    <value>Oddelenie</value>
+  </data>
+  <data name="ExcelExportForm_cbColumnID" xml:space="preserve">
+    <value>Osobné číslo</value>
+  </data>
+  <data name="ExcelExportForm_cbColumnPhone" xml:space="preserve">
+    <value>Telefón</value>
+  </data>
+  <data name="NCASAccessControlListsForm_bExportExcel" xml:space="preserve">
+    <value>Exportovať do Excelu</value>
+  </data>
+  <data name="NCASCardReadersForm_bExportExcel" xml:space="preserve">
+    <value>Exportovať do Excelu</value>
   </data>
 </root>

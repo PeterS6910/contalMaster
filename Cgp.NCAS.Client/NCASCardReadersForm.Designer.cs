@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.NCAS.Client
+namespace Contal.Cgp.NCAS.Client
 {
     partial class NCASCardReadersForm
     {
@@ -32,11 +32,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this._pFilter = new System.Windows.Forms.Panel();
+            this.bExportExcel = new System.Windows.Forms.Button();
             this._tbmMemberOfAclFilter = new Contal.IwQuick.UI.TextBoxMenu();
             this._tsiModify1 = new System.Windows.Forms.ToolStripMenuItem();
             this._tsiRemove1 = new System.Windows.Forms.ToolStripMenuItem();
             this._lRecordCount = new System.Windows.Forms.Label();
             this._gbRuntimeFilter = new System.Windows.Forms.GroupBox();
+            this._bUnblock = new System.Windows.Forms.Button();
             this._chbBlocked = new System.Windows.Forms.CheckBox();
             this._cbOnlineStateFilter = new System.Windows.Forms.ComboBox();
             this._lOnlineStateFilter = new System.Windows.Forms.Label();
@@ -62,7 +64,6 @@
             this._bFilterClear = new System.Windows.Forms.Button();
             this._bRunFilter = new System.Windows.Forms.Button();
             this._cdgvData = new Contal.Cgp.Components.CgpDataGridView();
-            this._bUnblock = new System.Windows.Forms.Button();
             this._pFilter.SuspendLayout();
             this._gbRuntimeFilter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._cdgvData.DataGrid)).BeginInit();
@@ -70,6 +71,7 @@
             // 
             // _pFilter
             // 
+            this._pFilter.Controls.Add(this.bExportExcel);
             this._pFilter.Controls.Add(this._tbmMemberOfAclFilter);
             this._pFilter.Controls.Add(this._lRecordCount);
             this._pFilter.Controls.Add(this._gbRuntimeFilter);
@@ -91,10 +93,21 @@
             this._pFilter.Controls.Add(this._bFilterClear);
             this._pFilter.Controls.Add(this._bRunFilter);
             this._pFilter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this._pFilter.Location = new System.Drawing.Point(0, 233);
+            this._pFilter.Location = new System.Drawing.Point(0, 211);
             this._pFilter.Name = "_pFilter";
-            this._pFilter.Size = new System.Drawing.Size(976, 176);
+            this._pFilter.Size = new System.Drawing.Size(1192, 191);
             this._pFilter.TabIndex = 1;
+            // 
+            // bExportExcel
+            // 
+            this.bExportExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bExportExcel.Location = new System.Drawing.Point(1065, 168);
+            this.bExportExcel.Name = "bExportExcel";
+            this.bExportExcel.Size = new System.Drawing.Size(124, 23);
+            this.bExportExcel.TabIndex = 51;
+            this.bExportExcel.Text = "Export to Excel";
+            this.bExportExcel.UseVisualStyleBackColor = false;
+            this.bExportExcel.Click += new System.EventHandler(this.bExportToExcel_Click);
             // 
             // _tbmMemberOfAclFilter
             // 
@@ -105,6 +118,7 @@
             // 
             this._tbmMemberOfAclFilter.Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._tbmMemberOfAclFilter.Button.BackColor = System.Drawing.SystemColors.Control;
+            this._tbmMemberOfAclFilter.Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this._tbmMemberOfAclFilter.Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this._tbmMemberOfAclFilter.Button.Image = ((System.Drawing.Image)(resources.GetObject("_tbmMemberOfAclFilter.Button.Image")));
             this._tbmMemberOfAclFilter.Button.Location = new System.Drawing.Point(210, 0);
@@ -129,17 +143,15 @@
             this._tbmMemberOfAclFilter.ButtonSizeHeight = 20;
             this._tbmMemberOfAclFilter.ButtonSizeWidth = 20;
             this._tbmMemberOfAclFilter.ButtonText = "";
-            this._tbmMemberOfAclFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this._tbmMemberOfAclFilter.HoverTime = 500;
             // 
             // 
             // 
-            this._tbmMemberOfAclFilter.ImageTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this._tbmMemberOfAclFilter.ImageTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this._tbmMemberOfAclFilter.ImageTextBox.BackColor = System.Drawing.SystemColors.Info;
             this._tbmMemberOfAclFilter.ImageTextBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this._tbmMemberOfAclFilter.ImageTextBox.ContextMenuStrip = this._tbmMemberOfAclFilter.ButtonPopupMenu;
-            this._tbmMemberOfAclFilter.ImageTextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this._tbmMemberOfAclFilter.ImageTextBox.Image = ((System.Drawing.Image)(resources.GetObject("_tbmMemberOfAclFilter.ImageTextBox.Image")));
             this._tbmMemberOfAclFilter.ImageTextBox.Location = new System.Drawing.Point(0, 0);
             this._tbmMemberOfAclFilter.ImageTextBox.Margin = new System.Windows.Forms.Padding(4);
@@ -151,11 +163,11 @@
             // 
             // 
             // 
-            this._tbmMemberOfAclFilter.ImageTextBox.TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this._tbmMemberOfAclFilter.ImageTextBox.TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this._tbmMemberOfAclFilter.ImageTextBox.TextBox.BackColor = System.Drawing.SystemColors.Info;
             this._tbmMemberOfAclFilter.ImageTextBox.TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this._tbmMemberOfAclFilter.ImageTextBox.TextBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this._tbmMemberOfAclFilter.ImageTextBox.TextBox.Cursor = System.Windows.Forms.Cursors.Default;
             this._tbmMemberOfAclFilter.ImageTextBox.TextBox.Location = new System.Drawing.Point(1, 2);
             this._tbmMemberOfAclFilter.ImageTextBox.TextBox.Margin = new System.Windows.Forms.Padding(4);
             this._tbmMemberOfAclFilter.ImageTextBox.TextBox.Name = "_tbTextBox";
@@ -170,9 +182,9 @@
             this._tbmMemberOfAclFilter.Size = new System.Drawing.Size(230, 22);
             this._tbmMemberOfAclFilter.TabIndex = 50;
             this._tbmMemberOfAclFilter.TextImage = ((System.Drawing.Image)(resources.GetObject("_tbmMemberOfAclFilter.TextImage")));
-            this._tbmMemberOfAclFilter.DragOver += new System.Windows.Forms.DragEventHandler(this._tbmMemberOfAclFilter_DragOver);
-            this._tbmMemberOfAclFilter.DragDrop += new System.Windows.Forms.DragEventHandler(this._tbmMemberOfAclFilter_DragDrop);
             this._tbmMemberOfAclFilter.ButtonPopupMenuItemClick += new Contal.IwQuick.UI.TextBoxMenu.DPopupMenuHandler(this._tbmMemberOfAclFilter_ButtonPopupMenuItemClick);
+            this._tbmMemberOfAclFilter.DragDrop += new System.Windows.Forms.DragEventHandler(this._tbmMemberOfAclFilter_DragDrop);
+            this._tbmMemberOfAclFilter.DragOver += new System.Windows.Forms.DragEventHandler(this._tbmMemberOfAclFilter_DragOver);
             // 
             // _tsiModify1
             // 
@@ -190,7 +202,7 @@
             // 
             this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._lRecordCount.AutoSize = true;
-            this._lRecordCount.Location = new System.Drawing.Point(642, 152);
+            this._lRecordCount.Location = new System.Drawing.Point(702, 142);
             this._lRecordCount.Name = "_lRecordCount";
             this._lRecordCount.Size = new System.Drawing.Size(75, 13);
             this._lRecordCount.TabIndex = 49;
@@ -214,6 +226,17 @@
             this._gbRuntimeFilter.Tag = "RealtimeFiltering";
             this._gbRuntimeFilter.Text = "Runtime filters";
             // 
+            // _bUnblock
+            // 
+            this._bUnblock.Enabled = false;
+            this._bUnblock.Location = new System.Drawing.Point(279, 98);
+            this._bUnblock.Name = "_bUnblock";
+            this._bUnblock.Size = new System.Drawing.Size(75, 23);
+            this._bUnblock.TabIndex = 30;
+            this._bUnblock.Text = "Unblock";
+            this._bUnblock.UseVisualStyleBackColor = true;
+            this._bUnblock.Click += new System.EventHandler(this._bUnblock_Click);
+            // 
             // _chbBlocked
             // 
             this._chbBlocked.AutoSize = true;
@@ -223,7 +246,7 @@
             this._chbBlocked.TabIndex = 29;
             this._chbBlocked.Text = "Blocked (invalid GIN retries limit reached)";
             this._chbBlocked.UseVisualStyleBackColor = true;
-            this._chbBlocked.CheckedChanged += new System.EventHandler(_chbBlocked_CheckedChanged);
+            this._chbBlocked.CheckedChanged += new System.EventHandler(this._chbBlocked_CheckedChanged);
             // 
             // _cbOnlineStateFilter
             // 
@@ -242,17 +265,15 @@
             this._cbOnlineStateFilter.Name = "_cbOnlineStateFilter";
             this._cbOnlineStateFilter.Size = new System.Drawing.Size(155, 21);
             this._cbOnlineStateFilter.TabIndex = 7;
-            this._cbOnlineStateFilter.Tag = new string[]
-            {
-                "",
-                "Unknown",
-                "Offline",
-                "Online",
-                "Upgrading",
-                "WaitingForUpgrade",
-                "AutoUpgrading",
-                "Reseting"
-            };
+            this._cbOnlineStateFilter.Tag = new string[] {
+        "",
+        "Unknown",
+        "Offline",
+        "Online",
+        "Upgrading",
+        "WaitingForUpgrade",
+        "AutoUpgrading",
+        "Reseting"};
             this._cbOnlineStateFilter.SelectedIndexChanged += new System.EventHandler(this._rbFilterOr_CheckedChanged);
             this._cbOnlineStateFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DisableKeyPress);
             // 
@@ -305,22 +326,18 @@
             // 
             this._cbCurrentForcedSecurityLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._cbCurrentForcedSecurityLevel.FormattingEnabled = true;
-            this._cbCurrentForcedSecurityLevel.Items.AddRange(new object[]
-            {
-                "",
-                "True",
-                "False"
-            });
+            this._cbCurrentForcedSecurityLevel.Items.AddRange(new object[] {
+            "",
+            "True",
+            "False"});
             this._cbCurrentForcedSecurityLevel.Location = new System.Drawing.Point(199, 71);
             this._cbCurrentForcedSecurityLevel.Name = "_cbCurrentForcedSecurityLevel";
             this._cbCurrentForcedSecurityLevel.Size = new System.Drawing.Size(155, 21);
             this._cbCurrentForcedSecurityLevel.TabIndex = 3;
-            this._cbCurrentForcedSecurityLevel.Tag = new string[]
-            {
-                "",
-                "General_True",
-                "General_False"
-            };
+            this._cbCurrentForcedSecurityLevel.Tag = new string[] {
+        "",
+        "General_True",
+        "General_False"};
             this._cbCurrentForcedSecurityLevel.SelectedIndexChanged += new System.EventHandler(this._rbFilterOr_CheckedChanged);
             this._cbCurrentForcedSecurityLevel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DisableKeyPress);
             // 
@@ -337,7 +354,7 @@
             // 
             this._rbFilterOr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._rbFilterOr.AutoSize = true;
-            this._rbFilterOr.Location = new System.Drawing.Point(8, 151);
+            this._rbFilterOr.Location = new System.Drawing.Point(3, 142);
             this._rbFilterOr.Name = "_rbFilterOr";
             this._rbFilterOr.Size = new System.Drawing.Size(275, 17);
             this._rbFilterOr.TabIndex = 32;
@@ -350,7 +367,7 @@
             this._rbFilterAnd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._rbFilterAnd.AutoSize = true;
             this._rbFilterAnd.Checked = true;
-            this._rbFilterAnd.Location = new System.Drawing.Point(335, 151);
+            this._rbFilterAnd.Location = new System.Drawing.Point(338, 140);
             this._rbFilterAnd.Name = "_rbFilterAnd";
             this._rbFilterAnd.Size = new System.Drawing.Size(235, 17);
             this._rbFilterAnd.TabIndex = 31;
@@ -454,22 +471,18 @@
             // 
             this._cbEmergencyCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._cbEmergencyCode.FormattingEnabled = true;
-            this._cbEmergencyCode.Items.AddRange(new object[]
-            {
-                "",
-                "True",
-                "False"
-            });
+            this._cbEmergencyCode.Items.AddRange(new object[] {
+            "",
+            "True",
+            "False"});
             this._cbEmergencyCode.Location = new System.Drawing.Point(128, 92);
             this._cbEmergencyCode.Name = "_cbEmergencyCode";
             this._cbEmergencyCode.Size = new System.Drawing.Size(112, 21);
             this._cbEmergencyCode.TabIndex = 3;
-            this._cbEmergencyCode.Tag = new string[]
-            {
-                "",
-                "General_True",
-                "General_False"
-            };
+            this._cbEmergencyCode.Tag = new string[] {
+        "",
+        "General_True",
+        "General_False"};
             this._cbEmergencyCode.SelectedIndexChanged += new System.EventHandler(this._rbFilterOr_CheckedChanged);
             this._cbEmergencyCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DisableKeyPress);
             // 
@@ -477,22 +490,18 @@
             // 
             this._cbForcedSecurityLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._cbForcedSecurityLevel.FormattingEnabled = true;
-            this._cbForcedSecurityLevel.Items.AddRange(new object[]
-            {
-                "",
-                "True",
-                "False"
-            });
+            this._cbForcedSecurityLevel.Items.AddRange(new object[] {
+            "",
+            "True",
+            "False"});
             this._cbForcedSecurityLevel.Location = new System.Drawing.Point(8, 92);
             this._cbForcedSecurityLevel.Name = "_cbForcedSecurityLevel";
             this._cbForcedSecurityLevel.Size = new System.Drawing.Size(112, 21);
             this._cbForcedSecurityLevel.TabIndex = 3;
-            this._cbForcedSecurityLevel.Tag = new string[]
-            {
-                "",
-                "General_True",
-                "General_False"
-            };
+            this._cbForcedSecurityLevel.Tag = new string[] {
+        "",
+        "General_True",
+        "General_False"};
             this._cbForcedSecurityLevel.SelectedIndexChanged += new System.EventHandler(this._rbFilterOr_CheckedChanged);
             this._cbForcedSecurityLevel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DisableKeyPress);
             // 
@@ -526,7 +535,7 @@
             // _bFilterClear
             // 
             this._bFilterClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._bFilterClear.Location = new System.Drawing.Point(898, 147);
+            this._bFilterClear.Location = new System.Drawing.Point(972, 168);
             this._bFilterClear.Name = "_bFilterClear";
             this._bFilterClear.Size = new System.Drawing.Size(75, 23);
             this._bFilterClear.TabIndex = 9;
@@ -537,7 +546,7 @@
             // _bRunFilter
             // 
             this._bRunFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._bRunFilter.Location = new System.Drawing.Point(817, 147);
+            this._bRunFilter.Location = new System.Drawing.Point(880, 168);
             this._bRunFilter.Name = "_bRunFilter";
             this._bRunFilter.Size = new System.Drawing.Size(75, 23);
             this._bRunFilter.TabIndex = 8;
@@ -571,32 +580,21 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             this._cdgvData.DataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this._cdgvData.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._cdgvData.DataGrid.Size = new System.Drawing.Size(976, 233);
+            this._cdgvData.DataGrid.Size = new System.Drawing.Size(1192, 211);
             this._cdgvData.DataGrid.TabIndex = 0;
             this._cdgvData.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.LocalizationHelper = null;
             this._cdgvData.Location = new System.Drawing.Point(0, 0);
             this._cdgvData.Margin = new System.Windows.Forms.Padding(4);
             this._cdgvData.Name = "_cdgvData";
-            this._cdgvData.Size = new System.Drawing.Size(976, 233);
+            this._cdgvData.Size = new System.Drawing.Size(1192, 211);
             this._cdgvData.TabIndex = 2;
-            // 
-            // _bUnblock
-            // 
-            this._bUnblock.Enabled = false;
-            this._bUnblock.Location = new System.Drawing.Point(279, 98);
-            this._bUnblock.Name = "_bUnblock";
-            this._bUnblock.Size = new System.Drawing.Size(75, 23);
-            this._bUnblock.TabIndex = 30;
-            this._bUnblock.Text = "Unblock";
-            this._bUnblock.UseVisualStyleBackColor = true;
-            this._bUnblock.Click += new System.EventHandler(this._bUnblock_Click);
             // 
             // NCASCardReadersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(976, 409);
+            this.ClientSize = new System.Drawing.Size(1192, 402);
             this.Controls.Add(this._cdgvData);
             this.Controls.Add(this._pFilter);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -645,6 +643,6 @@
         private Contal.IwQuick.UI.TextBoxMenu _tbmMemberOfAclFilter;
         private System.Windows.Forms.CheckBox _chbBlocked;
         private System.Windows.Forms.Button _bUnblock;
-
+        private System.Windows.Forms.Button bExportExcel;
     }
 }

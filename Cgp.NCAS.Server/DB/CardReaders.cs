@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -18,6 +18,7 @@ using Contal.Cgp.Globals;
 using TimeZone = Contal.Cgp.Server.Beans.TimeZone;
 using CRHWVersion = Contal.Drivers.CardReader.CRHWVersion;
 using Contal.Cgp.NCAS.Server.Alarms;
+using System.Data;
 
 namespace Contal.Cgp.NCAS.Server.DB
 {
@@ -198,6 +199,8 @@ namespace Contal.Cgp.NCAS.Server.DB
                 new IdAndObjectType(
                     cardReader.IdCardReader,
                     ObjectType.CardReader));
+
+            ConsecutiveEvents.Singleton.CleanConsecutiveEvents(cardReader.IdCardReader);
         }
 
         public void ConfigureSpecificAlarmArcs()

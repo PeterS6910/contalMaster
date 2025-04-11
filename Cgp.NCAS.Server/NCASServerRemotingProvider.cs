@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,6 +14,10 @@ using Contal.IwQuick.Sys;
 using Contal.Cgp.NCAS.Globals;
 using Contal.Cgp.Server;
 using Contal.Drivers.CardReader;
+using System.Windows;
+using Contal.Cgp.BaseLib;
+using System.Data;
+using Contal.Cgp.NCAS.Server.ExportData;
 
 namespace Contal.Cgp.NCAS.Server
 {
@@ -575,6 +579,38 @@ namespace Contal.Cgp.NCAS.Server
             }
         }
 
+        public IPersonAttributeOutput PersonAttributeOutputs
+        {
+            get
+            {
+                try
+                {
+                    ValidateSession();
+                    return DB.PersonAttributeOutputs.Singleton;
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+            }
+        }
+
+
+        public IExcelReportOutput ExcelReportOutputs
+        {
+            get
+            {
+                try
+                {
+                    ValidateSession();
+                    return DB.ExcelReportOutputs.Singleton;
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+            }
+        }
         public byte GetSecurityTimeZoneActualStatus(Guid idSecurityTimeZone)
         {
             return SecurityTimeAxis.Singleton.GetActualStatusSecurityTZ(idSecurityTimeZone);
@@ -1031,6 +1067,15 @@ namespace Contal.Cgp.NCAS.Server
                 return null;
 
             return CCUConfigurationHandler.Singleton.GetMemoryReport(idCcu);
+        }
+
+        public DataTable ExportDataLogs(IList<FilterSettings> filterSettings,  bool bCardReader, out bool bFillSection)
+
+        {
+            if (bCardReader)
+                return ExportTableNCASFactory.Generate(ExportTableNCASFactory.Type._CardReader, filterSettings, out bFillSection);
+            else
+                return ExportTableNCASFactory.Generate(ExportTableNCASFactory.Type._AccessControlList, filterSettings, out bFillSection);
         }
     }
 }

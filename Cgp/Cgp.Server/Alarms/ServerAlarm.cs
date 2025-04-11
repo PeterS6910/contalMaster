@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Contal.Cgp.Globals.PlatformPC;
 using Contal.Cgp.Server.Beans;
 using Contal.IwQuick.Data;
@@ -67,6 +67,11 @@ namespace Contal.Cgp.Server.Alarms
         public virtual PresentationGroup GetPresentationGroup()
         {
             return null;
+        }
+
+        public virtual  string GetPresentationDescription()
+        {
+            return ServerAlarmCore.Description;
         }
     }
 }

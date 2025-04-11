@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -1551,6 +1551,12 @@ namespace Contal.Cgp.NCAS.Client
             {
                 HandledExceptionAdapter.Examine(error);
             }
+        }
+
+        private void bExportToExcel_Click(object sender, EventArgs e)
+        {
+            var exportForm = new ExcelExportForm(true, FilterSettings);
+            exportForm.Show();
         }
     }
 }

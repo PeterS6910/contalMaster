@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 using Contal.Cgp.Globals;
@@ -240,7 +240,7 @@ namespace Contal.Cgp.Server.Beans
 
         public override string ToString()
         {
-            return FirstName + " " + Surname;
+            return FirstName + " " + (Surname ?? "");
         }
 
         public override bool Compare(object obj)

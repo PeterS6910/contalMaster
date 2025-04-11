@@ -33,10 +33,14 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -82,6 +86,15 @@
     <Reference Include="CatCom.PC45">
       <HintPath>..\lib\CatCom.PC45.dll</HintPath>
     </Reference>
+    <Reference Include="EPPlus, Version=6.1.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.6.1.1\lib\net35\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.1\lib\net35\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net35\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
     <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL" />
     <Reference Include="IwQuick.PC45">
       <HintPath>..\lib\IwQuick.PC45.dll</HintPath>
@@ -99,10 +112,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Cgp\Cgp.ORM\NHibernate.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="SLA.ClientModule">
       <HintPath>..\lib\SLA.ClientModule.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -112,6 +128,7 @@
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
@@ -120,9 +137,17 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB\ExcelReportOutputs.cs" />
+    <Compile Include="DB\PersonAttributeOutputs.cs" />
     <Compile Include="DB\ReportSettings.cs" />
+    <Compile Include="ExportData\AccessControlListsExportData.cs" />
+    <Compile Include="ExportData\CardReadersExportData.cs" />
+    <Compile Include="ExportData\ExportTableNCASFactory.cs" />
+    <Compile Include="ExportData\DoorEnvironmentAlarmExportData.cs" />
+    <Compile Include="ExportData\PersonAttributeExportData.cs" />
     <Compile Include="MaximumVersionAndIds.cs" />
     <Compile Include="Notifications\EmailNotificationService.cs" />
     <Compile Include="DB\PersonAttributes.cs" />
@@ -170,7 +195,7 @@
       <Name>Cgp.Server.Beans</Name>
     </ProjectReference>
     <ProjectReference Include="..\Cgp\Cgp.Server\Cgp.Server.csproj">
-      <Project>{E4AA19DF-B369-4979-A2A0-D3D2BCFED985}</Project>
+      <Project>{e4aa19df-b369-4979-a2a0-d3d2bcfed985}</Project>
       <Name>Cgp.Server</Name>
     </ProjectReference>
     <ProjectReference Include="..\WcfServiceNovaConnection\WcfServiceNovaConnection.PC45.csproj">
@@ -189,6 +214,8 @@
     <Compile Include="Alarms\CcuCatUnreachableAlarm.cs" />
     <Compile Include="Alarms\CrInvalidPinRetriesLimitReached.cs" />
     <Compile Include="DB\TimetecSettings.cs" />
+    <Compile Include="Reports\DoorEnviromentAlarmsReportService.cs" />
+    <Compile Include="Reports\PersonAttributesReportService.cs" />
     <Compile Include="ServerAlarms\AlarmAreaAServerAlarm.cs" />
     <Compile Include="ServerAlarms\AlarmAreaServerAlarm.cs" />
     <Compile Include="ServerAlarms\AlarmAreaSetByOnOffObjectFailedServerAlarm.cs" />
@@ -598,17 +625,17 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Localization.English.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.English.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Localization.Slovak.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.Slovak.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Localization.Swedish.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.Swedish.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -647,6 +674,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CcuDataReplicator\DataReplicationManager.CcuDataReplicator.Initializer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -692,7 +722,6 @@ if %25CodeProtectionResult%25 neq 0 goto CodeProtectionFailed
 REM need to copy files, that are not part of the obfuscation process
 REM C:\Windows\System32\xcopy.exe /C /Y "$(TargetDir)*xmlserializers.dll" "$(TargetDir)\%25FinalSubfolder%25\"
 
-C:\Windows\System32\xcopy.exe /C /Y  "$(TargetDir)*interop*.dll" "$(TargetDir)%25FinalSubfolder%25\"
 C:\Windows\System32\xcopy.exe /C /Y "$(TargetDir)*pcap*.dll" "$(TargetDir)%25FinalSubfolder%25\"
 C:\Windows\System32\xcopy.exe /C /Y "$(TargetDir)*NHibernate*.dll" "$(TargetDir)%25FinalSubfolder%25\"
 C:\Windows\System32\xcopy.exe /C /Y "$(TargetDir)*Ionic.Zip*.dll" "$(TargetDir)%25FinalSubfolder%25\"
@@ -723,6 +752,8 @@ C:\Windows\System32\xcopy.exe /C /Y /E "$(TargetDir)Graphics symbols" "$(TargetD
 
 C:\Windows\System32\xcopy.exe /C /Y /E "$(SolutionDir)Cgp.NCAS.Client\bin\ClientUpgrade.gz" "$(TargetDir)%25FinalSubfolder%25\Client Upgrades\"
 
-:WithoutCodeProtection</PostBuildEvent>
+:WithoutCodeProtection
+
+</PostBuildEvent>
   </PropertyGroup>
 </Project>

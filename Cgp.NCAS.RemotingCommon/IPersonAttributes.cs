@@ -1,4 +1,4 @@
-﻿using Contal.Cgp.NCAS.Server.Beans;
+using Contal.Cgp.NCAS.Server.Beans;
 using Contal.Cgp.Server.Beans;
 using System;
 using System.Collections.Generic;

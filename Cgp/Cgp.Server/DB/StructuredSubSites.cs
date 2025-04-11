@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -783,7 +783,8 @@ namespace Contal.Cgp.Server.DB
                    || objectType == ObjectType.Calendar
                    || objectType == ObjectType.DayType
                    || objectType == ObjectType.CardSystem
-                   || objectType == ObjectType.Card;
+                   || objectType == ObjectType.Card
+                   || objectType == ObjectType.DoorEnvironment;
         }
 
         public bool HasAccessUpdate(AOrmObject ormObject)

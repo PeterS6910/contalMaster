@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -42,6 +42,7 @@ using RequiredLicenceProperties = Contal.Cgp.NCAS.Globals.RequiredLicencePropert
 using TimeZone = Contal.Cgp.Server.Beans.TimeZone;
 using Contal.IwQuick.Data;
 using Contal.Cgp.NCAS.Server.Notifications;
+using Contal.Cgp.NCAS.Server.Reports;
 
 namespace Contal.Cgp.NCAS.Server
 {
@@ -86,7 +87,7 @@ namespace Contal.Cgp.NCAS.Server
         public const string DCU_UPGRADES_DIRECTORY_NAME = "DCU Upgrades";
         public const string CE_UPGRADES_DIRECTORY_NAME = "CE Upgrades";
         public const string CR_UPGRADES_DIRECTORY_NAME = "Card Reader Upgrades";
-
+        public const string REPORTS_DIRECTORY_NAME      = "Reports";
         /// <summary>
         /// minimal version of CE on CCU until not considered upgrade only
         /// </summary>
@@ -250,15 +251,9 @@ namespace Contal.Cgp.NCAS.Server
 
         private void PerformPresentationGroup(ServerAlarm serverAlarm, PresentationGroup pg)
         {
-            string acknowledgeState = !serverAlarm.ServerAlarmCore.Alarm.IsAcknowledged ? "Not acknowledged" : "Acknowledged";
-
-            SafeThread<PresentationGroup, string>.StartThread(
+             SafeThread<PresentationGroup, string>.StartThread(
                 PGProcessSendMessage,
-                pg,
-                string.Format("{0} - {1}/{2}",
-                    serverAlarm.ServerAlarmCore.Description,
-                    serverAlarm.ServerAlarmCore.Alarm.AlarmState,
-                    acknowledgeState));
+                pg,serverAlarm);
         }
 
         public void PresentationGroupChanged(AlarmType alarmType)
@@ -302,6 +297,28 @@ namespace Contal.Cgp.NCAS.Server
                 lock (_lockPGProcessSendMessage)
                 {
                     var ppg = new PerformPresentationGroup(pg);
+                    PerformPresentationProcessor.Singleton.ProcessSendMessage(
+                        ppg,
+                        msg);
+                }
+            }
+        }
+
+        public void PGProcessSendMessage(PresentationGroup pg, ServerAlarm serverAlarm)
+        {
+            if (pg != null)
+            {
+                lock (_lockPGProcessSendMessage)
+                {
+                    string acknowledgeState = !serverAlarm.ServerAlarmCore.Alarm.IsAcknowledged ? "Not acknowledged" : "Acknowledged";
+
+                    var ppg = new PerformPresentationGroup(pg);
+                    string msg=
+                    string.Format("{0} - {1}/{2}",
+                     serverAlarm.GetPresentationDescription(),
+                     serverAlarm.ServerAlarmCore.Alarm.AlarmState,
+                     acknowledgeState);
+
                     PerformPresentationProcessor.Singleton.ProcessSendMessage(
                         ppg,
                         msg);
@@ -442,6 +459,8 @@ namespace Contal.Cgp.NCAS.Server
                     DevicesAlarmSettings.Singleton.InvalidPinRetriesLimitReachedTimeout);
 
             Cards.Singleton.StartTemporaryBlocks();
+            PersonAttributesReportService.Singleton.Start();
+            DoorEnviromentAlarmsReportService.Singleton.Start();
         }
 
         private void DeleteRecordsWithNullReferences()

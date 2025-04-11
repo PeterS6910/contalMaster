@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace WcfServiceNovaConnection
@@ -59,7 +59,9 @@ namespace WcfServiceNovaConnection
         public DateTime? CardUntill { get; set; } //End of card validity
         public string PIN { get; set; }
         public string Description { get; set; }
-        public CardSettings Settings { get; set; } //Card settings:  
+        public CardSettings Settings { get; set; } //Card settings:
+
+        public long ID { get; set; } //Card Id: 
     }
 
     //Basic object for sending of Person with Cards from Timetec to NOVA (callback WCF call)

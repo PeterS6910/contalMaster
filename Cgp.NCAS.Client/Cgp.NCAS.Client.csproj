@@ -20,10 +20,14 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
     <TargetFrameworkProfile />
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -169,6 +173,12 @@
     </Compile>
     <Compile Include="CreateDoorsForMultiDoorForm.Designer.cs">
       <DependentUpon>CreateDoorsForMultiDoorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExcelExportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExcelExportForm.Designer.cs">
+      <DependentUpon>ExcelExportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GraphicSymbolsForm.cs">
       <SubType>Form</SubType>
@@ -544,6 +554,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Cgp.NCAS.Server\Cgp.NCAS.Server.csproj">
+      <Project>{E9AA864F-8019-4281-87BE-6E47085E756C}</Project>
+      <Name>Cgp.NCAS.Server</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cgp\Cgp.BaseLib\Cgp.BaseLib.csproj">
       <Project>{4B649633-3110-4CBD-AC66-43685FFDC808}</Project>
       <Name>Cgp.BaseLib</Name>
@@ -584,6 +598,10 @@
       <Project>{2EB9DDDF-0719-4A79-8CB7-FBD410743C92}</Project>
       <Name>Cgp.NCAS.Server.Beans</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cgp\Cgp.ORM\Cgp.ORM.csproj">
+      <Project>{91F9BB39-37AA-4831-91AD-882EEE262722}</Project>
+      <Name>Cgp.ORM</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cgp\Cgp.RemotingCommon\Cgp.RemotingCommon.csproj">
       <Project>{1A33974B-B787-4E35-BE4B-BCF6F50DB953}</Project>
       <Name>Cgp.RemotingCommon</Name>
@@ -595,6 +613,10 @@
     <ProjectReference Include="..\Cgp\Cgp.Server.Beans\Cgp.Server.Beans.csproj">
       <Project>{0A152990-C767-4D19-ABD5-9CC4FDDDBC95}</Project>
       <Name>Cgp.Server.Beans</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cgp\Cgp.Server\Cgp.Server.csproj">
+      <Project>{E4AA19DF-B369-4979-A2A0-D3D2BCFED985}</Project>
+      <Name>Cgp.Server</Name>
     </ProjectReference>
     <ProjectReference Include="..\WcfServiceNovaConnection\WcfServiceNovaConnection.PC45.csproj">
       <Project>{2224e287-fbf1-4268-890e-a04a1a194a5d}</Project>
@@ -633,6 +655,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateDoorsForMultiDoorForm.resx">
       <DependentUpon>CreateDoorsForMultiDoorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExcelExportForm.resx">
+      <DependentUpon>ExcelExportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GraphicSymbolsForm.resx">
       <DependentUpon>GraphicSymbolsForm.cs</DependentUpon>
@@ -1077,7 +1102,6 @@ if "$(ConfigurationName)"=="Release" (
 if "$(ConfigurationName)"=="Release (Special)" (
 "$(SolutionDir)Cgp.NCAS.CCU\Binaries\FilePackerTool.exe" /t Client /s "$(SolutionDir)Cgp.NCAS.Client\bin\Release" /va "$(SolutionDir)Cgp.NCAS.Client\bin\Release\Contal Nova Client.exe" /f "$(SolutionDir)Cgp.NCAS.Client\bin\ClientUpgrade.gz" /e *.pdb
 )
-
 endlocal
 </PostBuildEvent>
   </PropertyGroup>

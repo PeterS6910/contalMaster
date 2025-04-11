@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 using Contal.Cgp.Globals;
@@ -6,6 +6,8 @@ using Contal.Cgp.Globals.PlatformPC;
 using Contal.Cgp.NCAS.Server.Beans;
 using Contal.Cgp.NCAS.Globals;
 using Contal.Cgp.Server.Beans;
+using Contal.Cgp.BaseLib;
+using System.Data;
 
 namespace Contal.Cgp.NCAS.RemotingCommon
 {
@@ -49,6 +51,10 @@ namespace Contal.Cgp.NCAS.RemotingCommon
 
         IReportSettings ReportSettings { get; }
 
+        IPersonAttributeOutput PersonAttributeOutputs { get; }
+
+        IExcelReportOutput ExcelReportOutputs { get; }
+
         byte GetSecurityTimeZoneActualStatus(Guid idSecurityTimeZone);
         byte GetSecurityDailyPlanActualStatus(Guid idSecurityDailyPlan);
         IList<string> GetAvailableUpgrades();
@@ -87,5 +93,6 @@ namespace Contal.Cgp.NCAS.RemotingCommon
         State GetRealOnOffObjectState(ObjectType type, Guid id);
         ICollection<ServerAlarmCore> GetAlarms(AlarmType alarmType, IdAndObjectType alarmObject);
         ICollection<MemoryInfo> GetMemoryReport(Guid idCcu);
+        DataTable ExportDataLogs(IList<FilterSettings> filterSettings, bool bCardReader, out bool bFillSection);
     }
 }

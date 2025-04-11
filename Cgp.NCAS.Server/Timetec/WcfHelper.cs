@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IdentityModel.Selectors;
 using System.IdentityModel.Tokens;
+using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.ServiceModel.Security;
@@ -103,7 +104,7 @@ namespace Contal.Cgp.NCAS.Server.Timetec
         public bool? IsConnected { get; private set; }
 
         public event Action<bool?> OnlineStateChanged;
-
+        
         public WcfHelper()
         {
             _netTcpContextBinding = new NetTcpContextBinding(SecurityMode.Message)
@@ -137,13 +138,13 @@ namespace Contal.Cgp.NCAS.Server.Timetec
                 var certificate = new X509Certificate2(certificateRawData);
 
                 var identity = EndpointIdentity.CreateX509CertificateIdentity(certificate);
-
                 var endPointAdr = new EndpointAddress(
                     new Uri(string.Format(
                         "net.tcp://{0}:{1}/service",
                         ipAddress,
                         port)),
                     identity);
+
 
                 var providerCallback = new TimetecProviderCallback();
 
@@ -158,15 +159,15 @@ namespace Contal.Cgp.NCAS.Server.Timetec
 
                 _channelFactory.Credentials.UserName.UserName = userName;
                 _channelFactory.Credentials.UserName.Password = password;
-                _channelFactory.Credentials.ClientCertificate.Certificate = certificate;
+                 _channelFactory.Credentials.ClientCertificate.Certificate = certificate;
                 _channelFactory.Credentials.ServiceCertificate.DefaultCertificate = certificate;
 
                 _channelFactory.Credentials.ServiceCertificate.Authentication.CertificateValidationMode =
                     X509CertificateValidationMode.Custom;
 
                 _channelFactory.Credentials.ServiceCertificate.Authentication.CustomCertificateValidator =
-                    new CustomCertificateValidator(
-                        "CN=Contal TtN cert",
+                   new CustomCertificateValidator(
+                       "CN=Contal TtN cert",
                         "5435577EB2308AED57D24BB18441674D8806AECB");
 
                 _isRunning = true;
@@ -179,7 +180,6 @@ namespace Contal.Cgp.NCAS.Server.Timetec
         private void CreateChannel()
         {
             _channel = _channelFactory.CreateChannel();
-
             CheckConnection();
         }
 
@@ -220,7 +220,6 @@ namespace Contal.Cgp.NCAS.Server.Timetec
             try
             {
                 _channel.RpcPing();
-
                 if (!IsConnected.HasValue || !IsConnected.Value)
                     ExecuteOnlineStateChanged(true);
 

@@ -33,10 +33,14 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -87,6 +91,8 @@
     <Compile Include="IMultiDoors.cs" />
     <Compile Include="IMultiDoorElements.cs" />
     <Compile Include="IOutputDCUs.cs" />
+    <Compile Include="IExcelReportOutput.cs" />
+    <Compile Include="IPersonAttributeOutput.cs" />
     <Compile Include="IPersonAttributes.cs" />
     <Compile Include="IScenes.cs" />
     <Compile Include="ISecurityDailyPlans.cs" />
@@ -118,6 +124,14 @@
     <ProjectReference Include="..\Cgp.NCAS.Server.Beans\Cgp.NCAS.Server.Beans.csproj">
       <Project>{2EB9DDDF-0719-4A79-8CB7-FBD410743C92}</Project>
       <Name>Cgp.NCAS.Server.Beans</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cgp\Cgp.ORM\Cgp.ORM.csproj">
+      <Project>{91f9bb39-37aa-4831-91ad-882eee262722}</Project>
+      <Name>Cgp.ORM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cgp\Cgp.Server.Beans.Extern\Cgp.Server.Beans.Extern.csproj">
+      <Project>{8DB7364B-5E6B-4869-A3DD-DB9B95DA7064}</Project>
+      <Name>Cgp.Server.Beans.Extern</Name>
     </ProjectReference>
     <ProjectReference Include="..\Cgp\Cgp.Server.Beans\Cgp.Server.Beans.csproj">
       <Project>{0A152990-C767-4D19-ABD5-9CC4FDDDBC95}</Project>

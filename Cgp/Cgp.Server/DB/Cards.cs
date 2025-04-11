@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,6 +16,12 @@ using Contal.IwQuick.Data;
 
 using SqlDeleteReferenceConstraintException = Contal.IwQuick.SqlDeleteReferenceConstraintException;
 using SqlUniqueException = Contal.IwQuick.SqlUniqueException;
+using Contal.Cgp.NCAS.Server.Beans;
+using Contal.Cgp.NCAS.RemotingCommon;
+using System.Data;
+using System.Windows.Forms;
+using Contal.Cgp.Server.ExportData;
+using Contal.Cgp.Server.Beans.Extern;
 
 namespace Contal.Cgp.Server.DB
 {
@@ -56,7 +62,7 @@ namespace Contal.Cgp.Server.DB
                 cardState);
         }
 
-        private readonly TimeoutDictionary<Guid, CardState> _temporaryBlockTimeouts = 
+        private readonly TimeoutDictionary<Guid, CardState> _temporaryBlockTimeouts =
             new TimeoutDictionary<Guid, CardState>();
 
         public override AOrmObject GetObjectParent(AOrmObject ormObject)
@@ -150,7 +156,7 @@ namespace Contal.Cgp.Server.DB
             if (state == CardState.TemporarilyBlocked
                 || state == CardState.HybridTemporarilyBlocked)
             {
-                var remainingTimeout = 
+                var remainingTimeout =
                     InvalidPinRetriesLimitReachedTimeout
                     - (DateTime.UtcNow - card.UtcDateStateLastChange);
 
@@ -190,6 +196,8 @@ namespace Contal.Cgp.Server.DB
                 error = new SqlDeleteReferenceConstraintException();
                 return false;
             }
+
+            ConsecutiveEvents.Singleton.CleanConsecutiveEvents(ormObject.IdCard);
 
             return true;
         }
@@ -892,7 +900,7 @@ namespace Contal.Cgp.Server.DB
 
             foreach (var temporarilyBlockedCard in temporarilyBlockedCards)
             {
-                var remainingTime = 
+                var remainingTime =
                     (temporarilyBlockedCard.UtcDateStateLastChange
                      + InvalidPinRetriesLimitReachedTimeout) - utcNow;
 
@@ -932,6 +940,11 @@ namespace Contal.Cgp.Server.DB
                 card =>
                     card.LocalAlarmInstruction != null
                     && card.LocalAlarmInstruction != string.Empty);
+        }
+
+        public DataTable ExportCards(IList<FilterSettings> filterSettings,  out bool bFillSection)
+        {
+            return ExportTableFactory.Generate(ExportTableFactory.Type._Card, filterSettings,  out bFillSection);
         }
     }
 }

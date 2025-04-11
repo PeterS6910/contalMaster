@@ -6188,6 +6188,9 @@ Normalt stängd</value>
   <data name="NCASCardReadersForm_chbBlocked" xml:space="preserve">
     <value>Blockerad (ogiltig KOD har angetts för många gånger)</value>
   </data>
+  <data name="NCASCardReadersForm_bExportExcel" xml:space="preserve">
+    <value>Exportera till Excel</value>
+  </data>
   <data name="SensorBlockingType_BlockPermanently" xml:space="preserve">
     <value>Permanent blockerad</value>
   </data>
@@ -6810,5 +6813,20 @@ Vill Ni ändra ingångskontroll på {1} till forcerad blockering?</value>
   </data>
   <data name="NCASCardReaderEditForm_gbAccessScreen" xml:space="preserve">
     <value>Säkerhetsnivå indikering</value>
+  </data>
+  <data name="ExcelExportForm_cbBD" xml:space="preserve">
+    <value>Födelsedag</value>
+  </data>
+  <data name="ExcelExportForm_cbColumnID" xml:space="preserve">
+    <value>Personligt ID</value>
+  </data>
+  <data name="ExcelExportForm_cbColumnDepartment" xml:space="preserve">
+    <value>Avdelning</value>
+  </data>
+  <data name="ExcelExportForm_cbPhone" xml:space="preserve">
+    <value>Telefonnummer</value>
+  </data>
+  <data name="ExportExcel" xml:space="preserve">
+    <value>Exportera till Excel</value>
   </data>
 </root>

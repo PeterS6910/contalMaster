@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CISIntegration" xml:space="preserve">
     <value>Povolenie CIS integrácie</value>
@@ -289,5 +289,86 @@ Naozaj chcete zavrieť dialóg ?</value>
     <value>Táto možnosť je mienená hlavne pre zmeny licencií.
     
 Naozaj chcete preskočiť rekonfiguráciu databázy ?</value>
+  </data>
+  <data name="AccessControlLists" xml:space="preserve">
+    <value>Zoznam prístupových práv</value>
+  </data>
+  <data name="CardReaders" xml:space="preserve">
+    <value>Snímače kariet</value>
+  </data>
+  <data name="SelectStructuredSubSiteForm_RootNode" xml:space="preserve">
+    <value>Všetko</value>
+  </data>
+  <data name="Cards" xml:space="preserve">
+    <value>Karty</value>
+  </data>
+  <data name="ColumnBD" xml:space="preserve">
+    <value>Dátum narodenia</value>
+  </data>
+  <data name="ColumnCardFullNumber" xml:space="preserve">
+    <value>Celé číslo karty</value>
+  </data>
+  <data name="ColumnCardHolder" xml:space="preserve">
+    <value>Uživateľ</value>
+  </data>
+  <data name="ColumnDateFrom" xml:space="preserve">
+    <value>Od</value>
+  </data>
+  <data name="ColumnDateTo" xml:space="preserve">
+    <value>Do</value>
+  </data>
+  <data name="ColumnDepartment" xml:space="preserve">
+    <value>Oddelenie</value>
+  </data>
+  <data name="ColumnDescription" xml:space="preserve">
+    <value>Popis</value>
+  </data>
+  <data name="ColumnEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ColumnEmploymentBeginningDate" xml:space="preserve">
+    <value>Dátum nástupu do zamestnania</value>
+  </data>
+  <data name="ColumnEmploymentEndDate" xml:space="preserve">
+    <value>Dátum ukončenia zamestnania</value>
+  </data>
+  <data name="ColumnPerson" xml:space="preserve">
+    <value>Osoba</value>
+  </data>
+  <data name="ColumnPersonID" xml:space="preserve">
+    <value>Osobne ID</value>
+  </data>
+  <data name="ColumnState" xml:space="preserve">
+    <value>Stav karty</value>
+  </data>
+  <data name="ColumnTelephone" xml:space="preserve">
+    <value>Telefón</value>
+  </data>
+  <data name="ColumnCardNumber" xml:space="preserve">
+    <value>Číslo karty</value>
+  </data>
+  <data name="ColumnAccessDenied" xml:space="preserve">
+    <value>Počet odmietnutých prístupov</value>
+  </data>
+  <data name="ColumnCardReader" xml:space="preserve">
+    <value>Snímač</value>
+  </data>
+  <data name="ColumnEventlogDateTimeFirst" xml:space="preserve">
+    <value>Dátum prvéj udalosti</value>
+  </data>
+  <data name="ColumnEventlogDateTimeLast" xml:space="preserve">
+    <value>Dátum poslednej udalosti</value>
+  </data>
+  <data name="ColumnDateTimeCreated" xml:space="preserve">
+    <value>Dátum vytvorenia alarmu Door Ajar</value>
+  </data>
+  <data name="ColumnDuration" xml:space="preserve">
+    <value>Trvanie alarmu (s)</value>
+  </data>
+  <data name="ColumnName" xml:space="preserve">
+    <value>Názov DCU</value>
+  </data>
+  <data name="ColumnParent" xml:space="preserve">
+    <value>Názov CCU</value>
   </data>
 </root>

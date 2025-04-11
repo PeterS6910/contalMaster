@@ -19,10 +19,10 @@ namespace Contal.Cgp.NCAS.Server {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Localization_Swedish {
+    public class Localization_Swedish {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Contal.Cgp.NCAS.Server {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Contal.Cgp.NCAS.Server.Localization.Swedish", typeof(Localization_Swedish).Assembly);
@@ -51,7 +51,7 @@ namespace Contal.Cgp.NCAS.Server {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Contal.Cgp.NCAS.Server {
         /// <summary>
         ///   Looks up a localized string similar to CCU har föråldrad mjukvara.
         /// </summary>
-        internal static string CCUOutdatedFirmware {
+        public static string CCUOutdatedFirmware {
             get {
                 return ResourceManager.GetString("CCUOutdatedFirmware", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Contal.Cgp.NCAS.Server {
         /// <summary>
         ///   Looks up a localized string similar to Plugin till passersystem.
         /// </summary>
-        internal static string CgpNCASServerplugin {
+        public static string CgpNCASServerplugin {
             get {
                 return ResourceManager.GetString("CgpNCASServerplugin", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Contal.Cgp.NCAS.Server {
         /// <summary>
         ///   Looks up a localized string similar to DCU har föråldrad mjukvara.
         /// </summary>
-        internal static string DCUOutdatedFirmware {
+        public static string DCUOutdatedFirmware {
             get {
                 return ResourceManager.GetString("DCUOutdatedFirmware", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace Contal.Cgp.NCAS.Server {
         /// <summary>
         ///   Looks up a localized string similar to Max antal dörrmiljöer.
         /// </summary>
-        internal static string DoorEnvironmentCount {
+        public static string DoorEnvironmentCount {
             get {
                 return ResourceManager.GetString("DoorEnvironmentCount", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace Contal.Cgp.NCAS.Server {
         /// <summary>
         ///   Looks up a localized string similar to CCU avkonfigurerades då CCU Combo licens saknas.
         /// </summary>
-        internal static string InsufficientCCUComboLicenceCount {
+        public static string InsufficientCCUComboLicenceCount {
             get {
                 return ResourceManager.GetString("InsufficientCCUComboLicenceCount", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace Contal.Cgp.NCAS.Server {
         /// <summary>
         ///   Looks up a localized string similar to Lägsta mjukvaruversion som stöds.
         /// </summary>
-        internal static string MinimalSupportedFW {
+        public static string MinimalSupportedFW {
             get {
                 return ResourceManager.GetString("MinimalSupportedFW", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace Contal.Cgp.NCAS.Server {
         /// <summary>
         ///   Looks up a localized string similar to Larmsändare.
         /// </summary>
-        internal static string TextAlarmTransmitter {
+        public static string TextAlarmTransmitter {
             get {
                 return ResourceManager.GetString("TextAlarmTransmitter", resourceCulture);
             }

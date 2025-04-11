@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -28,6 +28,7 @@ using Contal.SLA.Client.Interfaces;
 using Contal.IwQuick.Threads;
 
 using NHibernate.Mapping;
+using Contal.Cgp.NCAS.RemotingCommon;
 
 namespace Contal.Cgp.Server
 {
@@ -152,6 +153,20 @@ namespace Contal.Cgp.Server
                 try
                 {
                     return DB.Eventlogs.Singleton;
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+        }
+        public IConsecutiveEvent ConsecutiveEvents
+        {
+            get
+            {
+                try
+                {
+                    return DB.ConsecutiveEvents.Singleton;
                 }
                 catch
                 {

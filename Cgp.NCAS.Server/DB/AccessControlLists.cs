@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,6 +11,11 @@ using Contal.Cgp.BaseLib;
 using Contal.Cgp.Globals;
 using NHibernate;
 using NHibernate.Criterion;
+using System.Data;
+using System.Globalization;
+using System.Threading;
+using Contal.IwQuick.Localization;
+using System.Windows.Forms;
 
 namespace Contal.Cgp.NCAS.Server.DB
 {
@@ -427,6 +432,8 @@ namespace Contal.Cgp.NCAS.Server.DB
             get { return ObjectType.AccessControlList; }
         }
 
+
+
         public IEnumerable<ICardReaderObject> GetCardReaderObjects(
             AccessControlList accessControlList,
             DateTime dateTime)
@@ -442,7 +449,7 @@ namespace Contal.Cgp.NCAS.Server.DB
                 if (aclSetting.Disabled == true)
                     continue;
 
-                if (aclSetting.TimeZone != null &&
+                if (dateTime != DateTime.MinValue && aclSetting.TimeZone != null &&
                     !aclSetting.TimeZone.IsOn(dateTime))
                 {
                     continue;

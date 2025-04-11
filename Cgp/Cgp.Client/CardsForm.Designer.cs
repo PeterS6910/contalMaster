@@ -43,10 +43,11 @@
             this._bFilterClear = new System.Windows.Forms.Button();
             this._bRunFilter = new System.Windows.Forms.Button();
             this._pControl = new System.Windows.Forms.Panel();
+            this._lRecordCount = new System.Windows.Forms.Label();
             this._bPrint = new System.Windows.Forms.Button();
             this._bCSVImport = new System.Windows.Forms.Button();
             this._cdgvData = new Contal.Cgp.Components.CgpDataGridView();
-            this._lRecordCount = new System.Windows.Forms.Label();
+            this.bExportExcel = new System.Windows.Forms.Button();
             this._pFilter.SuspendLayout();
             this._pControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._cdgvData.DataGrid)).BeginInit();
@@ -78,8 +79,8 @@
             this._cbPersonFilter.Size = new System.Drawing.Size(121, 21);
             this._cbPersonFilter.TabIndex = 5;
             this._cbPersonFilter.SelectedIndexChanged += new System.EventHandler(this._cbPersonFilter_SelectedIndexChanged);
-            this._cbPersonFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
             this._cbPersonFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
+            this._cbPersonFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
             // 
             // _lPersonFilter
             // 
@@ -98,8 +99,8 @@
             this._cbCardStateFilter.Name = "_cbCardStateFilter";
             this._cbCardStateFilter.Size = new System.Drawing.Size(121, 21);
             this._cbCardStateFilter.TabIndex = 7;
-            this._cbCardStateFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
             this._cbCardStateFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
+            this._cbCardStateFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
             // 
             // _lCardState
             // 
@@ -118,8 +119,8 @@
             this._cbCardSystemFilter.Name = "_cbCardSystemFilter";
             this._cbCardSystemFilter.Size = new System.Drawing.Size(121, 21);
             this._cbCardSystemFilter.TabIndex = 3;
-            this._cbCardSystemFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
             this._cbCardSystemFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
+            this._cbCardSystemFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
             // 
             // _lCardSystemFilter
             // 
@@ -170,6 +171,7 @@
             // 
             // _pControl
             // 
+            this._pControl.Controls.Add(this.bExportExcel);
             this._pControl.Controls.Add(this._lRecordCount);
             this._pControl.Controls.Add(this._bPrint);
             this._pControl.Controls.Add(this._bCSVImport);
@@ -178,6 +180,16 @@
             this._pControl.Name = "_pControl";
             this._pControl.Size = new System.Drawing.Size(960, 37);
             this._pControl.TabIndex = 2;
+            // 
+            // _lRecordCount
+            // 
+            this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._lRecordCount.AutoSize = true;
+            this._lRecordCount.Location = new System.Drawing.Point(808, 11);
+            this._lRecordCount.Name = "_lRecordCount";
+            this._lRecordCount.Size = new System.Drawing.Size(70, 13);
+            this._lRecordCount.TabIndex = 5;
+            this._lRecordCount.Text = "RecordCount";
             // 
             // _bPrint
             // 
@@ -233,15 +245,15 @@
             this._cdgvData.Size = new System.Drawing.Size(960, 399);
             this._cdgvData.TabIndex = 3;
             // 
-            // _lRecordCount
+            // bExportExcel
             // 
-            this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._lRecordCount.AutoSize = true;
-            this._lRecordCount.Location = new System.Drawing.Point(808, 11);
-            this._lRecordCount.Name = "_lRecordCount";
-            this._lRecordCount.Size = new System.Drawing.Size(70, 13);
-            this._lRecordCount.TabIndex = 5;
-            this._lRecordCount.Text = "RecordCount";
+            this.bExportExcel.Location = new System.Drawing.Point(188, 6);
+            this.bExportExcel.Name = "bExportExcel";
+            this.bExportExcel.Size = new System.Drawing.Size(98, 23);
+            this.bExportExcel.TabIndex = 6;
+            this.bExportExcel.Text = "Export To Excel";
+            this.bExportExcel.UseVisualStyleBackColor = true;
+            this.bExportExcel.Click += new System.EventHandler(this.bExportExcel_Click);
             // 
             // CardsForm
             // 
@@ -281,5 +293,6 @@
         private System.Windows.Forms.Button _bPrint;
         private Contal.Cgp.Components.CgpDataGridView _cdgvData;
         private System.Windows.Forms.Label _lRecordCount;
+        private System.Windows.Forms.Button bExportExcel;
     }
 }

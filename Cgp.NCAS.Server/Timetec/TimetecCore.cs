@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -314,31 +314,15 @@ namespace Contal.Cgp.NCAS.Server.Timetec
                 UserFoldersStructure result = null;
 
                 // Check department for existence 
-                var folders = UserFoldersStructures.Singleton.FolderStructureSearch(name);
-                foreach (var folder in folders)
+                var folder = UserFoldersStructures.Singleton.FolderStructureSearchExactName(name, parent);
+                if (folder != null)
                 {
-                    if (parent == null)
-                    {
-                        if (folder.ParentFolder == null)
-                        {
-                            // Correct folder
-                            result = folder;
-                            break;
-                        }
-                    }
-                    else
-                    {
-                        if (folder.ParentFolder.IdUserFoldersStructure == parent.IdUserFoldersStructure)
-                        {
-                            // Correct folder
-                            result = folder;
-                            break;
-                        }
-                    }
+                    // Correct folder
+                    result = folder;
                 }
 
                 // Create it if not exists
-                if (result == null)
+                if (result == null && name != null && name.Length > 0)
                 {
                     result = new UserFoldersStructure();
                     result.ParentFolder = parent;
@@ -353,7 +337,7 @@ namespace Contal.Cgp.NCAS.Server.Timetec
             {
                 var saveCardResult = new SaveCardResult
                 {
-                    IdObject = cardObject.CardNumber,
+                    IdObject = cardObject.CardNumber+"#"+cardObject.ID,
                     Version = version,
                     Result = ObjectChangeProccessResult.FAILED
                 };
@@ -454,7 +438,7 @@ namespace Contal.Cgp.NCAS.Server.Timetec
 
             public void CardDelete(string cardNumber, int version)
             {
-                var card = Cards.Singleton.GetCardByFullNumber(cardNumber);
+                var parts = cardNumber.Split('#');
 
                 var deleteCardResult = new DeleteCardResult
                 {
@@ -463,39 +447,44 @@ namespace Contal.Cgp.NCAS.Server.Timetec
                     Result = ObjectChangeProccessResult.FAILED
                 };
 
-                _objectChangeResults.AddLast(deleteCardResult);
-
-                if (card == null)
+                if (parts.Length > 0)
                 {
-                    deleteCardResult.Result = ObjectChangeProccessResult.SUCCESS;
-                    return;
-                }
+                    var card = Cards.Singleton.GetCardByFullNumber(parts[0]);
 
-                if (card.Person != null)
-                {
-                    // Detach Card from Person to allow the deleting the card (otherwise the Constraint exception is thrown)
-                    var updCard = Cards.Singleton.GetObjectForEdit(card.IdCard);
-                    updCard.Person = null;
+                    _objectChangeResults.AddLast(deleteCardResult);
 
-                    Cards.Singleton.Update(updCard);
-                    Cards.Singleton.EditEnd(updCard);
+                    if (card == null)
+                    {
+                        deleteCardResult.Result = ObjectChangeProccessResult.SUCCESS;
+                        return;
+                    }
 
-                    // Reload the Card object (without Person reference)
-                    card = null;
-                    card = Cards.Singleton.GetCardByFullNumber(cardNumber);
-                }
+                    if (card.Person != null)
+                    {
+                        // Detach Card from Person to allow the deleting the card (otherwise the Constraint exception is thrown)
+                        var updCard = Cards.Singleton.GetObjectForEdit(card.IdCard);
+                        updCard.Person = null;
 
-                deleteCardResult.Result = Cards.Singleton.DeleteById(card.IdCard)
-                    ? ObjectChangeProccessResult.SUCCESS
-                    : ObjectChangeProccessResult.FAILED;
+                        Cards.Singleton.Update(updCard);
+                        Cards.Singleton.EditEnd(updCard);
 
-                if (deleteCardResult.Result == ObjectChangeProccessResult.SUCCESS)
-                    Eventlogs.Singleton.InsertEvent(
+                        // Reload the Card object (without Person reference)
+                        card = null;
+                        card = Cards.Singleton.GetCardByFullNumber(parts[0]);
+                    }
+
+                    deleteCardResult.Result = Cards.Singleton.DeleteById(card.IdCard)
+                        ? ObjectChangeProccessResult.SUCCESS
+                        : ObjectChangeProccessResult.FAILED;
+
+                  if (deleteCardResult.Result == ObjectChangeProccessResult.SUCCESS)
+                      Eventlogs.Singleton.InsertEvent(
                         Eventlog.TYPE_TIMETEC_EVENT_DELETE_OBJECT,
                         DateTime.Now,
                         GetType().Assembly.GetName().Name,
                         null,
-                        string.Format("Timetec card was deleted ({0})", card.FullCardNumber));
+                        string.Format("Timetec card was deleted ({0})", card.FullCardNumber + (parts.Length > 1? "#"+parts[1]:"")));
+                }
             }
         }
 

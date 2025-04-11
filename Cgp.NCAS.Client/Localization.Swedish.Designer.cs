@@ -19,7 +19,7 @@ namespace Contal.Cgp.NCAS.Client {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Localization_Swedish {
@@ -5481,6 +5481,51 @@ namespace Contal.Cgp.NCAS.Client {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Födelsedag.
+        /// </summary>
+        internal static string ExcelExportForm_cbBD {
+            get {
+                return ResourceManager.GetString("ExcelExportForm_cbBD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Avdelning.
+        /// </summary>
+        internal static string ExcelExportForm_cbColumnDepartment {
+            get {
+                return ResourceManager.GetString("ExcelExportForm_cbColumnDepartment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personligt ID.
+        /// </summary>
+        internal static string ExcelExportForm_cbColumnID {
+            get {
+                return ResourceManager.GetString("ExcelExportForm_cbColumnID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telefonnummer.
+        /// </summary>
+        internal static string ExcelExportForm_cbPhone {
+            get {
+                return ResourceManager.GetString("ExcelExportForm_cbPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exportera till Excel.
+        /// </summary>
+        internal static string ExportExcel {
+            get {
+                return ResourceManager.GetString("ExportExcel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Skapa uttryck.
         /// </summary>
         internal static string ExpressionEditFormInsertText {
@@ -10114,6 +10159,15 @@ namespace Contal.Cgp.NCAS.Client {
         internal static string NCASCardReaderEditFormNCASCardReaderEditForm {
             get {
                 return ResourceManager.GetString("NCASCardReaderEditFormNCASCardReaderEditForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exportera till Excel.
+        /// </summary>
+        internal static string NCASCardReadersForm_bExportExcel {
+            get {
+                return ResourceManager.GetString("NCASCardReadersForm_bExportExcel", resourceCulture);
             }
         }
         

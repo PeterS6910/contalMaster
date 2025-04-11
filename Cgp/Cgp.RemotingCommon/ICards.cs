@@ -1,10 +1,11 @@
-﻿using System;
+using System;
 
 using Contal.Cgp.BaseLib;
 using Contal.Cgp.Server.Beans;
 using System.Collections.Generic;
 using Contal.Cgp.Globals;
-
+using Contal.Cgp.NCAS.RemotingCommon;
+using System.Data;
 
 namespace Contal.Cgp.RemotingCommon
 {
@@ -20,5 +21,7 @@ namespace Contal.Cgp.RemotingCommon
         Card GetCardByFullNumber(string cardNumber);
         bool SetCardsToPerson(IList<Guid> listIdCards, Guid idPerson);
         bool RemoveCardsFromPerson(IList<Guid> listIdCards, Guid idPerson);
+
+        DataTable ExportCards(IList<FilterSettings> filterSettings,   out bool bFillSection);
     }
 }

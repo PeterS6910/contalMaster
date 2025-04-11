@@ -19,7 +19,7 @@ namespace Contal.Cgp.Client {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Localization_Slovak {
@@ -3175,7 +3175,7 @@ namespace Contal.Cgp.Client {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Osobné ID.
+        ///   Looks up a localized string similar to ID.
         /// </summary>
         internal static string ColumnIdentification {
             get {
@@ -3481,7 +3481,7 @@ namespace Contal.Cgp.Client {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Verajný kľúč.
+        ///   Looks up a localized string similar to Verejný kľúč.
         /// </summary>
         internal static string ColumnPublicKey {
             get {
@@ -3774,6 +3774,33 @@ namespace Contal.Cgp.Client {
         internal static string columnTime {
             get {
                 return ResourceManager.GetString("columnTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CT Synch..
+        /// </summary>
+        internal static string ColumnTimetecSync {
+            get {
+                return ResourceManager.GetString("ColumnTimetecSync", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Platnosť od.
+        /// </summary>
+        internal static string ColumnTimetecValidFrom {
+            get {
+                return ResourceManager.GetString("ColumnTimetecValidFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Platnosť do.
+        /// </summary>
+        internal static string ColumnTimetecValidTo {
+            get {
+                return ResourceManager.GetString("ColumnTimetecValidTo", resourceCulture);
             }
         }
         
@@ -7370,6 +7397,24 @@ namespace Contal.Cgp.Client {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Export zlyhal.
+        /// </summary>
+        internal static string ExportFailed {
+            get {
+                return ResourceManager.GetString("ExportFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export prebehol úspešne.
+        /// </summary>
+        internal static string ExportSucceeded {
+            get {
+                return ResourceManager.GetString("ExportSucceeded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zlyhala aktualizácia štruktúry na CCU.
         /// </summary>
         internal static string FailedToUpdateStructureOnCCU {
@@ -9535,6 +9580,15 @@ namespace Contal.Cgp.Client {
         internal static string InfoColorPreview {
             get {
                 return ResourceManager.GetString("InfoColorPreview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string InfoDataExportSucceeded {
+            get {
+                return ResourceManager.GetString("InfoDataExportSucceeded", resourceCulture);
             }
         }
         

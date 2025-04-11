@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CgpNCASServerplugin" xml:space="preserve">
     <value>Plugin till Passersystem</value>
@@ -315,5 +315,62 @@ Vill Ni verkligen hoppa över omkonfigurering av databas?</value>
   </data>
   <data name="IdManagement" xml:space="preserve">
     <value>ID management/Batch design</value>
+  </data>
+  <data name="AccessControlLists" xml:space="preserve">
+    <value>Åtkomstkontrolllista</value>
+  </data>
+  <data name="CardReaders" xml:space="preserve">
+    <value>Kortläsare</value>
+  </data>
+  <data name="SelectStructuredSubSiteForm_RootNode" xml:space="preserve">
+    <value>Allt</value>
+  </data>
+  <data name="Cards" xml:space="preserve">
+    <value>Kort</value>
+  </data>
+  <data name="ColumnBD" xml:space="preserve">
+    <value>Födelsedag</value>
+  </data>
+  <data name="ColumnCardFullNumber" xml:space="preserve">
+    <value>Fullständigt kortnummer</value>
+  </data>
+  <data name="ColumnCardHolder" xml:space="preserve">
+    <value>Korthållare</value>
+  </data>
+  <data name="ColumnCardNumber" xml:space="preserve">
+    <value>Kortnummer</value>
+  </data>
+  <data name="ColumnDateFrom" xml:space="preserve">
+    <value>Från</value>
+  </data>
+  <data name="ColumnDateTo" xml:space="preserve">
+    <value>Till</value>
+  </data>
+  <data name="ColumnDepartment" xml:space="preserve">
+    <value>Avdelning</value>
+  </data>
+  <data name="ColumnDescription" xml:space="preserve">
+    <value>Beskrivning</value>
+  </data>
+  <data name="ColumnEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ColumnEmploymentBeginningDate" xml:space="preserve">
+    <value>Anställningens startdatum</value>
+  </data>
+  <data name="ColumnEmploymentEndDate" xml:space="preserve">
+    <value>Slutdatum för anställning</value>
+  </data>
+  <data name="ColumnPerson" xml:space="preserve">
+    <value>Person</value>
+  </data>
+  <data name="ColumnPersonID" xml:space="preserve">
+    <value>Personligt ID</value>
+  </data>
+  <data name="ColumnState" xml:space="preserve">
+    <value>Stat</value>
+  </data>
+  <data name="ColumnTelephone" xml:space="preserve">
+    <value>Telefon</value>
   </data>
 </root>

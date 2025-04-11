@@ -19,7 +19,7 @@ namespace Contal.Cgp.Server {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Localization_Slovak {
@@ -61,11 +61,245 @@ namespace Contal.Cgp.Server {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zoznam prístupových práv.
+        /// </summary>
+        internal static string AccessControlLists {
+            get {
+                return ResourceManager.GetString("AccessControlLists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Snímače kariet.
+        /// </summary>
+        internal static string CardReaders {
+            get {
+                return ResourceManager.GetString("CardReaders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Karty.
+        /// </summary>
+        internal static string Cards {
+            get {
+                return ResourceManager.GetString("Cards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Povolenie CIS integrácie.
         /// </summary>
         internal static string CISIntegration {
             get {
                 return ResourceManager.GetString("CISIntegration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Počet odmietnutých prístupov.
+        /// </summary>
+        internal static string ColumnAccessDenied {
+            get {
+                return ResourceManager.GetString("ColumnAccessDenied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dátum narodenia.
+        /// </summary>
+        internal static string ColumnBD {
+            get {
+                return ResourceManager.GetString("ColumnBD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Celé číslo karty.
+        /// </summary>
+        internal static string ColumnCardFullNumber {
+            get {
+                return ResourceManager.GetString("ColumnCardFullNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uživateľ.
+        /// </summary>
+        internal static string ColumnCardHolder {
+            get {
+                return ResourceManager.GetString("ColumnCardHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Číslo karty.
+        /// </summary>
+        internal static string ColumnCardNumber {
+            get {
+                return ResourceManager.GetString("ColumnCardNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Snímač.
+        /// </summary>
+        internal static string ColumnCardReader {
+            get {
+                return ResourceManager.GetString("ColumnCardReader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Od.
+        /// </summary>
+        internal static string ColumnDateFrom {
+            get {
+                return ResourceManager.GetString("ColumnDateFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dátum vytvorenia alarmu Door Ajar.
+        /// </summary>
+        internal static string ColumnDateTimeCreated {
+            get {
+                return ResourceManager.GetString("ColumnDateTimeCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do.
+        /// </summary>
+        internal static string ColumnDateTo {
+            get {
+                return ResourceManager.GetString("ColumnDateTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oddelenie.
+        /// </summary>
+        internal static string ColumnDepartment {
+            get {
+                return ResourceManager.GetString("ColumnDepartment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Popis.
+        /// </summary>
+        internal static string ColumnDescription {
+            get {
+                return ResourceManager.GetString("ColumnDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trvanie alarmu (s).
+        /// </summary>
+        internal static string ColumnDuration {
+            get {
+                return ResourceManager.GetString("ColumnDuration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        internal static string ColumnEmail {
+            get {
+                return ResourceManager.GetString("ColumnEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dátum nástupu do zamestnania.
+        /// </summary>
+        internal static string ColumnEmploymentBeginningDate {
+            get {
+                return ResourceManager.GetString("ColumnEmploymentBeginningDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dátum ukončenia zamestnania.
+        /// </summary>
+        internal static string ColumnEmploymentEndDate {
+            get {
+                return ResourceManager.GetString("ColumnEmploymentEndDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dátum prvéj udalosti.
+        /// </summary>
+        internal static string ColumnEventlogDateTimeFirst {
+            get {
+                return ResourceManager.GetString("ColumnEventlogDateTimeFirst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dátum poslednej udalosti.
+        /// </summary>
+        internal static string ColumnEventlogDateTimeLast {
+            get {
+                return ResourceManager.GetString("ColumnEventlogDateTimeLast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Názov DCU.
+        /// </summary>
+        internal static string ColumnName {
+            get {
+                return ResourceManager.GetString("ColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Názov CCU.
+        /// </summary>
+        internal static string ColumnParent {
+            get {
+                return ResourceManager.GetString("ColumnParent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Osoba.
+        /// </summary>
+        internal static string ColumnPerson {
+            get {
+                return ResourceManager.GetString("ColumnPerson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Osobne ID.
+        /// </summary>
+        internal static string ColumnPersonID {
+            get {
+                return ResourceManager.GetString("ColumnPersonID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stav karty.
+        /// </summary>
+        internal static string ColumnState {
+            get {
+                return ResourceManager.GetString("ColumnState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telefón.
+        /// </summary>
+        internal static string ColumnTelephone {
+            get {
+                return ResourceManager.GetString("ColumnTelephone", resourceCulture);
             }
         }
         
@@ -566,6 +800,15 @@ namespace Contal.Cgp.Server {
         internal static string RequestSuccessfullyCreated {
             get {
                 return ResourceManager.GetString("RequestSuccessfullyCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Všetko.
+        /// </summary>
+        internal static string SelectStructuredSubSiteForm_RootNode {
+            get {
+                return ResourceManager.GetString("SelectStructuredSubSiteForm_RootNode", resourceCulture);
             }
         }
     }

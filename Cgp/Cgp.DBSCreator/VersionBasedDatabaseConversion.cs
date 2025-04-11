@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -161,7 +161,7 @@ namespace Contal.Cgp.DBSCreator
             Action<string> saveVersionToDatabase)
         {
             if (version >= routineVersion)
-                return true;
+               return true;
 
             string routineVersionString = routineVersion.ToString(System.Globalization.CultureInfo.InvariantCulture);
                 
@@ -471,6 +471,17 @@ namespace Contal.Cgp.DBSCreator
                 version,
                 1.97,
                 ConversionCgpServerBeansExtern1_97,
+                false,
+                conversionTypeString,
+                saveVersionToDabase))
+            {
+                return false;
+            }
+
+            if (!DoConvertToVersion(
+                version,
+                2.00,
+                ConversionCgpServerBeansExtern2_00,
                 false,
                 conversionTypeString,
                 saveVersionToDabase))
@@ -3694,6 +3705,19 @@ namespace Contal.Cgp.DBSCreator
 
             if (!_databaseCommandExecutor.RunSqlNonQuery(
                 "CREATE TABLE TimetecErrorEvents (id int identity(1,1) not null primary key, ErrorEventId bigint)",
+                true,
+                out error))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ConversionCgpServerBeansExtern2_00(out Exception error)
+        {
+            if (!_databaseCommandExecutor.RunSqlNonQuery(
+                "CREATE TABLE ConsecutiveEvents (id int identity(1,1) primary key, LastEventlogId bigint null, SourceId uniqueidentifier, ReasonId uniqueidentifier, LastEventDateTime datetime2(3) null)",
                 true,
                 out error))
             {

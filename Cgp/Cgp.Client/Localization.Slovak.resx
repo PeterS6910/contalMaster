@@ -606,9 +606,9 @@
   <data name="ColumnTimetecValidFrom" xml:space="preserve">
     <value>Platnosť od</value>
   </data>
-    <data name="ColumnTimetecValidTo" xml:space="preserve">
+  <data name="ColumnTimetecValidTo" xml:space="preserve">
     <value>Platnosť do</value>
-  </data> 
+  </data>
   <data name="ColumnIdFormatter" xml:space="preserve">
     <value>Id formátora</value>
   </data>
@@ -4749,5 +4749,14 @@
   </data>
   <data name="ErrorEventlogsExportFailed" xml:space="preserve">
     <value>Export zlyhal</value>
+  </data>
+  <data name="InfoDataExportSucceeded" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ExportFailed" xml:space="preserve">
+    <value>Export zlyhal</value>
+  </data>
+  <data name="ExportSucceeded" xml:space="preserve">
+    <value>Export prebehol úspešne</value>
   </data>
 </root>

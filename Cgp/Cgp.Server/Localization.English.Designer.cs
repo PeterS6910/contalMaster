@@ -19,7 +19,7 @@ namespace Contal.Cgp.Server {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Localization_English {
@@ -61,11 +61,245 @@ namespace Contal.Cgp.Server {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Access Control List.
+        /// </summary>
+        internal static string AccessControlLists {
+            get {
+                return ResourceManager.GetString("AccessControlLists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Card Readers.
+        /// </summary>
+        internal static string CardReaders {
+            get {
+                return ResourceManager.GetString("CardReaders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cards.
+        /// </summary>
+        internal static string Cards {
+            get {
+                return ResourceManager.GetString("Cards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enable CIS integration.
         /// </summary>
         internal static string CISIntegration {
             get {
                 return ResourceManager.GetString("CISIntegration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Access Denied.
+        /// </summary>
+        internal static string ColumnAccessDenied {
+            get {
+                return ResourceManager.GetString("ColumnAccessDenied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Birthday.
+        /// </summary>
+        internal static string ColumnBD {
+            get {
+                return ResourceManager.GetString("ColumnBD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Full number.
+        /// </summary>
+        internal static string ColumnCardFullNumber {
+            get {
+                return ResourceManager.GetString("ColumnCardFullNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Holder.
+        /// </summary>
+        internal static string ColumnCardHolder {
+            get {
+                return ResourceManager.GetString("ColumnCardHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Card number.
+        /// </summary>
+        internal static string ColumnCardNumber {
+            get {
+                return ResourceManager.GetString("ColumnCardNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Card Reader.
+        /// </summary>
+        internal static string ColumnCardReader {
+            get {
+                return ResourceManager.GetString("ColumnCardReader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From.
+        /// </summary>
+        internal static string ColumnDateFrom {
+            get {
+                return ResourceManager.GetString("ColumnDateFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Door Ajar Alarm Created.
+        /// </summary>
+        internal static string ColumnDateTimeCreated {
+            get {
+                return ResourceManager.GetString("ColumnDateTimeCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To.
+        /// </summary>
+        internal static string ColumnDateTo {
+            get {
+                return ResourceManager.GetString("ColumnDateTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Department.
+        /// </summary>
+        internal static string ColumnDepartment {
+            get {
+                return ResourceManager.GetString("ColumnDepartment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        internal static string ColumnDescription {
+            get {
+                return ResourceManager.GetString("ColumnDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm duration (sec).
+        /// </summary>
+        internal static string ColumnDuration {
+            get {
+                return ResourceManager.GetString("ColumnDuration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        internal static string ColumnEmail {
+            get {
+                return ResourceManager.GetString("ColumnEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employment Beginning Date.
+        /// </summary>
+        internal static string ColumnEmploymentBeginningDate {
+            get {
+                return ResourceManager.GetString("ColumnEmploymentBeginningDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employment End Date.
+        /// </summary>
+        internal static string ColumnEmploymentEndDate {
+            get {
+                return ResourceManager.GetString("ColumnEmploymentEndDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date of 1st event.
+        /// </summary>
+        internal static string ColumnEventlogDateTimeFirst {
+            get {
+                return ResourceManager.GetString("ColumnEventlogDateTimeFirst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date of last event.
+        /// </summary>
+        internal static string ColumnEventlogDateTimeLast {
+            get {
+                return ResourceManager.GetString("ColumnEventlogDateTimeLast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DCU name.
+        /// </summary>
+        internal static string ColumnName {
+            get {
+                return ResourceManager.GetString("ColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CCU name.
+        /// </summary>
+        internal static string ColumnParent {
+            get {
+                return ResourceManager.GetString("ColumnParent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Person.
+        /// </summary>
+        internal static string ColumnPerson {
+            get {
+                return ResourceManager.GetString("ColumnPerson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal ID.
+        /// </summary>
+        internal static string ColumnPersonID {
+            get {
+                return ResourceManager.GetString("ColumnPersonID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State.
+        /// </summary>
+        internal static string ColumnState {
+            get {
+                return ResourceManager.GetString("ColumnState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telephone.
+        /// </summary>
+        internal static string ColumnTelephone {
+            get {
+                return ResourceManager.GetString("ColumnTelephone", resourceCulture);
             }
         }
         
@@ -595,6 +829,15 @@ namespace Contal.Cgp.Server {
         internal static string RequestSuccessfullyCreated {
             get {
                 return ResourceManager.GetString("RequestSuccessfullyCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Root.
+        /// </summary>
+        internal static string SelectStructuredSubSiteForm_RootNode {
+            get {
+                return ResourceManager.GetString("SelectStructuredSubSiteForm_RootNode", resourceCulture);
             }
         }
     }

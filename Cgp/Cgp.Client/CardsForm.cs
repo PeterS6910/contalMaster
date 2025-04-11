@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -584,6 +584,13 @@ namespace Contal.Cgp.Client
         {
             base.FilterValueChanged(sender, null);
             base.RunFilter();
+        }
+
+        private void bExportExcel_Click(object sender, EventArgs e)
+        {
+            var exportForm=new ExportForm(_filterSettings);
+            exportForm.TopMost = true;
+            exportForm.Show();
         }
     }
 

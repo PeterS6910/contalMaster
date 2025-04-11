@@ -19,7 +19,7 @@ namespace Contal.Cgp.Client {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Localization_Swedish {
@@ -6973,6 +6973,33 @@ namespace Contal.Cgp.Client {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CT Sync..
+        /// </summary>
+        internal static string ColumnTimetecSync {
+            get {
+                return ResourceManager.GetString("ColumnTimetecSync", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valid from.
+        /// </summary>
+        internal static string ColumnTimetecValidFrom {
+            get {
+                return ResourceManager.GetString("ColumnTimetecValidFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valid to.
+        /// </summary>
+        internal static string ColumnTimetecValidTo {
+            get {
+                return ResourceManager.GetString("ColumnTimetecValidTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Titel.
         /// </summary>
         internal static string ColumnTitle {
@@ -11209,6 +11236,24 @@ namespace Contal.Cgp.Client {
         internal static string ExceptionOccured {
             get {
                 return ResourceManager.GetString("ExceptionOccured", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export misslyckades.
+        /// </summary>
+        internal static string ExportFailed {
+            get {
+                return ResourceManager.GetString("ExportFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export lyckades.
+        /// </summary>
+        internal static string ExportSucceeded {
+            get {
+                return ResourceManager.GetString("ExportSucceeded", resourceCulture);
             }
         }
         

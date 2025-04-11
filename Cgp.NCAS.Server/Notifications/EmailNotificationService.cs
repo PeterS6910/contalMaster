@@ -1,16 +1,20 @@
-﻿using Contal.Cgp.Globals;
+using Contal.Cgp.Globals;
 using Contal.Cgp.NCAS.Server.DB;
 using Contal.Cgp.Server;
+using Contal.Cgp.Server.Beans;
 using Contal.Cgp.Server.Beans.Extern;
 using Contal.Cgp.Server.DB;
 using Contal.IwQuick.CrossPlatform;
+using OfficeOpenXml.FormulaParsing.Excel.Operators;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 
 // SB
 namespace Contal.Cgp.NCAS.Server.Notifications
@@ -20,18 +24,27 @@ namespace Contal.Cgp.NCAS.Server.Notifications
     /// </summary>
     public class AccessPermintedNotification
     {
-        public AccessPermintedNotification(DateTime time, string userName, string cardNumber, string readerName, string eventType)
+        public AccessPermintedNotification(DateTime time, string userName, string personalId, string cardNumber, string readerName, string eventType)
         {
             this.Time = time;
             this.UserName = userName;
+            this.PersonalId = personalId;
             this.CardNumber = cardNumber;
             this.ReaderName = readerName;
             this.EventType = eventType;
         }
 
+        public void UpdateEvenetTypeForWatchedPerson()
+        {
+            var perAttr = PersonAttributeOutputs.Singleton.GetPersonAttributeOutput();
+            EventType = perAttr.FailsCount + "x " + EventType;
+        }
+
         public DateTime Time { get; private set; }
 
         public string UserName { get; private set; }
+
+        public string PersonalId { get; private set; }
 
         public string CardNumber { get; private set; }
 
@@ -48,6 +61,17 @@ namespace Contal.Cgp.NCAS.Server.Notifications
                 .Where(eventlogParameter => eventlogParameter.TypeObjectType == typeObjectType)
                 .Select(eventlogParameter => eventlogParameter.TypeGuid)
                 .FirstOrDefault();
+        }
+
+        public static Guid GetTypeGuidEvenSources(this IEnumerable<EventSource> eventSources, ObjectType type)
+        {
+            foreach (var eventsource in eventSources)
+            {
+                if (CentralNameRegisters.Singleton.GetObjectTypeFromGuid(eventsource.EventSourceObjectGuid) == type)
+                    return eventsource.EventSourceObjectGuid;
+            }
+
+            return Guid.Empty;
         }
 
         public static string GetTypeValue(this IEnumerable<EventlogParameter> eventlogParameters, string typeName)
@@ -134,6 +158,10 @@ namespace Contal.Cgp.NCAS.Server.Notifications
             return PersonAttributes.Singleton.GetIsPersonWatched(cardNumber);
         }
 
+        private bool IsConsecuteEventTriggered(Eventlog eventlog)
+        {
+            return PersonAttributeOutputs.Singleton.IsConsecutiveEvent(eventlog);
+        }
         private static AccessPermintedNotification ToAccessPermintedNotification(EventlogInsertItem eventlogInsertItem)
         {            
             var eventlog = eventlogInsertItem.Eventlog;
@@ -141,13 +169,30 @@ namespace Contal.Cgp.NCAS.Server.Notifications
 
             var idCardReader = eventlogParameters.GetTypeGuid((byte)ObjectType.CardReader); 
             var cardReader = idCardReader == Guid.Empty ? null : CardReaders.Singleton.GetById(idCardReader);
-
-            if (cardReader == null)
+            if(cardReader == null)
             {
-                return null;
+                idCardReader = eventlogInsertItem.EventSources.GetTypeGuidEvenSources(ObjectType.CardReader);
+                cardReader = idCardReader == Guid.Empty ? null : CardReaders.Singleton.GetById(idCardReader);
+            }
+            string PersonalId = "";
+            var idPerson = eventlogInsertItem.EventSources.GetTypeGuidEvenSources(ObjectType.Person);
+            var person= idPerson == Guid.Empty? null : Persons.Singleton.GetById(idPerson);
+
+            if (person!= null)
+            {
+                PersonalId = $" ( Personal Id: {person.Identification ?? " - "} )";
+            }
+            string crName = " - ";
+            if (cardReader != null)
+            {
+                crName = cardReader.Name;
             }
 
             var userName = eventlogParameters.GetTypeValue("User name");
+            if(string.IsNullOrEmpty(userName))
+            {
+                userName = eventlogParameters.GetTypeValue("Person name");
+            }
             var cardNumber = eventlogParameters.GetTypeValue("Card number");
 
             if (string.IsNullOrEmpty(cardNumber) && string.IsNullOrEmpty(userName))
@@ -156,12 +201,12 @@ namespace Contal.Cgp.NCAS.Server.Notifications
                 return null;
             }
 
-            return new AccessPermintedNotification(eventlog.EventlogDateTime, userName, cardNumber, cardReader.Name, eventlog.Type);
+            return new AccessPermintedNotification(eventlog.EventlogDateTime, userName, PersonalId, cardNumber, crName, eventlog.Type);
         }
         
         private void OnInsertEventlogSucceded(EventlogInsertItem eventlogInsertItem)
         {
-            if (IsServiceEnabled && 
+            if (IsServiceEnabled &&
                 (eventlogInsertItem.Eventlog.Type == Eventlog.TYPEACCESSDENIED) ||
                 (eventlogInsertItem.Eventlog.Type == Eventlog.TYPEACCESSDENIEDCARDBLOCKEDORINACTIVE) ||
                 (eventlogInsertItem.Eventlog.Type == Eventlog.TYPE_ACCESS_DENIED_ENTER_TO_AA_MENU_INVALID_CODE) ||
@@ -183,14 +228,22 @@ namespace Contal.Cgp.NCAS.Server.Notifications
                 (eventlogInsertItem.Eventlog.Type == Eventlog.TYPEDSMACCESSINTERRUPTED) ||
                 (eventlogInsertItem.Eventlog.Type == Eventlog.TYPEDSMACCESSPERMITTED) ||
                 (eventlogInsertItem.Eventlog.Type == Eventlog.TYPEDSMACCESSRESTRICTED) ||
-                (eventlogInsertItem.Eventlog.Type == Eventlog.TYPEDSMNORMALACCESS) )
+                (eventlogInsertItem.Eventlog.Type == Eventlog.TYPEDSMNORMALACCESS))
             {
                 var accessPermintedNotification = ToAccessPermintedNotification(eventlogInsertItem);
 
-                if (accessPermintedNotification != null && GetIsPersonWatched(accessPermintedNotification.CardNumber))
+                if (accessPermintedNotification != null)
                 {
-                    batchWorker.Add(accessPermintedNotification);
+                    bool isPersonWatched = GetIsPersonWatched(accessPermintedNotification.CardNumber);
+                    if (isPersonWatched ||
+                       !isPersonWatched && IsConsecuteEventTriggered(eventlogInsertItem.Eventlog))
+                    {
+                        if (!isPersonWatched) accessPermintedNotification.UpdateEvenetTypeForWatchedPerson();
+
+                        batchWorker.Add(accessPermintedNotification);
+                    }
                 }
+            
             }
         }
 
@@ -200,7 +253,7 @@ namespace Contal.Cgp.NCAS.Server.Notifications
 
             foreach (var accessPermintedNotification in notifications)
             {
-                text.AppendLine($"{accessPermintedNotification.Time} - {accessPermintedNotification.EventType}\n {accessPermintedNotification.ReaderName}, {accessPermintedNotification.UserName} ({accessPermintedNotification.CardNumber})");
+                text.AppendLine($"Card reader '{accessPermintedNotification.ReaderName}', {accessPermintedNotification.EventType}, {accessPermintedNotification.Time.ToShortDateString()} {accessPermintedNotification.Time.ToLongTimeString()}, {accessPermintedNotification.UserName}{accessPermintedNotification.PersonalId}, card number '{accessPermintedNotification.CardNumber}'");
             }
 
             var mail = new MailMessage();
