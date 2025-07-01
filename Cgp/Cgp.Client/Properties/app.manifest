@@ -29,6 +29,5 @@
         <requestedExecutionLevel level="asInvoker" />
       </requestedPrivileges>
     </security>
-  </trustInfo>
-  <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+  </trustInfo>  
 </assembly>

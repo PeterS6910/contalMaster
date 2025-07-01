@@ -26,8 +26,7 @@
         </PermissionSet>
       </applicationRequestMinimum>
     </security>
-  </trustInfo>
-  <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+  </trustInfo>  
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
     <application>
       <!-- Windows 10 -->

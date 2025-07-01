@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text.RegularExpressions;
@@ -28,6 +28,17 @@ namespace Contal.Cgp.Client
         private Card _relatedCard;
         private bool _relatedCardChanged;
         private Card _alternateCard;
+        
+        private static string GetPersonDisplayText(Person person)
+        {
+            if (person == null)
+                return string.Empty;
+
+            return string.Format("{0} {1} - {2}",
+                person.Surname,
+                person.FirstName,
+                person.Identification);
+        }
 
         public CardsEditForm(Card card, ShowOptionsEditForm showOption)
             : base(card, showOption)
@@ -351,7 +362,7 @@ namespace Contal.Cgp.Client
             {
                 _actPerson = _editingObject.Person;
 
-                _tbmPerson.Text = _actPerson.ToString();
+                _tbmPerson.Text = GetPersonDisplayText(_actPerson);
                 _tbmPerson.TextImage = ObjectImageList.Singleton.GetImageForAOrmObject(_actPerson);
 
                 _tbmPerson.Enabled = false;
@@ -400,7 +411,7 @@ namespace Contal.Cgp.Client
 
             if (_actPerson != null)
             {
-                _tbmPerson.Text = _actPerson.ToString();
+                _tbmPerson.Text = GetPersonDisplayText(_actPerson);
                 _tbmPerson.TextImage = ObjectImageList.Singleton.GetImageForAOrmObject(_actPerson);
             }
 
@@ -479,10 +490,8 @@ namespace Contal.Cgp.Client
             if (person != null)
             {
                 _actPerson = person;
-
-                _tbmPerson.Text = _actPerson.ToString();
+                _tbmPerson.Text = GetPersonDisplayText(_actPerson);
                 _tbmPerson.TextImage = ObjectImageList.Singleton.GetImageForAOrmObject(_actPerson);
-
                 _tbmPerson.Enabled = false;
             }
 
@@ -1392,7 +1401,7 @@ namespace Contal.Cgp.Client
                         CgpClient.Singleton.MainServerProvider.Persons
                             .GetObjectById(outModObj.GetId);
 
-                    _tbmPerson.Text = _actPerson.ToString();
+                    _tbmPerson.Text = GetPersonDisplayText(_actPerson);
 
                     _tbmPerson.TextImage =
                         ObjectImageList.Singleton
@@ -1456,7 +1465,7 @@ namespace Contal.Cgp.Client
 
                 _actPerson = person;
 
-                _tbmPerson.Text = _actPerson.ToString();
+                _tbmPerson.Text = GetPersonDisplayText(_actPerson);
 
                 _tbmPerson.TextImage =
                     ObjectImageList.Singleton.GetImageForAOrmObject(_actPerson);
