@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -26,6 +26,8 @@ namespace Contal.Cgp.Client
             _tbdpDateFromFilter.LocalizationHelper = LocalizationHelper;
             _tbdpDateToFilter.LocalizationHelper = LocalizationHelper;
             InitCGPDataGridView();
+            _cbActivePersons.Checked = true;
+            _cbInactivePersons.Checked = false;
         }
 
         private void InitCGPDataGridView()
@@ -254,8 +256,22 @@ namespace Contal.Cgp.Client
                 _filterSettings.Add(filterSetting);
             }
 
+            if (_cbActivePersons.Checked && !_cbInactivePersons.Checked)
+            {
+                var fs1 = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, DateTime.Now, ComparerModes.EQUALLMORE, LogicalOperators.OR);
+                var fs2 = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, null, ComparerModes.EQUALL, LogicalOperators.OR);
+                _filterSettings.Add(fs1);
+                _filterSettings.Add(fs2);
+            }
+            else if (!_cbActivePersons.Checked && _cbInactivePersons.Checked)
+            {
+                var fs = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, DateTime.Now, ComparerModes.LESS);
+                _filterSettings.Add(fs);
+            }
+
             _fullFilterSettingsText = _tbFullTextSearch.Text;
         }
+        
 
         protected override bool CheckFilterValues()
         {
@@ -277,6 +293,8 @@ namespace Contal.Cgp.Client
             _tbdpDateFromFilter.Value = null;
             _tbdpDateToFilter.Value = null;
             _eOtherInformationFiledsFilter.Text = string.Empty;
+            _cbActivePersons.Checked = true;
+            _cbInactivePersons.Checked = false;
         }
 
         #endregion

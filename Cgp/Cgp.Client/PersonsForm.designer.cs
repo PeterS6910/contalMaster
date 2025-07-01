@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.Client
+namespace Contal.Cgp.Client
 {
     partial class PersonsForm
     {
@@ -43,6 +43,8 @@
             this._lDateToFilter = new System.Windows.Forms.Label();
             this._bFilterClear = new System.Windows.Forms.Button();
             this._bRunFilter = new System.Windows.Forms.Button();
+            this._cbActivePersons = new System.Windows.Forms.CheckBox();
+            this._cbInactivePersons = new System.Windows.Forms.CheckBox();
             this._lNumberFilter = new System.Windows.Forms.Label();
             this._lDateFromFilter = new System.Windows.Forms.Label();
             this._lSurnameFilter = new System.Windows.Forms.Label();
@@ -116,6 +118,8 @@
             this._pFilter.Controls.Add(this._lDateToFilter);
             this._pFilter.Controls.Add(this._bFilterClear);
             this._pFilter.Controls.Add(this._bRunFilter);
+            this._pFilter.Controls.Add(this._cbInactivePersons);
+            this._pFilter.Controls.Add(this._cbActivePersons);
             this._pFilter.Controls.Add(this._lNumberFilter);
             this._pFilter.Controls.Add(this._lDateFromFilter);
             this._pFilter.Controls.Add(this._lSurnameFilter);
@@ -232,7 +236,7 @@
             // 
             // _bFilterClear
             // 
-            this._bFilterClear.Location = new System.Drawing.Point(699, 58);
+            this._bFilterClear.Location = new System.Drawing.Point(780, 58);
             this._bFilterClear.Name = "_bFilterClear";
             this._bFilterClear.Size = new System.Drawing.Size(75, 23);
             this._bFilterClear.TabIndex = 13;
@@ -242,16 +246,40 @@
             // 
             // _bRunFilter
             // 
-            this._bRunFilter.Location = new System.Drawing.Point(618, 58);
+            this._bRunFilter.Location = new System.Drawing.Point(690, 58);
             this._bRunFilter.Name = "_bRunFilter";
             this._bRunFilter.Size = new System.Drawing.Size(75, 23);
             this._bRunFilter.TabIndex = 12;
             this._bRunFilter.Text = "Filter";
             this._bRunFilter.UseVisualStyleBackColor = true;
             this._bRunFilter.Click += new System.EventHandler(this._bRunFilter_Click);
-            // 
+            //
+            // _cbActivePersons
+            //
+            this._cbActivePersons.AutoSize = true;
+            this._cbActivePersons.Location = new System.Drawing.Point(443, 60);
+            this._cbActivePersons.Name = "_cbActivePersons";
+            this._cbActivePersons.Size = new System.Drawing.Size(93, 17);
+            this._cbActivePersons.TabIndex = 16;
+            this._cbActivePersons.Text = "Active persons";
+            this._cbActivePersons.UseVisualStyleBackColor = true;
+            this._cbActivePersons.CheckedChanged += new System.EventHandler(this.FilterValueChanged);
+            this._cbActivePersons.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
+            //
+            // _cbInactivePersons
+            //
+            this._cbInactivePersons.AutoSize = true;
+            this._cbInactivePersons.Location = new System.Drawing.Point(542, 60);
+            this._cbInactivePersons.Name = "_cbInactivePersons";
+            this._cbInactivePersons.Size = new System.Drawing.Size(103, 17);
+            this._cbInactivePersons.TabIndex = 17;
+            this._cbInactivePersons.Text = "Inactive persons";
+            this._cbInactivePersons.UseVisualStyleBackColor = true;
+            this._cbInactivePersons.CheckedChanged += new System.EventHandler(this.FilterValueChanged);
+            this._cbInactivePersons.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
+            //
             // _lNumberFilter
-            // 
+            //
             this._lNumberFilter.AutoSize = true;
             this._lNumberFilter.Location = new System.Drawing.Point(440, 3);
             this._lNumberFilter.Name = "_lNumberFilter";
@@ -398,5 +426,7 @@
         private System.Windows.Forms.Label _lFullTextSearch;
         private System.Windows.Forms.TextBox _tbFullTextSearch;
         private System.Windows.Forms.Label _lRecordCount;
+        private System.Windows.Forms.CheckBox _cbActivePersons;
+        private System.Windows.Forms.CheckBox _cbInactivePersons;
     }
 }
