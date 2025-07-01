@@ -142,6 +142,7 @@ namespace Contal.Cgp.Server.ExportData
             row[ColumnIndex++] = Card.Number != null ? Card.Number:"";
             row[ColumnIndex++] = Card.FullCardNumber != null ? Card.FullCardNumber : "";
             row[ColumnIndex++] = CardHolder;
+            row[ColumnIndex++] = CardHolderId ?? "";
             row[ColumnIndex++] = Card.ValidityDateFrom != null ? Card.ValidityDateFrom.Value.ToShortDateString() : "";
             row[ColumnIndex++] = Card.ValidityDateTo != null ? Card.ValidityDateTo.Value.ToShortDateString() : "";
             row[ColumnIndex++] = ((CardState)Card.State).ToString();
