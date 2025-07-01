@@ -14,6 +14,7 @@ namespace Contal.Cgp.Server.ExportData
         public ICollection<string> Columns => new List<string>  {"ColumnCardNumber",
                                                                  "ColumnCardFullNumber",
                                                                   "ColumnPerson",
+                                                                  "ColumnPersonID",
                                                                   "ColumnDateFrom",
                                                                   "ColumnDateTo",
                                                                   "ColumnState",
@@ -28,7 +29,7 @@ namespace Contal.Cgp.Server.ExportData
             if( ormObj.Person != null)
                 person= Persons.Singleton.GetObjectById(ormObj.Person.IdPerson);
 
-            var refPerson = new RefCardPerson(ormObj, person != null ? person.ToString() : " - ");
+            var refPerson = new RefCardPerson(ormObj, person != null ? person.ToString() : " - ", person != null ? person.Identification : null);
             refPerson.FillDataRow(0, ref dr);
             table.Rows.Add(dr);
         }

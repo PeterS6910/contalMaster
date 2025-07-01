@@ -128,11 +128,13 @@ namespace Contal.Cgp.Server.ExportData
     {
         public Card Card { get; private set; }
         public string CardHolder { get; private set; }
+        public string CardHolderId { get; private set; }
 
-        public RefCardPerson(Card card, string cardHolder)
+        public RefCardPerson(Card card, string cardHolder, string cardHolderId)
         {
             Card = card;
             CardHolder = cardHolder;
+            CardHolderId = cardHolderId;
         }
 
         public void FillDataRow(int ColumnIndex, ref DataRow row)
