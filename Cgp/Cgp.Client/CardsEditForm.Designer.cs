@@ -509,7 +509,7 @@ namespace Contal.Cgp.Client
             this._tbmPerson.MaximumSize = new System.Drawing.Size(1800, 30);
             this._tbmPerson.MinimumSize = new System.Drawing.Size(32, 30);
             this._tbmPerson.Name = "_tbmPerson";
-            this._tbmPerson.Size = new System.Drawing.Size(129, 20);
+            this._tbmPerson.Size = new System.Drawing.Size(258, 20);
             this._tbmPerson.TabIndex = 15;
             this._tbmPerson.TextImage = ((System.Drawing.Image)(resources.GetObject("_tbmPerson.TextImage")));
             this._tbmPerson.ButtonPopupMenuItemClick += new Contal.IwQuick.UI.TextBoxMenu.DPopupMenuHandler(this._tbmPerson_ButtonPopupMenuItemClick);
