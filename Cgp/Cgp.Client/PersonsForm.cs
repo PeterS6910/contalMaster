@@ -27,7 +27,7 @@ namespace Contal.Cgp.Client
             _tbdpDateToFilter.LocalizationHelper = LocalizationHelper;
             InitCGPDataGridView();
             _cbActivePersons.Checked = true;
-            _cbInactivePersons.Checked = false;
+            _cbInactivePersons.Checked = true;
         }
 
         private void InitCGPDataGridView()
@@ -267,6 +267,8 @@ namespace Contal.Cgp.Client
             {
                 var fs = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, DateTime.Now, ComparerModes.LESS);
                 _filterSettings.Add(fs);
+                var fsNotNull = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, null, ComparerModes.NOTEQUALL);
+                _filterSettings.Add(fsNotNull);
             }
 
             _fullFilterSettingsText = _tbFullTextSearch.Text;

@@ -236,7 +236,7 @@ namespace Contal.Cgp.Client
             // 
             // _bFilterClear
             // 
-            this._bFilterClear.Location = new System.Drawing.Point(780, 58);
+            this._bFilterClear.Location = new System.Drawing.Point(740, 58);
             this._bFilterClear.Name = "_bFilterClear";
             this._bFilterClear.Size = new System.Drawing.Size(75, 23);
             this._bFilterClear.TabIndex = 13;
@@ -246,7 +246,7 @@ namespace Contal.Cgp.Client
             // 
             // _bRunFilter
             // 
-            this._bRunFilter.Location = new System.Drawing.Point(690, 58);
+            this._bRunFilter.Location = new System.Drawing.Point(650, 58);
             this._bRunFilter.Name = "_bRunFilter";
             this._bRunFilter.Size = new System.Drawing.Size(75, 23);
             this._bRunFilter.TabIndex = 12;
