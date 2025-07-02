@@ -280,13 +280,13 @@ namespace Contal.Cgp.Client
             {
                 // Slovak market has different columns
                 _cdgvData.ModifyGridView(bindingSource, CardShort.COLUMN_SYMBOL, CardShort.COLUMN_NUMBER,
-                CardShort.COLUMN_FULL_CARD_NUMBER, CardShort.COLUMN_CARD_SYSTEM, CardShort.COLUMN_PERSON, CardShort.COLUMN_STATE,
+                CardShort.COLUMN_FULL_CARD_NUMBER, CardShort.COLUMN_CARD_SYSTEM, CardShort.COLUMN_PERSONAL_ID, CardShort.COLUMN_PERSON, CardShort.COLUMN_STATE,
                 CardShort.COLUMN_TIMETEC_SYNC, CardShort.COLUMN_TIMETEC_VALIDFROM, CardShort.COLUMN_TIMETEC_VALIDTO, CardShort.COLUMN_DESCRIPTION);
             }
             else
             {
                 _cdgvData.ModifyGridView(bindingSource, CardShort.COLUMN_SYMBOL, CardShort.COLUMN_NUMBER,
-                CardShort.COLUMN_FULL_CARD_NUMBER, CardShort.COLUMN_CARD_SYSTEM, CardShort.COLUMN_PERSON, CardShort.COLUMN_STATE, CardShort.COLUMN_DESCRIPTION);
+                CardShort.COLUMN_FULL_CARD_NUMBER, CardShort.COLUMN_CARD_SYSTEM, CardShort.COLUMN_PERSONAL_ID, CardShort.COLUMN_PERSON, CardShort.COLUMN_STATE, CardShort.COLUMN_DESCRIPTION);
             }
         }
 

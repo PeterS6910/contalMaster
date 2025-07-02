@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 using Contal.IwQuick;
@@ -373,6 +373,7 @@ namespace Contal.Cgp.Server.Beans
         public const string COLUMN_NUMBER = "Number";
         public const string COLUMN_FULL_CARD_NUMBER = "FullCardNumber";
         public const string COLUMN_CARD_SYSTEM = "CardSystem";
+        public const string COLUMN_PERSONAL_ID = "PersonalID";
         public const string COLUMN_PERSON = "Person";
         public const string COLUMN_CARD_STATE = "CardState";
         public const string COLUMN_STATE = "StringCardState";
@@ -387,6 +388,7 @@ namespace Contal.Cgp.Server.Beans
         public string Number { get; set; }
         public string FullCardNumber { get; set; }
         public string CardSystem { get; set; }
+        public string PersonalID { get; set; }
         public string Person { get; set; }
         public byte CardState { get; set; }
         public string StringCardState { get; set; }
@@ -410,10 +412,9 @@ namespace Contal.Cgp.Server.Beans
 
             FullCardNumber = card.FullCardNumber;
 
-            Person = 
-                card.Person != null
-                    ? card.Person.ToString() 
-                    : string.Empty;
+            PersonalID = card.Person != null ? card.Person.Identification : string.Empty;
+
+            Person = card.Person != null ? card.Person.ToString() : string.Empty;
 
             CardState = card.State;
             Description = card.Description;
