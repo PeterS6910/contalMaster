@@ -37,13 +37,15 @@ namespace Contal.Cgp.Client
             this._cdgvData.DataGrid.ColumnHeadersHeight = 34;
             this._cdgvData.DataGrid.Location = new System.Drawing.Point(0, 0);
             this._cdgvData.DataGrid.Name = "_dgvData";
+            this._cdgvData.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.DataGrid.RowHeadersWidth = 62;
             this._cdgvData.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             this._cdgvData.DataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this._cdgvData.DataGrid.TabIndex = 0;
             this._cdgvData.LocalizationHelper = null;
-            this._cdgvData.Location = new System.Drawing.Point(-2, 4);
+            this._cdgvData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._cdgvData.Location = new System.Drawing.Point(0, 0);
             this._cdgvData.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.Location = new System.Drawing.Point(0, 0);
             this._cdgvData.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);

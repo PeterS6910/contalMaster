@@ -588,6 +588,17 @@ namespace Contal.Cgp.Client
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(157, 6);
+            //
+            // _carsForm
+            //
+            this._carsForm.Image = ((System.Drawing.Image)(resources.GetObject("_carsForm.Image")));
+            this._carsForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this._carsForm.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this._carsForm.Name = "_carsForm";
+            this._carsForm.Size = new System.Drawing.Size(157, 20);
+            this._carsForm.Text = "Cars form";
+            this._carsForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this._carsForm.Click += new System.EventHandler(this._carsForm_Click);
             // 
             // _presentationGroupsForm
             // 
