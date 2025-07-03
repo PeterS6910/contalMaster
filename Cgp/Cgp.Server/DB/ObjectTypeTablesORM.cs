@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 using Contal.IwQuick.Data;
 using Contal.Cgp.Globals;
@@ -98,6 +98,10 @@ namespace Contal.Cgp.Server.DB
                     {
                         ObjectType.Person,
                         Persons.Singleton
+                    },
+                                        {
+                        ObjectType.Car,
+                        Cars.Singleton
                     },
                     {
                         ObjectType.PresentationFormatter,

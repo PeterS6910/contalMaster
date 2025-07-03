@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Windows.Forms;
@@ -391,6 +391,12 @@ namespace Contal.Cgp.Client
             {
                 form = CardsForm.Singleton;
                 icon = ResourceGlobal.IconCardsNew16;
+                add = true;
+            }
+            else if (inObject.GetType() == typeof(Car))
+            {
+                form = CarsForm.Singleton;
+                icon = ResourceGlobal.Car16;
                 add = true;
             }
             else if (inObject.GetType() == typeof(DailyPlan))

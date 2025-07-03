@@ -84,6 +84,8 @@ namespace Contal.Cgp.Globals
         ConsecutiveEvent= 144,
         PersonAttributeOutput = 145,
         ExcelReportOutput = 146,
+        Car = 144,
+
         NotSupport = 201,
         AllObjectTypes = 202
     }   

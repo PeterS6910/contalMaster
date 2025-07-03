@@ -257,6 +257,45 @@ namespace Contal.Cgp.Server.DB
             return null;
         }
 
+        public new ICollection<Card> List()
+        {
+            var cards = base.List();
+            if (cards != null)
+            {
+                foreach (var card in cards)
+                {
+                    card.PrepareToSend();
+                }
+            }
+            return cards;
+        }
+
+        public new ICollection<Card> List(out Exception error)
+        {
+            var cards = base.List(out error);
+            if (cards != null)
+            {
+                foreach (var card in cards)
+                {
+                    card.PrepareToSend();
+                }
+            }
+            return cards;
+        }
+
+        public new ICollection<Card> List(Login login, out Exception error)
+        {
+            var cards = base.List(login, out error);
+            if (cards != null)
+            {
+                foreach (var card in cards)
+                {
+                    card.PrepareToSend();
+                }
+            }
+            return cards;
+        }
+
         public Card GetCardForClient(Guid idCard)
         {
             var card = GetById(idCard);

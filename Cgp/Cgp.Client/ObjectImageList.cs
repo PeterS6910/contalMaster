@@ -1,4 +1,4 @@
-﻿using System.Drawing;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -149,6 +149,7 @@ namespace Contal.Cgp.Client
             _clientObjectImages.Images.Add(ObjectType.Login.ToString(), ResourceGlobal.IconLogins16);
             _clientObjectImages.Images.Add(ObjectType.LoginGroup.ToString(), ResourceGlobal.IconLoginGroup16);
             _clientObjectImages.Images.Add(ObjectType.Person.ToString(), ResourceGlobal.IconPersonsNew16);
+            _clientObjectImages.Images.Add(ObjectType.Car.ToString(), ResourceGlobal.Car16);
             _clientObjectImages.Images.Add(ObjectType.PresentationFormatter.ToString(), ResourceGlobal.IconFormater16);
             _clientObjectImages.Images.Add(ObjectType.PresentationGroup.ToString(), ResourceGlobal.IconNewPresentationGroup16);
             _clientObjectImages.Images.Add(ObjectType.SystemEvent.ToString(), ResourceGlobal.SystemEvents16);

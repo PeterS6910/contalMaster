@@ -162,11 +162,13 @@
     <Compile Include="DB\BeforeIUDForObjectWithVersion.cs" />
     <Compile Include="DB\CalendarDateSettings.cs" />
     <Compile Include="DB\Calendars.cs" />
+    <Compile Include="DB\CarCards.cs" />
     <Compile Include="DB\CardPairs.cs" />
     <Compile Include="DB\CardSystemData.cs" />
     <Compile Include="DB\CardSystems.cs" />
     <Compile Include="DB\Cards.cs" />
     <Compile Include="DB\CardTemplates.cs" />
+    <Compile Include="DB\Cars.cs" />
     <Compile Include="DB\CentralNameRegisters.cs" />
     <Compile Include="DB\CentralTransactionControl.cs" />
     <Compile Include="DB\AccessControls.cs" />

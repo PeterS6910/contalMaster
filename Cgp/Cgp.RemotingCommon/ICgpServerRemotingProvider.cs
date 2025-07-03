@@ -24,6 +24,7 @@ namespace Contal.Cgp.RemotingCommon
         ISystemEvents SystemEvents { get; }
         ICisNGs CisNGs { get; }
         ICards Cards { get; }
+        ICars Cars { get; }
         ICardSystems CardSystems { get; }
         ICentralNameRegisters CentralNameRegisters { get; }
         IServerGenaralOptionsProvider ServerGenaralOptionsProvider { get; }
@@ -43,6 +44,7 @@ namespace Contal.Cgp.RemotingCommon
         IGlobalAlarmInstructions GlobalAlarmInstructions { get; }
         ICardTemplates CardTemplates { get; }
         ICardPairs CardPairs { get; }
+        ICarCards CarCards { get; }
         ILoginGroups LoginGroups { get; }
         IStructuredSubSites StructuredSubSites { get; }
         uint DatabaseLoginCount { get; }

@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.Client
+namespace Contal.Cgp.Client
 {
     partial class CgpClientMainForm
     {
@@ -67,6 +67,7 @@
             this._calendarForm = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this._cardsForm = new System.Windows.Forms.ToolStripButton();
+            this._carsForm = new System.Windows.Forms.ToolStripButton();
             this._cardTemplatesForm = new System.Windows.Forms.ToolStripButton();
             this._cardSystemsForm = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
@@ -97,6 +98,7 @@
             this._pbMinMaxLeftMenu = new System.Windows.Forms.PictureBox();
             this._lvUnderMenu = new System.Windows.Forms.ListView();
             this._lDemoLicense = new System.Windows.Forms.Label();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this._toolStripLoading = new System.Windows.Forms.ToolStripStatusLabel();
             this._status.SuspendLayout();
             this._cnTsOpenWindows.SuspendLayout();
@@ -325,6 +327,8 @@
             this._cardTemplatesForm,
             this._cardSystemsForm,
             this.toolStripSeparator4,
+            this._carsForm,
+            this.toolStripSeparator10,
             this._presentationGroupsForm,
             this._presentationFormatterForm,
             this.toolStripSeparator6,
@@ -896,6 +900,12 @@
             this._lDemoLicense.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this._lDemoLicense.Visible = false;
             // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(232, 6);
+            // 
+            // 
             // _toolStripLoading
             // 
             this._toolStripLoading.AutoSize = false;
@@ -992,6 +1002,7 @@
         private System.Windows.Forms.ToolStripButton _calendarForm;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton _cardsForm;
+        private System.Windows.Forms.ToolStripButton _carsForm;
         private System.Windows.Forms.ToolStripButton _cardTemplatesForm;
         private System.Windows.Forms.ToolStripButton _cardSystemsForm;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
@@ -1019,6 +1030,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuItemGoBack;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripStatusLabel _toolStripLoading;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
     }
 }
 

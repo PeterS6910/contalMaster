@@ -87,8 +87,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAlarmPrioritiesDbs.cs" />
+    <Compile Include="ICarCards.cs" />
     <Compile Include="ICardPairs.cs" />
     <Compile Include="ICardTemplates.cs" />
+    <Compile Include="ICars.cs" />
     <Compile Include="ICentralNameRegisters.cs" />
     <Compile Include="IConsecutiveEvent.cs" />
     <Compile Include="ICSVImportSchemas.cs" />

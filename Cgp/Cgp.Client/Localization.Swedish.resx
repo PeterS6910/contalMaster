@@ -684,6 +684,9 @@
   <data name="CardsFormCardsForm" xml:space="preserve">
     <value>Kort</value>
   </data>
+  <data name="CarsFormCarsForm" xml:space="preserve">
+    <value>Bilar</value>
+  </data>
   <data name="CardSystemsEditForm_lCards" xml:space="preserve">
     <value>Kort</value>
   </data>
@@ -2513,6 +2516,9 @@
   </data>
   <data name="CgpClientMainForm_personsForm" xml:space="preserve">
     <value>Personer</value>
+  </data>
+  <data name="CgpClientMainForm_carsForm" xml:space="preserve">
+    <value>Bilar</value>
   </data>
   <data name="PersonsFormPersonsForm" xml:space="preserve">
     <value>Personer</value>
@@ -6532,10 +6538,19 @@ Vill Ni radera personen?</value>
   <data name="GeneralOptionsForm_lIsPinConfirmationObligatory" xml:space="preserve">
     <value>Bekräftelse krävs efter inslagen PIN</value>
   </data>
-  <data name="ExportFailed" xml:space="preserve">
-    <value>Export misslyckades</value>
+  <data name="CarEditForm_tpCards" xml:space="preserve">
+    <value>Kort</value>
   </data>
-  <data name="ExportSucceeded" xml:space="preserve">
-    <value>Export lyckades</value>
+  <data name="CarEditForm_lAssignedCards" xml:space="preserve">
+    <value>Tilldelade kort</value>
+  </data>
+  <data name="CarEditForm_lAvailableCards" xml:space="preserve">
+    <value>Tillgängliga kort</value>
+  </data>
+  <data name="CarEditForm_bAssignCard" xml:space="preserve">
+    <value>&gt;&gt;</value>
+  </data>
+  <data name="CarEditForm_bUnassignCard" xml:space="preserve">
+    <value>&lt;&lt;</value>
   </data>
 </root>

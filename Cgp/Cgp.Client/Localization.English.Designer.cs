@@ -4516,6 +4516,60 @@ namespace Contal.Cgp.Client {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &gt;&gt;.
+        /// </summary>
+        internal static string CarEditForm_bAssignCard {
+            get {
+                return ResourceManager.GetString("CarEditForm_bAssignCard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;&lt;.
+        /// </summary>
+        internal static string CarEditForm_bUnassignCard {
+            get {
+                return ResourceManager.GetString("CarEditForm_bUnassignCard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assigned cards.
+        /// </summary>
+        internal static string CarEditForm_lAssignedCards {
+            get {
+                return ResourceManager.GetString("CarEditForm_lAssignedCards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Available cards.
+        /// </summary>
+        internal static string CarEditForm_lAvailableCards {
+            get {
+                return ResourceManager.GetString("CarEditForm_lAvailableCards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cards.
+        /// </summary>
+        internal static string CarEditForm_tpCards {
+            get {
+                return ResourceManager.GetString("CarEditForm_tpCards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cars.
+        /// </summary>
+        internal static string CarsFormCarsForm {
+            get {
+                return ResourceManager.GetString("CarsFormCarsForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CCU alarm battery is low.
         /// </summary>
         internal static string CCUAlarmBatteryIsLow {
@@ -4836,6 +4890,15 @@ namespace Contal.Cgp.Client {
         internal static string CgpClientMainForm_cardTemplatesForm {
             get {
                 return ResourceManager.GetString("CgpClientMainForm_cardTemplatesForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cars.
+        /// </summary>
+        internal static string CgpClientMainForm_carsForm {
+            get {
+                return ResourceManager.GetString("CgpClientMainForm_carsForm", resourceCulture);
             }
         }
         
@@ -11020,24 +11083,6 @@ namespace Contal.Cgp.Client {
         internal static string ExceptionOccured {
             get {
                 return ResourceManager.GetString("ExceptionOccured", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Export Failed.
-        /// </summary>
-        internal static string ExportFailed {
-            get {
-                return ResourceManager.GetString("ExportFailed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Export Succeeded.
-        /// </summary>
-        internal static string ExportSucceeded {
-            get {
-                return ResourceManager.GetString("ExportSucceeded", resourceCulture);
             }
         }
         

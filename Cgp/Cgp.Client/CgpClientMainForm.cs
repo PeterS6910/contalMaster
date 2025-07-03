@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.Drawing;
@@ -1556,6 +1556,10 @@ namespace Contal.Cgp.Client
                     {
                         formToOpen = CardSystemsForm.Singleton;
                     }
+                    else if (openedWindow.FormName == typeof(CarsForm).Name)
+                    {
+                        formToOpen = CarsForm.Singleton;
+                    }
                     else if (openedWindow.FormName == typeof(CisNGGroupsForm).Name)
                     {
                         formToOpen = CisNGGroupsForm.Singleton;
@@ -1700,6 +1704,24 @@ namespace Contal.Cgp.Client
                                 case ShowOptionsEditForm.InsertWithData:
                                 case ShowOptionsEditForm.Insert:
                                     formToOpen = new CardSystemsEditForm(new CardSystem(), (ShowOptionsEditForm)(openedWindow.ShowOption));
+                                    break;
+                            }
+                        }
+                        else if (openedWindow.FormName == typeof(CarEditForm).Name)
+                        {
+                            switch ((ShowOptionsEditForm)(openedWindow.ShowOption))
+                            {
+                                case ShowOptionsEditForm.View:
+                                case ShowOptionsEditForm.Edit:
+                                    objForEdit = CgpClient.Singleton.MainServerProvider.Cards.GetObjectForEditById(new Guid(openedWindow.ObjectId), out editAllowed);
+                                    if (objForEdit == null)
+                                        continue;
+                                    formToOpen = CarsForm.Singleton.OpenEditForm(objForEdit as Car, editAllowed, false);
+                                    break;
+                                case ShowOptionsEditForm.InsertDialog:
+                                case ShowOptionsEditForm.InsertWithData:
+                                case ShowOptionsEditForm.Insert:
+                                    formToOpen = new CarEditForm(new Car(), (ShowOptionsEditForm)(openedWindow.ShowOption));
                                     break;
                             }
                         }
@@ -2176,6 +2198,12 @@ namespace Contal.Cgp.Client
         {
             if (!CgpClient.Singleton.IsConnectionLost(false))
                 CardsForm.Singleton.Show();
+        }
+
+        private void _carsForm_Click(object sender, EventArgs e)
+        {
+            if (!CgpClient.Singleton.IsConnectionLost(false))
+                CarsForm.Singleton.Show();
         }
 
         private void _cardTemplatesForm_Click(object sender, EventArgs e)
@@ -3255,6 +3283,7 @@ namespace Contal.Cgp.Client
             _leftMenuItems.Add(_cisNgGroupForm, CisNGGroupsForm.Singleton.HasAccessView());
             _leftMenuItems.Add(_cardSystemsForm, CardSystemsForm.Singleton.HasAccessView());
             _leftMenuItems.Add(_cardsForm, CardsForm.Singleton.HasAccessView());
+            _leftMenuItems.Add(_carsForm, CarsForm.Singleton.HasAccessView());
             _leftMenuItems.Add(_cardTemplatesForm, CardTemplatesForm.Singleton.HasAccessView());
             _leftMenuItems.Add(_dailyPlanForm, DailyPlansForm.Singleton.HasAccessView());
             _leftMenuItems.Add(_TimeZonesForm, TimeZonesForm.Singleton.HasAccessView());
@@ -4497,6 +4526,8 @@ namespace Contal.Cgp.Client
                 tableForm = CardTemplatesForm.Singleton;
             else if (editForm.GetEditingObject() is CardSystem)
                 tableForm = CardSystemsForm.Singleton;
+            else if (editForm.GetEditingObject() is Car)
+                tableForm = CarsForm.Singleton;
             else if (editForm.GetEditingObject() is PresentationGroup)
                 tableForm = PresentationGroupsForm.Singleton;
             else if (editForm.GetEditingObject() is PresentationFormatter)

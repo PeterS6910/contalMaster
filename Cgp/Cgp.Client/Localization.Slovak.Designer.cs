@@ -1780,6 +1780,60 @@ namespace Contal.Cgp.Client {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &gt;&gt;.
+        /// </summary>
+        internal static string CarEditForm_bAssignCard {
+            get {
+                return ResourceManager.GetString("CarEditForm_bAssignCard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;&lt;.
+        /// </summary>
+        internal static string CarEditForm_bUnassignCard {
+            get {
+                return ResourceManager.GetString("CarEditForm_bUnassignCard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Priradené karty.
+        /// </summary>
+        internal static string CarEditForm_lAssignedCards {
+            get {
+                return ResourceManager.GetString("CarEditForm_lAssignedCards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dostupné karty.
+        /// </summary>
+        internal static string CarEditForm_lAvailableCards {
+            get {
+                return ResourceManager.GetString("CarEditForm_lAvailableCards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Karty.
+        /// </summary>
+        internal static string CarEditForm_tpCards {
+            get {
+                return ResourceManager.GetString("CarEditForm_tpCards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Autá.
+        /// </summary>
+        internal static string CarsFormCarsForm {
+            get {
+                return ResourceManager.GetString("CarsFormCarsForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CCU - Nízke napätie batérie.
         /// </summary>
         internal static string CCUAlarmBatteryIsLow {
@@ -2091,6 +2145,15 @@ namespace Contal.Cgp.Client {
         internal static string CgpClientMainForm_cardSystemsForm {
             get {
                 return ResourceManager.GetString("CgpClientMainForm_cardSystemsForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Autá.
+        /// </summary>
+        internal static string CgpClientMainForm_carsForm {
+            get {
+                return ResourceManager.GetString("CgpClientMainForm_carsForm", resourceCulture);
             }
         }
         
@@ -7397,24 +7460,6 @@ namespace Contal.Cgp.Client {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Export zlyhal.
-        /// </summary>
-        internal static string ExportFailed {
-            get {
-                return ResourceManager.GetString("ExportFailed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Export prebehol úspešne.
-        /// </summary>
-        internal static string ExportSucceeded {
-            get {
-                return ResourceManager.GetString("ExportSucceeded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Zlyhala aktualizácia štruktúry na CCU.
         /// </summary>
         internal static string FailedToUpdateStructureOnCCU {
@@ -9580,15 +9625,6 @@ namespace Contal.Cgp.Client {
         internal static string InfoColorPreview {
             get {
                 return ResourceManager.GetString("InfoColorPreview", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string InfoDataExportSucceeded {
-            get {
-                return ResourceManager.GetString("InfoDataExportSucceeded", resourceCulture);
             }
         }
         

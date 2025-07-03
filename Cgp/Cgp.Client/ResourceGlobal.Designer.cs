@@ -19,7 +19,7 @@ namespace Contal.Cgp.Client {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class ResourceGlobal {
@@ -86,6 +86,26 @@ namespace Contal.Cgp.Client {
         public static System.Drawing.Bitmap Calendar48 {
             get {
                 object obj = ResourceManager.GetObject("Calendar48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        public static System.Drawing.Icon Car16 {
+            get {
+                object obj = ResourceManager.GetObject("Car16", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Car48 {
+            get {
+                object obj = ResourceManager.GetObject("Car48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

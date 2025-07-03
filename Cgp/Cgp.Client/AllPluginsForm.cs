@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -283,6 +283,21 @@ namespace Contal.Cgp.Client
                         i++;
                     }
 
+                    if (CarsForm.Singleton.HasAccessView())
+                    {
+                        _imagesCgpLarge.Images.Add(ResourceGlobal.Car16);
+                        ListViewItem lv =
+                            new ListViewItem(
+                                LocalizationHelper.GetString(
+                                    CarsForm.Singleton.Name + CarsForm.Singleton.Name),
+                                i);
+                        lv.Name = CarsForm.Singleton.Name;
+                        lv.Group = _lvCgp.Groups[0];
+                        _lvCgp.Items.Add(lv);
+                        i++;
+                    }
+
+
                     if (PresentationGroupsForm.Singleton.HasAccessView())
                     {
                         _imagesCgpLarge.Images.Add(ResourceGlobal.PresentationGroup48);
@@ -479,6 +494,10 @@ namespace Contal.Cgp.Client
             else if (_lvCgp.FocusedItem.Name == CardTemplatesForm.Singleton.Name)
             {
                 CardTemplatesForm.Singleton.Show();
+            }
+            else if (_lvCgp.FocusedItem.Name == CarsForm.Singleton.Name)
+            {
+                CarsForm.Singleton.Show();
             }
             else if (_lvCgp.FocusedItem.Name == DailyPlansForm.Singleton.Name)
             {

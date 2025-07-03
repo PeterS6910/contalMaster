@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -533,6 +533,8 @@ namespace Contal.Cgp.Components
 
             // Last column is always set to Fill and Symbol to ColumnHeader
             _dgvData.Columns[COLUMN_SYMBOL_NAME].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            if (_dgvData.Columns.Contains(COLUMN_SYMBOL_NAME))
+                _dgvData.Columns[COLUMN_SYMBOL_NAME].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             _dgvData.Columns[_columnsVisibilityOrder.Keys.Last()].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             _columnsPropertiesSet = true;
         }

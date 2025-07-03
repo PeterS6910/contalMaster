@@ -114,6 +114,22 @@ namespace Contal.Cgp.Server
             }
         }
 
+        public ICarCards CarCards
+        {
+            get
+            {
+                try
+                {
+                    base.ValidateSession();
+                    return DB.CarCards.Singleton;
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+        }
+
         public IPresentationGroups PresentationGroups
         {
             get
@@ -215,6 +231,22 @@ namespace Contal.Cgp.Server
                 {
                     base.ValidateSession();
                     return DB.CisNGGroups.Singleton;
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+        }
+
+        public ICars Cars
+        {
+            get
+            {
+                try
+                {
+                    base.ValidateSession();
+                    return DB.Cars.Singleton;
                 }
                 catch
                 {
