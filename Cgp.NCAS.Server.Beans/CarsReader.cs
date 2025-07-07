@@ -224,11 +224,11 @@ namespace Contal.Cgp.NCAS.Server.Beans
     {
         public override ObjectType GetOrmObjectType { get { return ObjectType.NotSupport; } }
 
-        public CarsReaderModifyObj(CarsReader cameraReader)
+        public CarsReaderModifyObj(CarsReader carsReader)
         {
-            Id = cameraReader.IdCarsReader;
-            FullName = cameraReader.ToString();
-            Description = cameraReader.Description;
+            Id = carsReader.IdCarsReader;
+            FullName = carsReader.ToString();
+            Description = carsReader.Description;
         }
     }
 }
