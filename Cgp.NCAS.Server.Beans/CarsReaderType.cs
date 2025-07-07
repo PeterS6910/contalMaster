@@ -5,9 +5,9 @@ using Contal.Cgp.Server.Beans;
 namespace Contal.Cgp.NCAS.Server.Beans
 {
     [Serializable]
-    public class CameraType : AOrmObject
+    public class CarsReaderType : AOrmObject
     {
-        public virtual Guid IdCameraType { get; set; }
+        public virtual Guid IdCarsReaderType { get; set; }
         public virtual int CameraTypeCode { get; set; }
         public virtual string Name { get; set; }
         public virtual string Model { get; set; }
@@ -16,24 +16,24 @@ namespace Contal.Cgp.NCAS.Server.Beans
 
         public virtual byte ObjectType
         {
-            get { return (byte)ObjectType.NotSupport; }
+            get { return (byte)ObjectType(); }
             set { }
         }
 
         public override bool Compare(object obj)
         {
-            var cameraType = obj as CameraType;
-            return cameraType != null && cameraType.IdCameraType == IdCameraType;
+            var carsReaderType = obj as CarsReaderType;
+            return carsReaderType != null && carsReaderType.IdCarsReaderType == IdCarsReaderType;
         }
 
         public override string GetIdString()
         {
-            return IdCameraType.ToString();
+            return IdCarsReaderType.ToString();
         }
 
         public override object GetId()
         {
-            return IdCameraType;
+            return IdCarsReaderType;
         }
 
         public override ObjectType GetObjectType()

@@ -88,6 +88,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AACardReader.cs" />
+    <Compile Include="CarsReader.cs" />
+    <Compile Include="CameraType.cs" />
     <Compile Include="ExcelReportOutput.cs" />
     <Compile Include="PersonAttributeOutput.cs" />
     <Compile Include="PersonAttribute.cs" />
@@ -287,6 +289,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ExcelReportOutput.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CameraType.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CarsReader.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
