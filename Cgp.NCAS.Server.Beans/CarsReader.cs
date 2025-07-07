@@ -4,10 +4,6 @@ using Contal.IwQuick;
 using Contal.IwQuick.Data;
 using System;
 using System.Collections.Generic;
-
--0
-
-using System;
 using System.Collections.Generic;
 using Contal.Cgp.Globals;
 using Contal.Cgp.Server.Beans;
@@ -20,14 +16,14 @@ namespace Contal.Cgp.NCAS.Server.Beans
     [LwSerialize(348)]
     [LwSerializeMode(LwSerializationMode.Selective, DirectMemberType.All)]
     [LwSerializeNoParent]
-    public class CameraReader :
+    public class CarsReader :
         AOrmObjectWithVersion,
         IOrmObjectWithAlarmInstructions,
-        IEquatable<CameraReader>,
+        IEquatable<CarsReader>,
         IGetDcu,
         ICardReaderObject
     {
-        public const string COLUMN_ID_CAMERA_READER = "IdCameraReader";
+        public const string COLUMN_ID_CARS_READER = "IdCameraReader";
         public const string COLUMN_NAME = "Name";
         public const string COLUMN_DCU = "DCU";
         public const string COLUMN_CCU = "CCU";
@@ -56,7 +52,7 @@ namespace Contal.Cgp.NCAS.Server.Beans
         public const string COLUMN_VERSION = "Version";
 
         [LwSerialize]
-        public virtual Guid IdCameraReader { get; set; }
+        public virtual Guid IdCarsReader { get; set; }
         public virtual string Name { get; set; }
         public virtual DCU DCU { get; set; }
         private Guid _guidDCU = Guid.Empty;
@@ -106,7 +102,7 @@ namespace Contal.Cgp.NCAS.Server.Beans
         public virtual string LocalAlarmInstruction { get; set; }
         public virtual string Description { get; set; }
 
-        public CameraReader()
+        public CarsReader()
         {
             CkUnique = Guid.NewGuid();
             EnableParentInFullName = Support.EnableParentInFullName;
@@ -115,20 +111,20 @@ namespace Contal.Cgp.NCAS.Server.Beans
 
         public override bool Compare(object obj)
         {
-            var cameraReader = obj as CameraReader;
-            return cameraReader != null && cameraReader.IdCameraReader == IdCameraReader;
+            var carsReader = obj as CarsReader;
+            return carsReader != null && carsReader.IdCarsReader == IdCarsReader;
         }
 
-        public bool Equals(CameraReader other)
+        public bool Equals(CarsReader other)
         {
             if (ReferenceEquals(this, other))
                 return true;
-            return other != null && !IdCameraReader.Equals(Guid.Empty) && IdCameraReader.Equals(other.IdCameraReader);
+            return other != null && !IdCarsReader.Equals(Guid.Empty) && IdCarsReader.Equals(other.IdCarsReader);
         }
 
         public override bool Equals(object obj)
         {
-            return Equals(obj as CameraReader);
+            return Equals(obj as CarsReader);
         }
 
         public override string ToString()
@@ -155,17 +151,17 @@ namespace Contal.Cgp.NCAS.Server.Beans
 
         public override string GetIdString()
         {
-            return IdCameraReader.ToString();
+            return IdCarsReader.ToString();
         }
 
         public override object GetId()
         {
-            return IdCameraReader;
+            return IdCarsReader;
         }
 
         public override IModifyObject CreateModifyObject()
         {
-            return new CameraReaderModifyObj(this);
+            return new CarsReaderModifyObj(this);
         }
 
         public virtual IEnumerable<ICardReaderObject> GetChildObjects()
@@ -190,14 +186,14 @@ namespace Contal.Cgp.NCAS.Server.Beans
     }
 
     [Serializable]
-    public class CameraReaderShort : IShortObject
+    public class CarsReaderShort : IShortObject
     {
-        public const string COLUMN_ID_CAMERA_READER = "IdCameraReader";
+        public const string COLUMN_ID_CARS_READER = "IdCarsReader";
         public const string COLUMN_FULL_NAME = "FullName";
         public const string COLUMN_NAME = "Name";
         public const string COLUMN_DESCRIPTION = "Description";
 
-        public Guid IdCameraReader { get; set; }
+        public Guid IdCarsReader { get; set; }
         public string FullName { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -207,12 +203,12 @@ namespace Contal.Cgp.NCAS.Server.Beans
             return Name;
         }
 
-        public CameraReaderShort(CameraReader cameraReader)
+        public CarsReaderShort(CarsReader carsReader)
         {
-            IdCameraReader = cameraReader.IdCameraReader;
-            Name = cameraReader.Name;
-            FullName = cameraReader.ToString();
-            Description = cameraReader.Description;
+            IdCarsReader = carsReader.IdCarsReader;
+            Name = carsReader.Name;
+            FullName = carsReader.ToString();
+            Description = carsReader.Description;
         }
 
         public ObjectType ObjectType { get { return ObjectType.NotSupport; } }
@@ -220,17 +216,17 @@ namespace Contal.Cgp.NCAS.Server.Beans
         {
             return string.Empty;
         }
-        public object Id { get { return IdCameraReader; } }
+        public object Id { get { return IdCarsReader; } }
     }
 
     [Serializable]
-    public class CameraReaderModifyObj : AModifyObject
+    public class CarsReaderModifyObj : AModifyObject
     {
         public override ObjectType GetOrmObjectType { get { return ObjectType.NotSupport; } }
 
-        public CameraReaderModifyObj(CameraReader cameraReader)
+        public CarsReaderModifyObj(CarsReader cameraReader)
         {
-            Id = cameraReader.IdCameraReader;
+            Id = cameraReader.IdCarsReader;
             FullName = cameraReader.ToString();
             Description = cameraReader.Description;
         }
