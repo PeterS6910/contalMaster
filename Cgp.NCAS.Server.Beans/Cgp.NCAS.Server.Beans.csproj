@@ -89,7 +89,7 @@
   <ItemGroup>
     <Compile Include="AACardReader.cs" />
     <Compile Include="CarsReader.cs" />
-    <Compile Include="CameraType.cs" />
+    <Compile Include="CarsReaderType.cs" />
     <Compile Include="ExcelReportOutput.cs" />
     <Compile Include="PersonAttributeOutput.cs" />
     <Compile Include="PersonAttribute.cs" />
@@ -291,7 +291,7 @@
     <EmbeddedResource Include="ExcelReportOutput.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CameraType.hbm.xml" />
+    <EmbeddedResource Include="CarsReaderType.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CarsReader.hbm.xml" />

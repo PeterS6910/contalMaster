@@ -14,12 +14,15 @@ namespace Contal.Cgp.NCAS.Server.Beans
         public virtual string Description { get; set; }
         public virtual string Version { get; set; }
 
-        public virtual byte ObjectType
-        {
-            get { return (byte)ObjectType(); }
-            set { }
-        }
+        /// <summary>
+        /// Stores this object's type as byte for persistence.
+        /// </summary>
+        public virtual byte ObjectTypeCode { get; set; }
 
+        public CarsReaderType()
+        {
+            ObjectTypeCode = (byte)Cgp.Globals.ObjectType.NotSupport;
+        }
         public override bool Compare(object obj)
         {
             var carsReaderType = obj as CarsReaderType;
