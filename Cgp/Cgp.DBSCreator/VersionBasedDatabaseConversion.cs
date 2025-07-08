@@ -391,6 +391,16 @@ namespace Contal.Cgp.DBSCreator
                 return false;
             }
 
+            if (!DoConvertToVersion(version,
+                2.12,
+                ConversionCgpServerBeans2_12,
+                false,
+                conversionTypeString,
+                saveVersionToDabase))
+            {
+                return false;
+            }
+
             return true;
         }
 
@@ -1788,6 +1798,60 @@ namespace Contal.Cgp.DBSCreator
             return
                 _databaseCommandExecutor.RunSqlNonQuery(
                     "UPDATE CentralNameRegister SET Name = 'admins' WHERE ObjectType='122' AND Name='admin'",
+                    false,
+                    out error);
+        }
+
+        private bool ConversionCgpServerBeans2_12(out Exception error)
+        {
+            if (!_databaseCommandExecutor.RunSqlNonQuery(
+                    @"
+                    IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Car' AND xtype='U')
+                    BEGIN
+                        CREATE TABLE Car (
+                            IdCar uniqueidentifier not null primary key,
+                            Brand nvarchar(255) null,
+                            ValidityDateFrom datetime null,
+                            ValidityDateTo datetime null,
+                            SecurityLevel tinyint not null,
+                            Description nvarchar(max) null,
+                            SynchronizedWithTimetec bit not null,
+                            UtcDateStateLastChange datetime not null,
+                            Version int not null
+                        )
+                    END",
+                    false,
+                    out error))
+            {
+                return false;
+            }
+
+            if (!_databaseCommandExecutor.RunSqlNonQuery(
+                    @"
+                    IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='CarCard' AND xtype='U')
+                    BEGIN
+                        CREATE TABLE CarCard (
+                            IdCarCard uniqueidentifier not null primary key,
+                            IdCar uniqueidentifier not null,
+                            IdCard uniqueidentifier not null
+                        )
+                    END",
+                    false,
+                    out error))
+            {
+                return false;
+            }
+
+            if (!_databaseCommandExecutor.RunSqlNonQuery(
+                    "ALTER TABLE CarCard ADD CONSTRAINT FK_CarCard_Car FOREIGN KEY (IdCar) REFERENCES Car(IdCar)",
+                    false,
+                    out error))
+            {
+                return false;
+            }
+
+            return _databaseCommandExecutor.RunSqlNonQuery(
+                    "ALTER TABLE CarCard ADD CONSTRAINT FK_CarCard_Card FOREIGN KEY (IdCard) REFERENCES Card(IdCard)",
                     false,
                     out error);
         }

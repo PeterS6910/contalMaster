@@ -17,7 +17,7 @@
     <property name="Version" not-null="false" />
     <join table="CentralNameRegister">
       <key column="Id" foreign-key="none" />
-      <property name="Lp" column="Name" not-null="true" />
+      <property name="WholeName" column="Name" not-null="true" />
       <property name="ObjectType" not-null="true" />
       <property name="CkUnique" />
     </join>

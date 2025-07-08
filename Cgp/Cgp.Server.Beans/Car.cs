@@ -32,6 +32,7 @@ namespace Contal.Cgp.Server.Beans
 
         public virtual Guid IdCar { get; set; }
         public virtual string Lp { get; set; }
+        public virtual string WholeName { get; set; }
         public virtual string Brand { get; set; }
         public virtual DateTime? ValidityDateFrom { get; set; }
         public virtual DateTime? ValidityDateTo { get; set; }

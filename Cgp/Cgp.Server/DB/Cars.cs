@@ -30,6 +30,24 @@ namespace Contal.Cgp.Server.DB
             return null;
         }
 
+        public bool InsertCar(ref Car obj, out Exception insertException)
+        {
+            obj.WholeName = obj.Lp;
+            return Insert(ref obj, out insertException);
+        }
+
+        public bool UpdateCar(Car obj, out Exception updateException)
+        {
+            obj.WholeName = obj.Lp;
+            return Update(obj, out updateException);
+        }
+
+        public new bool UpdateOnlyInDatabase(Car obj, out Exception updateException)
+        {
+            obj.WholeName = obj.Lp;
+            return Update(obj, out updateException, false);
+        }
+
         public override bool HasAccessView(Login login)
         {
             return AccessChecker.HasAccessControl(

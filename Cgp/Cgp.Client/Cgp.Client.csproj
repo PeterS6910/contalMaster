@@ -218,15 +218,18 @@
     <Compile Include="CarEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CarsForm.cs">
-  	<SubType>Form</SubType>
+    <Compile Include="CarEditForm.Designer.cs">
+      <DependentUpon>CarEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CarsForm.Designer.cs">
-  	<DependentUpon>CarsForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="CarsForm.resx">
-  	<DependentUpon>CarsForm.cs</DependentUpon>
+    <EmbeddedResource Include="CarEditForm.resx">
+      <DependentUpon>CarEditForm.cs</DependentUpon>
     </EmbeddedResource>
+  <Compile Include="CarsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+   <Compile Include="CarsForm.Designer.cs">
+      <DependentUpon>CarsForm.cs</DependentUpon>
+   </Compile>
     <Compile Include="CheckedLisboxFormChange.cs">
       <SubType>Form</SubType>
     </Compile>
