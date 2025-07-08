@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.Server
+namespace Contal.Cgp.Server
 {
     partial class GeneralOptionsForm
     {
@@ -49,7 +49,7 @@
             this._eFriendlyName.Location = new System.Drawing.Point(15, 130);
             this._eFriendlyName.Margin = new System.Windows.Forms.Padding(4);
             this._eFriendlyName.Name = "_eFriendlyName";
-            this._eFriendlyName.Size = new System.Drawing.Size(191, 22);
+            this._eFriendlyName.Size = new System.Drawing.Size(191, 26);
             this._eFriendlyName.TabIndex = 3;
             // 
             // _lFriendlyName
@@ -59,7 +59,7 @@
             this._lFriendlyName.Location = new System.Drawing.Point(13, 109);
             this._lFriendlyName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lFriendlyName.Name = "_lFriendlyName";
-            this._lFriendlyName.Size = new System.Drawing.Size(139, 17);
+            this._lFriendlyName.Size = new System.Drawing.Size(153, 20);
             this._lFriendlyName.TabIndex = 2;
             this._lFriendlyName.Text = "Server firendly name";
             // 
@@ -70,7 +70,7 @@
             this._lServerPort.Location = new System.Drawing.Point(13, 11);
             this._lServerPort.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lServerPort.Name = "_lServerPort";
-            this._lServerPort.Size = new System.Drawing.Size(141, 17);
+            this._lServerPort.Size = new System.Drawing.Size(157, 20);
             this._lServerPort.TabIndex = 0;
             this._lServerPort.Text = "Remoting server port";
             // 
@@ -111,7 +111,7 @@
             0,
             0});
             this._eServerPort.Name = "_eServerPort";
-            this._eServerPort.Size = new System.Drawing.Size(192, 22);
+            this._eServerPort.Size = new System.Drawing.Size(192, 26);
             this._eServerPort.TabIndex = 1;
             this._eServerPort.Value = new decimal(new int[] {
             1,
@@ -125,7 +125,7 @@
             this._labelLicenceFilePath.Location = new System.Drawing.Point(244, 57);
             this._labelLicenceFilePath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._labelLicenceFilePath.Name = "_labelLicenceFilePath";
-            this._labelLicenceFilePath.Size = new System.Drawing.Size(79, 17);
+            this._labelLicenceFilePath.Size = new System.Drawing.Size(88, 20);
             this._labelLicenceFilePath.TabIndex = 11;
             this._labelLicenceFilePath.Text = "Licence file";
             // 
@@ -136,18 +136,18 @@
             this._lRemotingIpAddress.Location = new System.Drawing.Point(12, 61);
             this._lRemotingIpAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lRemotingIpAddress.Name = "_lRemotingIpAddress";
-            this._lRemotingIpAddress.Size = new System.Drawing.Size(174, 17);
+            this._lRemotingIpAddress.Size = new System.Drawing.Size(196, 20);
             this._lRemotingIpAddress.TabIndex = 13;
             this._lRemotingIpAddress.Text = "Bind to specific IP address";
             // 
             // _lbAvailableLicences
             // 
             this._lbAvailableLicences.FormattingEnabled = true;
-            this._lbAvailableLicences.ItemHeight = 16;
+            this._lbAvailableLicences.ItemHeight = 20;
             this._lbAvailableLicences.Location = new System.Drawing.Point(247, 82);
             this._lbAvailableLicences.Margin = new System.Windows.Forms.Padding(4);
             this._lbAvailableLicences.Name = "_lbAvailableLicences";
-            this._lbAvailableLicences.Size = new System.Drawing.Size(275, 100);
+            this._lbAvailableLicences.Size = new System.Drawing.Size(275, 84);
             this._lbAvailableLicences.TabIndex = 14;
             this._lbAvailableLicences.SelectedValueChanged += new System.EventHandler(this._lbAvailableLicences_SelectedValueChanged);
             // 
@@ -167,7 +167,7 @@
             this._chbSaveAndSkipDB.AutoSize = true;
             this._chbSaveAndSkipDB.Location = new System.Drawing.Point(123, 237);
             this._chbSaveAndSkipDB.Name = "_chbSaveAndSkipDB";
-            this._chbSaveAndSkipDB.Size = new System.Drawing.Size(219, 21);
+            this._chbSaveAndSkipDB.Size = new System.Drawing.Size(247, 24);
             this._chbSaveAndSkipDB.TabIndex = 16;
             this._chbSaveAndSkipDB.Text = "Skip database reconfiguration";
             this._chbSaveAndSkipDB.UseVisualStyleBackColor = true;
@@ -181,14 +181,14 @@
             ""});
             this._eRemotingIpAddress.Location = new System.Drawing.Point(15, 82);
             this._eRemotingIpAddress.Name = "_eRemotingIpAddress";
-            this._eRemotingIpAddress.Size = new System.Drawing.Size(190, 24);
+            this._eRemotingIpAddress.Size = new System.Drawing.Size(190, 28);
             this._eRemotingIpAddress.TabIndex = 17;
             this._eRemotingIpAddress.SelectedIndexChanged += new System.EventHandler(this._eRemotingIpAddress_SelectedIndexChanged);
             // 
             // GeneralOptionsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(535, 278);
+            this.ClientSize = new System.Drawing.Size(535, 328);
             this.ControlBox = false;
             this.Controls.Add(this._eRemotingIpAddress);
             this.Controls.Add(this._chbSaveAndSkipDB);

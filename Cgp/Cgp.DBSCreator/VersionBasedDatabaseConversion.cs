@@ -3717,7 +3717,12 @@ namespace Contal.Cgp.DBSCreator
         private bool ConversionCgpServerBeansExtern2_00(out Exception error)
         {
             if (!_databaseCommandExecutor.RunSqlNonQuery(
-                "CREATE TABLE ConsecutiveEvents (id int identity(1,1) primary key, LastEventlogId bigint null, SourceId uniqueidentifier, ReasonId uniqueidentifier, LastEventDateTime datetime2(3) null)",
+                  @"
+                    IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='ConsecutiveEvents' AND xtype='U')
+                    BEGIN
+                        CREATE TABLE ConsecutiveEvents (id int identity(1,1) primary key, LastEventlogId bigint null, SourceId uniqueidentifier, ReasonId uniqueidentifier, LastEventDateTime datetime2(3) null)
+                    END
+                   ",
                 true,
                 out error))
             {

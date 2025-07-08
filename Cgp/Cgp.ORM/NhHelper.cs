@@ -69,14 +69,11 @@ namespace Contal.Cgp.ORM
         {
 // ReSharper disable PossibleMultipleEnumeration
             Validator.CheckForNull(assemblies,"assemblies");
-
-
-            if (_sessionFactory == null)
-            {
-                Configuration cfg = ConfigureNHibernate();
-                AddAssemblies(cfg, assemblies);
-                _sessionFactory = cfg.BuildSessionFactory();
-            }
+            
+            Configuration cfg = ConfigureNHibernate();
+            AddAssemblies(cfg, assemblies);
+            _sessionFactory = cfg.BuildSessionFactory();
+            
 // ReSharper restore PossibleMultipleEnumeration
             
             return _sessionFactory.OpenSession();
@@ -115,8 +112,12 @@ namespace Contal.Cgp.ORM
             cfg.SetProperty("command_timeout", "90000");
 /*#if DEBUG
             cfg.SetProperty("show_sql", "true");
+            cfg.SetProperty(NHibernate.Cfg.Environment.FormatSql, "true");
+            cfg.SetProperty(NHibernate.Cfg.Environment.UseSqlComments, "true");
 #else
             cfg.SetProperty("show_sql", "false");
+            cfg.SetProperty(NHibernate.Cfg.Environment.FormatSql, "false");
+            cfg.SetProperty(NHibernate.Cfg.Environment.UseSqlComments, "false");
 #endif*/
             //cfg.SetProperty("proxyfactory.factory_class", "NHibernate.ByteCode.LinFu.ProxyFactoryFactory, NHibernate.ByteCode.LinFu");
             //cfg.SetProperty("proxyfactory.factory_class", "NHibernate.ByteCode.Castle.ProxyFactoryFactory, NHibernate.ByteCode.Castle");
