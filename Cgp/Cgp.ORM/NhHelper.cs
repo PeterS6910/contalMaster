@@ -69,10 +69,13 @@ namespace Contal.Cgp.ORM
         {
 // ReSharper disable PossibleMultipleEnumeration
             Validator.CheckForNull(assemblies,"assemblies");
-            
-            Configuration cfg = ConfigureNHibernate();
-            AddAssemblies(cfg, assemblies);
-            _sessionFactory = cfg.BuildSessionFactory();
+
+            if (_sessionFactory == null)
+            {
+                Configuration cfg = ConfigureNHibernate();
+                AddAssemblies(cfg, assemblies);
+                _sessionFactory = cfg.BuildSessionFactory();
+            }
             
 // ReSharper restore PossibleMultipleEnumeration
             
