@@ -85,6 +85,8 @@ namespace Contal.Cgp.Globals
         PersonAttributeOutput = 145,
         ExcelReportOutput = 146,
         Car = 144,
+        CarReader = 145,
+        CarReaderAlarmArc = 146,
 
         NotSupport = 201,
         AllObjectTypes = 202

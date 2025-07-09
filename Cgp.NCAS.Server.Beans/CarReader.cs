@@ -71,7 +71,7 @@ namespace Contal.Cgp.NCAS.Server.Beans
 
         public override ObjectType GetObjectType()
         {
-            return ObjectType.CardReader;
+            return Cgp.Globals.ObjectType.CarReader;
         }
 
         public override object GetId()
@@ -116,7 +116,7 @@ namespace Contal.Cgp.NCAS.Server.Beans
 
         public CarReader()
         {
-            ObjectType = (byte)Globals.ObjectType.CarReader;
+            ObjectType = (byte)Cgp.Globals.ObjectType.CardReader;
             CkUnique = Guid.NewGuid();
             EnableParentInFullName = Support.EnableParentInFullName;
         }
