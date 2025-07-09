@@ -391,15 +391,15 @@ namespace Contal.Cgp.DBSCreator
                 return false;
             }
 
-            if (!DoConvertToVersion(version,
-                2.12,
-                ConversionCgpServerBeans2_12,
-                false,
-                conversionTypeString,
-                saveVersionToDabase))
-            {
-                return false;
-            }
+            //if (!DoConvertToVersion(version,
+            //    2.12,
+            //    ConversionCgpServerBeans2_12,
+            //    false,
+            //    conversionTypeString,
+            //    saveVersionToDabase))
+            //{
+            //    return false;
+            //}
 
             return true;
         }
