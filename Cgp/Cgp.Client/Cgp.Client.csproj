@@ -224,12 +224,12 @@
     <EmbeddedResource Include="CarEditForm.resx">
       <DependentUpon>CarEditForm.cs</DependentUpon>
     </EmbeddedResource>
-  <Compile Include="CarsForm.cs">
+    <Compile Include="CarsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-   <Compile Include="CarsForm.Designer.cs">
+    <Compile Include="CarsForm.Designer.cs">
       <DependentUpon>CarsForm.cs</DependentUpon>
-   </Compile>
+    </Compile>
     <Compile Include="CheckedLisboxFormChange.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -618,6 +618,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CardTemplatesForm.resx">
       <DependentUpon>CardTemplatesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarsForm.resx">
+      <DependentUpon>CarsForm.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CarsForm1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CheckedLisboxFormChange.resx">
       <DependentUpon>CheckedLisboxFormChange.cs</DependentUpon>
