@@ -89,7 +89,7 @@
   <ItemGroup>
     <Compile Include="AACardReader.cs" />
     <Compile Include="CarReaderType.cs" />
-    <Compile Include="ClarReader.cs" />
+    <Compile Include="CarReader.cs" />
     <Compile Include="ClarReaderAlarmArc.cs" />
     <Compile Include="ExcelReportOutput.cs" />
     <Compile Include="PersonAttributeOutput.cs" />

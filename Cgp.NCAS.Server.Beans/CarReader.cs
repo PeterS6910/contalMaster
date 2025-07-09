@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Contal.Cgp.Globals;
 using Contal.Cgp.Server.Beans;
+using Contal.IwQuick;
 using Contal.IwQuick.Data;
 
 namespace Contal.Cgp.NCAS.Server.Beans
@@ -27,6 +28,9 @@ namespace Contal.Cgp.NCAS.Server.Beans
         public const string COLUMN_DESCRIPTION = "Description";
         public const string COLUMN_CAR_READER_ALARM_ARCS = "CarReaderAlarmArcs";
         public const string ColumnVersion = "Version";
+        public const string COLUMNOBJECTTYPE = "ObjectType";
+        public const string COLUMNCKUNIQUE = "CkUnique";
+        public const string COLUMNENABLEPARENTINFULLNAME = "EnableParentInFullName";
 
         [LwSerialize]
         public virtual Guid IdCarReader { get; set; }
@@ -51,7 +55,9 @@ namespace Contal.Cgp.NCAS.Server.Beans
         public virtual string Description { get; set; }
 
         public virtual ICollection<CarReaderAlarmArc> CarReaderAlarmArcs { get; set; }
-
+        public virtual byte ObjectType { get; set; }
+        public virtual Guid CkUnique { get; set; }
+        public virtual bool EnableParentInFullName { get; set; }
         public override bool Compare(object obj)
         {
             var carReader = obj as CarReader;
@@ -86,6 +92,33 @@ namespace Contal.Cgp.NCAS.Server.Beans
         public virtual DCU GetDcu()
         {
             return DCU;
+        }
+
+        public override string ToString()
+        {
+            var result = string.Empty;
+            if (EnableParentInFullName)
+            {
+                if (CCU != null)
+                {
+                    result += CCU + StringConstants.SLASHWITHSPACES;
+                }
+                else if (DCU != null)
+                {
+                    result += DCU + StringConstants.SLASHWITHSPACES;
+                }
+            }
+
+            result += Name;
+
+            return result;
+        }
+
+        public CarReader()
+        {
+            ObjectType = (byte)Globals.ObjectType.CarReader;
+            CkUnique = Guid.NewGuid();
+            EnableParentInFullName = Support.EnableParentInFullName;
         }
     }
 }

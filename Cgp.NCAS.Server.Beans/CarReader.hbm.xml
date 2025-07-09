@@ -22,6 +22,7 @@
       <key column="Id" foreign-key="none" />
       <property name="Name" column="Name" not-null="true" />
       <property name="ObjectType" not-null="true" />
+      <property name="CkUnique" />
     </join>
   </class>
 </hibernate-mapping>
