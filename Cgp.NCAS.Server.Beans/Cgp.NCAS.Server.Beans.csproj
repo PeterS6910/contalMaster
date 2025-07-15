@@ -294,7 +294,7 @@
     <EmbeddedResource Include="CarReader.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CarReaderAlarmArc.hbm.xml" />
+    <EmbeddedResource Include="CarReaderAlarmArc.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

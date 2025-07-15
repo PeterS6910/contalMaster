@@ -139,11 +139,12 @@ namespace Contal.Cgp.Client
             if (_editingObject.IdCar == Guid.Empty)
                 return;
             Exception error;
-            IList<Card> allCards = CgpClient.Singleton.MainServerProvider.Cards.List(out error).ToList() as IList<Card>;
+            ICollection<Card> allCardsCollection =
+                CgpClient.Singleton.MainServerProvider.Cards.List(out error);
             var activeCards = new List<Card>();
-            if (allCards != null)
+            if (allCardsCollection != null)
             {
-                foreach (var card in allCards)
+                foreach (var card in allCardsCollection)
                 {
                     if (card.State == (byte)CardState.Active || card.State == (byte)CardState.HybridActive)
                         activeCards.Add(card);
@@ -156,7 +157,7 @@ namespace Contal.Cgp.Client
                 foreach (var card in assigned)
                 {
                     assignedSet.Add(card.IdCard);
-                    string cardText = card.ToString();
+                    string cardText = card.FullCardNumber.ToString();
                     if (card.Person != null && card.GuidPerson != Guid.Empty)
                     {
                         var person = CgpClient.Singleton.MainServerProvider.Persons.GetObjectById(card.GuidPerson);
@@ -170,7 +171,7 @@ namespace Contal.Cgp.Client
             {
                 if (!assignedSet.Contains(card.IdCard))
                 {
-                    string cardText = card.ToString();
+                    string cardText = card.FullCardNumber.ToString();
                     if (card.Person != null && card.GuidPerson != Guid.Empty)
                     {
                         var person = CgpClient.Singleton.MainServerProvider.Persons.GetObjectById(card.GuidPerson);

@@ -1,14 +1,15 @@
+using Contal.Cgp.BaseLib;
+using Contal.Cgp.Client.PluginSupport;
+using Contal.IwQuick.Sys;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Contal.Cgp.BaseLib;
-using Contal.Cgp.Client.PluginSupport;
-using Contal.IwQuick.Sys;
 
 namespace Contal.Cgp.Client
 {
@@ -376,7 +377,7 @@ namespace Contal.Cgp.Client
                         CgpClient.Singleton.PluginManager
                             .GetVisualPlugins()
                             .ToList();
-
+                    
                     //int i = 0;
                     foreach (ICgpVisualPlugin p in plugins)
                     {
