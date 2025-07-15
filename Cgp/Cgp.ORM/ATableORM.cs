@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -75,6 +75,7 @@ namespace Contal.Cgp.ORM
             try
             {
                 transaction = session.BeginTransaction();
+                ormObject = session.Merge(ormObject);
                 session.Delete(ormObject);
                 transaction.Commit();
                 _error = null;
