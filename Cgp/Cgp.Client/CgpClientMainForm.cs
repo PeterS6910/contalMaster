@@ -2490,6 +2490,8 @@ namespace Contal.Cgp.Client
                         image = ResourceGlobal.IconCardTemplate16.ToBitmap();
                     else if (form is CardSystemsForm || form is CardSystemsEditForm)
                         image = ResourceGlobal.IconCardSystemNew16.ToBitmap();
+                    else if (form is CarsForm || form is CarEditForm)
+                        image = ResourceGlobal.Car16.ToBitmap();
                     else if (form is CisNGsForm || form is CisNGEditForm)
                         image = ResourceGlobal.CisNG16;
                     else if (form is CisNGGroupsForm || form is CisNGGroupEditForm)

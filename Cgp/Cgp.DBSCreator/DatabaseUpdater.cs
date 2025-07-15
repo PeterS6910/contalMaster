@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 using Contal.Cgp.ORM;
 using Contal.IwQuick.Localization;
@@ -110,7 +110,19 @@ namespace Contal.Cgp.DBSCreator
                 eventSourceTableExist ||
                 eventlogParameterTableExist)
             {
-                throw new ArgumentException("Some eventlog tables exist, but not all of them");
+                Exception error;
+
+                if (eventLogTableExist)
+                    _databaseCommandExecutor.SqlDropTable(
+                        "EventLog", true, out error);
+
+                if (eventSourceTableExist)
+                    _databaseCommandExecutor.SqlDropTable(
+                        "EventSource", true, out error);
+
+                if (eventlogParameterTableExist)
+                    _databaseCommandExecutor.SqlDropTable(
+                        "EventlogParameter", true, out error);
             }
 
             CreateEventlogDatabaseTables();
