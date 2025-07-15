@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -41,10 +41,11 @@ namespace Contal.Cgp.Server.Alarms
 
                 foreach (var serverAlarm in serverAlarms)
                 {
-                    AddAlarmCore(
-                        serverAlarm,
-                        null,
-                        true);
+                    if(serverAlarm != null)
+                        AddAlarmCore(
+                            serverAlarm,
+                            null,
+                            true);
                 }
             }
 

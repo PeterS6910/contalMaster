@@ -18,7 +18,7 @@ namespace Contal.Cgp.Server.Beans
     public class Car : AOrmObjectWithVersion, IOrmObjectWithAlarmInstructions, IComparer
     {
         public const string COLUMNIDCAR = "IdCar";
-        public const string COLUMNLP = "Lp";
+        public const string COLUMNLP = "WholeName";
         public const string COLUMNBRAND = "Brand";
         public const string COLUMNVALIDITYDATEFROM = "ValidityDateFrom";
         public const string COLUMNVALIDITYDATETO = "ValidityDateTo";
@@ -31,7 +31,16 @@ namespace Contal.Cgp.Server.Beans
         public const string COLUMNVERSION = "Version";
 
         public virtual Guid IdCar { get; set; }
-        public virtual string Lp { get; set; }
+        private string _lp;
+        public virtual string Lp
+        {
+            get { return _lp ?? WholeName; }
+            set
+            {
+                _lp = value;
+                WholeName = value;
+            }
+        }
         public virtual string WholeName { get; set; }
         public virtual string Brand { get; set; }
         public virtual DateTime? ValidityDateFrom { get; set; }
@@ -55,7 +64,7 @@ namespace Contal.Cgp.Server.Beans
 
         public override string ToString()
         {
-            return Lp;
+            return Lp ?? WholeName;
         }
 
         public override bool Compare(object obj)
@@ -142,7 +151,7 @@ namespace Contal.Cgp.Server.Beans
         public CarShort(Car car)
         {
             IdCar = car.IdCar;
-            Lp = car.Lp;
+            Lp = car.Lp ?? car.WholeName;
             Brand = car.Brand;
             ValidityDateTo = car.ValidityDateTo;
             SecurityLevel = car.SecurityLevel;
