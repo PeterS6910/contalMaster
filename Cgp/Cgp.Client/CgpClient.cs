@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -12,6 +12,7 @@ using Contal.Cgp.Server.Beans;
 using Contal.IwQuick.Threads;
 using Contal.IwQuick;
 using Contal.IwQuick.UI;
+using System.IO;
 
 namespace Contal.Cgp.Client
 {
@@ -91,7 +92,20 @@ namespace Contal.Cgp.Client
 
         protected override string PluginPath
         {
-            get { return Application.StartupPath; }
+            get
+            {
+#if DEBUG                
+                var cgRoot = Directory.GetParent(Application.StartupPath)?.Parent?.Parent?.Parent;
+
+                if (cgRoot == null) return Application.StartupPath;
+                
+                string debugPluginPath = Path.Combine(cgRoot.FullName, "Cgp.NCAS.Client", "bin", "Debug");
+                return debugPluginPath;
+
+#else
+            return Application.StartupPath;
+#endif
+            }
         }
 
         /// <summary>
