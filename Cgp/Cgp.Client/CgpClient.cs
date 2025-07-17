@@ -94,17 +94,7 @@ namespace Contal.Cgp.Client
         {
             get
             {
-#if DEBUG                
-                var cgRoot = Directory.GetParent(Application.StartupPath)?.Parent?.Parent?.Parent;
-
-                if (cgRoot == null) return Application.StartupPath;
-                
-                string debugPluginPath = Path.Combine(cgRoot.FullName, "Cgp.NCAS.Client", "bin", "Debug");
-                return debugPluginPath;
-
-#else
-            return Application.StartupPath;
-#endif
+                return Application.StartupPath;
             }
         }
 
