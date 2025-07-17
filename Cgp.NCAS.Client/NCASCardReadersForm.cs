@@ -643,7 +643,10 @@ namespace Contal.Cgp.NCAS.Client
         {
             try
             {
-                if (CgpClient.Singleton.IsLoggedIn)
+                if (CgpClient.Singleton.IsLoggedIn
+                        && Plugin != null
+                        && Plugin.MainServerProvider != null
+                        && Plugin.MainServerProvider.CardReaders != null)
                     return Plugin.MainServerProvider.CardReaders.HasAccessView();
             }
             catch (Exception error)
@@ -658,7 +661,10 @@ namespace Contal.Cgp.NCAS.Client
         {
             try
             {
-                if (CgpClient.Singleton.IsLoggedIn)
+                if (CgpClient.Singleton.IsLoggedIn
+                        && Plugin != null
+                        && Plugin.MainServerProvider != null
+                        && Plugin.MainServerProvider.CardReaders != null)
                     return
                         Plugin.MainServerProvider.CardReaders
                             .HasAccessViewForObject(cardReader);

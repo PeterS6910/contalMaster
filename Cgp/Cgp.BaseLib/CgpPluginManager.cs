@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -472,6 +472,11 @@ namespace Contal.Cgp.BaseLib
             bool appDomainSeparation, 
             AppDomain serverDomain)
         {
+#if DEBUG
+            bool demoLicence = true;
+#else
+            bool demoLicence = false;
+#endif
             var loadedPlugins = new LinkedList<TCgpPlugin>();
             LinkedList<string> failedPlugins = null;
 
@@ -480,8 +485,8 @@ namespace Contal.Cgp.BaseLib
                 appDomainSeparation, 
                 ref loadedPlugins, 
                 ref failedPlugins, 
-                serverDomain, 
-                false);
+                serverDomain,
+                demoLicence);
 
             InvokePluginSetLoaded(loadedPlugins);
             if (null != loadedPlugins && loadedPlugins.Count > 0)
