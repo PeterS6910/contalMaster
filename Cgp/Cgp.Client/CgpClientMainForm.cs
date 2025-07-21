@@ -3305,7 +3305,15 @@ namespace Contal.Cgp.Client
                 var pluginMainForm = (toolStripItem.Tag as IPluginMainForm);
                 if (pluginMainForm != null)
                 {
-                    toolStripItem.Visible = pluginMainForm.HasAccessView();
+                    try
+                    {
+                        toolStripItem.Visible = pluginMainForm.HasAccessView();
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Implicit.Error("RefreshLeftMenuItems: " + ex);
+                        toolStripItem.Visible = false;
+                    }
                 }
 
                 if (toolStripItem is ToolStripSeparator)

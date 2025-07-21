@@ -163,7 +163,7 @@ namespace Contal.Cgp.Client.Common
         /// <summary>
         /// default remoting peer for the connection to the Cgp Server
         /// </summary>
-        private TcpRemotingPeer _remotingPeer;
+        protected TcpRemotingPeer _remotingPeer;
 
         private RemotingProxyKeeper<ICgpServerRemotingProvider> _mainServerProviderKeeper;
 
@@ -481,7 +481,7 @@ namespace Contal.Cgp.Client.Common
             _mainServerProviderKeeper.ProxyLost -= removeLostProxyDelegate;
         }
 
-        private bool _isCreatedPluginProxyKeeper;
+        protected bool _isCreatedPluginProxyKeeper;
 
         //this value must be smaller than delay on server side
         private const long ConnectedClientsDelay = 5000;
@@ -495,13 +495,13 @@ namespace Contal.Cgp.Client.Common
                 else
                 {
                     _isCreatedPluginProxyKeeper = true;
-
+                    Debugger.Break();
                     _pluginManager.CreatePluginsProxyKeeper(
                         ref _remotingPeer,
                         OnPluginProxyGained,
                         OnPluginProxyLost);
                 }
-
+                Debugger.Break();
                 MainServerProvider = parameter;
 
                 TryPerformClientUpgrade();
@@ -698,7 +698,7 @@ namespace Contal.Cgp.Client.Common
 
         public Action<ICgpClientPlugin> PluginProxyLost;
 
-        private void OnPluginProxyLost(ICgpClientPlugin plugin)
+        protected void OnPluginProxyLost(ICgpClientPlugin plugin)
         {
             if (PluginProxyLost != null)
                 PluginProxyLost(plugin);
@@ -706,7 +706,7 @@ namespace Contal.Cgp.Client.Common
 
         public Action<ICgpClientPlugin> PluginProxyGained;
 
-        private void OnPluginProxyGained(ICgpClientPlugin plugin)
+        protected void OnPluginProxyGained(ICgpClientPlugin plugin)
         {
             if (PluginProxyGained != null)
                 PluginProxyGained(plugin);

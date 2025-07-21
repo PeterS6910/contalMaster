@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 using Contal.Cgp.BaseLib;
 using Contal.IwQuick;
@@ -29,7 +29,7 @@ namespace Contal.Cgp.Client.Common
                 {
                     ICgpClientPlugin plugin = cgpClientPluginDescriptor._plugin;
 
-                    if (plugin != null)
+                    if (plugin != null && cgpClientPluginDescriptor._pluginRemotingProxyKeeper == null)
                         cgpClientPluginDescriptor._pluginRemotingProxyKeeper =
                             CreateGeneric(
                                 typeof(PluginRemotingProxyKeeper<>),
