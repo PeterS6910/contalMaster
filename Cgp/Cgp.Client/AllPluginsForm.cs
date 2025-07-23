@@ -371,7 +371,7 @@ namespace Contal.Cgp.Client
                         _lvCgp.Items.Add(lv);
                         i++;
                     }
-                    Debugger.Break();
+                    
                     //Insert object from plugins
                     ICollection<ICgpVisualPlugin> plugins =
                         CgpClient.Singleton.PluginManager

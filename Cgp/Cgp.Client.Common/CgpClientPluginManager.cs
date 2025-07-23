@@ -1,8 +1,7 @@
-using System;
-
 using Contal.Cgp.BaseLib;
 using Contal.IwQuick;
 using Contal.IwQuick.Remoting;
+using System;
 
 namespace Contal.Cgp.Client.Common
 {
@@ -29,7 +28,7 @@ namespace Contal.Cgp.Client.Common
                 {
                     ICgpClientPlugin plugin = cgpClientPluginDescriptor._plugin;
 
-                    if (plugin != null && cgpClientPluginDescriptor._pluginRemotingProxyKeeper == null)
+                    if (plugin != null )
                         cgpClientPluginDescriptor._pluginRemotingProxyKeeper =
                             CreateGeneric(
                                 typeof(PluginRemotingProxyKeeper<>),
@@ -39,8 +38,9 @@ namespace Contal.Cgp.Client.Common
                                 proxyGained,
                                 proxyLost);
                 }
-                catch
+                catch (Exception ex)
                 {
+                    Console.WriteLine($"[PluginProxyKeeper] Nepodarilo sa vytvoriť proxy pre plugin : {ex}");
                 }
         }
 

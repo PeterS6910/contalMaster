@@ -123,25 +123,6 @@ namespace Contal.Cgp.Client
 
         protected override void OnPluginLoaded(ICgpClientPlugin parameter)
         {
-            // Ensure dynamically loaded plugins obtain their remoting proxy
-            // when the connection to the server has already been established.
-            Debugger.Break();
-            if (MainServerProvider != null && _isCreatedPluginProxyKeeper)
-            {
-                _pluginManager.CreatePluginsProxyKeeper(
-                    ref _remotingPeer,
-                    OnPluginProxyGained,
-                    OnPluginProxyLost);
-
-                // register callbacks of the newly loaded plugin
-                try
-                {
-                    parameter.PreRegisterAttachCallbackHandlers();
-                }
-                catch
-                {
-                }
-            }
             //PluginDashboardForm.Singleton.ShowPlugin();
         }
 
