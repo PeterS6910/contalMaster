@@ -28,7 +28,7 @@ namespace Contal.Cgp.Client.Common
                 {
                     ICgpClientPlugin plugin = cgpClientPluginDescriptor._plugin;
 
-                    if (plugin != null )
+                    if (plugin != null)
                         cgpClientPluginDescriptor._pluginRemotingProxyKeeper =
                             CreateGeneric(
                                 typeof(PluginRemotingProxyKeeper<>),

@@ -128,7 +128,7 @@ namespace Contal.Cgp.Client
         private void _tcCar_SelectedIndexChanged(object sender, EventArgs e)
         {
             foreach (TabPage page in _tcCar.TabPages)
-                page.BackColor = SystemColors.Control;           
+                page.BackColor = SystemColors.Control;
         }
 
 
@@ -163,7 +163,7 @@ namespace Contal.Cgp.Client
                         var person = CgpClient.Singleton.MainServerProvider.Persons.GetObjectById(card.GuidPerson);
                         cardText += " - " + person.FirstName + " " + person.Surname;
                     }
-                    
+
                     _lvAssignedCards.Items.Add(new ListViewItem(cardText) { Tag = card });
                 }
             }
@@ -176,7 +176,7 @@ namespace Contal.Cgp.Client
                     {
                         var person = CgpClient.Singleton.MainServerProvider.Persons.GetObjectById(card.GuidPerson);
                         cardText += " - " + person.FirstName + " " + person.Surname;
-                    }                        
+                    }
                     _lvAvailableCards.Items.Add(new ListViewItem(cardText) { Tag = card });
                 }
             }
@@ -184,7 +184,7 @@ namespace Contal.Cgp.Client
 
         private void _bAssignCard_Click(object sender, EventArgs e)
         {
-            
+
             if (_lvAssignedCards.SelectedItems.Count == 0)
                 return;
             foreach (ListViewItem item in _lvAssignedCards.SelectedItems)
@@ -203,7 +203,7 @@ namespace Contal.Cgp.Client
             foreach (ListViewItem item in _lvAvailableCards.SelectedItems)
             {
                 var card = item.Tag as Card;
-                if (card != null)                  
+                if (card != null)
                     CgpClient.Singleton.MainServerProvider.CarCards.AssignCardToCar(_editingObject.IdCar, card.IdCard);
             }
             LoadCards();

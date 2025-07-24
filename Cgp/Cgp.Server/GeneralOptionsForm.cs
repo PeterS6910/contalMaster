@@ -32,7 +32,7 @@ namespace Contal.Cgp.Server
 
             SetStartValues();
             ShowLanguages();
-            this.Height = (this.Height - this.ClientSize.Height) + _bSave.Location.Y + _bSave.Height + 30;
+            this.Height = (this.Height - this.ClientSize.Height) + _bSave.Location.Y + _bSave.Height + 100;
             _bSave.DialogResult = DialogResult.OK;
             _bClose.DialogResult = DialogResult.Cancel;
         }

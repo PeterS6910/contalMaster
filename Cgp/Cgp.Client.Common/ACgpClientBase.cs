@@ -489,19 +489,21 @@ namespace Contal.Cgp.Client.Common
         private void OnMainServerProviderProxyGained(ICgpServerRemotingProvider parameter)
         {
             lock (_lockProxyGainedProxyLost)
-            {                
+            {
                 if (_isCreatedPluginProxyKeeper)
                     _pluginManager.PreRegisterAttachCallbackHandlers();
                 else
                 {
-                    _isCreatedPluginProxyKeeper = true;                    
+                    _isCreatedPluginProxyKeeper = true;
+
                     _pluginManager.CreatePluginsProxyKeeper(
                         ref _remotingPeer,
                         OnPluginProxyGained,
-                        OnPluginProxyLost);                    
-                }             
+                        OnPluginProxyLost);
+                }
+
                 MainServerProvider = parameter;
-                
+
                 TryPerformClientUpgrade();
 
                 if (MainServerProvider.ClientConnect(
@@ -705,7 +707,7 @@ namespace Contal.Cgp.Client.Common
         public Action<ICgpClientPlugin> PluginProxyGained;
 
         protected void OnPluginProxyGained(ICgpClientPlugin plugin)
-        {            
+        {
             if (PluginProxyGained != null)
                 PluginProxyGained(plugin);
         }

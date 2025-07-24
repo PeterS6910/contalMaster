@@ -188,7 +188,7 @@ namespace Contal.Cgp.Server
             // GeneralOptionsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(535, 328);
+            this.ClientSize = new System.Drawing.Size(535, 310);
             this.ControlBox = false;
             this.Controls.Add(this._eRemotingIpAddress);
             this.Controls.Add(this._chbSaveAndSkipDB);

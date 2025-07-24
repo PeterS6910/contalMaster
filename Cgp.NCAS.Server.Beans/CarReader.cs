@@ -23,7 +23,6 @@ namespace Contal.Cgp.NCAS.Server.Beans
         Axis = 4
     }
 
-
     [Serializable]
     [LwSerialize(339)]
     [LwSerializeMode(LwSerializationMode.Selective, DirectMemberType.All)]
