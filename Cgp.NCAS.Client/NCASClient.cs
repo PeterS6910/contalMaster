@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -228,6 +228,10 @@ namespace Contal.Cgp.NCAS.Client
                 ResourceGlobal.IconCardreader16);
 
             _objectImages.Images.Add(
+                ObjectType.CarReader.ToString(),
+                ResourceGlobal.IconCarReader16);
+
+            _objectImages.Images.Add(
                 ObjectType.CCU.ToString(), 
                 ResourceGlobal.ccu_16);
 
@@ -359,6 +363,7 @@ namespace Contal.Cgp.NCAS.Client
         {
             _listSubForms.Clear();
             _listSubForms.Add(NCASCardReadersForm.Singleton);
+            _listSubForms.Add(NCASCarReadersForm.Singleton);
             _listSubForms.Add(NCASCCUsForm.Singleton);
             _listSubForms.Add(NCASDCUsForm.Singleton);
             _listSubForms.Add(NCASInputsForm.Singleton);
@@ -1043,6 +1048,9 @@ namespace Contal.Cgp.NCAS.Client
 
             if (objectType == ObjectType.CardReader)
                 return NCASCardReadersForm.Singleton.Icon;
+
+            if (objectType == ObjectType.CarReader)
+                return NCASCarReadersForm.Singleton.Icon;
 
             if (objectType == ObjectType.Input)
                 return NCASInputsForm.Singleton.Icon;
