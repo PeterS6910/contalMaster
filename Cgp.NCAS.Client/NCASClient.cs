@@ -229,7 +229,7 @@ namespace Contal.Cgp.NCAS.Client
 
             _objectImages.Images.Add(
                 ObjectType.CarReader.ToString(),
-                ResourceGlobal.IconCarReader16);
+                ResourceGlobal.IconCarReader);
 
             _objectImages.Images.Add(
                 ObjectType.CCU.ToString(), 

@@ -161,32 +161,32 @@ namespace Contal.Cgp.NCAS.Client {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] camera {
-            get {
-                object obj = ResourceManager.GetObject("camera", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap camera_icon_9199 {
-            get {
-                object obj = ResourceManager.GetObject("camera-icon-9199", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Cardreader48 {
             get {
                 object obj = ResourceManager.GetObject("Cardreader48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carReader {
+            get {
+                object obj = ResourceManager.GetObject("carReader", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] carReaderIcon {
+            get {
+                object obj = ResourceManager.GetObject("carReaderIcon", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -396,6 +396,16 @@ namespace Contal.Cgp.NCAS.Client {
         internal static System.Drawing.Icon IconCardreaderBlocked_16 {
             get {
                 object obj = ResourceManager.GetObject("IconCardreaderBlocked_16", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon IconCarReader {
+            get {
+                object obj = ResourceManager.GetObject("IconCarReader", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

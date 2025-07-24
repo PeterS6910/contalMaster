@@ -131,6 +131,7 @@
     <Compile Include="ModifyObjects\FloorModifyObj.cs" />
     <Compile Include="Shorts\AlarmArcShort.cs" />
     <Compile Include="Shorts\AlarmTransmitterShort.cs" />
+    <Compile Include="Shorts\CarReaderShort.cs" />
     <Compile Include="Shorts\FloorShort.cs" />
     <Compile Include="Shorts\MultiDoorShort.cs" />
     <Compile Include="MultiDoorElement.cs" />

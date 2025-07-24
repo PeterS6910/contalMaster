@@ -46,12 +46,12 @@ namespace Contal.Cgp.NCAS.Client
                 NCASClient.Singleton,
                 NCASClient.LocalizationHelper)
         {
-            FormImage = ResourceGlobal.CarReader48;
+            FormImage = ResourceGlobal.carReader;
             InitializeComponent();
             InitCgpDataGridView();
         }
 
-        private void InitializeComponent()
+        private void InitializeCustomComponent()
         {
             SuspendLayout();
             _cdgvData.Dock = DockStyle.Fill;
