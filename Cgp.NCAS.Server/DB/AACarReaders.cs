@@ -16,91 +16,91 @@ namespace Contal.Cgp.NCAS.Server.DB
         private AACarReaders()
             : base(
                   null,
-                  new CudPreparationForObjectWithVersion<AACardReader>())
+                  new CudPreparationForObjectWithVersion<AACarReader>())
         {
         }
 
         public override bool HasAccessView(Login login)
         {
-            return AccessChecker.HasAccessControl(NCASAccess.GetAccessesForGroup(AccessNcasGroups.CARD_READERS), login);
+            return AccessChecker.HasAccessControl(NCASAccess.GetAccessesForGroup(AccessNcasGroups.CAR_READERS), login);
         }
 
         public override bool HasAccessInsert(Login login)
         {
-            return AccessChecker.HasAccessControl(NCASAccess.GetAccess(AccessNCAS.CardReadersInsertDeletePerform), login);
+            return AccessChecker.HasAccessControl(NCASAccess.GetAccess(AccessNCAS.CarReadersInsertDeletePerform), login);
         }
 
         public override bool HasAccessUpdate(Login login)
         {
-            return AccessChecker.HasAccessControl(NCASAccess.GetAccessesForGroup(AccessNcasGroups.CARD_READERS), login);
+            return AccessChecker.HasAccessControl(NCASAccess.GetAccessesForGroup(AccessNcasGroups.CAR_READERS), login);
         }
 
         public override bool HasAccessDelete(Login login)
         {
-            return AccessChecker.HasAccessControl(NCASAccess.GetAccess(AccessNCAS.CardReadersInsertDeletePerform), login);
+            return AccessChecker.HasAccessControl(NCASAccess.GetAccess(AccessNCAS.CarReadersInsertDeletePerform), login);
         }
 
-        protected override void LoadObjectsInRelationship(AACardReader obj)
+        protected override void LoadObjectsInRelationship(AACarReader obj)
         {
             if (obj.AlarmArea != null)
                 obj.AlarmArea = AlarmAreas.Singleton.GetById(obj.AlarmArea.IdAlarmArea);
 
-            if (obj.CardReader != null)
-                obj.CardReader = CardReaders.Singleton.GetById(obj.CardReader.IdCardReader);
+            if (obj.CarReader != null)
+                obj.CarReader = CarReaders.Singleton.GetById(obj.CarReader.IdCarReader);
         }
 
-        public AlarmArea GetImplicitAlarmArea(CardReader cardReader)
+        public AlarmArea GetImplicitAlarmArea(CarReader carReader)
         {
-            ICollection<AACardReader> aaCardReaders = SelectLinq<AACardReader>(aaCardReader => aaCardReader.CardReader == cardReader && aaCardReader.PermanentlyUnlock == false);
+            ICollection<AACarReader> aaCarReaders = SelectLinq<AACarReader>(aaCarReader => aaCarReader.CarReader == carReader && aaCarReader.PermanentlyUnlock == false);
 
-            if (aaCardReaders != null && aaCardReaders.Count > 0 && aaCardReaders.ToList()[0].AlarmArea != null)
+            if (aaCarReaders != null && aaCarReaders.Count > 0 && aaCarReaders.ToList()[0].AlarmArea != null)
             {
-                return AlarmAreas.Singleton.GetById(aaCardReaders.ToList()[0].AlarmArea.IdAlarmArea);
+                return AlarmAreas.Singleton.GetById(aaCarReaders.ToList()[0].AlarmArea.IdAlarmArea);
             }
 
             return null;
         }
 
-        public void GetParentCCU(ICollection<Guid> ccus, Guid idAAcardReader)
+        public void GetParentCCU(ICollection<Guid> ccus, Guid idAAcarReader)
         {
-            AACardReader aaCardreader = GetById(idAAcardReader);
-            if (ccus != null && aaCardreader != null)
+            AACarReader aaCarreader = GetById(idAAcarReader);
+            if (ccus != null && aaCarreader != null)
             {
-                if (aaCardreader.CardReader != null)
+                if (aaCarreader.CarReader != null)
                 {
-                    CardReaders.Singleton.GetParentCCU(ccus, aaCardreader.CardReader.IdCardReader);
+                    CarReaders.Singleton.GetParentCCU(ccus, aaCarreader.CarReader.IdCarReader);
                 }
             }
         }
 
-        public void SetImplicitAAToCardReader(Guid guidAlarmArea)
+        public void SetImplicitAAToCarReader(Guid guidAlarmArea)
         {
             AlarmArea alarmArea = AlarmAreas.Singleton.GetById(guidAlarmArea);
             if (alarmArea == null) return;
-            foreach (AACardReader aaCardReader in alarmArea.AACardReaders)
+            foreach (AACarReader aaCarReader in alarmArea.AACarReaders)
             {
-                if (!aaCardReader.PermanentlyUnlock)
+                if (!aaCarReader.PermanentlyUnlock)
                 {
-                    CancelPermanentlyUnlockinCardReaders(aaCardReader.CardReader, guidAlarmArea);
+                    CancelPermanentlyUnlockinCardReaders(aaCarReader.CarReader, guidAlarmArea);
                 }
             }
         }
 
-        private void CancelPermanentlyUnlockinCardReaders(CardReader cardReader, Guid guidAlarmArea)
+        private void CancelPermanentlyUnlockinCardReaders(CarReader carReader, Guid guidAlarmArea)
         {
-            ICollection<AACardReader> aaCardReaders = SelectLinq<AACardReader>(aaCardReader => aaCardReader.CardReader == cardReader);
-            if (aaCardReaders == null) return;
-            foreach (AACardReader aaCr in aaCardReaders)
+            ICollection<AACarReader> aaCarReaders = SelectLinq<AACarReader>(aaCarReader => aaCarReader.CarReader == carReader);
+            if (aaCarReaders == null) return;
+            foreach (AACarReader aaCr in aaCarReaders)
             {
                 if (!aaCr.PermanentlyUnlock && aaCr.AlarmArea.IdAlarmArea != guidAlarmArea)
                 {
                     try
                     {
-                        AACardReader editAaCardReader = GetObjectForEdit(aaCr.IdAACardReader);
-                        if (editAaCardReader != null)
+                        AACarReader editAaCarReader = GetObjectForEdit(aaCr.IdAACarReader);
+                        if (editAaCarReader != null)
                         {
-                            editAaCardReader.PermanentlyUnlock = true;
-                            Update(editAaCardReader);
+                            editAaCarReader.PermanentlyUnlock = true;
+                            Update(editAaCarReader);
                         }
                     }
                     catch { }
@@ -110,7 +110,7 @@ namespace Contal.Cgp.NCAS.Server.DB
 
         public override Contal.Cgp.Globals.ObjectType ObjectType
         {
-            get { return Contal.Cgp.Globals.ObjectType.AACardReader; }
+            get { return Contal.Cgp.Globals.ObjectType.AACarReader; }
         }
     }
 }

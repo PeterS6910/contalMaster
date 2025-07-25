@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +11,7 @@ namespace Contal.Cgp.NCAS.Server.Beans
     public static class AccessNcasGroups
     {
         public const string CARD_READERS = "CardReaders";
+        public const string CAR_READERS = "CarReaders";
         public const string CCUS = "Ccus";
         public const string DCUS = "Dcus";
         public const string INPUTS = "Inputs";
@@ -760,7 +761,75 @@ namespace Contal.Cgp.NCAS.Server.Beans
         [Access(NCASAccess.SOURCE, AccessNcasGroups.AlarmArcs, (int)OldDevicesManagementView)]
         AlarmArcsDescriptionView = 1708,
         [Access(NCASAccess.SOURCE, AccessNcasGroups.AlarmArcs, (int)OldDevicesManagementAdmin)]
-        AlarmArcsDescriptionAdmin = 1709
+        AlarmArcsDescriptionAdmin = 1709,
+
+        // Car readers
+        [AccessPresentation(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, AccessConstans.NULL_ACCESS_REFERENCE, null, (int)CarReadersInsertDeletePerform, AccessConstans.PERFORM_DESCRIPTION, 0)]
+        CarReadersInsertDelete = 1800,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementAdmin, new[] { (int)CarReadersSettingsAdmin }, null)]
+        CarReadersInsertDeletePerform = 1801,
+        [AccessPresentation(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)CarReadersSettingsView, (int)CarReadersSettingsAdmin, 1)]
+        CarReadersSettings = 1802,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementView)]
+        CarReadersSettingsView = 1803,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementAdmin, null, new[] { (int)CarReadersInsertDeletePerform })]
+        CarReadersSettingsAdmin = 1804,
+        [AccessPresentation(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)CarReadersInformationView, (int)CarReadersInformationAdmin, 2)]
+        CarReadersInformation = 1805,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementView)]
+        CarReadersInformationView = 1806,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementAdmin)]
+        CarReadersInformationAdmin = 1807,
+        [AccessPresentation(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)CardReadersAlarmAreasView, AccessConstans.NULL_ACCESS_REFERENCE, 3)]
+        CarReadersAlarmAreas = 1808,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementView)]
+        CarReadersAlarmAreasView = 1809,
+        [AccessPresentation(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)CardReadersAlarmSettingsView, (int)CardReadersAlarmSettingsAdmin, 4)]
+        CarReadersAlarmSettings = 1810,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementView)]
+        CarReadersAlarmSettingsView = 1811,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementAdmin)]
+        CarReadersAlarmSettingsAdmin = 1812,
+        [AccessPresentation(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)CardReadersLanguageSettingsView, (int)CardReadersLanguageSettingsAdmin, 5)]
+        CarReadersLanguageSettings = 1813,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementView)]
+        CarReadersLanguageSettingsView = 1814,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementAdmin)]
+        CarReadersLanguageSettingsAdmin = 1815,
+        [AccessPresentation(NCASAccess.SOURCE, AccessNcasGroups.CARD_READERS, (int)CardReadersActionPresentationSettingsView, (int)CardReadersActionPresentationSettingsAdmin, 6)]
+        CarReadersActionPresentationSettings = 1816,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementView)]
+        CarReadersActionPresentationSettingsView = 1817,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementAdmin)]
+        CarReadersActionPresentationSettingsAdmin = 1818,
+        [AccessPresentation(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)CardReadersSpecialOutputsView, (int)CardReadersSpecialOutputsAdmin, 7)]
+        CarReadersSpecialOutputs = 1819,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementView)]
+        CarReadersSpecialOutputsView = 1820,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementAdmin)]
+        CarReadersSpecialOutputsAdmin = 1821,
+        [AccessPresentation(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)CardReadersReferencedByView, AccessConstans.NULL_ACCESS_REFERENCE, 8)]
+        CarReadersReferencedBy = 1822,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementView)]
+        CarReadersReferencedByView = 1823,
+        [AccessPresentation(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)CardReadersDescriptionView, (int)CarReadersDescriptionAdmin, 9)]
+        CarReadersDescription = 1824,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementView)]
+        CarReadersDescriptionView = 1825,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementAdmin)]
+        CarReadersDescriptionAdmin = 1826,
+        [AccessPresentation(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)CarReadersLocalAlarmInstructionsView, (int)CarReadersLocalAlarmInstructionsAdmin, 10)]
+        CarReadersLocalAlarmInstructions = 1827,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementView)]
+        CarReadersLocalAlarmInstructionsView = 1828,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementAdmin)]
+        CarReadersLocalAlarmInstructionsAdmin = 1829,
+        [AccessPresentation(NCASAccess.SOURCE, AccessNcasGroups.CARD_READERS, (int)CardReadersFunctionKeysSettingsView, (int)CarReadersFunctionKeysSettingsAdmin, 11)]
+        CarReadersFunctionKeysSettings = 1830,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementView)]
+        CarReadersFunctionKeysSettingsView = 1831,
+        [Access(NCASAccess.SOURCE, AccessNcasGroups.CAR_READERS, (int)OldDevicesManagementAdmin)]
+        CarReadersFunctionKeysSettingsAdmin = 1832
     }
 
     public static class NCASAccess

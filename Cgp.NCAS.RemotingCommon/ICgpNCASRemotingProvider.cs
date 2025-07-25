@@ -26,6 +26,7 @@ namespace Contal.Cgp.NCAS.RemotingCommon
         IOutputs Outputs { get; }
         IAlarmAreas AlarmAreas { get; }
         IAACardReaders AACardReaders { get; }
+        IAACarReaders AACarReaders { get; }
         ISecurityDailyPlans SecurityDailyPlans { get; }
         ISecurityDayIntervals SecurityDayIntervals { get; }
         ISecurityTimeZones SecurityTimeZones { get; }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -110,7 +110,7 @@ namespace Contal.Cgp.NCAS.Server.DB
 
         public override Contal.Cgp.Globals.ObjectType ObjectType
         {
-            get { return Contal.Cgp.Globals.ObjectType.AACardReader; }
+            get { return Contal.Cgp.Globals.ObjectType.AACarReader; }
         }
     }
 }

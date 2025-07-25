@@ -86,6 +86,7 @@ namespace Contal.Cgp.Globals
         ExcelReportOutput = 146,
         Car = 147,
         CarReader = 148,
+        AACarReader = 149,
 
         NotSupport = 201,
         AllObjectTypes = 202
