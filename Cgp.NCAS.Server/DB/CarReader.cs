@@ -42,6 +42,31 @@ namespace Contal.Cgp.NCAS.Server.DB
         {
             var list = SelectByCriteria(filterSettings, out error);
             return list != null ? new LinkedList<CarReaderShort>(list.Select(cr => new CarReaderShort(cr))) : null;
+        }    
+    
+        public Guid GetParentCCU(Guid idCarReader)
+        {
+            var carReader = GetById(idCarReader);
+            var ccu = carReader?.CCU ?? carReader?.DCU?.CCU;
+
+            return ccu != null ? ccu.IdCCU : Guid.Empty;
+        }
+
+        public void GetParentCCU(ICollection<Guid> ccus, Guid idCarReader)
+        {
+            var carReader = GetById(idCarReader);
+            if (ccus != null && carReader != null)
+            {
+                if (carReader.CCU != null)
+                    CCUs.Singleton.GetParentCCU(ccus, carReader.CCU.IdCCU);
+                else if (carReader.DCU != null)
+                    DCUs.Singleton.GetParentCCU(ccus, carReader.DCU.IdDCU);
+            }
+        }
+
+        public override Contal.Cgp.Globals.ObjectType ObjectType
+        {
+            get { return Contal.Cgp.Globals.ObjectType.CarReader; }
         }
     }
 }

@@ -338,6 +338,23 @@ namespace Contal.Cgp.NCAS.Server
                 }
             }
         }
+
+        public IAACarReaders AACarReaders
+        {
+            get
+            {
+                try
+                {
+                    ValidateSession();
+                    return DB.AACarReaders.Singleton;
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+        }
+
         public ISecurityDailyPlans SecurityDailyPlans
         {
             get
