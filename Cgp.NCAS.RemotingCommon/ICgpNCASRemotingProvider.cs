@@ -15,6 +15,7 @@ namespace Contal.Cgp.NCAS.RemotingCommon
     {
         string ToString();
         ICardReaders CardReaders { get; }
+        ICarReaders CarReaders { get; }
         ICCUs CCUs { get; }
         IDCUs DCUs { get; }
         IAccessControlLists AccessControlLists { get; }

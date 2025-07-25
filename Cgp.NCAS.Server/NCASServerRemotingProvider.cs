@@ -67,6 +67,22 @@ namespace Contal.Cgp.NCAS.Server
             }
         }
 
+        public ICarReaders CarReaders
+        {
+            get
+            {
+                try
+                {
+                    ValidateSession();
+                    return DB.CarReaders.Singleton;
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+        }
+
         public IScenes Scenes
         {
             get
