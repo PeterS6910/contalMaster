@@ -4,6 +4,7 @@ using Contal.Cgp.Components;
 using Contal.Cgp.NCAS.Server.Beans;
 using Contal.Cgp.NCAS.Server.Beans.Shorts;
 using Contal.IwQuick;
+using Contal.IwQuick.Sys;
 using Contal.IwQuick.UI;
 using System;
 using System.Collections.Generic;
@@ -129,16 +130,63 @@ namespace Contal.Cgp.NCAS.Client
 
         public override bool HasAccessView()
         {
+            try
+            {
+                if (Plugin != null && Plugin.MainServerProvider != null)
+                {
+                    if (Plugin.MainServerProvider.CarReaders != null &&
+                        CgpClient.Singleton.IsLoggedIn)
+                        return Plugin.MainServerProvider.CarReaders.HasAccessView();
+                }
+                else
+                    return true;
+            }
+            catch (Exception error)
+            {
+                HandledExceptionAdapter.Examine(error);
+            }
+
             return false;
         }
 
         public override bool HasAccessView(CarReader obj)
         {
+            try
+            {
+                if (Plugin != null && Plugin.MainServerProvider != null)
+                {
+                    if (Plugin.MainServerProvider.CarReaders != null &&
+                        CgpClient.Singleton.IsLoggedIn)
+                        return Plugin.MainServerProvider.CarReaders.HasAccessViewForObject(obj);
+                }
+                else
+                    return true;
+            }
+            catch (Exception error)
+            {
+                HandledExceptionAdapter.Examine(error);
+            }
+
             return false;
         }
 
         public override bool HasAccessInsert()
         {
+            try
+            {
+                if (Plugin != null && Plugin.MainServerProvider != null)
+                {
+                    if (Plugin.MainServerProvider.CarReaders != null &&
+                        CgpClient.Singleton.IsLoggedIn)
+                        return Plugin.MainServerProvider.CarReaders.HasAccessInsert();
+                }
+                else
+                    return true;
+            }
+            catch (Exception error)
+            {
+                HandledExceptionAdapter.Examine(error);
+            }
             return false;
         }
 
