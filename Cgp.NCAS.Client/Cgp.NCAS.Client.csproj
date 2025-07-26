@@ -995,6 +995,7 @@
     <None Include="Resources\clienticon.ico_128x128.png" />
     <Content Include="Resources\camera-icon-9199.png" />
     <Content Include="Resources\camera.ico" />
+    <Content Include="Resources\carReader_48.png" />
     <Content Include="Resources\IconACLGroup16.ico" />
     <None Include="Resources\IconAntiPassBackZone16.ico" />
     <None Include="Resources\IconFloor16.ico" />
@@ -1006,6 +1007,7 @@
     <None Include="Resources\IconAlarmArc16.ico" />
     <None Include="Resources\insert.png" />
     <None Include="Resources\information.png" />
+    <Content Include="Resources\IconCarReader_48.ico" />
     <Content Include="Resources\Scenes.ico" />
     <None Include="Resources\Warning.png" />
     <None Include="Resources\Scene48.png" />

@@ -49,6 +49,7 @@ namespace Contal.Cgp.NCAS.Client
         {
             FormImage = ResourceGlobal.carReader;
             InitializeComponent();
+            InitializeCustomComponent();
             InitCgpDataGridView();
         }
 
@@ -71,7 +72,15 @@ namespace Contal.Cgp.NCAS.Client
         protected override ICollection<CarReaderShort> GetData()
         {
             // Data retrieval not implemented yet
-            return new List<CarReaderShort>();
+            Exception error;
+            var list = Plugin.MainServerProvider.CarReaders.ShortSelectByCriteria(
+                FilterSettings,
+                out error);
+
+            if (error != null)
+                throw error;
+
+            return list;
         }
 
         protected override void ModifyGridView(BindingSource bindingSource)
@@ -92,13 +101,12 @@ namespace Contal.Cgp.NCAS.Client
 
         protected override ACgpPluginEditForm<NCASClient, CarReader> CreateEditForm(CarReader obj, ShowOptionsEditForm showOption)
         {
-            return null;
+            return new NCASCarReaderEditForm(obj, showOption, this);
         }
 
         protected override CarReader GetObjectForEdit(CarReaderShort listObj, out bool editEnabled)
         {
-            editEnabled = false;
-            return null;
+            return Plugin.MainServerProvider.CarReaders.GetObjectForEditById(listObj.IdCarReader, out editEnabled);
         }
 
         protected override CarReader GetFromShort(CarReaderShort listObj)
@@ -118,6 +126,9 @@ namespace Contal.Cgp.NCAS.Client
 
         protected override void DeleteObj(CarReader obj)
         {
+            Exception error;
+            if (!Plugin.MainServerProvider.CarReaders.Delete(obj, out error))
+                throw error;
         }
 
         protected override void SetFilterSettings()
@@ -132,14 +143,8 @@ namespace Contal.Cgp.NCAS.Client
         {
             try
             {
-                if (Plugin != null && Plugin.MainServerProvider != null)
-                {
-                    if (Plugin.MainServerProvider.CarReaders != null &&
-                        CgpClient.Singleton.IsLoggedIn)
-                        return Plugin.MainServerProvider.CarReaders.HasAccessView();
-                }
-                else
-                    return true;
+                if (CgpClient.Singleton.IsLoggedIn)
+                    return Plugin.MainServerProvider.CarReaders.HasAccessView();
             }
             catch (Exception error)
             {
@@ -153,14 +158,8 @@ namespace Contal.Cgp.NCAS.Client
         {
             try
             {
-                if (Plugin != null && Plugin.MainServerProvider != null)
-                {
-                    if (Plugin.MainServerProvider.CarReaders != null &&
-                        CgpClient.Singleton.IsLoggedIn)
-                        return Plugin.MainServerProvider.CarReaders.HasAccessViewForObject(obj);
-                }
-                else
-                    return true;
+                if (CgpClient.Singleton.IsLoggedIn)
+                    return Plugin.MainServerProvider.CarReaders.HasAccessViewForObject(obj);
             }
             catch (Exception error)
             {
@@ -174,14 +173,8 @@ namespace Contal.Cgp.NCAS.Client
         {
             try
             {
-                if (Plugin != null && Plugin.MainServerProvider != null)
-                {
-                    if (Plugin.MainServerProvider.CarReaders != null &&
-                        CgpClient.Singleton.IsLoggedIn)
-                        return Plugin.MainServerProvider.CarReaders.HasAccessInsert();
-                }
-                else
-                    return true;
+                if (CgpClient.Singleton.IsLoggedIn)
+                    return Plugin.MainServerProvider.CarReaders.HasAccessInsert();
             }
             catch (Exception error)
             {

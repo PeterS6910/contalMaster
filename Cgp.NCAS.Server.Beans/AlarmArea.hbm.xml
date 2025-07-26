@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
   <class name="Contal.Cgp.NCAS.Server.Beans.AlarmArea, Cgp.NCAS.Server.Beans" select-before-update="true">
     <cache usage="read-write"/>
@@ -18,6 +18,11 @@
       <one-to-many class="Contal.Cgp.NCAS.Server.Beans.AACardReader"  />
     </bag>
 
+    <bag name="AACarReaders" cascade="all-delete-orphan">
+      <key column="AlarmArea" />
+      <one-to-many class="Contal.Cgp.NCAS.Server.Beans.AACarReader"  />
+    </bag>
+    
     <property name="EnableEventlogsInCR" not-null="false"></property>
     <property name="Id" not-null="true" unique="true"></property>
 

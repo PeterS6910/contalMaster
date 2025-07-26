@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -239,6 +239,7 @@ namespace Contal.Cgp.NCAS.Server.Beans
         [LwSerialize]
         public virtual List<Guid> GuidAAInputs { get { return _guidAAInputs; } set { _guidAAInputs = value; } }
         public virtual ICollection<AACardReader> AACardReaders { get; set; }
+        public virtual ICollection<AACarReader> AACarReaders { get; set; }
 
         #region Object for automatic activation
 
