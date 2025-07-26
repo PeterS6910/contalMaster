@@ -6829,4 +6829,10 @@ Vill Ni ändra ingångskontroll på {1} till forcerad blockering?</value>
   <data name="ExportExcel" xml:space="preserve">
     <value>Exportera till Excel</value>
   </data>
+  <data name="NCASCarReaderEditFormNCASCarReaderEditForm" xml:space="preserve">
+    <value>Redigera bil-läsare</value>
+  </data>
+  <data name="ErrorEntryCarReaderName" xml:space="preserve">
+    <value>Ange namn för bil-läsare</value>
+  </data>
 </root>

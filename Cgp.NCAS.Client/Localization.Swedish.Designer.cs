@@ -3994,6 +3994,15 @@ namespace Contal.Cgp.NCAS.Client {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ange namn för bil-läsare.
+        /// </summary>
+        internal static string ErrorEntryCarReaderName {
+            get {
+                return ResourceManager.GetString("ErrorEntryCarReaderName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ange DNS värdnamn.
         /// </summary>
         internal static string ErrorEntryDNSHostname {
@@ -10276,6 +10285,15 @@ namespace Contal.Cgp.NCAS.Client {
         internal static string NCASCardReadersFormNCASCardReadersForm {
             get {
                 return ResourceManager.GetString("NCASCardReadersFormNCASCardReadersForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Redigera bil-läsare.
+        /// </summary>
+        internal static string NCASCarReaderEditFormNCASCarReaderEditForm {
+            get {
+                return ResourceManager.GetString("NCASCarReaderEditFormNCASCarReaderEditForm", resourceCulture);
             }
         }
         

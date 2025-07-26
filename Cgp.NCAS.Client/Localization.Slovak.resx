@@ -4708,4 +4708,10 @@ Nakupovaný čas: {1}, {2} čas: {3}</value>
   <data name="NCASCardReadersForm_bExportExcel" xml:space="preserve">
     <value>Exportovať do Excelu</value>
   </data>
+  <data name="NCASCarReaderEditFormNCASCarReaderEditForm" xml:space="preserve">
+    <value>Upraviť čítačku vozidiel</value>
+  </data>
+  <data name="ErrorEntryCarReaderName" xml:space="preserve">
+    <value>Zadajte názov čítačky vozidiel</value>
+  </data>
 </root>

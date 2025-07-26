@@ -3976,6 +3976,15 @@ namespace Contal.Cgp.NCAS.Client {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter car reader name.
+        /// </summary>
+        internal static string ErrorEntryCarReaderName {
+            get {
+                return ResourceManager.GetString("ErrorEntryCarReaderName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Entry DNS hostname.
         /// </summary>
         internal static string ErrorEntryDNSHostname {
@@ -10195,6 +10204,15 @@ namespace Contal.Cgp.NCAS.Client {
         internal static string NCASCardReadersFormNCASCardReadersForm {
             get {
                 return ResourceManager.GetString("NCASCardReadersFormNCASCardReadersForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit car reader.
+        /// </summary>
+        internal static string NCASCarReaderEditFormNCASCarReaderEditForm {
+            get {
+                return ResourceManager.GetString("NCASCarReaderEditFormNCASCarReaderEditForm", resourceCulture);
             }
         }
         
