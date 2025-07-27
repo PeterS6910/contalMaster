@@ -7272,6 +7272,15 @@ namespace Contal.Cgp.NCAS.Client {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Čítačky vozidiel.
+        /// </summary>
+        internal static string NCASCarReadersFormNCASCarReadersForm {
+            get {
+                return ResourceManager.GetString("NCASCarReadersFormNCASCarReadersForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Časové zóny (bezpečnostné č.z.), denné plány (bezpečnostné d.p.).
         /// </summary>
         internal static string NCASCCUEditForm_AddTimeZoneDailyPlan {

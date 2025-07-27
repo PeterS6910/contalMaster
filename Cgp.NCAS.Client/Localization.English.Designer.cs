@@ -10217,6 +10217,15 @@ namespace Contal.Cgp.NCAS.Client {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Car readers.
+        /// </summary>
+        internal static string NCASCarReadersFormNCASCarReadersForm {
+            get {
+                return ResourceManager.GetString("NCASCarReadersFormNCASCarReadersForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Phone numbers.
         /// </summary>
         internal static string NCASCatSmsConfiguration_gbPhoneNumbers {

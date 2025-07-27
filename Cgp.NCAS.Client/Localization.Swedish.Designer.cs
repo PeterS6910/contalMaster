@@ -10298,6 +10298,15 @@ namespace Contal.Cgp.NCAS.Client {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bil-läsare.
+        /// </summary>
+        internal static string NCASCarReadersFormNCASCarReadersForm {
+            get {
+                return ResourceManager.GetString("NCASCarReadersFormNCASCarReadersForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Telefonnummer.
         /// </summary>
         internal static string NCASCatSmsConfiguration_gbPhoneNumbers {

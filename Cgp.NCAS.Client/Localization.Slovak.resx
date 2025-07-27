@@ -4714,4 +4714,7 @@ Nakupovaný čas: {1}, {2} čas: {3}</value>
   <data name="ErrorEntryCarReaderName" xml:space="preserve">
     <value>Zadajte názov čítačky vozidiel</value>
   </data>
+  <data name="NCASCarReadersFormNCASCarReadersForm" xml:space="preserve">
+    <value>Čítačky vozidiel</value>
+  </data>
 </root>

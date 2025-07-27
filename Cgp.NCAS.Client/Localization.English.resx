@@ -6781,6 +6781,9 @@ Do you want to change the input control of {1} to forcefully blocked ?</value>
     <data name="NCASCarReaderEditFormNCASCarReaderEditForm" xml:space="preserve">
     <value>Edit car reader</value>
   </data>
+  <data name="NCASCarReadersFormNCASCarReadersForm" xml:space="preserve">
+    <value>Car readers</value>
+  </data>
   <data name="ErrorEntryCarReaderName" xml:space="preserve">
     <value>Enter car reader name</value>
   </data>

@@ -88,6 +88,15 @@ namespace Contal.Cgp.Server {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Snímače vozidiel.
+        /// </summary>
+        internal static string CarReaders {
+            get {
+                return ResourceManager.GetString("CarReaders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Povolenie CIS integrácie.
         /// </summary>
         internal static string CISIntegration {

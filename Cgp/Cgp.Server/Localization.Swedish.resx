@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -321,6 +321,9 @@ Vill Ni verkligen hoppa över omkonfigurering av databas?</value>
   </data>
   <data name="CardReaders" xml:space="preserve">
     <value>Kortläsare</value>
+  </data>
+  <data name="CarReaders" xml:space="preserve">
+    <value>Fordonssensorer</value>
   </data>
   <data name="SelectStructuredSubSiteForm_RootNode" xml:space="preserve">
     <value>Allt</value>

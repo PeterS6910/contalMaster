@@ -51,6 +51,8 @@ namespace Contal.Cgp.NCAS.Client
             InitializeComponent();
             InitializeCustomComponent();
             InitCgpDataGridView();
+            Name = "NCASCarReadersForm";
+            Icon = ResourceGlobal.IconCarReader;
         }
 
         private void InitializeCustomComponent()

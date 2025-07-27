@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.NCAS.Client
+namespace Contal.Cgp.NCAS.Client
 {
     partial class NCASCarReadersForm
     {
@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Icon = global::Contal.Cgp.NCAS.Client.ResourceGlobal.IconCarReader;
+            this.Name = "NCASCarReadersForm";
             this.Text = "NCASCarReadersForm";
         }
 

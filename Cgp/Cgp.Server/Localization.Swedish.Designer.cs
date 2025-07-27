@@ -88,6 +88,15 @@ namespace Contal.Cgp.Server {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fordonssensorer.
+        /// </summary>
+        internal static string CarReaders {
+            get {
+                return ResourceManager.GetString("CarReaders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CCU har föråldrad mjukvara.
         /// </summary>
         internal static string CCUOutdatedFirmware {

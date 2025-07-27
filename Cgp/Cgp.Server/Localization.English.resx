@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -306,6 +306,9 @@ Do you really want to skip the database reconfiguration ?</value>
   </data>
   <data name="CardReaders" xml:space="preserve">
     <value>Card Readers</value>
+  </data>
+  <data name="CarReaders" xml:space="preserve">
+    <value>Car Readers</value>
   </data>
   <data name="SelectStructuredSubSiteForm_RootNode" xml:space="preserve">
     <value>Root</value>
