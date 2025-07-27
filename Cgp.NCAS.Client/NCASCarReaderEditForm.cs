@@ -123,6 +123,23 @@ namespace Contal.Cgp.NCAS.Client
             return ret;
         }
 
+        protected override void AfterInsert()
+        {
+        }
+
+        protected override void AfterEdit()
+        {
+        }
+
+        protected override void RegisterEvents()
+        {
+        }
+
+        protected override void UnregisterEvents()
+        {
+        }
+
+
         protected override void EditEnd()
         {
             if (Plugin.MainServerProvider?.CarReaders != null)
