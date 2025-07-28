@@ -20,22 +20,22 @@ namespace Contal.Cgp.NCAS.Server.DB
 
         public override bool HasAccessView(Login login)
         {
-            return AccessChecker.HasAccessControl(NCASAccess.GetAccessesForGroup(AccessNcasGroups.CARD_READERS), login);
+            return AccessChecker.HasAccessControl(NCASAccess.GetAccessesForGroup(AccessNcasGroups.CAR_READERS), login);
         }
 
         public override bool HasAccessInsert(Login login)
         {
-            return AccessChecker.HasAccessControl(NCASAccess.GetAccess(AccessNCAS.CardReadersInsertDeletePerform), login);
+            return AccessChecker.HasAccessControl(NCASAccess.GetAccess(AccessNCAS.CarReadersInsertDeletePerform), login);
         }
 
         public override bool HasAccessUpdate(Login login)
         {
-            return AccessChecker.HasAccessControl(NCASAccess.GetAccessesForGroup(AccessNcasGroups.CARD_READERS), login);
+            return AccessChecker.HasAccessControl(NCASAccess.GetAccessesForGroup(AccessNcasGroups.CAR_READERS), login);
         }
 
         public override bool HasAccessDelete(Login login)
         {
-            return AccessChecker.HasAccessControl(NCASAccess.GetAccess(AccessNCAS.CardReadersInsertDeletePerform), login);
+            return AccessChecker.HasAccessControl(NCASAccess.GetAccess(AccessNCAS.CarReadersInsertDeletePerform), login);
         }
 
         public ICollection<CarReaderShort> ShortSelectByCriteria(IList<FilterSettings> filterSettings, out Exception error)
