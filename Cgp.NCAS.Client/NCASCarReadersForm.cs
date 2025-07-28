@@ -185,6 +185,23 @@ namespace Contal.Cgp.NCAS.Client
             return false;
         }
 
+        public bool HasAccessDelete()
+        {
+            try
+            {
+                if (CgpClient.Singleton.IsLoggedIn)
+                    return
+                        Plugin.MainServerProvider.CarReaders
+                            .HasAccessDelete();
+            }
+            catch (Exception error)
+            {
+                HandledExceptionAdapter.Examine(error);
+            }
+
+            return false;
+        }
+
         protected override void RegisterEvents()
         {
         }
