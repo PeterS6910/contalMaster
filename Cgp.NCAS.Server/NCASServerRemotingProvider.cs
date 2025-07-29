@@ -346,7 +346,7 @@ namespace Contal.Cgp.NCAS.Server
                 try
                 {
                     ValidateSession();
-                    return DB.AACarReaders.Singleton;
+                    return DB.AACarReader.Singleton;
                 }
                 catch
                 {

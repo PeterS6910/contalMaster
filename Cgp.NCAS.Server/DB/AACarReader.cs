@@ -9,14 +9,14 @@ using Contal.Cgp.Server.DB;
 
 namespace Contal.Cgp.NCAS.Server.DB
 {
-    public sealed class AACarReaders :
-        ANcasBaseOrmTable<AACarReaders, AACarReader>,
+    public sealed class AACarReader :
+        ANcasBaseOrmTable<AACarReader, Beans.AACarReader>,
         IAACarReaders
     {
-        private AACarReaders()
+        private AACarReader()
             : base(
                   null,
-                  new CudPreparationForObjectWithVersion<AACarReader>())
+                  new CudPreparationForObjectWithVersion<Beans.AACarReader>())
         {
         }
 
@@ -40,7 +40,7 @@ namespace Contal.Cgp.NCAS.Server.DB
             return AccessChecker.HasAccessControl(NCASAccess.GetAccess(AccessNCAS.CarReadersInsertDeletePerform), login);
         }
 
-        protected override void LoadObjectsInRelationship(AACarReader obj)
+        protected override void LoadObjectsInRelationship(Beans.AACarReader obj)
         {
             if (obj.AlarmArea != null)
                 obj.AlarmArea = AlarmAreas.Singleton.GetById(obj.AlarmArea.IdAlarmArea);
@@ -51,7 +51,7 @@ namespace Contal.Cgp.NCAS.Server.DB
 
         public AlarmArea GetImplicitAlarmArea(CarReader carReader)
         {
-            ICollection<AACarReader> aaCarReaders = SelectLinq<AACarReader>(aaCarReader => aaCarReader.CarReader == carReader && aaCarReader.PermanentlyUnlock == false);
+            ICollection<Beans.AACarReader> aaCarReaders = SelectLinq((Beans.AACarReader aaCarReader) => aaCarReader.CarReader == carReader && aaCarReader.PermanentlyUnlock == false);
 
             if (aaCarReaders != null && aaCarReaders.Count > 0 && aaCarReaders.ToList()[0].AlarmArea != null)
             {
@@ -63,7 +63,7 @@ namespace Contal.Cgp.NCAS.Server.DB
 
         public void GetParentCCU(ICollection<Guid> ccus, Guid idAAcarReader)
         {
-            AACarReader aaCarreader = GetById(idAAcarReader);
+            Beans.AACarReader aaCarreader = GetById(idAAcarReader);
             if (ccus != null && aaCarreader != null)
             {
                 if (aaCarreader.CarReader != null)
@@ -77,7 +77,7 @@ namespace Contal.Cgp.NCAS.Server.DB
         {
             AlarmArea alarmArea = AlarmAreas.Singleton.GetById(guidAlarmArea);
             if (alarmArea == null) return;
-            foreach (AACarReader aaCarReader in alarmArea.AACarReaders)
+            foreach (Beans.AACarReader aaCarReader in alarmArea.AACarReaders)
             {
                 if (!aaCarReader.PermanentlyUnlock)
                 {
@@ -88,15 +88,15 @@ namespace Contal.Cgp.NCAS.Server.DB
 
         private void CancelPermanentlyUnlockinCardReaders(CarReader carReader, Guid guidAlarmArea)
         {
-            ICollection<AACarReader> aaCarReaders = SelectLinq<AACarReader>(aaCarReader => aaCarReader.CarReader == carReader);
+            ICollection<Beans.AACarReader> aaCarReaders = SelectLinq((Beans.AACarReader aaCarReader) => aaCarReader.CarReader == carReader);
             if (aaCarReaders == null) return;
-            foreach (AACarReader aaCr in aaCarReaders)
+            foreach (Beans.AACarReader aaCr in aaCarReaders)
             {
                 if (!aaCr.PermanentlyUnlock && aaCr.AlarmArea.IdAlarmArea != guidAlarmArea)
                 {
                     try
                     {
-                        AACarReader editAaCarReader = GetObjectForEdit(aaCr.IdAACarReader);
+                        Beans.AACarReader editAaCarReader = GetObjectForEdit(aaCr.IdAACarReader);
                         if (editAaCarReader != null)
                         {
                             editAaCarReader.PermanentlyUnlock = true;

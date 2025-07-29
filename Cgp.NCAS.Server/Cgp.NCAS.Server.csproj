@@ -141,7 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB\AACarReaders.cs" />
-    <Compile Include="DB\CarReader.cs" />
+    <Compile Include="DB\CarReaders.cs" />
     <Compile Include="DB\ExcelReportOutputs.cs" />
     <Compile Include="DB\PersonAttributeOutputs.cs" />
     <Compile Include="DB\ReportSettings.cs" />
