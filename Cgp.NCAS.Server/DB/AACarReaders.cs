@@ -9,11 +9,11 @@ using Contal.Cgp.Server.DB;
 
 namespace Contal.Cgp.NCAS.Server.DB
 {
-    public sealed class AACarReader :
-        ANcasBaseOrmTable<AACarReader, Beans.AACarReader>,
+    public sealed class AACarReaders :
+        ANcasBaseOrmTable<AACarReaders, Beans.AACarReader>,
         IAACarReaders
     {
-        private AACarReader()
+        private AACarReaders()
             : base(
                   null,
                   new CudPreparationForObjectWithVersion<Beans.AACarReader>())
