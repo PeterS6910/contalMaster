@@ -889,6 +889,17 @@ namespace Contal.Cgp.DBSCreator
                 ConversionCgpNCASServerBeans2_23,
                 false,
                 conversionTypeString,
+                saveVersionToDabase)) 
+            {
+                return false;
+            }
+
+            if (!DoConvertToVersion(
+                version,
+                2.24,
+                ConversionCgpNCASServerBeans2_24,
+                false,
+                conversionTypeString,
                 saveVersionToDabase))
             {
                 return false;
@@ -3390,6 +3401,79 @@ namespace Contal.Cgp.DBSCreator
                 {
                     return false;
                 }
+            }
+
+            error = null;
+            return true;
+        }
+
+        private bool ConversionCgpNCASServerBeans2_24(out Exception error)
+        {
+            if (!_databaseCommandExecutor.RunSqlNonQuery(
+                    @"
+                    IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='CarReader' AND xtype='U')
+                    BEGIN
+                        CREATE TABLE CarReader (
+                            IdCarReader uniqueidentifier not null primary key,
+                            CameraType tinyint null,
+                            DCU uniqueidentifier null,
+                            CCU uniqueidentifier null,
+                            IpAddress nvarchar(255) null,
+                            Port int null,
+                            Description nvarchar(max) null,
+                            Version int null,
+                            CONSTRAINT DCUCCUPortAddress UNIQUE (DCU, CCU, Port)
+                        )
+                        ALTER TABLE CarReader ADD CONSTRAINT FK_CarReader_DCU FOREIGN KEY (DCU) REFERENCES DCU(IdDCU)
+                        ALTER TABLE CarReader ADD CONSTRAINT FK_CarReader_CCU FOREIGN KEY (CCU) REFERENCES CCU(IdCCU)
+                    END",
+                    false,
+                    out error))
+            {
+                return false;
+            }
+
+            if (!_databaseCommandExecutor.RunSqlNonQuery(
+                    @"
+                    IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='CarReaderAlarmArc' AND xtype='U')
+                    BEGIN
+                        CREATE TABLE CarReaderAlarmArc (
+                            IdCarReaderAlarmArc uniqueidentifier not null primary key,
+                            CarReader uniqueidentifier not null,
+                            AlarmType tinyint null,
+                            AlarmArc uniqueidentifier null
+                        )
+                        ALTER TABLE CarReaderAlarmArc ADD CONSTRAINT FK_CarReaderAlarmArc_CarReader FOREIGN KEY (CarReader) REFERENCES CarReader(IdCarReader)
+                        ALTER TABLE CarReaderAlarmArc ADD CONSTRAINT FK_CarReaderAlarmArc_AlarmArc FOREIGN KEY (AlarmArc) REFERENCES AlarmArc(IdAlarmArc)
+                    END",
+                    false,
+                    out error))
+            {
+                return false;
+            }
+
+            if (!_databaseCommandExecutor.RunSqlNonQuery(
+                    @"
+                    IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='AACarReader' AND xtype='U')
+                    BEGIN
+                        CREATE TABLE AACarReader (
+                            IdAACarReader uniqueidentifier not null primary key,
+                            AlarmArea uniqueidentifier not null,
+                            CarReader uniqueidentifier not null,
+                            EnableEventlog bit null,
+                            AASet bit not null,
+                            AAUnset bit not null,
+                            AAUnconditionalSet bit null,
+                            PermanentlyUnlock bit not null,
+                            Version int null
+                        )
+                        ALTER TABLE AACarReader ADD CONSTRAINT FK_AACarReader_AlarmArea FOREIGN KEY (AlarmArea) REFERENCES AlarmArea(IdAlarmArea)
+                        ALTER TABLE AACarReader ADD CONSTRAINT FK_AACarReader_CarReader FOREIGN KEY (CarReader) REFERENCES CarReader(IdCarReader)
+                    END",
+                    false,
+                    out error))
+            {
+                return false;
             }
 
             error = null;

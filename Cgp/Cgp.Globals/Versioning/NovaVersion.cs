@@ -10,14 +10,14 @@ namespace Contal.Cgp.Globals.Versioning
         // The version number is loaded from SVN revision automatically. Build PC 4.5 (Client/Server) first to regenerate this class.
 
         public const string Edition = "2.2";
-        public const string Version = "2.2.8924"; //build 10 june 2024
+        public const string Version = "2.2.9348"; //build 5 augusta 2025
 
     }
 
     internal  class VersionDay
     {
-        private const int StartNumber = 8430;  //for date 30.01.2023
-       // private const int StartNumber = 8440;  //for date 09.02.2023
+        //private const int StartNumber = 8430;  //for date 30.01.2023
+        private const int StartNumber = 9348;  //for date 05.08.2025
         public  readonly static long DayNum = StartNumber+ (DateTime.Today - new DateTime(2023, 01, 30)).Days;
         public  string Version = "2.2."+ StartNumber.ToString();
     }
