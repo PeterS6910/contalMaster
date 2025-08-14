@@ -83,8 +83,8 @@ namespace Contal.Cgp.NCAS.Server.Beans
     [LwSerializeMode(LwSerializationMode.Selective, DirectMemberType.All)]
     [LwSerializeNoParent]
     public class CardReader : 
-        AOrmObjectWithVersion, 
-        IOrmObjectWithAlarmInstructions, 
+        AOrmObjectWithVersion,
+        IOrmObjectWithAlarmInstructions,
         IEquatable<CardReader>,
         IGetDcu,
         ICardReaderObject
@@ -648,7 +648,7 @@ namespace Contal.Cgp.NCAS.Server.Beans
             return new CardReaderModifyObj(this);
         }
 
-        public virtual IEnumerable<ICarReaderObject> GetChildObjects()
+        public virtual IEnumerable<ICardReaderObject> GetChildObjects()
         {
             yield break;
         }

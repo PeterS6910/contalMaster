@@ -93,9 +93,9 @@ namespace Contal.Cgp.NCAS.Client
                 CarReaderShort.COLUMN_NAME,
                 CarReaderShort.COLUMN_IP_ADDRESS,
                 CarReaderShort.COLUMN_PORT,
-                CarReaderShort.COLUMN_DESCRIPTION);
                 CarReaderShort.COLUMN_PORT_SSL,
                 CarReaderShort.COLUMN_MAC_ADDRESS,
+                CarReaderShort.COLUMN_DESCRIPTION);
         }
 
         protected override void RemoveGridView()

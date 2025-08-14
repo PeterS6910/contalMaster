@@ -135,7 +135,7 @@ namespace Contal.Cgp.NCAS.Server.Beans
             return null;
         }
 
-        public virtual IEnumerable<ICardReaderObject> GetChildObjects()
+        public virtual IEnumerable<ICarReaderObject> GetChildObjects()
         {
             yield break;
         }
