@@ -3411,7 +3411,7 @@ namespace Contal.Cgp.DBSCreator
         {
             if (!_databaseCommandExecutor.RunSqlNonQuery(
                     @"
-                    IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='CarReader' AND xtype='U')
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='CarReader' AND xtype='U')
                     BEGIN
                         CREATE TABLE CarReader (
                             IdCarReader uniqueidentifier not null primary key,
@@ -3421,12 +3421,111 @@ namespace Contal.Cgp.DBSCreator
                             IpAddress nvarchar(255) null,
                             Port int null,
                             Description nvarchar(max) null,
+                            UniqueKey nvarchar(255) null,
+                            InterfaceSource nvarchar(255) null,
+                            PortSsl int null,
+                            Equipment nvarchar(255) null,
+                            Locked bit null,
+                            LockingClientIp nvarchar(255) null,
+                            MacAddress nvarchar(255) null,
+                            Serial nvarchar(255) null,
+                            Model nvarchar(255) null,
+                            Type nvarchar(255) null,
+                            Build nvarchar(255) null,
                             Version int null,
                             CONSTRAINT DCUCCUPortAddress UNIQUE (DCU, CCU, Port)
                         )
                         ALTER TABLE CarReader ADD CONSTRAINT FK_CarReader_DCU FOREIGN KEY (DCU) REFERENCES DCU(IdDCU)
                         ALTER TABLE CarReader ADD CONSTRAINT FK_CarReader_CCU FOREIGN KEY (CCU) REFERENCES CCU(IdCCU)
                     END",
+                    false,
+                    out error))
+            {
+                return false;
+            }
+
+            if (!_databaseCommandExecutor.RunSqlNonQuery(
+                    "if not exists (select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='CarReader' and COLUMN_NAME='UniqueKey') alter table CarReader add UniqueKey nvarchar(255) null",
+                    false,
+                    out error))
+            {
+                return false;
+            }
+
+            if (!_databaseCommandExecutor.RunSqlNonQuery(
+                    "if not exists (select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='CarReader' and COLUMN_NAME='InterfaceSource') alter table CarReader add InterfaceSource nvarchar(255) null",
+                    false,
+                    out error))
+            {
+                return false;
+            }
+
+            if (!_databaseCommandExecutor.RunSqlNonQuery(
+                    "if not exists (select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='CarReader' and COLUMN_NAME='PortSsl') alter table CarReader add PortSsl int null",
+                    false,
+                    out error))
+            {
+                return false;
+            }
+
+            if (!_databaseCommandExecutor.RunSqlNonQuery(
+                    "if not exists (select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='CarReader' and COLUMN_NAME='Equipment') alter table CarReader add Equipment nvarchar(255) null",
+                    false,
+                    out error))
+            {
+                return false;
+            }
+
+            if (!_databaseCommandExecutor.RunSqlNonQuery(
+                    "if not exists (select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='CarReader' and COLUMN_NAME='Locked') alter table CarReader add Locked bit null",
+                    false,
+                    out error))
+            {
+                return false;
+            }
+
+            if (!_databaseCommandExecutor.RunSqlNonQuery(
+                    "if not exists (select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='CarReader' and COLUMN_NAME='LockingClientIp') alter table CarReader add LockingClientIp nvarchar(255) null",
+                    false,
+                    out error))
+            {
+                return false;
+            }
+
+            if (!_databaseCommandExecutor.RunSqlNonQuery(
+                    "if not exists (select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='CarReader' and COLUMN_NAME='MacAddress') alter table CarReader add MacAddress nvarchar(255) null",
+                    false,
+                    out error))
+            {
+                return false;
+            }
+
+            if (!_databaseCommandExecutor.RunSqlNonQuery(
+                    "if not exists (select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='CarReader' and COLUMN_NAME='Serial') alter table CarReader add Serial nvarchar(255) null",
+                    false,
+                    out error))
+            {
+                return false;
+            }
+
+            if (!_databaseCommandExecutor.RunSqlNonQuery(
+                    "if not exists (select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='CarReader' and COLUMN_NAME='Model') alter table CarReader add Model nvarchar(255) null",
+                    false,
+                    out error))
+            {
+                return false;
+            }
+
+            if (!_databaseCommandExecutor.RunSqlNonQuery(
+                    "if not exists (select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='CarReader' and COLUMN_NAME='Type') alter table CarReader add Type nvarchar(255) null",
+                    false,
+                    out error))
+            {
+                return false;
+            }
+
+            if (!_databaseCommandExecutor.RunSqlNonQuery(
+                    "if not exists (select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='CarReader' and COLUMN_NAME='Build') alter table CarReader add Build nvarchar(255) null",
                     false,
                     out error))
             {

@@ -13,6 +13,17 @@
     <property name="Description" not-null="false">
       <column name="Description" sql-type="NVARCHAR(MAX)" />
     </property>
+    <property name="UniqueKey" not-null="false" />
+    <property name="InterfaceSource" not-null="false" />
+    <property name="PortSsl" not-null="false" />
+    <property name="Equipment" not-null="false" />
+    <property name="Locked" not-null="false" />
+    <property name="LockingClientIp" not-null="false" />
+    <property name="MacAddress" not-null="false" />
+    <property name="Serial" not-null="false" />
+    <property name="Model" not-null="false" />
+    <property name="Type" not-null="false" />
+    <property name="Build" not-null="false" />
     <bag name="CarReaderAlarmArcs" cascade="all-delete-orphan">
       <key column="CarReader" />
       <one-to-many class="Contal.Cgp.NCAS.Server.Beans.CarReaderAlarmArc" />
