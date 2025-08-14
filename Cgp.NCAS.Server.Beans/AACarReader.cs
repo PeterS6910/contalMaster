@@ -21,8 +21,7 @@ namespace Contal.Cgp.NCAS.Server.Beans
         public const string COLUMNAAUNSET = "AAUnset";
         public const string COLUMNAAUNCONDITIONALSET = "AAUnconditionalSet";
         public const string COLUMNPERMANENTLYUNLOCK = "PermanentlyUnlock";
-        public const string COLUMNENABLEEVENTLOG = "EnableEventlog";
-        public const string ColumnVersion = "Version";
+        public const string COLUMNENABLEEVENTLOG = "EnableEventlog";        
         public const string COLUMN_UNIQUE_KEY = "UniqueKey";
         public const string COLUMN_INTERFACE_SOURCE = "InterfaceSource";
         public const string COLUMN_PORT_SSL = "PortSsl";
@@ -34,6 +33,7 @@ namespace Contal.Cgp.NCAS.Server.Beans
         public const string COLUMN_MODEL = "Model";
         public const string COLUMN_TYPE = "Type";
         public const string COLUMN_BUILD = "Build";
+        public const string ColumnVersion = "Version";
 
 
         [LwSerialize]
