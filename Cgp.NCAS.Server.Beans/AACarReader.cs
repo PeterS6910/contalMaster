@@ -23,6 +23,18 @@ namespace Contal.Cgp.NCAS.Server.Beans
         public const string COLUMNPERMANENTLYUNLOCK = "PermanentlyUnlock";
         public const string COLUMNENABLEEVENTLOG = "EnableEventlog";
         public const string ColumnVersion = "Version";
+        public const string COLUMN_UNIQUE_KEY = "UniqueKey";
+        public const string COLUMN_INTERFACE_SOURCE = "InterfaceSource";
+        public const string COLUMN_PORT_SSL = "PortSsl";
+        public const string COLUMN_EQUIPMENT = "Equipment";
+        public const string COLUMN_LOCKED = "Locked";
+        public const string COLUMN_LOCKING_CLIENT_IP = "LockingClientIp";
+        public const string COLUMN_MAC_ADDRESS = "MacAddress";
+        public const string COLUMN_SERIAL = "Serial";
+        public const string COLUMN_MODEL = "Model";
+        public const string COLUMN_TYPE = "Type";
+        public const string COLUMN_BUILD = "Build";
+
 
         [LwSerialize]
         public virtual Guid IdAACarReader { get; set; }
@@ -45,6 +57,29 @@ namespace Contal.Cgp.NCAS.Server.Beans
         [LwSerialize]
         public virtual bool EnableEventlog { get; set; }
 
+        [LwSerialize]
+        public virtual string UniqueKey { get; set; }
+        [LwSerialize]
+        public virtual string InterfaceSource { get; set; }
+        [LwSerialize]
+        public virtual int PortSsl { get; set; }
+        [LwSerialize]
+        public virtual string Equipment { get; set; }
+        [LwSerialize]
+        public virtual bool Locked { get; set; }
+        [LwSerialize]
+        public virtual string LockingClientIp { get; set; }
+        [LwSerialize]
+        public virtual string MacAddress { get; set; }
+        [LwSerialize]
+        public virtual string Serial { get; set; }
+        [LwSerialize]
+        public virtual string Model { get; set; }
+        [LwSerialize]
+        public virtual string Type { get; set; }
+        [LwSerialize]
+        public virtual string Build { get; set; }
+
         public override bool Compare(object obj)
         {
             var aaCarReader = obj as AACarReader;
@@ -57,6 +92,20 @@ namespace Contal.Cgp.NCAS.Server.Beans
             GuidAlarmArea = AlarmArea != null ? AlarmArea.IdAlarmArea : Guid.Empty;
 
             GuidCarReader = CarReader != null ? CarReader.IdCarReader : Guid.Empty;
+            if (CarReader != null)
+            {
+                UniqueKey = CarReader.UniqueKey;
+                InterfaceSource = CarReader.InterfaceSource;
+                PortSsl = CarReader.PortSsl;
+                Equipment = CarReader.Equipment;
+                Locked = CarReader.Locked;
+                LockingClientIp = CarReader.LockingClientIp;
+                MacAddress = CarReader.MacAddress;
+                Serial = CarReader.Serial;
+                Model = CarReader.Model;
+                Type = CarReader.Type;
+                Build = CarReader.Build;
+            }
         }
 
         public override string GetIdString()
