@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -87,7 +87,7 @@ namespace Contal.Cgp.NCAS.Server.Beans
         IOrmObjectWithAlarmInstructions, 
         IEquatable<CardReader>,
         IGetDcu,
-        ICardReaderObject
+        ICarReaderObject
     {
         public const string COLUMNIDCARDREADER = "IdCardReader";
         public const string COLUMNNAME = "Name";
@@ -648,7 +648,7 @@ namespace Contal.Cgp.NCAS.Server.Beans
             return new CardReaderModifyObj(this);
         }
 
-        public virtual IEnumerable<ICardReaderObject> GetChildObjects()
+        public virtual IEnumerable<ICarReaderObject> GetChildObjects()
         {
             yield break;
         }

@@ -44,6 +44,17 @@ namespace Contal.Cgp.NCAS.Server.Beans
         public const string COLUMN_DESCRIPTION = "Description";
         public const string COLUMN_CAR_READER_ALARM_ARCS = "CarReaderAlarmArcs";
         public const string ColumnVersion = "Version";
+        public const string COLUMN_UNIQUE_KEY = "UniqueKey";
+        public const string COLUMN_INTERFACE_SOURCE = "InterfaceSource";
+        public const string COLUMN_PORT_SSL = "PortSsl";
+        public const string COLUMN_EQUIPMENT = "Equipment";
+        public const string COLUMN_LOCKED = "Locked";
+        public const string COLUMN_LOCKING_CLIENT_IP = "LockingClientIp";
+        public const string COLUMN_MAC_ADDRESS = "MacAddress";
+        public const string COLUMN_SERIAL = "Serial";
+        public const string COLUMN_MODEL = "Model";
+        public const string COLUMN_TYPE = "Type";
+        public const string COLUMN_BUILD = "Build";
         public const string COLUMNOBJECTTYPE = "ObjectType";
         public const string COLUMNCKUNIQUE = "CkUnique";
         public const string COLUMNENABLEPARENTINFULLNAME = "EnableParentInFullName";
@@ -70,6 +81,30 @@ namespace Contal.Cgp.NCAS.Server.Beans
         public virtual int Port { get; set; }
         public virtual string Description { get; set; }
 
+        [LwSerialize]
+        public virtual string UniqueKey { get; set; }
+        [LwSerialize]
+        public virtual string InterfaceSource { get; set; }
+        [LwSerialize]
+        public virtual int PortSsl { get; set; }
+        [LwSerialize]
+        public virtual string Equipment { get; set; }
+        [LwSerialize]
+        public override int Version { get; set; }
+        [LwSerialize]
+        public virtual bool Locked { get; set; }
+        [LwSerialize]
+        public virtual string LockingClientIp { get; set; }
+        [LwSerialize]
+        public virtual string MacAddress { get; set; }
+        [LwSerialize]
+        public virtual string Serial { get; set; }
+        [LwSerialize]
+        public virtual string Model { get; set; }
+        [LwSerialize]
+        public virtual string Type { get; set; }
+        [LwSerialize]
+        public virtual string Build { get; set; }
         public virtual ICollection<CarReaderAlarmArc> CarReaderAlarmArcs { get; set; }
         public virtual byte ObjectType { get; set; }
         public virtual Guid CkUnique { get; set; }
@@ -127,6 +162,11 @@ namespace Contal.Cgp.NCAS.Server.Beans
 
             result += Name;
 
+            if (!string.IsNullOrEmpty(UniqueKey))
+            {
+                result += $" ({UniqueKey})";
+            }
+
             return result;
         }
 
@@ -135,6 +175,7 @@ namespace Contal.Cgp.NCAS.Server.Beans
             ObjectType = (byte)Cgp.Globals.ObjectType.CarReader;
             CkUnique = Guid.NewGuid();
             EnableParentInFullName = Support.EnableParentInFullName;
+            UniqueKey = Guid.NewGuid().ToString();
         }
     }
 }
