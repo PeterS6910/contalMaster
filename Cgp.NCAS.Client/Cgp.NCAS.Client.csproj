@@ -724,6 +724,7 @@
       <DependentUpon>NCASCarReaderEditForm.cs</DependentUpon>
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>NCASCarReaderEditForm1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="NCASCatSmsConfiguration.resx">
       <DependentUpon>NCASCatSmsConfiguration.cs</DependentUpon>
