@@ -70,6 +70,17 @@ namespace Contal.Cgp.NCAS.Client
             _cbCameraType.SelectedItem = _editingObject.CameraType;
             _eIpAddress.Text = _editingObject.IpAddress;
             _nudPort.Value = _editingObject.Port;
+            _eUniqueKey.Text = _editingObject.UniqueKey;
+            _eInterfaceSource.Text = _editingObject.InterfaceSource;
+            _nudPortSsl.Value = _editingObject.PortSsl;
+            _eEquipment.Text = _editingObject.Equipment;
+            _chkLocked.Checked = _editingObject.Locked;
+            _eLockingClientIp.Text = _editingObject.LockingClientIp;
+            _eMacAddress.Text = _editingObject.MacAddress;
+            _eSerial.Text = _editingObject.Serial;
+            _eModel.Text = _editingObject.Model;
+            _eType.Text = _editingObject.Type;
+            _eBuild.Text = _editingObject.Build;
             _eDescription.Text = _editingObject.Description;
         }
 
@@ -82,6 +93,13 @@ namespace Contal.Cgp.NCAS.Client
                 _eName.Focus();
                 return false;
             }
+            if (string.IsNullOrEmpty(_eUniqueKey.Text))
+            {
+                ControlNotification.Singleton.Error(NotificationPriority.JustOne, _eUniqueKey,
+                    "Unique key is required.", CgpClient.Singleton.ClientControlNotificationSettings);
+                _eUniqueKey.Focus();
+                return false;
+            }
             return true;
         }
 
@@ -92,6 +110,17 @@ namespace Contal.Cgp.NCAS.Client
                 _editingObject.CameraType = (CarReaderType)_cbCameraType.SelectedItem;
             _editingObject.IpAddress = _eIpAddress.Text;
             _editingObject.Port = (int)_nudPort.Value;
+            _editingObject.UniqueKey = _eUniqueKey.Text;
+            _editingObject.InterfaceSource = _eInterfaceSource.Text;
+            _editingObject.PortSsl = (int)_nudPortSsl.Value;
+            _editingObject.Equipment = _eEquipment.Text;
+            _editingObject.Locked = _chkLocked.Checked;
+            _editingObject.LockingClientIp = _eLockingClientIp.Text;
+            _editingObject.MacAddress = _eMacAddress.Text;
+            _editingObject.Serial = _eSerial.Text;
+            _editingObject.Model = _eModel.Text;
+            _editingObject.Type = _eType.Text;
+            _editingObject.Build = _eBuild.Text;
             _editingObject.Description = _eDescription.Text;
             return true;
         }
