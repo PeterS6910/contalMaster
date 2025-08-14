@@ -87,7 +87,7 @@ namespace Contal.Cgp.NCAS.Server.Beans
         IOrmObjectWithAlarmInstructions, 
         IEquatable<CardReader>,
         IGetDcu,
-        ICarReaderObject
+        ICardReaderObject
     {
         public const string COLUMNIDCARDREADER = "IdCardReader";
         public const string COLUMNNAME = "Name";

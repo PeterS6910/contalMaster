@@ -30,7 +30,7 @@ namespace Contal.Cgp.NCAS.Server.Beans
     public class CarReader :
         AOrmObjectWithVersion,
         IGetDcu,
-        ICardReaderObject
+        ICarReaderObject
     {
         public const string COLUMN_ID_CAR_READER = "IdCarReader";
         public const string COLUMN_NAME = "Name";
