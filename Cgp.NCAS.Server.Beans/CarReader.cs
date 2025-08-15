@@ -42,6 +42,7 @@ namespace Contal.Cgp.NCAS.Server.Beans
         public const string COLUMN_IP_ADDRESS = "IpAddress";
         public const string COLUMN_PORT = "Port";
         public const string COLUMN_DESCRIPTION = "Description";
+        public const string COLUMNAACARREADERS = "AACarReaders";
         public const string COLUMN_CAR_READER_ALARM_ARCS = "CarReaderAlarmArcs";
         public const string ColumnVersion = "Version";
         public const string COLUMN_UNIQUE_KEY = "UniqueKey";
@@ -74,13 +75,14 @@ namespace Contal.Cgp.NCAS.Server.Beans
         private Guid _guidCCU = Guid.Empty;
         [LwSerialize]
         public virtual Guid GuidCCU { get { return _guidCCU; } set { _guidCCU = value; } }
-
         [LwSerialize]
         public virtual string IpAddress { get; set; }
         [LwSerialize]
         public virtual int Port { get; set; }
+        [LwSerialize]
         public virtual string Description { get; set; }
-
+        [LwSerialize]
+        public virtual ICollection<AACarReader> AACarReaders { get; set; }
         [LwSerialize]
         public virtual string UniqueKey { get; set; }
         [LwSerialize]

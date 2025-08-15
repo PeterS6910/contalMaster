@@ -24,6 +24,10 @@
     <property name="Model" not-null="false" />
     <property name="Type" not-null="false" />
     <property name="Build" not-null="false" />
+    <bag name="AACarReaders" cascade="all-delete-orphan">
+      <key column="CarReader" />
+      <one-to-many class="Contal.Cgp.NCAS.Server.Beans.AACarReader" />
+    </bag>
     <bag name="CarReaderAlarmArcs" cascade="all-delete-orphan">
       <key column="CarReader" />
       <one-to-many class="Contal.Cgp.NCAS.Server.Beans.CarReaderAlarmArc" />
