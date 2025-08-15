@@ -66,6 +66,8 @@ namespace Contal.Cgp.NCAS.Server.Beans
         [LwSerialize]
         public virtual string Equipment { get; set; }
         [LwSerialize]
+        public override int Version { get; set; }
+        [LwSerialize]
         public virtual bool Locked { get; set; }
         [LwSerialize]
         public virtual string LockingClientIp { get; set; }
