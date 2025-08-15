@@ -35,7 +35,6 @@ namespace Contal.Cgp.NCAS.Server.Beans
         public const string COLUMN_BUILD = "Build";
         public const string ColumnVersion = "Version";
 
-
         [LwSerialize]
         public virtual Guid IdAACarReader { get; set; }
         public virtual AlarmArea AlarmArea { get; set; }
@@ -81,7 +80,6 @@ namespace Contal.Cgp.NCAS.Server.Beans
         public virtual string Type { get; set; }
         [LwSerialize]
         public virtual string Build { get; set; }
-
         public override bool Compare(object obj)
         {
             var aaCarReader = obj as AACarReader;
