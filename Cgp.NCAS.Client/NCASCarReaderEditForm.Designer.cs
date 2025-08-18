@@ -14,7 +14,7 @@ namespace Contal.Cgp.NCAS.Client
         private System.Windows.Forms.Label _lIpAddress;
         private System.Windows.Forms.TextBox _eIpAddress;
         private System.Windows.Forms.Label _lPort;
-        private System.Windows.Forms.NumericUpDown _nudPort;
+        private System.Windows.Forms.TextBox _ePort;
         private System.Windows.Forms.Label _lUniqueKey;
         private System.Windows.Forms.TextBox _eUniqueKey;
         private System.Windows.Forms.Label _lInterfaceSource;
@@ -75,7 +75,7 @@ namespace Contal.Cgp.NCAS.Client
             this._lIpAddress = new System.Windows.Forms.Label();
             this._eIpAddress = new System.Windows.Forms.TextBox();
             this._lPort = new System.Windows.Forms.Label();
-            this._nudPort = new System.Windows.Forms.NumericUpDown();
+            this._ePort = new System.Windows.Forms.TextBox();
             this._lUniqueKey = new System.Windows.Forms.Label();
             this._eUniqueKey = new System.Windows.Forms.TextBox();
             this._lInterfaceSource = new System.Windows.Forms.Label();
@@ -110,8 +110,7 @@ namespace Contal.Cgp.NCAS.Client
             this._chkEnableParentInFullName = new System.Windows.Forms.CheckBox();
             this._bOk = new System.Windows.Forms.Button();
             this._bCancel = new System.Windows.Forms.Button();
-            this._panelBack.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._nudPort)).BeginInit();            
+            this._panelBack.SuspendLayout();                  
             ((System.ComponentModel.ISupportInitialize)(this._nudVersion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,7 +130,7 @@ namespace Contal.Cgp.NCAS.Client
             this._panelBack.Controls.Add(this._lIpAddress, 0, 4);
             this._panelBack.Controls.Add(this._eIpAddress, 1, 4);
             this._panelBack.Controls.Add(this._lPort, 0, 5);
-            this._panelBack.Controls.Add(this._nudPort, 1, 5);
+            this._panelBack.Controls.Add(this._ePort, 1, 5);
             this._panelBack.Controls.Add(this._lUniqueKey, 0, 6);
             this._panelBack.Controls.Add(this._eUniqueKey, 1, 6);
             this._panelBack.Controls.Add(this._lInterfaceSource, 0, 7);
@@ -296,12 +295,11 @@ namespace Contal.Cgp.NCAS.Client
             // 
             // _nudPort
             // 
-            this._nudPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this._nudPort.Location = new System.Drawing.Point(129, 128);
-            this._nudPort.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
-            this._nudPort.Name = "_nudPort";
-            this._nudPort.Size = new System.Drawing.Size(288, 20);
-            this._nudPort.TabIndex = 11;
+            this._ePort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._ePort.Location = new System.Drawing.Point(129, 128);
+            this._ePort.Name = "_ePort";
+            this._ePort.Size = new System.Drawing.Size(288, 20);
+            this._ePort.TabIndex = 11;
             //
             // _lUniqueKey
             //
@@ -635,8 +633,7 @@ namespace Contal.Cgp.NCAS.Client
             this.Name = "NCASCarReaderEditForm";
             this.Text = "NCASCarReaderEditForm";
             this._panelBack.ResumeLayout(false);
-            this._panelBack.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._nudPort)).EndInit();            
+            this._panelBack.PerformLayout();                    
             ((System.ComponentModel.ISupportInitialize)(this._nudVersion)).EndInit();
             this.ResumeLayout(false);
         }

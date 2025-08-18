@@ -69,6 +69,7 @@ namespace Contal.Cgp.NCAS.Client
             _cbCameraType.DataSource = Enum.GetValues(typeof(CarReaderType));
             _cbCameraType.SelectedItem = _editingObject.CameraType;
             _eIpAddress.Text = _editingObject.IpAddress;
+            _ePort.Text = _editingObject.Port;
             _eGuidDCU.Text = _editingObject.GuidDCU.ToString();
             _eGuidCCU.Text = _editingObject.GuidCCU.ToString();
             _eUniqueKey.Text = _editingObject.UniqueKey;
@@ -140,7 +141,7 @@ namespace Contal.Cgp.NCAS.Client
             if (Guid.TryParse(_eGuidCCU.Text, out tmp))
                 _editingObject.GuidCCU = tmp;
             _editingObject.IpAddress = _eIpAddress.Text;
-            _editingObject.Port = _nudPort.Value.ToString();
+            _editingObject.Port = _ePort.Text;
             _editingObject.UniqueKey = _eUniqueKey.Text;
             _editingObject.InterfaceSource = _eInterfaceSource.Text;
             _editingObject.PortSsl = _ePortSsl.Text;
