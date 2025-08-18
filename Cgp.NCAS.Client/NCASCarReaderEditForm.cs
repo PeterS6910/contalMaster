@@ -73,7 +73,7 @@ namespace Contal.Cgp.NCAS.Client
             _eGuidCCU.Text = _editingObject.GuidCCU.ToString();
             _eUniqueKey.Text = _editingObject.UniqueKey;
             _eInterfaceSource.Text = _editingObject.InterfaceSource;
-            _nudPortSsl.Value = _editingObject.PortSsl;
+            _ePortSsl.Text = _editingObject.PortSsl;
             _eEquipment.Text = _editingObject.Equipment;
             _chkLocked.Checked = _editingObject.Locked;
             _eLockingClientIp.Text = _editingObject.LockingClientIp;
@@ -143,7 +143,7 @@ namespace Contal.Cgp.NCAS.Client
             _editingObject.Port = _nudPort.Value.ToString();
             _editingObject.UniqueKey = _eUniqueKey.Text;
             _editingObject.InterfaceSource = _eInterfaceSource.Text;
-            _editingObject.PortSsl = _nudPortSsl.Value.ToString();
+            _editingObject.PortSsl = _ePortSsl.Text;
             _editingObject.Equipment = _eEquipment.Text;
             _editingObject.Locked = _chkLocked.Checked;
             _editingObject.LockingClientIp = _eLockingClientIp.Text;

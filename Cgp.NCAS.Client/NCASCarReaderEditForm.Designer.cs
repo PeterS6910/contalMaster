@@ -20,7 +20,7 @@ namespace Contal.Cgp.NCAS.Client
         private System.Windows.Forms.Label _lInterfaceSource;
         private System.Windows.Forms.TextBox _eInterfaceSource;
         private System.Windows.Forms.Label _lPortSsl;
-        private System.Windows.Forms.NumericUpDown _nudPortSsl;
+        private System.Windows.Forms.TextBox _ePortSsl;
         private System.Windows.Forms.Label _lEquipment;
         private System.Windows.Forms.TextBox _eEquipment;
         private System.Windows.Forms.Label _lLocked;
@@ -81,7 +81,7 @@ namespace Contal.Cgp.NCAS.Client
             this._lInterfaceSource = new System.Windows.Forms.Label();
             this._eInterfaceSource = new System.Windows.Forms.TextBox();
             this._lPortSsl = new System.Windows.Forms.Label();
-            this._nudPortSsl = new System.Windows.Forms.NumericUpDown();
+            this._ePortSsl = new System.Windows.Forms.TextBox();
             this._lEquipment = new System.Windows.Forms.Label();
             this._eEquipment = new System.Windows.Forms.TextBox();
             this._lLocked = new System.Windows.Forms.Label();
@@ -111,8 +111,7 @@ namespace Contal.Cgp.NCAS.Client
             this._bOk = new System.Windows.Forms.Button();
             this._bCancel = new System.Windows.Forms.Button();
             this._panelBack.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._nudPort)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._nudPortSsl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._nudPort)).BeginInit();            
             ((System.ComponentModel.ISupportInitialize)(this._nudVersion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,7 +137,7 @@ namespace Contal.Cgp.NCAS.Client
             this._panelBack.Controls.Add(this._lInterfaceSource, 0, 7);
             this._panelBack.Controls.Add(this._eInterfaceSource, 1, 7);
             this._panelBack.Controls.Add(this._lPortSsl, 0, 8);
-            this._panelBack.Controls.Add(this._nudPortSsl, 1, 8);
+            this._panelBack.Controls.Add(this._ePortSsl, 1, 8);
             this._panelBack.Controls.Add(this._lEquipment, 0, 9);
             this._panelBack.Controls.Add(this._eEquipment, 1, 9);
             this._panelBack.Controls.Add(this._lLocked, 0, 10);
@@ -350,14 +349,13 @@ namespace Contal.Cgp.NCAS.Client
             this._lPortSsl.TabIndex = 16;
             this._lPortSsl.Text = "Port SSL";
             //
-            // _nudPortSsl
+            // _ePortSsl
             //
-            this._nudPortSsl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this._nudPortSsl.Location = new System.Drawing.Point(129, 203);
-            this._nudPortSsl.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
-            this._nudPortSsl.Name = "_nudPortSsl";
-            this._nudPortSsl.Size = new System.Drawing.Size(288, 20);
-            this._nudPortSsl.TabIndex = 17;
+            this._ePortSsl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._ePortSsl.Location = new System.Drawing.Point(129, 203);
+            this._ePortSsl.Name = "_ePortSsl";
+            this._ePortSsl.Size = new System.Drawing.Size(288, 20);
+            this._ePortSsl.TabIndex = 17;
             //
             // _lEquipment
             //
@@ -638,8 +636,7 @@ namespace Contal.Cgp.NCAS.Client
             this.Text = "NCASCarReaderEditForm";
             this._panelBack.ResumeLayout(false);
             this._panelBack.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._nudPort)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._nudPortSsl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._nudPort)).EndInit();            
             ((System.ComponentModel.ISupportInitialize)(this._nudVersion)).EndInit();
             this.ResumeLayout(false);
         }
