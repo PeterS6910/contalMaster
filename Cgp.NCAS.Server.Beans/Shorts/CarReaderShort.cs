@@ -28,12 +28,12 @@ namespace Contal.Cgp.NCAS.Server.Beans.Shorts
         public Guid IdCarReader { get; private set; }
         public string Name { get; private set; }
         public string IpAddress { get; private set; }
-        public int Port { get; private set; }
+        public string Port { get; private set; }
         public string Description { get; private set; }
         public Image Symbol { get; set; }
         public string UniqueKey { get; private set; }
         public string InterfaceSource { get; private set; }
-        public int PortSsl { get; private set; }
+        public string PortSsl { get; private set; }
         public string Equipment { get; private set; }
         public bool Locked { get; private set; }
         public string LockingClientIp { get; private set; }

@@ -7,10 +7,10 @@ namespace Contal.Cgp.NCAS.Client
         private System.Windows.Forms.TextBox _eName;
         private System.Windows.Forms.Label _lCameraType;
         private System.Windows.Forms.ComboBox _cbCameraType;
-        private System.Windows.Forms.Label _lDCU;
-        private System.Windows.Forms.TextBox _eDCU;
-        private System.Windows.Forms.Label _lCCU;
-        private System.Windows.Forms.TextBox _eCCU;
+        private System.Windows.Forms.Label _lGuidDCU;
+        private System.Windows.Forms.TextBox _eGuidDCU;
+        private System.Windows.Forms.Label _lGuidCCU;
+        private System.Windows.Forms.TextBox _eGuidCCU;
         private System.Windows.Forms.Label _lIpAddress;
         private System.Windows.Forms.TextBox _eIpAddress;
         private System.Windows.Forms.Label _lPort;
@@ -41,6 +41,12 @@ namespace Contal.Cgp.NCAS.Client
         private System.Windows.Forms.TextBox _eDescription;
         private System.Windows.Forms.Label _lAlarmArcs;
         private ControlModifyAlarmArcs _cmaaAlarmArcs;
+        private System.Windows.Forms.Label _lVersion;
+        private System.Windows.Forms.NumericUpDown _nudVersion;
+        private System.Windows.Forms.Label _lCkUnique;
+        private System.Windows.Forms.TextBox _eCkUnique;
+        private System.Windows.Forms.Label _lEnableParentInFullName;
+        private System.Windows.Forms.CheckBox _chkEnableParentInFullName;
         private System.Windows.Forms.Button _bOk;
         private System.Windows.Forms.Button _bCancel;
         private System.Windows.Forms.TableLayoutPanel _panelBack;
@@ -62,10 +68,10 @@ namespace Contal.Cgp.NCAS.Client
             this._eName = new System.Windows.Forms.TextBox();
             this._lCameraType = new System.Windows.Forms.Label();
             this._cbCameraType = new System.Windows.Forms.ComboBox();
-            this._lDCU = new System.Windows.Forms.Label();
-            this._eDCU = new System.Windows.Forms.TextBox();
-            this._lCCU = new System.Windows.Forms.Label();
-            this._eCCU = new System.Windows.Forms.TextBox();
+            this._lGuidDCU = new System.Windows.Forms.Label();
+            this._eGuidDCU = new System.Windows.Forms.TextBox();
+            this._lGuidCCU = new System.Windows.Forms.Label();
+            this._eGuidCCU = new System.Windows.Forms.TextBox();
             this._lIpAddress = new System.Windows.Forms.Label();
             this._eIpAddress = new System.Windows.Forms.TextBox();
             this._lPort = new System.Windows.Forms.Label();
@@ -96,11 +102,18 @@ namespace Contal.Cgp.NCAS.Client
             this._eDescription = new System.Windows.Forms.TextBox();
             this._lAlarmArcs = new System.Windows.Forms.Label();
             this._cmaaAlarmArcs = new Contal.Cgp.NCAS.Client.ControlModifyAlarmArcs();
+            this._lVersion = new System.Windows.Forms.Label();
+            this._nudVersion = new System.Windows.Forms.NumericUpDown();
+            this._lCkUnique = new System.Windows.Forms.Label();
+            this._eCkUnique = new System.Windows.Forms.TextBox();
+            this._lEnableParentInFullName = new System.Windows.Forms.Label();
+            this._chkEnableParentInFullName = new System.Windows.Forms.CheckBox();
             this._bOk = new System.Windows.Forms.Button();
             this._bCancel = new System.Windows.Forms.Button();
             this._panelBack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._nudPort)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._nudPortSsl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._nudVersion)).BeginInit();
             this.SuspendLayout();
             // 
             // _panelBack
@@ -112,10 +125,10 @@ namespace Contal.Cgp.NCAS.Client
             this._panelBack.Controls.Add(this._eName, 1, 0);
             this._panelBack.Controls.Add(this._lCameraType, 0, 1);
             this._panelBack.Controls.Add(this._cbCameraType, 1, 1);
-            this._panelBack.Controls.Add(this._lDCU, 0, 2);
-            this._panelBack.Controls.Add(this._eDCU, 1, 2);
-            this._panelBack.Controls.Add(this._lCCU, 0, 3);
-            this._panelBack.Controls.Add(this._eCCU, 1, 3);
+            this._panelBack.Controls.Add(this._lGuidDCU, 0, 2);
+            this._panelBack.Controls.Add(this._eGuidDCU, 1, 2);
+            this._panelBack.Controls.Add(this._lGuidCCU, 0, 3);
+            this._panelBack.Controls.Add(this._eGuidCCU, 1, 3);
             this._panelBack.Controls.Add(this._lIpAddress, 0, 4);
             this._panelBack.Controls.Add(this._eIpAddress, 1, 4);
             this._panelBack.Controls.Add(this._lPort, 0, 5);
@@ -146,9 +159,15 @@ namespace Contal.Cgp.NCAS.Client
             this._panelBack.Controls.Add(this._eDescription, 1, 17);
             this._panelBack.Controls.Add(this._lAlarmArcs, 0, 18);
             this._panelBack.Controls.Add(this._cmaaAlarmArcs, 1, 18); ;
+            this._panelBack.Controls.Add(this._lVersion, 0, 19);
+            this._panelBack.Controls.Add(this._nudVersion, 1, 19);
+            this._panelBack.Controls.Add(this._lCkUnique, 0, 20);
+            this._panelBack.Controls.Add(this._eCkUnique, 1, 20);
+            this._panelBack.Controls.Add(this._lEnableParentInFullName, 0, 21);
+            this._panelBack.Controls.Add(this._chkEnableParentInFullName, 1, 21);
             this._panelBack.Location = new System.Drawing.Point(12, 12);
             this._panelBack.Name = "_panelBack";
-            this._panelBack.RowCount = 19;
+            this._panelBack.RowCount = 22;
             this._panelBack.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this._panelBack.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this._panelBack.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
@@ -168,7 +187,10 @@ namespace Contal.Cgp.NCAS.Client
             this._panelBack.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this._panelBack.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this._panelBack.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this._panelBack.Size = new System.Drawing.Size(420, 545);
+            this._panelBack.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this._panelBack.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this._panelBack.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this._panelBack.Size = new System.Drawing.Size(420, 620);
             this._panelBack.TabIndex = 0;
             // 
             // _lName
@@ -209,41 +231,41 @@ namespace Contal.Cgp.NCAS.Client
             this._cbCameraType.Size = new System.Drawing.Size(288, 21);
             this._cbCameraType.TabIndex = 3;
             // 
-            // _lDCU
-            // 
-            this._lDCU.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this._lDCU.AutoSize = true;
-            this._lDCU.Location = new System.Drawing.Point(3, 56);
-            this._lDCU.Name = "_lDCU";
-            this._lDCU.Size = new System.Drawing.Size(31, 13);
-            this._lDCU.TabIndex = 4;
-            this._lDCU.Text = "DCU";
-            // 
-            // _eDCU
-            // 
-            this._eDCU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this._eDCU.Location = new System.Drawing.Point(129, 53);
-            this._eDCU.Name = "_eDCU";
-            this._eDCU.Size = new System.Drawing.Size(288, 20);
-            this._eDCU.TabIndex = 5;
-            // 
-            // _lCCU
-            // 
-            this._lCCU.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this._lCCU.AutoSize = true;
-            this._lCCU.Location = new System.Drawing.Point(3, 81);
-            this._lCCU.Name = "_lCCU";
-            this._lCCU.Size = new System.Drawing.Size(31, 13);
-            this._lCCU.TabIndex = 6;
-            this._lCCU.Text = "CCU";
-            // 
-            // _eCCU
-            // 
-            this._eCCU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this._eCCU.Location = new System.Drawing.Point(129, 78);
-            this._eCCU.Name = "_eCCU";
-            this._eCCU.Size = new System.Drawing.Size(288, 20);
-            this._eCCU.TabIndex = 7;
+            // _lGuidDCU
+            //
+            this._lGuidDCU.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this._lGuidDCU.AutoSize = true;
+            this._lGuidDCU.Location = new System.Drawing.Point(3, 56);
+            this._lGuidDCU.Name = "_lGuidDCU";
+            this._lGuidDCU.Size = new System.Drawing.Size(56, 13);
+            this._lGuidDCU.TabIndex = 4;
+            this._lGuidDCU.Text = "Guid DCU";
+            //
+            // _eGuidDCU
+            //
+            this._eGuidDCU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._eGuidDCU.Location = new System.Drawing.Point(129, 53);
+            this._eGuidDCU.Name = "_eGuidDCU";
+            this._eGuidDCU.Size = new System.Drawing.Size(288, 20);
+            this._eGuidDCU.TabIndex = 5;
+            //
+            // _lGuidCCU
+            //
+            this._lGuidCCU.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this._lGuidCCU.AutoSize = true;
+            this._lGuidCCU.Location = new System.Drawing.Point(3, 81);
+            this._lGuidCCU.Name = "_lGuidCCU";
+            this._lGuidCCU.Size = new System.Drawing.Size(57, 13);
+            this._lGuidCCU.TabIndex = 6;
+            this._lGuidCCU.Text = "Guid CCU";
+            //
+            // _eGuidCCU
+            //
+            this._eGuidCCU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._eGuidCCU.Location = new System.Drawing.Point(129, 78);
+            this._eGuidCCU.Name = "_eGuidCCU";
+            this._eGuidCCU.Size = new System.Drawing.Size(288, 20);
+            this._eGuidCCU.TabIndex = 7;
             // 
             // _lIpAddress
             // 
@@ -520,11 +542,72 @@ namespace Contal.Cgp.NCAS.Client
             this._cmaaAlarmArcs.Name = "_cmaaAlarmArcs";
             this._cmaaAlarmArcs.Size = new System.Drawing.Size(288, 54);
             this._cmaaAlarmArcs.TabIndex = 37;
+            //
+            // _lVersion
+            //
+            this._lVersion.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this._lVersion.AutoSize = true;
+            this._lVersion.Location = new System.Drawing.Point(3, 553);
+            this._lVersion.Name = "_lVersion";
+            this._lVersion.Size = new System.Drawing.Size(42, 13);
+            this._lVersion.TabIndex = 38;
+            this._lVersion.Text = "Version";
+            //
+            // _nudVersion
+            //
+            this._nudVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._nudVersion.Location = new System.Drawing.Point(129, 550);
+            this._nudVersion.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this._nudVersion.Name = "_nudVersion";
+            this._nudVersion.Size = new System.Drawing.Size(288, 20);
+            this._nudVersion.TabIndex = 39;
+            //
+            // _lCkUnique
+            //
+            this._lCkUnique.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this._lCkUnique.AutoSize = true;
+            this._lCkUnique.Location = new System.Drawing.Point(3, 578);
+            this._lCkUnique.Name = "_lCkUnique";
+            this._lCkUnique.Size = new System.Drawing.Size(59, 13);
+            this._lCkUnique.TabIndex = 40;
+            this._lCkUnique.Text = "Ck Unique";
+            //
+            // _eCkUnique
+            //
+            this._eCkUnique.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._eCkUnique.Location = new System.Drawing.Point(129, 575);
+            this._eCkUnique.Name = "_eCkUnique";
+            this._eCkUnique.Size = new System.Drawing.Size(288, 20);
+            this._eCkUnique.TabIndex = 41;
+            //
+            // _lEnableParentInFullName
+            //
+            this._lEnableParentInFullName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this._lEnableParentInFullName.AutoSize = true;
+            this._lEnableParentInFullName.Location = new System.Drawing.Point(3, 603);
+            this._lEnableParentInFullName.Name = "_lEnableParentInFullName";
+            this._lEnableParentInFullName.Size = new System.Drawing.Size(127, 13);
+            this._lEnableParentInFullName.TabIndex = 42;
+            this._lEnableParentInFullName.Text = "Enable parent in full name";
+            //
+            // _chkEnableParentInFullName
+            //
+            this._chkEnableParentInFullName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this._chkEnableParentInFullName.AutoSize = true;
+            this._chkEnableParentInFullName.Location = new System.Drawing.Point(129, 603);
+            this._chkEnableParentInFullName.Name = "_chkEnableParentInFullName";
+            this._chkEnableParentInFullName.Size = new System.Drawing.Size(15, 14);
+            this._chkEnableParentInFullName.TabIndex = 43;
+            this._chkEnableParentInFullName.UseVisualStyleBackColor = true;
             // 
             // _bOk
             // 
             this._bOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._bOk.Location = new System.Drawing.Point(276, 563);
+            this._bOk.Location = new System.Drawing.Point(276, 638);
             this._bOk.Name = "_bOk";
             this._bOk.Size = new System.Drawing.Size(75, 23);
             this._bOk.TabIndex = 1;
@@ -535,7 +618,7 @@ namespace Contal.Cgp.NCAS.Client
             // _bCancel
             // 
             this._bCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._bCancel.Location = new System.Drawing.Point(357, 563);
+            this._bCancel.Location = new System.Drawing.Point(357, 638);
             this._bCancel.Name = "_bCancel";
             this._bCancel.Size = new System.Drawing.Size(75, 23);
             this._bCancel.TabIndex = 2;
@@ -547,7 +630,7 @@ namespace Contal.Cgp.NCAS.Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 598);
+            this.ClientSize = new System.Drawing.Size(444, 673);
             this.Controls.Add(this._bCancel);
             this.Controls.Add(this._bOk);
             this.Controls.Add(this._panelBack);
@@ -557,6 +640,7 @@ namespace Contal.Cgp.NCAS.Client
             this._panelBack.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._nudPort)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._nudPortSsl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._nudVersion)).EndInit();
             this.ResumeLayout(false);
         }
     }

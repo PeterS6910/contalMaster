@@ -9,13 +9,17 @@
     <many-to-one name="DCU" column="DCU" class="Contal.Cgp.NCAS.Server.Beans.DCU, Cgp.NCAS.Server.Beans" not-null="false" unique-key="DCUCCUPortAddress"/>
     <many-to-one name="CCU" column="CCU" class="Contal.Cgp.NCAS.Server.Beans.CCU, Cgp.NCAS.Server.Beans" not-null="false" unique-key="DCUCCUPortAddress"/>
     <property name="IpAddress" not-null="false" />
-    <property name="Port" not-null="false" />
+    <property name="Port" not-null="false" unique-key="DCUCCUPortAddress">
+      <column name="Port" sql-type="NVARCHAR(255)" />
+    </property>
     <property name="Description" not-null="false">
       <column name="Description" sql-type="NVARCHAR(MAX)" />
     </property>
     <property name="UniqueKey" not-null="false" />
     <property name="InterfaceSource" not-null="false" />
-    <property name="PortSsl" not-null="false" />
+    <property name="PortSsl" not-null="false">
+      <column name="PortSsl" sql-type="NVARCHAR(255)" />
+    </property>
     <property name="Equipment" not-null="false" />
     <property name="Locked" not-null="false" />
     <property name="LockingClientIp" not-null="false" />

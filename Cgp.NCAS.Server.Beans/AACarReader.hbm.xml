@@ -14,7 +14,9 @@
     <property name="PermanentlyUnlock" not-null="true"></property>
     <property name="UniqueKey" not-null="false" />
     <property name="InterfaceSource" not-null="false" />
-    <property name="PortSsl" not-null="false" />
+    <property name="PortSsl" not-null="false">
+      <column name="PortSsl" sql-type="NVARCHAR(255)" />
+    </property>
     <property name="Equipment" not-null="false" />
     <property name="Locked" not-null="false" />
     <property name="LockingClientIp" not-null="false" />

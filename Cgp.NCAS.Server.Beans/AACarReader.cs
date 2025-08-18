@@ -61,7 +61,7 @@ namespace Contal.Cgp.NCAS.Server.Beans
         [LwSerialize]
         public virtual string InterfaceSource { get; set; }
         [LwSerialize]
-        public virtual int PortSsl { get; set; }
+        public virtual string PortSsl { get; set; }
         [LwSerialize]
         public virtual string Equipment { get; set; }
         [LwSerialize]

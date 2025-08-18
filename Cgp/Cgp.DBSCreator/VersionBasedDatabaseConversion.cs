@@ -3419,11 +3419,11 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='CarReader' AND xtype='U')
                             DCU uniqueidentifier null,
                             CCU uniqueidentifier null,
                             IpAddress nvarchar(255) null,
-                            Port int null,
+                            Port nvarchar(255) null,
                             Description nvarchar(max) null,
                             UniqueKey nvarchar(255) null,
                             InterfaceSource nvarchar(255) null,
-                            PortSsl int null,
+                            PortSsl nvarchar(255) null,
                             Equipment nvarchar(255) null,
                             Locked bit null,
                             LockingClientIp nvarchar(255) null,
@@ -3461,7 +3461,7 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='CarReader' AND xtype='U')
             }
 
             if (!_databaseCommandExecutor.RunSqlNonQuery(
-                    "if not exists (select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='CarReader' and COLUMN_NAME='PortSsl') alter table CarReader add PortSsl int null",
+                    "if not exists (select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='CarReader' and COLUMN_NAME='PortSsl') alter table CarReader add PortSsl nvarchar(255) null",
                     false,
                     out error))
             {

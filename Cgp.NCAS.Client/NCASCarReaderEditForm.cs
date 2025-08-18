@@ -69,7 +69,8 @@ namespace Contal.Cgp.NCAS.Client
             _cbCameraType.DataSource = Enum.GetValues(typeof(CarReaderType));
             _cbCameraType.SelectedItem = _editingObject.CameraType;
             _eIpAddress.Text = _editingObject.IpAddress;
-            _nudPort.Value = _editingObject.Port;
+            _eGuidDCU.Text = _editingObject.GuidDCU.ToString();
+            _eGuidCCU.Text = _editingObject.GuidCCU.ToString();
             _eUniqueKey.Text = _editingObject.UniqueKey;
             _eInterfaceSource.Text = _editingObject.InterfaceSource;
             _nudPortSsl.Value = _editingObject.PortSsl;
@@ -82,6 +83,9 @@ namespace Contal.Cgp.NCAS.Client
             _eType.Text = _editingObject.Type;
             _eBuild.Text = _editingObject.Build;
             _eDescription.Text = _editingObject.Description;
+            _nudVersion.Value = _editingObject.Version;
+            _eCkUnique.Text = _editingObject.CkUnique.ToString();
+            _chkEnableParentInFullName.Checked = _editingObject.EnableParentInFullName;
         }
 
         protected override bool CheckValues()
@@ -100,6 +104,28 @@ namespace Contal.Cgp.NCAS.Client
                 _eUniqueKey.Focus();
                 return false;
             }
+            Guid tmpGuid;
+            if (!Guid.TryParse(_eCkUnique.Text, out tmpGuid))
+            {
+                ControlNotification.Singleton.Error(NotificationPriority.JustOne, _eCkUnique,
+                    "Ck Unique is required.", CgpClient.Singleton.ClientControlNotificationSettings);
+                _eCkUnique.Focus();
+                return false;
+            }
+            if (!string.IsNullOrEmpty(_eGuidDCU.Text) && !Guid.TryParse(_eGuidDCU.Text, out tmpGuid))
+            {
+                ControlNotification.Singleton.Error(NotificationPriority.JustOne, _eGuidDCU,
+                    "Guid DCU is invalid.", CgpClient.Singleton.ClientControlNotificationSettings);
+                _eGuidDCU.Focus();
+                return false;
+            }
+            if (!string.IsNullOrEmpty(_eGuidCCU.Text) && !Guid.TryParse(_eGuidCCU.Text, out tmpGuid))
+            {
+                ControlNotification.Singleton.Error(NotificationPriority.JustOne, _eGuidCCU,
+                    "Guid CCU is invalid.", CgpClient.Singleton.ClientControlNotificationSettings);
+                _eGuidCCU.Focus();
+                return false;
+            }
             return true;
         }
 
@@ -108,11 +134,16 @@ namespace Contal.Cgp.NCAS.Client
             _editingObject.Name = _eName.Text;
             if (_cbCameraType.SelectedItem != null)
                 _editingObject.CameraType = (CarReaderType)_cbCameraType.SelectedItem;
+            Guid tmp;
+            if (Guid.TryParse(_eGuidDCU.Text, out tmp))
+                _editingObject.GuidDCU = tmp;
+            if (Guid.TryParse(_eGuidCCU.Text, out tmp))
+                _editingObject.GuidCCU = tmp;
             _editingObject.IpAddress = _eIpAddress.Text;
-            _editingObject.Port = (int)_nudPort.Value;
+            _editingObject.Port = _nudPort.Value.ToString();
             _editingObject.UniqueKey = _eUniqueKey.Text;
             _editingObject.InterfaceSource = _eInterfaceSource.Text;
-            _editingObject.PortSsl = (int)_nudPortSsl.Value;
+            _editingObject.PortSsl = _nudPortSsl.Value.ToString();
             _editingObject.Equipment = _eEquipment.Text;
             _editingObject.Locked = _chkLocked.Checked;
             _editingObject.LockingClientIp = _eLockingClientIp.Text;
@@ -122,6 +153,10 @@ namespace Contal.Cgp.NCAS.Client
             _editingObject.Type = _eType.Text;
             _editingObject.Build = _eBuild.Text;
             _editingObject.Description = _eDescription.Text;
+            _editingObject.Version = (int)_nudVersion.Value;
+            if (Guid.TryParse(_eCkUnique.Text, out tmp))
+                _editingObject.CkUnique = tmp;
+            _editingObject.EnableParentInFullName = _chkEnableParentInFullName.Checked;
             return true;
         }
 
