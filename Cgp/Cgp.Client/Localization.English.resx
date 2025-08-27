@@ -228,6 +228,12 @@
   <data name="PersonsForm_lSurnameFilter" xml:space="preserve">
     <value>Surname</value>
   </data>
+  <data name="PersonsForm_cbActivePersons" xml:space="preserve">
+    <value>Active persons</value>
+  </data>
+  <data name="PersonsForm_cbInactivePersons" xml:space="preserve">
+    <value>Inactive persons</value>
+  </data>
   <data name="ErrorInserPerson" xml:space="preserve">
     <value>Insert person fail.</value>
   </data>

@@ -11510,6 +11510,24 @@ namespace Contal.Cgp.Client {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aktívne osoby.
+        /// </summary>
+        internal static string PersonsForm_cbActivePersons {
+            get {
+                return ResourceManager.GetString("PersonsForm_cbActivePersons", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Neaktívne osoby.
+        /// </summary>
+        internal static string PersonsForm_cbInactivePersons {
+            get {
+                return ResourceManager.GetString("PersonsForm_cbInactivePersons", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dátum narodenia od.
         /// </summary>
         internal static string PersonsForm_lDateFromFilter {

@@ -27,8 +27,17 @@ namespace Contal.Cgp.Client
             _tbdpDateToFilter.LocalizationHelper = LocalizationHelper;
             InitCGPDataGridView();
             _cbActivePersons.Checked = true;
-            _cbInactivePersons.Checked = true;
+            _cbInactivePersons.Checked = false;
+            FilterValueChanged(this, EventArgs.Empty);
+            this.Load += PersonsForm_Load;
         }
+
+        private void PersonsForm_Load(object sender, EventArgs e)
+        {
+            RunFilter();
+            this.Load -= PersonsForm_Load;
+        }
+
 
         private void InitCGPDataGridView()
         {

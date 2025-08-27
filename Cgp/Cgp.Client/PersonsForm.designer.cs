@@ -43,8 +43,8 @@ namespace Contal.Cgp.Client
             this._lDateToFilter = new System.Windows.Forms.Label();
             this._bFilterClear = new System.Windows.Forms.Button();
             this._bRunFilter = new System.Windows.Forms.Button();
-            this._cbActivePersons = new System.Windows.Forms.CheckBox();
             this._cbInactivePersons = new System.Windows.Forms.CheckBox();
+            this._cbActivePersons = new System.Windows.Forms.CheckBox();
             this._lNumberFilter = new System.Windows.Forms.Label();
             this._lDateFromFilter = new System.Windows.Forms.Label();
             this._lSurnameFilter = new System.Windows.Forms.Label();
@@ -53,9 +53,9 @@ namespace Contal.Cgp.Client
             this._eSurnameFilter = new System.Windows.Forms.TextBox();
             this._eNameFilter = new System.Windows.Forms.TextBox();
             this._pControl = new System.Windows.Forms.Panel();
+            this._lRecordCount = new System.Windows.Forms.Label();
             this._bAclAssignment = new System.Windows.Forms.Button();
             this._bCSVImport = new System.Windows.Forms.Button();
-            this._lRecordCount = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._cdgvData.DataGrid)).BeginInit();
             this._pFilter.SuspendLayout();
@@ -69,8 +69,9 @@ namespace Contal.Cgp.Client
             this.panel3.Controls.Add(this._pControl);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(803, 448);
+            this.panel3.Size = new System.Drawing.Size(1204, 745);
             this.panel3.TabIndex = 2;
             // 
             // _cdgvData
@@ -88,23 +89,26 @@ namespace Contal.Cgp.Client
             this._cdgvData.DataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this._cdgvData.DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this._cdgvData.DataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this._cdgvData.DataGrid.ColumnHeadersHeight = 34;
             this._cdgvData.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this._cdgvData.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.DataGrid.Location = new System.Drawing.Point(0, 0);
             this._cdgvData.DataGrid.Name = "_dgvData";
             this._cdgvData.DataGrid.ReadOnly = true;
             this._cdgvData.DataGrid.RowHeadersVisible = false;
+            this._cdgvData.DataGrid.RowHeadersWidth = 62;
             this._cdgvData.DataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             this._cdgvData.DataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this._cdgvData.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._cdgvData.DataGrid.Size = new System.Drawing.Size(803, 321);
+            this._cdgvData.DataGrid.Size = new System.Drawing.Size(1204, 540);
             this._cdgvData.DataGrid.TabIndex = 0;
             this._cdgvData.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.LocalizationHelper = null;
             this._cdgvData.Location = new System.Drawing.Point(0, 0);
+            this._cdgvData.Margin = new System.Windows.Forms.Padding(4);
             this._cdgvData.Name = "_cdgvData";
-            this._cdgvData.Size = new System.Drawing.Size(803, 321);
+            this._cdgvData.Size = new System.Drawing.Size(1204, 540);
             this._cdgvData.TabIndex = 3;
             // 
             // _pFilter
@@ -128,25 +132,28 @@ namespace Contal.Cgp.Client
             this._pFilter.Controls.Add(this._eSurnameFilter);
             this._pFilter.Controls.Add(this._eNameFilter);
             this._pFilter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this._pFilter.Location = new System.Drawing.Point(0, 321);
+            this._pFilter.Location = new System.Drawing.Point(0, 540);
+            this._pFilter.Margin = new System.Windows.Forms.Padding(4);
             this._pFilter.Name = "_pFilter";
-            this._pFilter.Size = new System.Drawing.Size(803, 90);
+            this._pFilter.Size = new System.Drawing.Size(1204, 149);
             this._pFilter.TabIndex = 1;
             // 
             // _lFullTextSearch
             // 
             this._lFullTextSearch.AutoSize = true;
-            this._lFullTextSearch.Location = new System.Drawing.Point(5, 44);
+            this._lFullTextSearch.Location = new System.Drawing.Point(12, 75);
+            this._lFullTextSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lFullTextSearch.Name = "_lFullTextSearch";
-            this._lFullTextSearch.Size = new System.Drawing.Size(78, 13);
+            this._lFullTextSearch.Size = new System.Drawing.Size(115, 20);
             this._lFullTextSearch.TabIndex = 15;
             this._lFullTextSearch.Text = "FullTextSearch";
             // 
             // _tbFullTextSearch
             // 
-            this._tbFullTextSearch.Location = new System.Drawing.Point(8, 59);
+            this._tbFullTextSearch.Location = new System.Drawing.Point(12, 104);
+            this._tbFullTextSearch.Margin = new System.Windows.Forms.Padding(4);
             this._tbFullTextSearch.Name = "_tbFullTextSearch";
-            this._tbFullTextSearch.Size = new System.Drawing.Size(241, 20);
+            this._tbFullTextSearch.Size = new System.Drawing.Size(360, 26);
             this._tbFullTextSearch.TabIndex = 14;
             this._tbFullTextSearch.TextChanged += new System.EventHandler(this.FilterValueChanged);
             this._tbFullTextSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
@@ -156,25 +163,26 @@ namespace Contal.Cgp.Client
             this._tbdpDateToFilter.addActualTime = false;
             this._tbdpDateToFilter.BackColor = System.Drawing.Color.Transparent;
             this._tbdpDateToFilter.ButtonClearDateImage = null;
-            this._tbdpDateToFilter.ButtonClearDateText = global::Contal.Cgp.Client.Localization_Swedish.GeneralOptionsForm_chbEnableggingSDPSTZChanges;
+            this._tbdpDateToFilter.ButtonClearDateText = "";
             this._tbdpDateToFilter.ButtonClearDateWidth = 23;
             this._tbdpDateToFilter.ButtonDateImage = null;
-            this._tbdpDateToFilter.ButtonDateText = global::Contal.Cgp.Client.Localization_Swedish.GeneralOptionsForm_chbEnableggingSDPSTZChanges;
+            this._tbdpDateToFilter.ButtonDateText = "";
             this._tbdpDateToFilter.ButtonDateWidth = 23;
             this._tbdpDateToFilter.CustomFormat = "d. M. yyyy";
             this._tbdpDateToFilter.DateFormName = "Calendar";
             this._tbdpDateToFilter.LocalizationHelper = null;
-            this._tbdpDateToFilter.Location = new System.Drawing.Point(255, 58);
-            this._tbdpDateToFilter.MaximumSize = new System.Drawing.Size(1000, 60);
-            this._tbdpDateToFilter.MinimumSize = new System.Drawing.Size(100, 22);
+            this._tbdpDateToFilter.Location = new System.Drawing.Point(382, 104);
+            this._tbdpDateToFilter.Margin = new System.Windows.Forms.Padding(4);
+            this._tbdpDateToFilter.MaximumSize = new System.Drawing.Size(1500, 90);
+            this._tbdpDateToFilter.MinimumSize = new System.Drawing.Size(150, 33);
             this._tbdpDateToFilter.Name = "_tbdpDateToFilter";
             this._tbdpDateToFilter.ReadOnly = false;
             this._tbdpDateToFilter.SelectTime = Contal.IwQuick.UI.SelectedTimeOfDay.Unknown;
-            this._tbdpDateToFilter.Size = new System.Drawing.Size(182, 22);
+            this._tbdpDateToFilter.Size = new System.Drawing.Size(245, 33);
             this._tbdpDateToFilter.TabIndex = 7;
-            this._tbdpDateToFilter.ValidateAfter = 2;
+            this._tbdpDateToFilter.ValidateAfter = 2D;
             this._tbdpDateToFilter.ValidationEnabled = false;
-            this._tbdpDateToFilter.ValidationError = global::Contal.Cgp.Client.Localization_Swedish.GeneralOptionsForm_chbEnableggingSDPSTZChanges;
+            this._tbdpDateToFilter.ValidationError = "";
             this._tbdpDateToFilter.Value = null;
             this._tbdpDateToFilter.TextDateChanged += new Contal.IwQuick.UI.TextBoxDatePicker.DTextChanged(this.FilterValueChanged);
             // 
@@ -183,44 +191,47 @@ namespace Contal.Cgp.Client
             this._tbdpDateFromFilter.addActualTime = false;
             this._tbdpDateFromFilter.BackColor = System.Drawing.Color.Transparent;
             this._tbdpDateFromFilter.ButtonClearDateImage = null;
-            this._tbdpDateFromFilter.ButtonClearDateText = global::Contal.Cgp.Client.Localization_Swedish.GeneralOptionsForm_chbEnableggingSDPSTZChanges;
+            this._tbdpDateFromFilter.ButtonClearDateText = "";
             this._tbdpDateFromFilter.ButtonClearDateWidth = 23;
             this._tbdpDateFromFilter.ButtonDateImage = null;
-            this._tbdpDateFromFilter.ButtonDateText = global::Contal.Cgp.Client.Localization_Swedish.GeneralOptionsForm_chbEnableggingSDPSTZChanges;
+            this._tbdpDateFromFilter.ButtonDateText = "";
             this._tbdpDateFromFilter.ButtonDateWidth = 23;
             this._tbdpDateFromFilter.CustomFormat = "d. M. yyyy";
             this._tbdpDateFromFilter.DateFormName = "Calendar";
             this._tbdpDateFromFilter.LocalizationHelper = null;
-            this._tbdpDateFromFilter.Location = new System.Drawing.Point(255, 19);
-            this._tbdpDateFromFilter.MaximumSize = new System.Drawing.Size(1000, 60);
-            this._tbdpDateFromFilter.MinimumSize = new System.Drawing.Size(100, 22);
+            this._tbdpDateFromFilter.Location = new System.Drawing.Point(382, 32);
+            this._tbdpDateFromFilter.Margin = new System.Windows.Forms.Padding(4);
+            this._tbdpDateFromFilter.MaximumSize = new System.Drawing.Size(1500, 90);
+            this._tbdpDateFromFilter.MinimumSize = new System.Drawing.Size(150, 33);
             this._tbdpDateFromFilter.Name = "_tbdpDateFromFilter";
             this._tbdpDateFromFilter.ReadOnly = false;
             this._tbdpDateFromFilter.SelectTime = Contal.IwQuick.UI.SelectedTimeOfDay.Unknown;
-            this._tbdpDateFromFilter.Size = new System.Drawing.Size(182, 22);
+            this._tbdpDateFromFilter.Size = new System.Drawing.Size(245, 33);
             this._tbdpDateFromFilter.TabIndex = 5;
-            this._tbdpDateFromFilter.ValidateAfter = 2;
+            this._tbdpDateFromFilter.ValidateAfter = 2D;
             this._tbdpDateFromFilter.ValidationEnabled = false;
-            this._tbdpDateFromFilter.ValidationError = global::Contal.Cgp.Client.Localization_Swedish.GeneralOptionsForm_chbEnableggingSDPSTZChanges;
+            this._tbdpDateFromFilter.ValidationError = "";
             this._tbdpDateFromFilter.Value = null;
             this._tbdpDateFromFilter.TextDateChanged += new Contal.IwQuick.UI.TextBoxDatePicker.DTextChanged(this.FilterValueChanged);
             // 
             // _lOtherInformationFields
             // 
             this._lOtherInformationFields.AutoSize = true;
-            this._lOtherInformationFields.Location = new System.Drawing.Point(544, 3);
+            this._lOtherInformationFields.Location = new System.Drawing.Point(840, 4);
+            this._lOtherInformationFields.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lOtherInformationFields.Name = "_lOtherInformationFields";
-            this._lOtherInformationFields.Size = new System.Drawing.Size(114, 13);
+            this._lOtherInformationFields.Size = new System.Drawing.Size(173, 20);
             this._lOtherInformationFields.TabIndex = 10;
             this._lOtherInformationFields.Text = "Other information fields";
             // 
             // _eOtherInformationFiledsFilter
             // 
-            this._eOtherInformationFiledsFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this._eOtherInformationFiledsFilter.Location = new System.Drawing.Point(547, 19);
+            this._eOtherInformationFiledsFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._eOtherInformationFiledsFilter.Location = new System.Drawing.Point(840, 32);
+            this._eOtherInformationFiledsFilter.Margin = new System.Windows.Forms.Padding(4);
             this._eOtherInformationFiledsFilter.Name = "_eOtherInformationFiledsFilter";
-            this._eOtherInformationFiledsFilter.Size = new System.Drawing.Size(168, 20);
+            this._eOtherInformationFiledsFilter.Size = new System.Drawing.Size(250, 26);
             this._eOtherInformationFiledsFilter.TabIndex = 11;
             this._eOtherInformationFiledsFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
             this._eOtherInformationFiledsFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
@@ -228,17 +239,19 @@ namespace Contal.Cgp.Client
             // _lDateToFilter
             // 
             this._lDateToFilter.AutoSize = true;
-            this._lDateToFilter.Location = new System.Drawing.Point(252, 44);
+            this._lDateToFilter.Location = new System.Drawing.Point(382, 75);
+            this._lDateToFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lDateToFilter.Name = "_lDateToFilter";
-            this._lDateToFilter.Size = new System.Drawing.Size(42, 13);
+            this._lDateToFilter.Size = new System.Drawing.Size(62, 20);
             this._lDateToFilter.TabIndex = 6;
             this._lDateToFilter.Text = "Date to";
             // 
             // _bFilterClear
             // 
-            this._bFilterClear.Location = new System.Drawing.Point(740, 58);
+            this._bFilterClear.Location = new System.Drawing.Point(1079, 104);
+            this._bFilterClear.Margin = new System.Windows.Forms.Padding(4);
             this._bFilterClear.Name = "_bFilterClear";
-            this._bFilterClear.Size = new System.Drawing.Size(75, 23);
+            this._bFilterClear.Size = new System.Drawing.Size(112, 34);
             this._bFilterClear.TabIndex = 13;
             this._bFilterClear.Text = "Clear";
             this._bFilterClear.UseVisualStyleBackColor = true;
@@ -246,97 +259,107 @@ namespace Contal.Cgp.Client
             // 
             // _bRunFilter
             // 
-            this._bRunFilter.Location = new System.Drawing.Point(650, 58);
+            this._bRunFilter.Location = new System.Drawing.Point(941, 104);
+            this._bRunFilter.Margin = new System.Windows.Forms.Padding(4);
             this._bRunFilter.Name = "_bRunFilter";
-            this._bRunFilter.Size = new System.Drawing.Size(75, 23);
+            this._bRunFilter.Size = new System.Drawing.Size(112, 34);
             this._bRunFilter.TabIndex = 12;
             this._bRunFilter.Text = "Filter";
             this._bRunFilter.UseVisualStyleBackColor = true;
             this._bRunFilter.Click += new System.EventHandler(this._bRunFilter_Click);
-            //
-            // _cbActivePersons
-            //
-            this._cbActivePersons.AutoSize = true;
-            this._cbActivePersons.Location = new System.Drawing.Point(443, 60);
-            this._cbActivePersons.Name = "_cbActivePersons";
-            this._cbActivePersons.Size = new System.Drawing.Size(93, 17);
-            this._cbActivePersons.TabIndex = 16;
-            this._cbActivePersons.Text = "Active persons";
-            this._cbActivePersons.UseVisualStyleBackColor = true;
-            this._cbActivePersons.CheckedChanged += new System.EventHandler(this.FilterValueChanged);
-            this._cbActivePersons.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
-            //
+            // 
             // _cbInactivePersons
-            //
+            // 
             this._cbInactivePersons.AutoSize = true;
-            this._cbInactivePersons.Location = new System.Drawing.Point(542, 60);
+            this._cbInactivePersons.Location = new System.Drawing.Point(664, 104);
+            this._cbInactivePersons.Margin = new System.Windows.Forms.Padding(4);
             this._cbInactivePersons.Name = "_cbInactivePersons";
-            this._cbInactivePersons.Size = new System.Drawing.Size(103, 17);
+            this._cbInactivePersons.Size = new System.Drawing.Size(151, 24);
             this._cbInactivePersons.TabIndex = 17;
             this._cbInactivePersons.Text = "Inactive persons";
             this._cbInactivePersons.UseVisualStyleBackColor = true;
             this._cbInactivePersons.CheckedChanged += new System.EventHandler(this.FilterValueChanged);
             this._cbInactivePersons.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
-            //
+            // 
+            // _cbActivePersons
+            // 
+            this._cbActivePersons.AutoSize = true;
+            this._cbActivePersons.Location = new System.Drawing.Point(664, 77);
+            this._cbActivePersons.Margin = new System.Windows.Forms.Padding(4);
+            this._cbActivePersons.Name = "_cbActivePersons";
+            this._cbActivePersons.Size = new System.Drawing.Size(139, 24);
+            this._cbActivePersons.TabIndex = 16;
+            this._cbActivePersons.Text = "Active persons";
+            this._cbActivePersons.UseVisualStyleBackColor = true;
+            this._cbActivePersons.CheckedChanged += new System.EventHandler(this.FilterValueChanged);
+            this._cbActivePersons.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
+            // 
             // _lNumberFilter
-            //
+            // 
             this._lNumberFilter.AutoSize = true;
-            this._lNumberFilter.Location = new System.Drawing.Point(440, 3);
+            this._lNumberFilter.Location = new System.Drawing.Point(664, 4);
+            this._lNumberFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lNumberFilter.Name = "_lNumberFilter";
-            this._lNumberFilter.Size = new System.Drawing.Size(44, 13);
+            this._lNumberFilter.Size = new System.Drawing.Size(65, 20);
             this._lNumberFilter.TabIndex = 8;
             this._lNumberFilter.Text = "Number";
             // 
             // _lDateFromFilter
             // 
             this._lDateFromFilter.AutoSize = true;
-            this._lDateFromFilter.Location = new System.Drawing.Point(252, 3);
+            this._lDateFromFilter.Location = new System.Drawing.Point(382, 4);
+            this._lDateFromFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lDateFromFilter.Name = "_lDateFromFilter";
-            this._lDateFromFilter.Size = new System.Drawing.Size(53, 13);
+            this._lDateFromFilter.Size = new System.Drawing.Size(80, 20);
             this._lDateFromFilter.TabIndex = 4;
             this._lDateFromFilter.Text = "Date from";
             // 
             // _lSurnameFilter
             // 
             this._lSurnameFilter.AutoSize = true;
-            this._lSurnameFilter.Location = new System.Drawing.Point(132, 3);
+            this._lSurnameFilter.Location = new System.Drawing.Point(202, 4);
+            this._lSurnameFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lSurnameFilter.Name = "_lSurnameFilter";
-            this._lSurnameFilter.Size = new System.Drawing.Size(49, 13);
+            this._lSurnameFilter.Size = new System.Drawing.Size(74, 20);
             this._lSurnameFilter.TabIndex = 2;
             this._lSurnameFilter.Text = "Surname";
             // 
             // _lNameFilter
             // 
             this._lNameFilter.AutoSize = true;
-            this._lNameFilter.Location = new System.Drawing.Point(5, 3);
+            this._lNameFilter.Location = new System.Drawing.Point(12, 4);
+            this._lNameFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lNameFilter.Name = "_lNameFilter";
-            this._lNameFilter.Size = new System.Drawing.Size(35, 13);
+            this._lNameFilter.Size = new System.Drawing.Size(51, 20);
             this._lNameFilter.TabIndex = 0;
             this._lNameFilter.Text = "Name";
             // 
             // _eNumberFilter
             // 
-            this._eNumberFilter.Location = new System.Drawing.Point(443, 19);
+            this._eNumberFilter.Location = new System.Drawing.Point(664, 32);
+            this._eNumberFilter.Margin = new System.Windows.Forms.Padding(4);
             this._eNumberFilter.Name = "_eNumberFilter";
-            this._eNumberFilter.Size = new System.Drawing.Size(98, 20);
+            this._eNumberFilter.Size = new System.Drawing.Size(145, 26);
             this._eNumberFilter.TabIndex = 9;
             this._eNumberFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
             this._eNumberFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
             // 
             // _eSurnameFilter
             // 
-            this._eSurnameFilter.Location = new System.Drawing.Point(135, 21);
+            this._eSurnameFilter.Location = new System.Drawing.Point(202, 32);
+            this._eSurnameFilter.Margin = new System.Windows.Forms.Padding(4);
             this._eSurnameFilter.Name = "_eSurnameFilter";
-            this._eSurnameFilter.Size = new System.Drawing.Size(114, 20);
+            this._eSurnameFilter.Size = new System.Drawing.Size(169, 26);
             this._eSurnameFilter.TabIndex = 3;
             this._eSurnameFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
             this._eSurnameFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
             // 
             // _eNameFilter
             // 
-            this._eNameFilter.Location = new System.Drawing.Point(8, 21);
+            this._eNameFilter.Location = new System.Drawing.Point(12, 32);
+            this._eNameFilter.Margin = new System.Windows.Forms.Padding(4);
             this._eNameFilter.Name = "_eNameFilter";
-            this._eNameFilter.Size = new System.Drawing.Size(121, 20);
+            this._eNameFilter.Size = new System.Drawing.Size(180, 26);
             this._eNameFilter.TabIndex = 1;
             this._eNameFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
             this._eNameFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
@@ -347,16 +370,29 @@ namespace Contal.Cgp.Client
             this._pControl.Controls.Add(this._bAclAssignment);
             this._pControl.Controls.Add(this._bCSVImport);
             this._pControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this._pControl.Location = new System.Drawing.Point(0, 411);
+            this._pControl.Location = new System.Drawing.Point(0, 689);
+            this._pControl.Margin = new System.Windows.Forms.Padding(4);
             this._pControl.Name = "_pControl";
-            this._pControl.Size = new System.Drawing.Size(803, 37);
+            this._pControl.Size = new System.Drawing.Size(1204, 56);
             this._pControl.TabIndex = 2;
+            // 
+            // _lRecordCount
+            // 
+            this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._lRecordCount.AutoSize = true;
+            this._lRecordCount.Location = new System.Drawing.Point(934, 16);
+            this._lRecordCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this._lRecordCount.Name = "_lRecordCount";
+            this._lRecordCount.Size = new System.Drawing.Size(104, 20);
+            this._lRecordCount.TabIndex = 16;
+            this._lRecordCount.Text = "RecordCount";
             // 
             // _bAclAssignment
             // 
-            this._bAclAssignment.Location = new System.Drawing.Point(91, 6);
+            this._bAclAssignment.Location = new System.Drawing.Point(136, 9);
+            this._bAclAssignment.Margin = new System.Windows.Forms.Padding(4);
             this._bAclAssignment.Name = "_bAclAssignment";
-            this._bAclAssignment.Size = new System.Drawing.Size(101, 23);
+            this._bAclAssignment.Size = new System.Drawing.Size(152, 34);
             this._bAclAssignment.TabIndex = 4;
             this._bAclAssignment.Text = "ACL assignment ";
             this._bAclAssignment.UseVisualStyleBackColor = true;
@@ -364,31 +400,23 @@ namespace Contal.Cgp.Client
             // 
             // _bCSVImport
             // 
-            this._bCSVImport.Location = new System.Drawing.Point(10, 6);
+            this._bCSVImport.Location = new System.Drawing.Point(15, 9);
+            this._bCSVImport.Margin = new System.Windows.Forms.Padding(4);
             this._bCSVImport.Name = "_bCSVImport";
-            this._bCSVImport.Size = new System.Drawing.Size(75, 23);
+            this._bCSVImport.Size = new System.Drawing.Size(112, 34);
             this._bCSVImport.TabIndex = 3;
             this._bCSVImport.Text = "CSV import";
             this._bCSVImport.UseVisualStyleBackColor = true;
             this._bCSVImport.Click += new System.EventHandler(this._bCSVImport_Click);
             // 
-            // _lRecordCount
-            // 
-            this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._lRecordCount.AutoSize = true;
-            this._lRecordCount.Location = new System.Drawing.Point(623, 11);
-            this._lRecordCount.Name = "_lRecordCount";
-            this._lRecordCount.Size = new System.Drawing.Size(70, 13);
-            this._lRecordCount.TabIndex = 16;
-            this._lRecordCount.Text = "RecordCount";
-            // 
             // PersonsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(803, 448);
+            this.ClientSize = new System.Drawing.Size(1204, 745);
             this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PersonsForm";
             this.Text = "PersonsForm";
             this.panel3.ResumeLayout(false);

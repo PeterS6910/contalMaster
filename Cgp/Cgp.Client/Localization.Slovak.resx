@@ -219,6 +219,12 @@
   <data name="PersonsForm_lSurnameFilter" xml:space="preserve">
     <value>Priezvisko</value>
   </data>
+  <data name="PersonsForm_cbActivePersons" xml:space="preserve">
+    <value>Aktívne osoby</value>
+  </data>
+  <data name="PersonsForm_cbInactivePersons" xml:space="preserve">
+    <value>Neaktívne osoby</value>
+  </data>
   <data name="PersonsFormPersonsForm" xml:space="preserve">
     <value>Osoby</value>
   </data>

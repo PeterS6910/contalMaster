@@ -2970,6 +2970,12 @@
   <data name="PersonsForm_lSurnameFilter" xml:space="preserve">
     <value>Efternamn</value>
   </data>
+  <data name="PersonsForm_cbActivePersons" xml:space="preserve">
+    <value>Aktiva personer</value>
+  </data>
+  <data name="PersonsForm_cbInactivePersons" xml:space="preserve">
+    <value>Inaktiva personer</value>
+  </data>
   <data name="PersonEditForm_lSurname" xml:space="preserve">
     <value>Efternamn</value>
   </data>
