@@ -225,6 +225,10 @@ namespace Contal.Cgp.Client
         #region Filters
         private void _bRunFilter_Click(object sender, EventArgs e)
         {
+            _fullFilterSettingsText = string.Empty;
+            _cbInactivePersons.Checked = false;
+            _cbActivePersons.Checked = true;
+            FilterClear_Click();
             RunFilter();
         }
 
