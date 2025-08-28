@@ -531,8 +531,7 @@ namespace Contal.Cgp.Components
                 }
             }
 
-            // Last column is always set to Fill and Symbol to ColumnHeader
-            _dgvData.Columns[COLUMN_SYMBOL_NAME].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            // Last column is always set to Fill and Symbol to ColumnHeader            
             if (_dgvData.Columns.Contains(COLUMN_SYMBOL_NAME))
                 _dgvData.Columns[COLUMN_SYMBOL_NAME].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             _dgvData.Columns[_columnsVisibilityOrder.Keys.Last()].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
