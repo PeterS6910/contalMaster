@@ -43,7 +43,8 @@ namespace Contal.Cgp.Client
             _cdgvData.LocalizationHelper = CgpClient.Singleton.LocalizationHelper;
             _cdgvData.ImageList = ObjectImageList.Singleton.ClientObjectImages;
             _cdgvData.BeforeGridModified += _cdgvData_BeforeGridModified;
-            _cdgvData.AfterGridModified += SortBySurname;
+            _cdgvData.DefaultSortColumnName = PersonShort.COLUMNSURNAME;
+            _cdgvData.DefaultSortDirection = ListSortDirection.Ascending;
             _cdgvData.CgpDataGridEvents = this;
         }
 

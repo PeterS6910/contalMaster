@@ -168,6 +168,10 @@ namespace Contal.Cgp.Components
             }
         }
 
+        public string DefaultSortColumnName { get; set; }
+
+        public ListSortDirection DefaultSortDirection { get; set; }
+
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public DataGridView DataGrid
         {
@@ -178,6 +182,7 @@ namespace Contal.Cgp.Components
         public CgpDataGridView()
         {
             DisabledDoubleClickEventForColumns = new HashSet<string>();
+            DefaultSortDirection = ListSortDirection.Ascending;
             InitDataGridView();
         }
 
@@ -624,10 +629,20 @@ namespace Contal.Cgp.Components
                 if (AfterGridModified != null)
                     AfterGridModified(bindingSource);
 
+                bool defaultSortApplied = false;
+                if (sortedColumn == null && _dgvData.SortedColumn == null && DefaultSortColumnName != null)
+                {
+                    _dgvData.Sort(_dgvData.Columns[DefaultSortColumnName], DefaultSortDirection);
+                    defaultSortApplied = true;
+                }
+
                 if (bindingSource.SupportsSorting)
                 {
                     if (sortedColumn == null)
-                        DoImplicitSort();
+                    {
+                        if (!defaultSortApplied)
+                            DoImplicitSort();
+                    }
                     else
                         _dgvData.Sort(_dgvData.Columns[sortedColumn.Name],
                             sortOrder == SortOrder.Descending
