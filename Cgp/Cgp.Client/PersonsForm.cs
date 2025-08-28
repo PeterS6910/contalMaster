@@ -1,13 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
 using Contal.Cgp.BaseLib;
-
 using Contal.Cgp.Client.PluginSupport;
+using Contal.Cgp.Server.Beans;
 using Contal.IwQuick;
 using Contal.IwQuick.UI;
-using Contal.Cgp.Server.Beans;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace Contal.Cgp.Client
 {
@@ -43,6 +43,7 @@ namespace Contal.Cgp.Client
             _cdgvData.LocalizationHelper = CgpClient.Singleton.LocalizationHelper;
             _cdgvData.ImageList = ObjectImageList.Singleton.ClientObjectImages;
             _cdgvData.BeforeGridModified += _cdgvData_BeforeGridModified;
+            _cdgvData.AfterGridModified += SortBySurname;
             _cdgvData.CgpDataGridEvents = this;
         }
 
@@ -52,6 +53,15 @@ namespace Contal.Cgp.Client
             {
                 personShort.Symbol = _cdgvData.GetDefaultImage(personShort);
                 personShort.TimetecSync = personShort.TimetecSync == "True" ? GetString("General_true") : GetString("General_false");
+            }
+        }
+
+        private void SortBySurname(BindingSource bindingSource)
+        {
+            var columns = _cdgvData.DataGrid.Columns;
+            if (columns.Contains(PersonShort.COLUMNSURNAME))
+            {
+                _cdgvData.DataGrid.Sort(columns[PersonShort.COLUMNSURNAME], ListSortDirection.Ascending);
             }
         }
 
@@ -371,7 +381,7 @@ namespace Contal.Cgp.Client
         }
 
         protected override void ModifyGridView(BindingSource bindingSource)
-        {
+        {            
             if (CgpClient.Singleton.MainServerProvider.CheckTimetecLicense())
             {
                 // Slovak market has different columns
