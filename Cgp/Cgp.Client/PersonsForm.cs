@@ -38,7 +38,6 @@ namespace Contal.Cgp.Client
             this.Load -= PersonsForm_Load;
         }
 
-
         private void InitCGPDataGridView()
         {
             _cdgvData.LocalizationHelper = CgpClient.Singleton.LocalizationHelper;
@@ -225,10 +224,6 @@ namespace Contal.Cgp.Client
         #region Filters
         private void _bRunFilter_Click(object sender, EventArgs e)
         {
-            _fullFilterSettingsText = string.Empty;
-            _cbInactivePersons.Checked = false;
-            _cbActivePersons.Checked = true;
-            FilterClear_Click();
             RunFilter();
         }
 
@@ -286,7 +281,6 @@ namespace Contal.Cgp.Client
 
             _fullFilterSettingsText = _tbFullTextSearch.Text;
         }
-        
 
         protected override bool CheckFilterValues()
         {
@@ -296,7 +290,10 @@ namespace Contal.Cgp.Client
         private void _bFilterClear_Click(object sender, EventArgs e)
         {
             _fullFilterSettingsText = string.Empty;
-            FilterClear_Click();
+            _filterSettings.Clear();
+            ClearFilterEdits();
+            FilterValueChanged(this, EventArgs.Empty);
+            RunFilter();
         }
 
         protected override void ClearFilterEdits()
