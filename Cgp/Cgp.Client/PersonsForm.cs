@@ -387,12 +387,12 @@ namespace Contal.Cgp.Client
             {
                 // Slovak market has different columns
                 _cdgvData.ModifyGridView(bindingSource, PersonShort.COLUMN_SYMBOL, PersonShort.COLUMNIDENTIFICATION, PersonShort.COLUMNFIRSTNAME, PersonShort.COLUMNSURNAME,
-                PersonShort.COLUMNBIRTHDAY, PersonShort.COLUMN_TIMETEC_SYNC, PersonShort.COLUMNDESCRIPTION);
+                PersonShort.COLUMNDEPARTMENT, PersonShort.COLUMNBIRTHDAY, PersonShort.COLUMN_TIMETEC_SYNC, PersonShort.COLUMNDESCRIPTION);
             }
             else
             {
                 _cdgvData.ModifyGridView(bindingSource, PersonShort.COLUMN_SYMBOL, PersonShort.COLUMNFIRSTNAME, PersonShort.COLUMNSURNAME,
-                PersonShort.COLUMNBIRTHDAY, PersonShort.COLUMNDESCRIPTION);
+                PersonShort.COLUMNDEPARTMENT, PersonShort.COLUMNBIRTHDAY, PersonShort.COLUMNDESCRIPTION);
             }
         }
 
