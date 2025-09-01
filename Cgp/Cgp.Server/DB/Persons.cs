@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -325,6 +325,7 @@ namespace Contal.Cgp.Server.DB
             {
                 foreach (var person in listPerson)
                 {
+                    person.Department = UserFoldersStructures.Singleton.GetPersonDepartment(person.GetIdString());
                     result.Add(new PersonShort(person));
                 }
             }
