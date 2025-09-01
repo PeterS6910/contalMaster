@@ -325,7 +325,11 @@ namespace Contal.Cgp.Server.DB
             {
                 foreach (var person in listPerson)
                 {
-                    person.Department = UserFoldersStructures.Singleton.GetPersonDepartment(person.GetIdString());
+                    var department = UserFoldersStructures.Singleton.GetPersonDepartment(person.GetIdString());
+                    if (department != null)
+                    {
+                        person.Department = department;
+                    }
                     result.Add(new PersonShort(person));
                 }
             }

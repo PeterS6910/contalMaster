@@ -1,12 +1,12 @@
+using Contal.Cgp.Globals;
+using Contal.Cgp.ORM;
+using Contal.Cgp.RemotingCommon;
+using Contal.Cgp.Server.Beans;
+using Contal.Cgp.Server.StructuredSiteEvaluator;
+using NHibernate.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
-using Contal.Cgp.RemotingCommon;
-using Contal.Cgp.Server.Beans;
-using Contal.Cgp.Globals;
-using Contal.Cgp.Server.StructuredSiteEvaluator;
-using NHibernate.Driver;
 
 namespace Contal.Cgp.Server.DB
 {
@@ -347,11 +347,36 @@ namespace Contal.Cgp.Server.DB
             if (personUfsos != null && personUfsos.Count > 0)
             {
                 var folder = personUfsos.First().Folder;
-                
+
                 if (folder != null)
                 {
                     return GetById(folder.IdUserFoldersStructure);
                 }
+            }
+
+            // fallback to legacy department stored directly on person
+            try
+            {
+                var session = NhHelper.Singleton.GetSession();
+                using (session.BeginTransaction())
+                {
+                    var query = session.CreateSQLQuery(
+                        string.Format("select {0} from Person where {1} = :id", Person.COLUMNDEPARTMENT, Person.COLUMNIDPERSON));
+                    query.SetGuid("id", new Guid(strPersonId));
+                    var department = query.UniqueResult<string>();
+
+                    if (!string.IsNullOrEmpty(department))
+                    {
+                        return new UserFoldersStructure
+                        {
+                            FolderName = department
+                        };
+                    }
+                }
+            }
+            catch
+            {
+                // ignore errors and return null
             }
 
             return null;

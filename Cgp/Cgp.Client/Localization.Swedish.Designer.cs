@@ -16379,6 +16379,15 @@ namespace Contal.Cgp.Client {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Avdelning.
+        /// </summary>
+        internal static string PersonsForm_lDepartmentFilter {
+            get {
+                return ResourceManager.GetString("PersonsForm_lDepartmentFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Beskrivning.
         /// </summary>
         internal static string PersonsForm_lDescriptionFilter {

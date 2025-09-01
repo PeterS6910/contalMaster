@@ -16118,6 +16118,15 @@ namespace Contal.Cgp.Client {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Department.
+        /// </summary>
+        internal static string PersonsForm_lDepartmentFilter {
+            get {
+                return ResourceManager.GetString("PersonsForm_lDepartmentFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
         internal static string PersonsForm_lDescriptionFilter {

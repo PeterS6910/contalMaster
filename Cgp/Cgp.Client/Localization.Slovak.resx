@@ -228,6 +228,9 @@
   <data name="PersonsForm_cbInactivePersons" xml:space="preserve">
     <value>Neaktívne osoby</value>
   </data>
+  <data name="PersonsForm_lDepartmentFilter" xml:space="preserve">
+    <value>Oddelenie</value>
+  </data>
   <data name="PersonsFormPersonsForm" xml:space="preserve">
     <value>Osoby</value>
   </data>

@@ -237,6 +237,9 @@
   <data name="ErrorInserPerson" xml:space="preserve">
     <value>Insert person fail.</value>
   </data>
+  <data name="PersonsForm_lDepartmentFilter" xml:space="preserve">
+    <value>Department</value>
+  </data>
   <data name="ErrorUpdatePerson" xml:space="preserve">
     <value>Update person fail.</value>
   </data>

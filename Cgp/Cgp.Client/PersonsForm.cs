@@ -2,6 +2,7 @@ using Contal.Cgp.BaseLib;
 using Contal.Cgp.Client.PluginSupport;
 using Contal.Cgp.Server.Beans;
 using Contal.IwQuick;
+using Contal.IwQuick.Sys;
 using Contal.IwQuick.UI;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace Contal.Cgp.Client
 #endif
     {
         private string _fullFilterSettingsText = string.Empty;
+        private UserFoldersStructure _departmentFilter;
 
         public PersonsForm()
         {
@@ -54,15 +56,6 @@ namespace Contal.Cgp.Client
             {
                 personShort.Symbol = _cdgvData.GetDefaultImage(personShort);
                 personShort.TimetecSync = personShort.TimetecSync == "True" ? GetString("General_true") : GetString("General_false");
-            }
-        }
-
-        private void SortBySurname(BindingSource bindingSource)
-        {
-            var columns = _cdgvData.DataGrid.Columns;
-            if (columns.Contains(PersonShort.COLUMNSURNAME))
-            {
-                _cdgvData.DataGrid.Sort(columns[PersonShort.COLUMNSURNAME], ListSortDirection.Ascending);
             }
         }
 
@@ -238,6 +231,41 @@ namespace Contal.Cgp.Client
             RunFilter();
         }
 
+        private void SelectDepartmentClick(object sender, EventArgs e)
+        {
+            if (CgpClient.Singleton.IsConnectionLost(true)) return;
+
+            try
+            {
+                Exception error;
+                var listDepartments = CgpClient.Singleton.MainServerProvider.UserFoldersSutructures.ListDepartments(
+                    CgpClient.Singleton.LocalizationHelper.GetString("SelectStructuredSubSiteForm_RootNode"),
+                    @"\", null, out error);
+
+                if (error != null) throw error;
+
+                ListboxFormAdd formAdd = new ListboxFormAdd(
+                    listDepartments,
+                    CgpClient.Singleton.LocalizationHelper.GetString(
+                        "UserFoldersStructuresFormUserFoldersStructuresForm"));
+
+                object outUserFolder;
+                formAdd.ShowDialog(out outUserFolder);
+                if (outUserFolder != null)
+                {
+                    _departmentFilter = outUserFolder as UserFoldersStructure;
+                    _tbmDepartmentFilter.Text = _departmentFilter != null ? _departmentFilter.ToString() : string.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                HandledExceptionAdapter.Examine(ex);
+            }
+
+            FilterValueChanged(this, EventArgs.Empty);
+            RunFilter();
+        }
+
         protected override void SetFilterSettings()
         {
             if (!string.IsNullOrEmpty(_eNameFilter.Text))
@@ -282,6 +310,9 @@ namespace Contal.Cgp.Client
                 _filterSettings.Add(fs1);
                 _filterSettings.Add(fs2);
             }
+
+            if (_departmentFilter != null)
+                _filterSettings.Add(new FilterSettings(Person.COLUMNDEPARTMENT, _departmentFilter, ComparerModes.EQUALL));
             else if (!_cbActivePersons.Checked && _cbInactivePersons.Checked)
             {
                 var fs = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, DateTime.Now, ComparerModes.LESS);
@@ -318,6 +349,8 @@ namespace Contal.Cgp.Client
             _eOtherInformationFiledsFilter.Text = string.Empty;
             _cbActivePersons.Checked = true;
             _cbInactivePersons.Checked = false;
+            _departmentFilter = null;
+            _tbmDepartmentFilter.Text = string.Empty;
         }
 
         #endregion
@@ -382,7 +415,7 @@ namespace Contal.Cgp.Client
         }
 
         protected override void ModifyGridView(BindingSource bindingSource)
-        {            
+        {
             if (CgpClient.Singleton.MainServerProvider.CheckTimetecLicense())
             {
                 // Slovak market has different columns

@@ -34,6 +34,8 @@ namespace Contal.Cgp.Client
             this.panel3 = new System.Windows.Forms.Panel();
             this._cdgvData = new Contal.Cgp.Components.CgpDataGridView();
             this._pFilter = new System.Windows.Forms.Panel();
+            this._lDepartmentFilter = new System.Windows.Forms.Label();
+            this._tbmDepartmentFilter = new Contal.IwQuick.UI.TextBoxMenu();
             this._lFullTextSearch = new System.Windows.Forms.Label();
             this._tbFullTextSearch = new System.Windows.Forms.TextBox();
             this._tbdpDateToFilter = new Contal.IwQuick.UI.TextBoxDatePicker();
@@ -71,7 +73,7 @@ namespace Contal.Cgp.Client
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1204, 745);
+            this.panel3.Size = new System.Drawing.Size(1204, 775);
             this.panel3.TabIndex = 2;
             // 
             // _cdgvData
@@ -101,18 +103,22 @@ namespace Contal.Cgp.Client
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             this._cdgvData.DataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this._cdgvData.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._cdgvData.DataGrid.Size = new System.Drawing.Size(1204, 540);
+            this._cdgvData.DataGrid.Size = new System.Drawing.Size(1204, 545);
             this._cdgvData.DataGrid.TabIndex = 0;
+            this._cdgvData.DefaultSortColumnName = null;
+            this._cdgvData.DefaultSortDirection = System.ComponentModel.ListSortDirection.Ascending;
             this._cdgvData.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.LocalizationHelper = null;
             this._cdgvData.Location = new System.Drawing.Point(0, 0);
             this._cdgvData.Margin = new System.Windows.Forms.Padding(4);
             this._cdgvData.Name = "_cdgvData";
-            this._cdgvData.Size = new System.Drawing.Size(1204, 540);
+            this._cdgvData.Size = new System.Drawing.Size(1204, 545);
             this._cdgvData.TabIndex = 3;
             // 
             // _pFilter
             // 
+            this._pFilter.Controls.Add(this._lDepartmentFilter);
+            this._pFilter.Controls.Add(this._tbmDepartmentFilter);
             this._pFilter.Controls.Add(this._lFullTextSearch);
             this._pFilter.Controls.Add(this._tbFullTextSearch);
             this._pFilter.Controls.Add(this._tbdpDateToFilter);
@@ -132,11 +138,76 @@ namespace Contal.Cgp.Client
             this._pFilter.Controls.Add(this._eSurnameFilter);
             this._pFilter.Controls.Add(this._eNameFilter);
             this._pFilter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this._pFilter.Location = new System.Drawing.Point(0, 540);
+            this._pFilter.Location = new System.Drawing.Point(0, 545);
             this._pFilter.Margin = new System.Windows.Forms.Padding(4);
             this._pFilter.Name = "_pFilter";
-            this._pFilter.Size = new System.Drawing.Size(1204, 149);
+            this._pFilter.Size = new System.Drawing.Size(1204, 174);
             this._pFilter.TabIndex = 1;
+            // 
+            // _lDepartmentFilter
+            // 
+            this._lDepartmentFilter.AutoSize = true;
+            this._lDepartmentFilter.Location = new System.Drawing.Point(765, 140);
+            this._lDepartmentFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this._lDepartmentFilter.Name = "_lDepartmentFilter";
+            this._lDepartmentFilter.Size = new System.Drawing.Size(94, 20);
+            this._lDepartmentFilter.TabIndex = 18;
+            this._lDepartmentFilter.Text = "Department";
+            // 
+            // _tbmDepartmentFilter
+            // 
+            this._tbmDepartmentFilter.BackColor = System.Drawing.SystemColors.Control;
+            // 
+            // 
+            // 
+            this._tbmDepartmentFilter.Button.Image = ((System.Drawing.Image)(resources.GetObject("_tbmDepartmentFilter.Button.Image")));
+            this._tbmDepartmentFilter.Button.Location = new System.Drawing.Point(0, 0);
+            this._tbmDepartmentFilter.Button.Name = "_bMenu";
+            this._tbmDepartmentFilter.Button.Size = new System.Drawing.Size(20, 20);
+            this._tbmDepartmentFilter.Button.TabIndex = 3;
+            this._tbmDepartmentFilter.Button.Click += new System.EventHandler(this.SelectDepartmentClick);
+            this._tbmDepartmentFilter.ButtonBaseColor = System.Drawing.SystemColors.Control;
+            this._tbmDepartmentFilter.ButtonDefaultBehaviour = true;
+            this._tbmDepartmentFilter.ButtonHoverColor = System.Drawing.Color.Empty;
+            this._tbmDepartmentFilter.ButtonImage = ((System.Drawing.Image)(resources.GetObject("_tbmDepartmentFilter.ButtonImage")));
+            // 
+            // 
+            // 
+            this._tbmDepartmentFilter.ButtonPopupMenu.Name = "";
+            this._tbmDepartmentFilter.ButtonPopupMenu.Size = new System.Drawing.Size(100, 25);
+            this._tbmDepartmentFilter.ButtonPosition = Contal.IwQuick.UI.MenuPosition.Right;
+            this._tbmDepartmentFilter.ButtonShowImage = true;
+            this._tbmDepartmentFilter.ButtonSizeHeight = 20;
+            this._tbmDepartmentFilter.ButtonSizeWidth = 20;
+            this._tbmDepartmentFilter.ButtonText = "";
+            this._tbmDepartmentFilter.HoverTime = 500;
+            // 
+            // 
+            // 
+            this._tbmDepartmentFilter.ImageTextBox.Image = ((System.Drawing.Image)(resources.GetObject("_tbmDepartmentFilter.ImageTextBox.Image")));
+            this._tbmDepartmentFilter.ImageTextBox.Location = new System.Drawing.Point(0, 0);
+            this._tbmDepartmentFilter.ImageTextBox.Name = "_itbTextBox";
+            this._tbmDepartmentFilter.ImageTextBox.NoTextNoImage = true;
+            this._tbmDepartmentFilter.ImageTextBox.ReadOnly = true;
+            this._tbmDepartmentFilter.ImageTextBox.Size = new System.Drawing.Size(73, 150);
+            this._tbmDepartmentFilter.ImageTextBox.TabIndex = 4;
+            // 
+            // 
+            // 
+            this._tbmDepartmentFilter.ImageTextBox.TextBox.BackColor = System.Drawing.SystemColors.Control;
+            this._tbmDepartmentFilter.ImageTextBox.TextBox.Location = new System.Drawing.Point(0, 0);
+            this._tbmDepartmentFilter.ImageTextBox.TextBox.Name = "_tbTextBox";
+            this._tbmDepartmentFilter.ImageTextBox.TextBox.ReadOnly = true;
+            this._tbmDepartmentFilter.ImageTextBox.TextBox.TabIndex = 2;
+            this._tbmDepartmentFilter.ImageTextBox.UseImage = true;
+            this._tbmDepartmentFilter.Location = new System.Drawing.Point(664, 140);
+            this._tbmDepartmentFilter.Margin = new System.Windows.Forms.Padding(4);
+            this._tbmDepartmentFilter.MaximumSize = new System.Drawing.Size(1200, 55);
+            this._tbmDepartmentFilter.MinimumSize = new System.Drawing.Size(30, 20);
+            this._tbmDepartmentFilter.Name = "_tbmDepartmentFilter";
+            this._tbmDepartmentFilter.Size = new System.Drawing.Size(93, 26);
+            this._tbmDepartmentFilter.TabIndex = 19;
+            this._tbmDepartmentFilter.TextImage = ((System.Drawing.Image)(resources.GetObject("_tbmDepartmentFilter.TextImage")));
             // 
             // _lFullTextSearch
             // 
@@ -259,7 +330,7 @@ namespace Contal.Cgp.Client
             // 
             // _bRunFilter
             // 
-            this._bRunFilter.Location = new System.Drawing.Point(941, 104);
+            this._bRunFilter.Location = new System.Drawing.Point(958, 104);
             this._bRunFilter.Margin = new System.Windows.Forms.Padding(4);
             this._bRunFilter.Name = "_bRunFilter";
             this._bRunFilter.Size = new System.Drawing.Size(112, 34);
@@ -370,7 +441,7 @@ namespace Contal.Cgp.Client
             this._pControl.Controls.Add(this._bAclAssignment);
             this._pControl.Controls.Add(this._bCSVImport);
             this._pControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this._pControl.Location = new System.Drawing.Point(0, 689);
+            this._pControl.Location = new System.Drawing.Point(0, 719);
             this._pControl.Margin = new System.Windows.Forms.Padding(4);
             this._pControl.Name = "_pControl";
             this._pControl.Size = new System.Drawing.Size(1204, 56);
@@ -413,7 +484,7 @@ namespace Contal.Cgp.Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1204, 745);
+            this.ClientSize = new System.Drawing.Size(1204, 775);
             this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -456,5 +527,7 @@ namespace Contal.Cgp.Client
         private System.Windows.Forms.Label _lRecordCount;
         private System.Windows.Forms.CheckBox _cbActivePersons;
         private System.Windows.Forms.CheckBox _cbInactivePersons;
+        private System.Windows.Forms.Label _lDepartmentFilter;
+        private Contal.IwQuick.UI.TextBoxMenu _tbmDepartmentFilter;
     }
 }
