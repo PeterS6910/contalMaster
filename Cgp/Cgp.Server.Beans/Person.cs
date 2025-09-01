@@ -339,6 +339,7 @@ namespace Contal.Cgp.Server.Beans
         public const string COLUMNBIRTHDAY = "Birthday";
         public const string COLUMNIDENTIFICATION = "Identification";
         public const string COLUMNDESCRIPTION = "Description";
+        public const string COLUMNDEPARTMENT = "Department";
         public const string COLUMN_SYMBOL = "Symbol";
 
         public const string COLUMN_TIMETEC_SYNC = "TimetecSync";
@@ -351,6 +352,7 @@ namespace Contal.Cgp.Server.Beans
         public DateTime? Birthday { get; set; }
         public string Identification { get; set; }
         public string Description { get; set; }
+        public string Department { get; set; }
         public Image Symbol { get; set; }
         public string TimetecSync { get; set; }
 
@@ -364,6 +366,7 @@ namespace Contal.Cgp.Server.Beans
             Birthday = person.Birthday;
             Identification = person.Identification;
             Description = person.Description;
+            Department = person.Department?.FolderName;
             TimetecSync = person.SynchronizedWithTimetec.ToString();
         }
 
