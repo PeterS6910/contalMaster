@@ -21,7 +21,6 @@ namespace Contal.Cgp.Client
     {
         private string _fullFilterSettingsText = string.Empty;
         private UserFoldersStructure _departmentFilter;
-        private readonly IList<FilterSettings>[] _filterSettingsWithJoin;
 
         public PersonsForm()
         {
@@ -31,7 +30,6 @@ namespace Contal.Cgp.Client
             InitCGPDataGridView();
             _cbActivePersons.Checked = true;
             _cbInactivePersons.Checked = false;
-            _filterSettingsWithJoin = new IList<FilterSettings>[] { _filterSettings, new List<FilterSettings>() };
             FilterValueChanged(this, EventArgs.Empty);
             this.Load += PersonsForm_Load;
         }
@@ -257,74 +255,71 @@ namespace Contal.Cgp.Client
                 {
                     _departmentFilter = outUserFolder as UserFoldersStructure;
                     _tbmDepartmentFilter.Text = _departmentFilter != null ? _departmentFilter.ToString() : string.Empty;
+                    FilterValueChanged(this, EventArgs.Empty);
+                    RunFilter();
                 }
             }
             catch (Exception ex)
             {
                 HandledExceptionAdapter.Examine(ex);
             }
-
-            FilterValueChanged(this, EventArgs.Empty);
-            RunFilter();
         }
 
         protected override void SetFilterSettings()
         {
-            _filterSettingsWithJoin[1].Clear();
-
             if (!string.IsNullOrEmpty(_eNameFilter.Text))
             {
-                var filterSetting = new FilterSettings(Person.COLUMNFIRSTNAME, _eNameFilter.Text, ComparerModes.LIKEBOTH);
+                var filterSetting = new FilterSettings(Person.COLUMNFIRSTNAME, _eNameFilter.Text, ComparerModes.LIKEBOTH, LogicalOperators.AND);
                 _filterSettings.Add(filterSetting);
             }
             if (!string.IsNullOrEmpty(_eSurnameFilter.Text))
             {
-                var filterSetting = new FilterSettings(Person.COLUMNSURNAME, _eSurnameFilter.Text, ComparerModes.LIKEBOTH);
+                var filterSetting = new FilterSettings(Person.COLUMNSURNAME, _eSurnameFilter.Text, ComparerModes.LIKEBOTH, LogicalOperators.AND);
                 _filterSettings.Add(filterSetting);
             }
 
             if (_tbdpDateFromFilter.Text != "")
             {
-                var filterSetting = new FilterSettings(Person.COLUMNBIRTHDAY, DateTime.Parse(_tbdpDateFromFilter.Text), ComparerModes.EQUALLMORE);
+                var filterSetting = new FilterSettings(Person.COLUMNBIRTHDAY, DateTime.Parse(_tbdpDateFromFilter.Text), ComparerModes.EQUALLMORE, LogicalOperators.AND);
                 _filterSettings.Add(filterSetting);
             }
 
             if (_tbdpDateToFilter.Text != "")
             {
-                var filterSetting = new FilterSettings(Person.COLUMNBIRTHDAY, DateTime.Parse(_tbdpDateToFilter.Text), ComparerModes.EQUALLLESS);
+                var filterSetting = new FilterSettings(Person.COLUMNBIRTHDAY, DateTime.Parse(_tbdpDateToFilter.Text), ComparerModes.EQUALLLESS, LogicalOperators.AND);
                 _filterSettings.Add(filterSetting);
             }
 
             if (!string.IsNullOrEmpty(_eNumberFilter.Text))
             {
-                var filterSetting = new FilterSettings(Person.COLUMNIDENTIFICATION, _eNumberFilter.Text, ComparerModes.LIKE);
+                var filterSetting = new FilterSettings(Person.COLUMNIDENTIFICATION, _eNumberFilter.Text, ComparerModes.LIKE, LogicalOperators.AND);
                 _filterSettings.Add(filterSetting);
             }
 
             if (!string.IsNullOrEmpty(_eOtherInformationFiledsFilter.Text))
             {
-                var filterSetting = new FilterSettings(Person.COLUMNOTHERINFORMATIONFIELDS, _eOtherInformationFiledsFilter.Text, ComparerModes.LIKEBOTH);
+                var filterSetting = new FilterSettings(Person.COLUMNOTHERINFORMATIONFIELDS, _eOtherInformationFiledsFilter.Text, ComparerModes.LIKEBOTH, LogicalOperators.AND);
                 _filterSettings.Add(filterSetting);
             }
 
             if (_cbActivePersons.Checked && !_cbInactivePersons.Checked)
             {
-                var fs1 = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, DateTime.Now, ComparerModes.EQUALLMORE, LogicalOperators.OR);
-                var fs2 = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, null, ComparerModes.EQUALL, LogicalOperators.OR);
-                _filterSettingsWithJoin[1].Add(fs1);
-                _filterSettingsWithJoin[1].Add(fs2);
+                var fs1 = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, DateTime.Now, ComparerModes.EQUALLMORE, LogicalOperators.AND);
+                var fs2 = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, null, ComparerModes.EQUALL, LogicalOperators.AND);
+                _filterSettings.Add(fs1);
+                _filterSettings.Add(fs2);
             }
 
             if (_departmentFilter != null)
             {
-                _filterSettingsWithJoin[1].Add(new FilterSettings(Person.COLUMNDEPARTMENT, _departmentFilter, ComparerModes.EQUALL, LogicalOperators.OR));
+                _filterSettings.Add(new FilterSettings(Person.COLUMNDEPARTMENT, _departmentFilter, ComparerModes.EQUALL, LogicalOperators.AND));
             }
             else if (!_cbActivePersons.Checked && _cbInactivePersons.Checked)
             {
-                var fs = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, DateTime.Now, ComparerModes.LESS, LogicalOperators.OR);
-                _filterSettingsWithJoin[1].Add(fs);
-                var fsNotNull = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, null, ComparerModes.NOTEQUALL, LogicalOperators.OR);
-                _filterSettingsWithJoin[1].Add(fsNotNull);
+                var fs = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, DateTime.Now, ComparerModes.LESS, LogicalOperators.AND);
+                _filterSettings.Add(fs);
+                var fsNotNull = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, null, ComparerModes.NOTEQUALL, LogicalOperators.AND);
+                _filterSettings.Add(fsNotNull);
             }
 
             _fullFilterSettingsText = _tbFullTextSearch.Text;
@@ -338,8 +333,7 @@ namespace Contal.Cgp.Client
         private void _bFilterClear_Click(object sender, EventArgs e)
         {
             _fullFilterSettingsText = string.Empty;
-            _filterSettings.Clear();
-            _filterSettingsWithJoin[1].Clear();
+            _filterSettings.Clear();            
             ClearFilterEdits();
             FilterValueChanged(this, EventArgs.Empty);
             RunFilter();
@@ -373,9 +367,8 @@ namespace Contal.Cgp.Client
         {
             Exception error;
             var list = CgpClient.Singleton.MainServerProvider.Persons.ShortSelectByCriteria(
-                out error,
-                LogicalOperators.AND,
-                _filterSettingsWithJoin);
+                _filterSettings,
+                out error);
 
             if (error != null)
                 throw (error);
