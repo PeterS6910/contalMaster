@@ -336,6 +336,28 @@ namespace Contal.Cgp.Server.DB
             return result;
         }
 
+        public ICollection<PersonShort> ShortSelectByCriteria(
+            out Exception error,
+            LogicalOperators filterJoinOperator,
+            params ICollection<FilterSettings>[] filterSettings)
+        {
+            var listPerson = SelectByCriteria(out error, filterJoinOperator, filterSettings);
+            ICollection<PersonShort> result = new List<PersonShort>();
+            if (listPerson != null)
+            {
+                foreach (var person in listPerson)
+                {
+                    var department = UserFoldersStructures.Singleton.GetPersonDepartment(person.GetIdString());
+                    if (department != null)
+                    {
+                        person.Department = department;
+                    }
+                    result.Add(new PersonShort(person));
+                }
+            }
+            return result;
+        }
+
         public IList<IModifyObject> ListModifyObjects(out Exception error)
         {
             var listPerson = List(out error);

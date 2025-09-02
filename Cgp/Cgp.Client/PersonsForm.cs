@@ -21,6 +21,7 @@ namespace Contal.Cgp.Client
     {
         private string _fullFilterSettingsText = string.Empty;
         private UserFoldersStructure _departmentFilter;
+        private readonly IList<FilterSettings>[] _filterSettingsWithJoin;
 
         public PersonsForm()
         {
@@ -30,6 +31,7 @@ namespace Contal.Cgp.Client
             InitCGPDataGridView();
             _cbActivePersons.Checked = true;
             _cbInactivePersons.Checked = false;
+            _filterSettingsWithJoin = new IList<FilterSettings>[] { _filterSettings, new List<FilterSettings>() };
             FilterValueChanged(this, EventArgs.Empty);
             this.Load += PersonsForm_Load;
         }
@@ -268,6 +270,8 @@ namespace Contal.Cgp.Client
 
         protected override void SetFilterSettings()
         {
+            _filterSettingsWithJoin[1].Clear();
+
             if (!string.IsNullOrEmpty(_eNameFilter.Text))
             {
                 var filterSetting = new FilterSettings(Person.COLUMNFIRSTNAME, _eNameFilter.Text, ComparerModes.LIKEBOTH);
@@ -307,18 +311,20 @@ namespace Contal.Cgp.Client
             {
                 var fs1 = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, DateTime.Now, ComparerModes.EQUALLMORE, LogicalOperators.OR);
                 var fs2 = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, null, ComparerModes.EQUALL, LogicalOperators.OR);
-                _filterSettings.Add(fs1);
-                _filterSettings.Add(fs2);
+                _filterSettingsWithJoin[1].Add(fs1);
+                _filterSettingsWithJoin[1].Add(fs2);
             }
 
             if (_departmentFilter != null)
-                _filterSettings.Add(new FilterSettings(Person.COLUMNDEPARTMENT, _departmentFilter, ComparerModes.EQUALL));
+            {
+                _filterSettingsWithJoin[1].Add(new FilterSettings(Person.COLUMNDEPARTMENT, _departmentFilter, ComparerModes.EQUALL, LogicalOperators.OR));
+            }
             else if (!_cbActivePersons.Checked && _cbInactivePersons.Checked)
             {
-                var fs = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, DateTime.Now, ComparerModes.LESS);
-                _filterSettings.Add(fs);
-                var fsNotNull = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, null, ComparerModes.NOTEQUALL);
-                _filterSettings.Add(fsNotNull);
+                var fs = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, DateTime.Now, ComparerModes.LESS, LogicalOperators.OR);
+                _filterSettingsWithJoin[1].Add(fs);
+                var fsNotNull = new FilterSettings(Person.COLUMNEMPLOYMENTENDDATE, null, ComparerModes.NOTEQUALL, LogicalOperators.OR);
+                _filterSettingsWithJoin[1].Add(fsNotNull);
             }
 
             _fullFilterSettingsText = _tbFullTextSearch.Text;
@@ -333,6 +339,7 @@ namespace Contal.Cgp.Client
         {
             _fullFilterSettingsText = string.Empty;
             _filterSettings.Clear();
+            _filterSettingsWithJoin[1].Clear();
             ClearFilterEdits();
             FilterValueChanged(this, EventArgs.Empty);
             RunFilter();
@@ -365,7 +372,10 @@ namespace Contal.Cgp.Client
         protected override ICollection<PersonShort> GetData()
         {
             Exception error;
-            var list = CgpClient.Singleton.MainServerProvider.Persons.ShortSelectByCriteria(_filterSettings, out error);
+            var list = CgpClient.Singleton.MainServerProvider.Persons.ShortSelectByCriteria(
+                out error,
+                LogicalOperators.AND,
+                _filterSettingsWithJoin);
 
             if (error != null)
                 throw (error);

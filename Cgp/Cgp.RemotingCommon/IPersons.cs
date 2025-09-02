@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 using Contal.Cgp.BaseLib;
@@ -13,6 +13,10 @@ namespace Contal.Cgp.RemotingCommon
         bool UpdatePerson(Person obj, out Exception updateException);
 
         ICollection<PersonShort> ShortSelectByCriteria(IList<FilterSettings> filterSettings, out Exception error);
+        ICollection<PersonShort> ShortSelectByCriteria(
+    out Exception error,
+    LogicalOperators filterJoinOperator,
+    params ICollection<FilterSettings>[] filterSettings);
         IList<IModifyObject> ListModifyObjects(out Exception error);
         void SetPersonDepartment(UserFoldersStructure newDepartment, Guid personId);
         void SetPersonDepartment(UserFoldersStructure newDepartment, UserFoldersStructure oldDepartment, Guid personId);
