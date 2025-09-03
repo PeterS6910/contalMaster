@@ -257,7 +257,7 @@ namespace Contal.Cgp.Client
                 if (outUserFolder != null)
                 {
                     _departmentFilter = outUserFolder as UserFoldersStructure;
-                    _tbmDepartmentFilter.Text = _departmentFilter != null ? _departmentFilter.ToString() : string.Empty;
+                    _tbmDepartmentFilter.Text = _departmentFilter?.FolderName ?? string.Empty;
                     FilterValueChanged(this, EventArgs.Empty);
                     RunFilter();
                 }
@@ -317,7 +317,7 @@ namespace Contal.Cgp.Client
             }
 
             if (_departmentFilter != null)
-                addFilter(Person.COLUMNDEPARTMENT, _departmentFilter, ComparerModes.EQUALL);
+                addFilter(Person.COLUMNDEPARTMENT, _departmentFilter?.FolderName, ComparerModes.EQUALL);
 
             _fullFilterSettingsText = _tbFullTextSearch.Text;
         }

@@ -1,26 +1,23 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Contal.Cgp.RemotingCommon;
-using Contal.IwQuick;
-using Contal.IwQuick.Remoting;
-
-using NHibernate.Criterion;
-using NHibernate;
-
-using Contal.Cgp.Server.Beans;
+using Cgp.Components;
 using Contal.Cgp.BaseLib;
 using Contal.Cgp.Globals;
-using Contal.IwQuick.Threads;
-using System.IO;
-using System.Drawing;
-using Contal.IwQuick.Sys;
-using Cgp.Components;
-
-using SqlUniqueException = Contal.IwQuick.SqlUniqueException;
+using Contal.Cgp.RemotingCommon;
+using Contal.Cgp.Server.Beans;
+using Contal.IwQuick;
 using Contal.IwQuick.Crypto;
+using Contal.IwQuick.Remoting;
+using Contal.IwQuick.Sys;
+using Contal.IwQuick.Threads;
+using NHibernate;
+using NHibernate.Criterion;
+using NHibernate.SqlCommand;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Linq;
 using System.Text;
+using SqlUniqueException = Contal.IwQuick.SqlUniqueException;
 
 namespace Contal.Cgp.Server.DB
 {
@@ -1001,6 +998,14 @@ namespace Contal.Cgp.Server.DB
                         (byte) ObjectType.Person,
                         UserFoldersStructure.ColumnFolderName,
                         filterSetting.Value))));
+                return true;
+            }
+
+            if (filterSetting.Column == Person.COLUMNDEPARTMENT)
+            {
+                c = c.CreateAlias("Department", "dept", JoinType.LeftOuterJoin)
+                    .Add(Restrictions.Like("dept." + UserFoldersStructure.ColumnFolderName,
+                        filterSetting.Value as string, MatchMode.Anywhere));
                 return true;
             }
 
