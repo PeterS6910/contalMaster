@@ -464,14 +464,16 @@ namespace Contal.Cgp.NCAS.Client
             _cdgvData.ModifyGridView(_bindingSourceAclSettings, ACLSetting.COLUMN_SYMBOL, ACLSetting.COLUMN_CARD_READER_OBJECT,
                 ACLSetting.COLUMN_TIMEZONE, ACLSetting.COLUMN_STRING_DISABLED, ACLSetting.COLUMN_DESCRIPTION);
 
-            var cardReaderColumn = _cdgvData.Columns[ACLSetting.COLUMN_CARD_READER_OBJECT];
+            var cardReaderColumn = _cdgvData.DataGrid.Columns[ACLSetting.COLUMN_CARD_READER_OBJECT];
             if (cardReaderColumn != null)
             {
                 cardReaderColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 cardReaderColumn.FillWeight = 60;
+                cardReaderColumn.MinimumWidth = 300;
+                cardReaderColumn.Width = 300;
             }
 
-            var descriptionColumn = _cdgvData.Columns[ACLSetting.COLUMN_DESCRIPTION];
+            var descriptionColumn = _cdgvData.DataGrid.Columns[ACLSetting.COLUMN_DESCRIPTION];
             if (descriptionColumn != null)
             {
                 descriptionColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
