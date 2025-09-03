@@ -1003,9 +1003,16 @@ namespace Contal.Cgp.Server.DB
 
             if (filterSetting.Column == Person.COLUMNDEPARTMENT)
             {
-                c = c.CreateAlias("Department", "dept", JoinType.LeftOuterJoin)
-                    .Add(Restrictions.Like("dept." + UserFoldersStructure.ColumnFolderName,
-                        filterSetting.Value as string, MatchMode.Anywhere));
+                c = c.Add(Expression.Sql(string.Format(
+                    " {0} in (select {1} from UserFoldersStructureObject ufo join UserFoldersStructure dep on ufo.{2} = dep.{3} where ufo.{4} = {5} and dep.{6} like '%{7}%')",
+                    Person.COLUMNIDPERSON,
+                    UserFoldersStructureObject.ColumnObjectId,
+                    UserFoldersStructureObject.ColumnFolder,
+                    UserFoldersStructure.COLUMN_ID_USER_FOLDERS_STRUCTURE,
+                    UserFoldersStructureObject.ColumnObjectType,
+                    (byte)ObjectType.Person,
+                    UserFoldersStructure.ColumnFolderName,
+                    filterSetting.Value)));
                 return true;
             }
 
