@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -463,6 +463,20 @@ namespace Contal.Cgp.NCAS.Client
             InitBindingSource();
             _cdgvData.ModifyGridView(_bindingSourceAclSettings, ACLSetting.COLUMN_SYMBOL, ACLSetting.COLUMN_CARD_READER_OBJECT,
                 ACLSetting.COLUMN_TIMEZONE, ACLSetting.COLUMN_STRING_DISABLED, ACLSetting.COLUMN_DESCRIPTION);
+
+            var cardReaderColumn = _cdgvData.Columns[ACLSetting.COLUMN_CARD_READER_OBJECT];
+            if (cardReaderColumn != null)
+            {
+                cardReaderColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                cardReaderColumn.FillWeight = 60;
+            }
+
+            var descriptionColumn = _cdgvData.Columns[ACLSetting.COLUMN_DESCRIPTION];
+            if (descriptionColumn != null)
+            {
+                descriptionColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                descriptionColumn.FillWeight = 40;
+            }
 
             if (_editAclSetting == null)
                 ClearAclSettingsValues();
