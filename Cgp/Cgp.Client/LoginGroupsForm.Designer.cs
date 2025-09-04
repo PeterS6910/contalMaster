@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.Client
+namespace Contal.Cgp.Client
 {
     partial class LoginGroupsForm
     {
@@ -36,6 +36,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this._cdgvData = new Contal.Cgp.Components.CgpDataGridView();
             this._pFilter = new System.Windows.Forms.Panel();
+            this._lRecordCount = new System.Windows.Forms.Label();
             this._bFilterClear = new System.Windows.Forms.Button();
             this._bRunFilter = new System.Windows.Forms.Button();
             this._lExpirationSetFilter = new System.Windows.Forms.Label();
@@ -119,7 +120,8 @@
             this._cdgvData.TabIndex = 2;
             // 
             // _pFilter
-            // 
+            //
+            this._pFilter.Controls.Add(this._lRecordCount);
             this._pFilter.Controls.Add(this._eDisabledFilter);
             this._pFilter.Controls.Add(this._eExpirationFilter);
             this._pFilter.Controls.Add(this._bFilterClear);
@@ -133,6 +135,16 @@
             this._pFilter.Name = "_pFilter";
             this._pFilter.Size = new System.Drawing.Size(824, 46);
             this._pFilter.TabIndex = 1;
+            //
+            // _lRecordCount
+            //
+            this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._lRecordCount.AutoSize = true;
+            this._lRecordCount.Location = new System.Drawing.Point(720, 8);
+            this._lRecordCount.Name = "_lRecordCount";
+            this._lRecordCount.Size = new System.Drawing.Size(75, 13);
+            this._lRecordCount.TabIndex = 7;
+            this._lRecordCount.Text = "";
             // 
             // _bFilterClear
             // 
@@ -220,5 +232,6 @@
         private System.Windows.Forms.Label _lDisabledFilter;
         private System.Windows.Forms.Label _lLoginGroupNameFilter;
         private System.Windows.Forms.TextBox _eLoginGroupNameFilter;
+        private System.Windows.Forms.Label _lRecordCount;
     }
 }

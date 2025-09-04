@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 using System.Windows.Forms;
@@ -78,6 +78,15 @@ namespace Contal.Cgp.Client
 
             CheckAccess();
 
+            _lRecordCount.BeginInvoke(new Action(
+                () =>
+                    {
+                        _lRecordCount.Text = string.Format("{0} : {1}",
+                            GetString("TextRecordCount"),
+                            list == null
+                                ? 0
+                                : list.Count);
+                    }));
             return list;
         }
 
@@ -156,7 +165,7 @@ namespace Contal.Cgp.Client
         {
             _cdgvData.ModifyGridView(bindingSource, LoginGroupShort.COLUMN_SYMBOL, LoginGroupShort.COLUMN_LOGIN_GROUP_NAME,
                 LoginGroupShort.COLUMN_IS_DISABLED, LoginGroupShort.COLUMN_EXPIRATION_DATE,
-                LoginGroupShort.COLUMN_DESCRIPTION);
+                LoginGroupShort.COLUMN_DESCRIPTION);            
         }
 
         protected override void RemoveGridView()

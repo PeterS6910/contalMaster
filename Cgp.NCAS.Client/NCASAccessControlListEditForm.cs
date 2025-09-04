@@ -469,6 +469,7 @@ namespace Contal.Cgp.NCAS.Client
             {
                 cardReaderColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 cardReaderColumn.FillWeight = 60;
+                cardReaderColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
                 cardReaderColumn.MinimumWidth = 300;
                 cardReaderColumn.Width = 300;
             }
