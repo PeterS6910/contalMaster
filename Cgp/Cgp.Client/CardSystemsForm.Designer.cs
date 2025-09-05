@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.Client
+namespace Contal.Cgp.Client
 {
     partial class CardSystemsForm
     {
@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CardSystemsForm));
             this._pFilter = new System.Windows.Forms.Panel();
+            this._lRecordCount = new System.Windows.Forms.Label();
             this._cbCardTypeFilter = new System.Windows.Forms.ComboBox();
             this._eCompanyCodeFilter = new System.Windows.Forms.TextBox();
             this._lCompanyCodeFilter = new System.Windows.Forms.Label();
@@ -46,7 +47,8 @@
             this.SuspendLayout();
             // 
             // _pFilter
-            // 
+            //
+            this._pFilter.Controls.Add(this._lRecordCount);
             this._pFilter.Controls.Add(this._cbCardTypeFilter);
             this._pFilter.Controls.Add(this._eCompanyCodeFilter);
             this._pFilter.Controls.Add(this._lCompanyCodeFilter);
@@ -136,6 +138,16 @@
             this._bRunFilter.Text = "Filter";
             this._bRunFilter.UseVisualStyleBackColor = true;
             this._bRunFilter.Click += new System.EventHandler(this._bRunFilter_Click);
+            //
+            // _lRecordCount
+            //
+            this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._lRecordCount.AutoSize = true;
+            this._lRecordCount.Location = new System.Drawing.Point(739, 20);
+            this._lRecordCount.Name = "_lRecordCount";
+            this._lRecordCount.Size = new System.Drawing.Size(0, 13);
+            this._lRecordCount.TabIndex = 5;
+            this._lRecordCount.Text = "";
             // 
             // _cdgvData
             // 
@@ -199,5 +211,6 @@
         private System.Windows.Forms.TextBox _eNameFilter;
         private System.Windows.Forms.ComboBox _cbCardTypeFilter;
         private Contal.Cgp.Components.CgpDataGridView _cdgvData;
+        private System.Windows.Forms.Label _lRecordCount;
     }
 }

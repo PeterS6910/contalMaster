@@ -104,11 +104,11 @@ namespace Contal.Cgp.Client
             //
             this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._lRecordCount.AutoSize = true;
-            this._lRecordCount.Location = new System.Drawing.Point(600, 8);
+            this._lRecordCount.Location = new System.Drawing.Point(500, 8);
             this._lRecordCount.Name = "_lRecordCount";
             this._lRecordCount.Size = new System.Drawing.Size(0, 13);
             this._lRecordCount.TabIndex = 3;
-            this._lRecordCount.Text = "";
+            this._lRecordCount.Text = "----";
             this._lRecordCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;            
             //
             // _bFilterClear

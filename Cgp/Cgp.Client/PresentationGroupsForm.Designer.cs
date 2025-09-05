@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.Client
+namespace Contal.Cgp.Client
 {
     partial class PresentationGroupsForm
     {
@@ -33,6 +33,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PresentationGroupsForm));
             this._cdgvData = new Contal.Cgp.Components.CgpDataGridView();
             this._pFilter = new System.Windows.Forms.Panel();
+            this._lRecordCount = new System.Windows.Forms.Label();
             this._eGroupNameFilter = new System.Windows.Forms.TextBox();
             this._eEmailFilter = new System.Windows.Forms.TextBox();
             this._lNameFilter = new System.Windows.Forms.Label();
@@ -79,7 +80,8 @@
             this._cdgvData.TabIndex = 5;
             // 
             // _pFilter
-            // 
+            //
+            this._pFilter.Controls.Add(this._lRecordCount);
             this._pFilter.Controls.Add(this._bFilterClear);
             this._pFilter.Controls.Add(this._bRunFilter);
             this._pFilter.Controls.Add(this._lEmailFilter);
@@ -137,6 +139,16 @@
             this._bRunFilter.Text = "Filter";
             this._bRunFilter.UseVisualStyleBackColor = true;
             this._bRunFilter.Click += new System.EventHandler(this._bRunFilter_Click);
+            //
+            // _lRecordCount
+            //
+            this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._lRecordCount.AutoSize = true;
+            this._lRecordCount.Location = new System.Drawing.Point(720,8);
+            this._lRecordCount.Name = "_lRecordCount";
+            this._lRecordCount.Size = new System.Drawing.Size(0, 13);
+            this._lRecordCount.TabIndex = 5;
+            this._lRecordCount.Text = "";
             // 
             // _bFilterClear
             // 
@@ -186,6 +198,6 @@
         private System.Windows.Forms.TextBox _eEmailFilter;
         private System.Windows.Forms.TextBox _eGroupNameFilter;
         private System.Windows.Forms.Panel _panelControls;
-
+        private System.Windows.Forms.Label _lRecordCount;
     }
 }

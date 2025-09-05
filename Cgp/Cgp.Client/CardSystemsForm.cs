@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -120,7 +120,15 @@ namespace Contal.Cgp.Client
                 throw (error);
 
             CheckAccess();
-
+            _lRecordCount.BeginInvoke(new Action(
+            () =>
+            {
+                _lRecordCount.Text = string.Format("{0} : {1}",
+                                                        GetString("TextRecordCount"),
+                                                        list == null
+                                                            ? 0
+                                                            : list.Count);
+            }));
             return list;
         }
 
@@ -187,6 +195,10 @@ namespace Contal.Cgp.Client
             }
 
             _cdgvData.ModifyGridView(bindingSource, CardSystemShort.COLUMN_SYMBOL, CardSystemShort.COLUMNNAME, CardSystemShort.COLUMNFULLCOMPANYCODE, CardSystemShort.COLUMNDESCRIPTION);
+            _lRecordCount.BeginInvoke(new Action(() =>
+    _lRecordCount.Text = string.Format("{0} : {1}",
+                                       GetString("TextRecordCount"),
+                                       bindingSource?.Count ?? 0)));
         }
 
         protected override void RemoveGridView()

@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.Client
+namespace Contal.Cgp.Client
 {
     partial class CardTemplatesForm
     {
@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CardTemplatesForm));
             this._pFilter = new System.Windows.Forms.Panel();
+            this._lRecordCount = new System.Windows.Forms.Label();
             this._bClone = new System.Windows.Forms.Button();
             this._eCloneName = new System.Windows.Forms.TextBox();
             this._lCloneName = new System.Windows.Forms.Label();
@@ -45,7 +46,8 @@
             this.SuspendLayout();
             // 
             // _pFilter
-            // 
+            //
+            this._pFilter.Controls.Add(this._lRecordCount);
             this._pFilter.Controls.Add(this._bClone);
             this._pFilter.Controls.Add(this._eCloneName);
             this._pFilter.Controls.Add(this._lCloneName);
@@ -58,9 +60,19 @@
             this._pFilter.Name = "_pFilter";
             this._pFilter.Size = new System.Drawing.Size(609, 48);
             this._pFilter.TabIndex = 0;
-            // 
+            //
+            // _lRecordCount
+            //
+            this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._lRecordCount.AutoSize = true;
+            this._lRecordCount.Location = new System.Drawing.Point(450, 8);
+            this._lRecordCount.Name = "_lRecordCount";
+            this._lRecordCount.Size = new System.Drawing.Size(0, 13);
+            this._lRecordCount.TabIndex = 6;
+            this._lRecordCount.Text = "";
+            //
             // _bClone
-            // 
+            //
             this._bClone.Location = new System.Drawing.Point(429, 16);
             this._bClone.Name = "_bClone";
             this._bClone.Size = new System.Drawing.Size(75, 23);
@@ -182,5 +194,6 @@
         private System.Windows.Forms.TextBox _eCloneName;
         private System.Windows.Forms.Label _lCloneName;
         private Contal.Cgp.Components.CgpDataGridView _cdgvData;
+        private System.Windows.Forms.Label _lRecordCount;
     }
 }

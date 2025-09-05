@@ -53,14 +53,7 @@ namespace Contal.Cgp.Components
         {
             get
             {
-                try
-                {
-                    return _dgvData.CurrentRow.Index;
-                }
-                catch (Exception)
-                {
-                    return - 1;
-                }
+                return _dgvData != null && _dgvData.CurrentRow != null ? _dgvData.CurrentRow.Index : -1;
             }
         }
 
