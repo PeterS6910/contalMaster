@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -211,7 +211,15 @@ namespace Contal.Cgp.Client
                 throw (error);
 
             CheckAccess();
-
+            _lRecordCount.BeginInvoke(new Action(
+            () =>
+            {
+                _lRecordCount.Text = string.Format("{0} : {1}",
+                                                        GetString("TextRecordCount"),
+                                                        list == null
+                                                            ? 0
+                                                            : list.Count);
+            }));
             return list;
         }
 

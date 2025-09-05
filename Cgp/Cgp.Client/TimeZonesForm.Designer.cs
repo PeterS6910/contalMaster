@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.Client
+namespace Contal.Cgp.Client
 {
     partial class TimeZonesForm
     {
@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimeZonesForm));
             this._pFilter = new System.Windows.Forms.Panel();
+            this._lRecordCount = new System.Windows.Forms.Label();
             this._lDescriptionFilter = new System.Windows.Forms.Label();
             this._eDescriptionFilter = new System.Windows.Forms.TextBox();
             this._lNameFilter = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@
             // 
             // _pFilter
             // 
+            this._pFilter.Controls.Add(this._lRecordCount);
             this._pFilter.Controls.Add(this._lDescriptionFilter);
             this._pFilter.Controls.Add(this._eDescriptionFilter);
             this._pFilter.Controls.Add(this._lNameFilter);
@@ -52,25 +54,38 @@
             this._pFilter.Controls.Add(this._bFilterClear);
             this._pFilter.Controls.Add(this._bRunFilter);
             this._pFilter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this._pFilter.Location = new System.Drawing.Point(0, 437);
+            this._pFilter.Location = new System.Drawing.Point(0, 655);
+            this._pFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._pFilter.Name = "_pFilter";
-            this._pFilter.Size = new System.Drawing.Size(961, 53);
+            this._pFilter.Size = new System.Drawing.Size(1442, 80);
             this._pFilter.TabIndex = 1;
+            // 
+            // _lRecordCount
+            // 
+            this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._lRecordCount.AutoSize = true;
+            this._lRecordCount.Location = new System.Drawing.Point(1275, 8);
+            this._lRecordCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this._lRecordCount.Name = "_lRecordCount";
+            this._lRecordCount.Size = new System.Drawing.Size(0, 20);
+            this._lRecordCount.TabIndex = 3;
             // 
             // _lDescriptionFilter
             // 
             this._lDescriptionFilter.AutoSize = true;
-            this._lDescriptionFilter.Location = new System.Drawing.Point(142, 6);
+            this._lDescriptionFilter.Location = new System.Drawing.Point(213, 9);
+            this._lDescriptionFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lDescriptionFilter.Name = "_lDescriptionFilter";
-            this._lDescriptionFilter.Size = new System.Drawing.Size(60, 13);
+            this._lDescriptionFilter.Size = new System.Drawing.Size(89, 20);
             this._lDescriptionFilter.TabIndex = 22;
             this._lDescriptionFilter.Text = "Description";
             // 
             // _eDescriptionFilter
             // 
-            this._eDescriptionFilter.Location = new System.Drawing.Point(142, 22);
+            this._eDescriptionFilter.Location = new System.Drawing.Point(213, 33);
+            this._eDescriptionFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._eDescriptionFilter.Name = "_eDescriptionFilter";
-            this._eDescriptionFilter.Size = new System.Drawing.Size(383, 20);
+            this._eDescriptionFilter.Size = new System.Drawing.Size(572, 26);
             this._eDescriptionFilter.TabIndex = 1;
             this._eDescriptionFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
             this._eDescriptionFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
@@ -78,26 +93,29 @@
             // _lNameFilter
             // 
             this._lNameFilter.AutoSize = true;
-            this._lNameFilter.Location = new System.Drawing.Point(12, 6);
+            this._lNameFilter.Location = new System.Drawing.Point(18, 9);
+            this._lNameFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lNameFilter.Name = "_lNameFilter";
-            this._lNameFilter.Size = new System.Drawing.Size(35, 13);
+            this._lNameFilter.Size = new System.Drawing.Size(51, 20);
             this._lNameFilter.TabIndex = 20;
             this._lNameFilter.Text = "Name";
             // 
             // _eNameFilter
             // 
-            this._eNameFilter.Location = new System.Drawing.Point(12, 22);
+            this._eNameFilter.Location = new System.Drawing.Point(18, 33);
+            this._eNameFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._eNameFilter.Name = "_eNameFilter";
-            this._eNameFilter.Size = new System.Drawing.Size(124, 20);
+            this._eNameFilter.Size = new System.Drawing.Size(184, 26);
             this._eNameFilter.TabIndex = 0;
             this._eNameFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
             this._eNameFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
             // 
             // _bFilterClear
             // 
-            this._bFilterClear.Location = new System.Drawing.Point(612, 18);
+            this._bFilterClear.Location = new System.Drawing.Point(918, 27);
+            this._bFilterClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._bFilterClear.Name = "_bFilterClear";
-            this._bFilterClear.Size = new System.Drawing.Size(75, 23);
+            this._bFilterClear.Size = new System.Drawing.Size(112, 34);
             this._bFilterClear.TabIndex = 3;
             this._bFilterClear.Text = "Clear";
             this._bFilterClear.UseVisualStyleBackColor = true;
@@ -105,9 +123,10 @@
             // 
             // _bRunFilter
             // 
-            this._bRunFilter.Location = new System.Drawing.Point(531, 18);
+            this._bRunFilter.Location = new System.Drawing.Point(796, 27);
+            this._bRunFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._bRunFilter.Name = "_bRunFilter";
-            this._bRunFilter.Size = new System.Drawing.Size(75, 23);
+            this._bRunFilter.Size = new System.Drawing.Size(112, 34);
             this._bRunFilter.TabIndex = 2;
             this._bRunFilter.Text = "Filter";
             this._bRunFilter.UseVisualStyleBackColor = true;
@@ -127,33 +146,39 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             this._cdgvData.DataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this._cdgvData.DataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this._cdgvData.DataGrid.ColumnHeadersHeight = 34;
             this._cdgvData.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this._cdgvData.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.DataGrid.Location = new System.Drawing.Point(0, 0);
             this._cdgvData.DataGrid.Name = "_dgvData";
             this._cdgvData.DataGrid.ReadOnly = true;
             this._cdgvData.DataGrid.RowHeadersVisible = false;
+            this._cdgvData.DataGrid.RowHeadersWidth = 62;
             this._cdgvData.DataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             this._cdgvData.DataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this._cdgvData.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._cdgvData.DataGrid.Size = new System.Drawing.Size(961, 437);
+            this._cdgvData.DataGrid.Size = new System.Drawing.Size(1442, 655);
             this._cdgvData.DataGrid.TabIndex = 0;
+            this._cdgvData.DefaultSortColumnName = null;
+            this._cdgvData.DefaultSortDirection = System.ComponentModel.ListSortDirection.Ascending;
             this._cdgvData.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.LocalizationHelper = null;
             this._cdgvData.Location = new System.Drawing.Point(0, 0);
+            this._cdgvData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._cdgvData.Name = "_cdgvData";
-            this._cdgvData.Size = new System.Drawing.Size(961, 437);
+            this._cdgvData.Size = new System.Drawing.Size(1442, 655);
             this._cdgvData.TabIndex = 3;
             // 
             // TimeZonesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(961, 490);
+            this.ClientSize = new System.Drawing.Size(1442, 735);
             this.Controls.Add(this._cdgvData);
             this.Controls.Add(this._pFilter);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TimeZonesForm";
             this.Text = "TimeZonesForm";
             this._pFilter.ResumeLayout(false);
@@ -172,6 +197,7 @@
         private System.Windows.Forms.TextBox _eNameFilter;
         private System.Windows.Forms.Button _bFilterClear;
         private System.Windows.Forms.Button _bRunFilter;
+        private System.Windows.Forms.Label _lRecordCount;
         private Contal.Cgp.Components.CgpDataGridView _cdgvData;
     }
 }

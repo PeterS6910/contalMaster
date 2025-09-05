@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.Client
+namespace Contal.Cgp.Client
 {
     partial class DailyPlansForm
     {
@@ -34,6 +34,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this._cdgvData = new Contal.Cgp.Components.CgpDataGridView();
             this._pFilter = new System.Windows.Forms.Panel();
+            this._lRecordCount = new System.Windows.Forms.Label();
             this._bFilterClear = new System.Windows.Forms.Button();
             this._bRunFilter = new System.Windows.Forms.Button();
             this._lNameFilter = new System.Windows.Forms.Label();
@@ -88,18 +89,30 @@
             // 
             // _pFilter
             // 
+            this._pFilter.Controls.Add(this._lRecordCount);
             this._pFilter.Controls.Add(this._bFilterClear);
             this._pFilter.Controls.Add(this._bRunFilter);
             this._pFilter.Controls.Add(this._lNameFilter);
             this._pFilter.Controls.Add(this._eNameFilter);
             this._pFilter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this._pFilter.Location = new System.Drawing.Point(0, 345);
+            this._pFilter.Location = new System.Drawing.Point(0, 257);
             this._pFilter.Name = "_pFilter";
-            this._pFilter.Size = new System.Drawing.Size(718, 50);
+            this._pFilter.Size = new System.Drawing.Size(694, 50);
             this._pFilter.TabIndex = 1;
-            // 
+            //
+            // _lRecordCount
+            //
+            this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._lRecordCount.AutoSize = true;
+            this._lRecordCount.Location = new System.Drawing.Point(600, 8);
+            this._lRecordCount.Name = "_lRecordCount";
+            this._lRecordCount.Size = new System.Drawing.Size(0, 13);
+            this._lRecordCount.TabIndex = 3;
+            this._lRecordCount.Text = "";
+            this._lRecordCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;            
+            //
             // _bFilterClear
-            // 
+            //
             this._bFilterClear.Location = new System.Drawing.Point(216, 18);
             this._bFilterClear.Name = "_bFilterClear";
             this._bFilterClear.Size = new System.Drawing.Size(75, 23);
@@ -160,7 +173,8 @@
         private System.Windows.Forms.Button _bFilterClear;
         private System.Windows.Forms.Button _bRunFilter;
         private System.Windows.Forms.Label _lNameFilter;
-        private System.Windows.Forms.TextBox _eNameFilter;
+        private System.Windows.Forms.TextBox _eNameFilter;        
         private Contal.Cgp.Components.CgpDataGridView _cdgvData;
+        private System.Windows.Forms.Label _lRecordCount;
     }
 }

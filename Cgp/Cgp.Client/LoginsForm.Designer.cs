@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.Client
+namespace Contal.Cgp.Client
 {
     partial class LoginsForm
     {
@@ -34,6 +34,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this._cdgvData = new Contal.Cgp.Components.CgpDataGridView();
             this._pFilter = new System.Windows.Forms.Panel();
+            this._lRecordCount = new System.Windows.Forms.Label();
             this._lLoginGroupFilter = new System.Windows.Forms.Label();
             this._eLoginGroupFilter = new System.Windows.Forms.TextBox();
             this._eDisabledFilter = new System.Windows.Forms.ComboBox();
@@ -93,7 +94,8 @@
             this._cdgvData.TabIndex = 2;
             // 
             // _pFilter
-            // 
+            //
+            this._pFilter.Controls.Add(this._lRecordCount);
             this._pFilter.Controls.Add(this._lLoginGroupFilter);
             this._pFilter.Controls.Add(this._eLoginGroupFilter);
             this._pFilter.Controls.Add(this._eDisabledFilter);
@@ -109,9 +111,19 @@
             this._pFilter.Name = "_pFilter";
             this._pFilter.Size = new System.Drawing.Size(824, 46);
             this._pFilter.TabIndex = 1;
-            // 
+            //
+            // _lRecordCount
+            //
+            this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._lRecordCount.AutoSize = true;
+            this._lRecordCount.Location = new System.Drawing.Point(720, 8);
+            this._lRecordCount.Name = "_lRecordCount";
+            this._lRecordCount.Size = new System.Drawing.Size(75, 13);
+            this._lRecordCount.TabIndex = 9;
+            this._lRecordCount.Text = "";
+            //
             // _lLoginGroupFilter
-            // 
+            //
             this._lLoginGroupFilter.AutoSize = true;
             this._lLoginGroupFilter.Location = new System.Drawing.Point(135, 5);
             this._lLoginGroupFilter.Name = "_lLoginGroupFilter";
@@ -244,5 +256,6 @@
         private Contal.Cgp.Components.CgpDataGridView _cdgvData;
         private System.Windows.Forms.Label _lLoginGroupFilter;
         private System.Windows.Forms.TextBox _eLoginGroupFilter;
+        private System.Windows.Forms.Label _lRecordCount;
     }
 }
