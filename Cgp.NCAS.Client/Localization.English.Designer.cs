@@ -19446,6 +19446,15 @@ namespace Contal.Cgp.NCAS.Client {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Record count.
+        /// </summary>
+        internal static string TextRecordCount {
+            get {
+                return ResourceManager.GetString("TextRecordCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select card.
         /// </summary>
         internal static string TextSelectCard {

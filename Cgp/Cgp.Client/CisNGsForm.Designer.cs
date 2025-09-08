@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.Client
+namespace Contal.Cgp.Client
 {
     partial class CisNGsForm
     {
@@ -34,6 +34,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this._cdgvData = new Contal.Cgp.Components.CgpDataGridView();
             this._pFilter = new System.Windows.Forms.Panel();
+            this._lRecordCount = new System.Windows.Forms.Label();
             this._bFilterClear = new System.Windows.Forms.Button();
             this._bRunFilter = new System.Windows.Forms.Button();
             this._lIpAddressFilter = new System.Windows.Forms.Label();
@@ -89,7 +90,8 @@
             this._cdgvData.TabIndex = 2;
             // 
             // _pFilter
-            // 
+            //
+            this._pFilter.Controls.Add(this._lRecordCount);
             this._pFilter.Controls.Add(this._bFilterClear);
             this._pFilter.Controls.Add(this._bRunFilter);
             this._pFilter.Controls.Add(this._lIpAddressFilter);
@@ -121,6 +123,16 @@
             this._bRunFilter.Text = "Filter";
             this._bRunFilter.UseVisualStyleBackColor = true;
             this._bRunFilter.Click += new System.EventHandler(this.RunFilterClick);
+            //
+            // _lRecordCount
+            //
+            this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._lRecordCount.AutoSize = true;
+            this._lRecordCount.Location = new System.Drawing.Point(642, 20);
+            this._lRecordCount.Name = "_lRecordCount";
+            this._lRecordCount.Size = new System.Drawing.Size(0, 13);
+            this._lRecordCount.TabIndex = 4;
+            this._lRecordCount.Text = "";
             // 
             // _lIpAddressFilter
             // 
@@ -186,5 +198,6 @@
         private System.Windows.Forms.TextBox _eIpAddressFilter;
         private System.Windows.Forms.TextBox _eNameFilter;
         private Contal.Cgp.Components.CgpDataGridView _cdgvData;
+        private System.Windows.Forms.Label _lRecordCount;
     }
 }

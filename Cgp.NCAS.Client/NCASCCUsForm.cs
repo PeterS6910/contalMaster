@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -136,6 +136,15 @@ namespace Contal.Cgp.NCAS.Client
                 throw (error);
 
             CheckAccess();
+            _lRecordCount.BeginInvoke(new Action(
+            () =>
+            {
+                _lRecordCount.Text = string.Format("{0} : {1}",
+                                                        GetString("TextRecordCount"),
+                                                        list == null
+                                                            ? 0
+                                                            : list.Count);
+            }));
             return list;
         }
 

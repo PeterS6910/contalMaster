@@ -4717,4 +4717,7 @@ Nakupovaný čas: {1}, {2} čas: {3}</value>
   <data name="NCASCarReadersFormNCASCarReadersForm" xml:space="preserve">
     <value>Čítačky vozidiel</value>
   </data>
+  <data name="TextRecordCount" xml:space="preserve">
+    <value>Počet záznamov</value>
+  </data>
 </root>

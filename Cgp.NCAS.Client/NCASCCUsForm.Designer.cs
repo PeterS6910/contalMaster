@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.NCAS.Client
+namespace Contal.Cgp.NCAS.Client
 {
     partial class NCASCCUsForm
     {
@@ -40,6 +40,7 @@
             this._bFilterClear = new System.Windows.Forms.Button();
             this._bRunFilter = new System.Windows.Forms.Button();
             this._cdgvData = new Contal.Cgp.Components.CgpDataGridView();
+            this._lRecordCount = new System.Windows.Forms.Label();
             this._pFilter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._cdgvData.DataGrid)).BeginInit();
             this.SuspendLayout();
@@ -159,6 +160,16 @@
             this._cdgvData.Name = "_cdgvData";
             this._cdgvData.Size = new System.Drawing.Size(832, 357);
             this._cdgvData.TabIndex = 21;
+            //
+            // _lRecordCount
+            //
+            this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._lRecordCount.AutoSize = true;
+            this._lRecordCount.Location = new System.Drawing.Point(650, 341);
+            this._lRecordCount.Name = "_lRecordCount";
+            this._lRecordCount.Size = new System.Drawing.Size(74, 13);
+            this._lRecordCount.TabIndex = 22;
+            this._lRecordCount.Text = "Record count:";
             // 
             // NCASCCUsForm
             // 
@@ -166,6 +177,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 410);
             this.Controls.Add(this._cdgvData);
+            this.Controls.Add(this._lRecordCount);
             this.Controls.Add(this._pFilter);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NCASCCUsForm";
@@ -188,5 +200,6 @@
         private System.Windows.Forms.ComboBox _cbOnlineStateFilter;
         private System.Windows.Forms.Label _lOnlineStateFilter;
         private Contal.Cgp.Components.CgpDataGridView _cdgvData;
+        private System.Windows.Forms.Label _lRecordCount;
     }
 }

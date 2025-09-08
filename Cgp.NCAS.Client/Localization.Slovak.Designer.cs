@@ -13439,6 +13439,15 @@ namespace Contal.Cgp.NCAS.Client {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Počet záznamov.
+        /// </summary>
+        internal static string TextRecordCount {
+            get {
+                return ResourceManager.GetString("TextRecordCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CAT12 BSI nastavenia.
         /// </summary>
         internal static string TextTemplateCat12BSISettings {

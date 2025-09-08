@@ -140,7 +140,7 @@ namespace Contal.Cgp.Client
             //
             this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._lRecordCount.AutoSize = true;
-            this._lRecordCount.Location = new System.Drawing.Point(775, 8);
+            this._lRecordCount.Location = new System.Drawing.Point(730, 8);
             this._lRecordCount.Name = "_lRecordCount";
             this._lRecordCount.Size = new System.Drawing.Size(72, 13);
             this._lRecordCount.TabIndex = 3;

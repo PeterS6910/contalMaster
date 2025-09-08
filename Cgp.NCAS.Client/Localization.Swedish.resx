@@ -6838,4 +6838,7 @@ Vill Ni ändra ingångskontroll på {1} till forcerad blockering?</value>
   <data name="ErrorEntryCarReaderName" xml:space="preserve">
     <value>Ange namn för bil-läsare</value>
   </data>
+  <data name="TextRecordCount" xml:space="preserve">
+    <value>Antal</value>
+  </data>
 </root>

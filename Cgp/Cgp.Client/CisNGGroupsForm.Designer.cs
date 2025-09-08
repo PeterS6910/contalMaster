@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.Client
+namespace Contal.Cgp.Client
 {
     partial class CisNGGroupsForm
     {
@@ -38,13 +38,15 @@
             this._lGroupNameFilter = new System.Windows.Forms.Label();
             this._eDescriptionFilter = new System.Windows.Forms.TextBox();
             this._eGroupNameFilter = new System.Windows.Forms.TextBox();
+            this._lRecordCount = new System.Windows.Forms.Label();
             this._cdgvData = new Contal.Cgp.Components.CgpDataGridView();
             this._pFilter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._cdgvData.DataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // _pFilter
-            // 
+            //
+            this._pFilter.Controls.Add(this._lRecordCount);
             this._pFilter.Controls.Add(this._bFilterClear);
             this._pFilter.Controls.Add(this._bRunFilter);
             this._pFilter.Controls.Add(this._lDescriptionFilter);
@@ -112,6 +114,17 @@
             this._eGroupNameFilter.TabIndex = 1;
             this._eGroupNameFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
             this._eGroupNameFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
+            //
+            // _lRecordCount
+            //
+            this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._lRecordCount.AutoSize = true;
+            this._lRecordCount.Location = new System.Drawing.Point(620, 20);
+            this._lRecordCount.Name = "_lRecordCount";
+            this._lRecordCount.Size = new System.Drawing.Size(0, 13);
+            this._lRecordCount.TabIndex = 10;
+            this._lRecordCount.Text = "";
+            //
             // 
             // _cdgvData
             // 
@@ -173,5 +186,6 @@
         private System.Windows.Forms.TextBox _eDescriptionFilter;
         private System.Windows.Forms.TextBox _eGroupNameFilter;
         private Contal.Cgp.Components.CgpDataGridView _cdgvData;
+        private System.Windows.Forms.Label _lRecordCount;
     }
 }

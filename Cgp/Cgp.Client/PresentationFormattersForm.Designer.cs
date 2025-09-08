@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.Client
+namespace Contal.Cgp.Client
 {
     partial class PresentationFormattersForm
     {
@@ -33,6 +33,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PresentationFormattersForm));
             this._cdgvData = new Contal.Cgp.Components.CgpDataGridView();
             this._pFilter = new System.Windows.Forms.Panel();
+            this._lRecordCount = new System.Windows.Forms.Label();
             this._eFormatterNameFilter = new System.Windows.Forms.TextBox();
             this._eFormatterMessageFilter = new System.Windows.Forms.TextBox();
             this._lFormatterNameFilter = new System.Windows.Forms.Label();
@@ -80,6 +81,7 @@
             // 
             // _pFilter
             // 
+            this._pFilter.Controls.Add(this._lRecordCount);
             this._pFilter.Controls.Add(this._bFilterClear);
             this._pFilter.Controls.Add(this._bRunFilter);
             this._pFilter.Controls.Add(this._lMsgFormattlFilter);
@@ -91,9 +93,19 @@
             this._pFilter.Name = "_pFilter";
             this._pFilter.Size = new System.Drawing.Size(777, 46);
             this._pFilter.TabIndex = 0;
-            // 
+            //
+            // _lRecordCount
+            //
+            this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._lRecordCount.AutoSize = true;
+            this._lRecordCount.Location = new System.Drawing.Point(660, 8);
+            this._lRecordCount.Name = "_lRecordCount";
+            this._lRecordCount.Size = new System.Drawing.Size(0, 13);
+            this._lRecordCount.TabIndex = 4;
+            this._lRecordCount.Text = "";
+            //
             // _eFormatterNameFilter
-            // 
+            //
             this._eFormatterNameFilter.Location = new System.Drawing.Point(8, 21);
             this._eFormatterNameFilter.Name = "_eFormatterNameFilter";
             this._eFormatterNameFilter.Size = new System.Drawing.Size(167, 20);
@@ -186,5 +198,6 @@
         private System.Windows.Forms.TextBox _eFormatterMessageFilter;
         private System.Windows.Forms.TextBox _eFormatterNameFilter;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label _lRecordCount;
     }
 }
