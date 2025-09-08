@@ -46,7 +46,8 @@ namespace Contal.Cgp.NCAS.Client
             this.SuspendLayout();
             // 
             // _pFilter
-            // 
+            //            
+            this._pFilter.Controls.Add(this._lRecordCount);
             this._pFilter.Controls.Add(this._bCCUsLookUp);
             this._pFilter.Controls.Add(this._cbOnlineStateFilter);
             this._pFilter.Controls.Add(this._lOnlineStateFilter);
@@ -165,7 +166,7 @@ namespace Contal.Cgp.NCAS.Client
             //
             this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._lRecordCount.AutoSize = true;
-            this._lRecordCount.Location = new System.Drawing.Point(650, 341);
+            this._lRecordCount.Location = new System.Drawing.Point(500, 8);
             this._lRecordCount.Name = "_lRecordCount";
             this._lRecordCount.Size = new System.Drawing.Size(74, 13);
             this._lRecordCount.TabIndex = 22;
@@ -176,8 +177,7 @@ namespace Contal.Cgp.NCAS.Client
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 410);
-            this.Controls.Add(this._cdgvData);
-            this.Controls.Add(this._lRecordCount);
+            this.Controls.Add(this._cdgvData);            
             this.Controls.Add(this._pFilter);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NCASCCUsForm";
