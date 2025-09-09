@@ -70,6 +70,7 @@ namespace Contal.Cgp.NCAS.Client
             this._lRecordCount.Name = "_lRecordCount";
             this._lRecordCount.Size = new System.Drawing.Size(109, 20);
             this._lRecordCount.TabIndex = 22;
+            this._lRecordCount.Visible = true;
             this._lRecordCount.Text = "Record count:";
             // 
             // _bCCUsLookUp
