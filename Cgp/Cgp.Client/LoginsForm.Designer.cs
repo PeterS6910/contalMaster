@@ -74,28 +74,31 @@ namespace Contal.Cgp.Client
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             this._cdgvData.DataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this._cdgvData.DataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this._cdgvData.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this._cdgvData.DataGrid.ColumnHeadersHeight = 34;
+            this._cdgvData.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this._cdgvData.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.DataGrid.Location = new System.Drawing.Point(0, 0);
             this._cdgvData.DataGrid.Name = "_dgvData";
             this._cdgvData.DataGrid.ReadOnly = true;
             this._cdgvData.DataGrid.RowHeadersVisible = false;
+            this._cdgvData.DataGrid.RowHeadersWidth = 62;
             this._cdgvData.DataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             this._cdgvData.DataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this._cdgvData.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._cdgvData.DataGrid.Size = new System.Drawing.Size(824, 339);
+            this._cdgvData.DataGrid.Size = new System.Drawing.Size(824, 320);
             this._cdgvData.DataGrid.TabIndex = 0;
+            this._cdgvData.DefaultSortColumnName = null;
+            this._cdgvData.DefaultSortDirection = System.ComponentModel.ListSortDirection.Ascending;
             this._cdgvData.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.LocalizationHelper = null;
             this._cdgvData.Location = new System.Drawing.Point(0, 0);
             this._cdgvData.Name = "_cdgvData";
-            this._cdgvData.Size = new System.Drawing.Size(824, 339);
+            this._cdgvData.Size = new System.Drawing.Size(824, 320);
             this._cdgvData.TabIndex = 2;
             // 
             // _pFilter
-            //
+            // 
             this._pFilter.Controls.Add(this._lRecordCount);
             this._pFilter.Controls.Add(this._lLoginGroupFilter);
             this._pFilter.Controls.Add(this._eLoginGroupFilter);
@@ -108,35 +111,34 @@ namespace Contal.Cgp.Client
             this._pFilter.Controls.Add(this._lUserNameFilter);
             this._pFilter.Controls.Add(this._eUserNameFilter);
             this._pFilter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this._pFilter.Location = new System.Drawing.Point(0, 339);
+            this._pFilter.Location = new System.Drawing.Point(0, 320);
             this._pFilter.Name = "_pFilter";
-            this._pFilter.Size = new System.Drawing.Size(824, 46);
+            this._pFilter.Size = new System.Drawing.Size(824, 65);
             this._pFilter.TabIndex = 1;
-            //
+            // 
             // _lRecordCount
-            //
+            // 
             this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._lRecordCount.AutoSize = true;
             this._lRecordCount.Location = new System.Drawing.Point(650, 8);
             this._lRecordCount.Name = "_lRecordCount";
-            this._lRecordCount.Size = new System.Drawing.Size(75, 13);
+            this._lRecordCount.Size = new System.Drawing.Size(0, 20);
             this._lRecordCount.TabIndex = 9;
-            this._lRecordCount.Text = "";
-            //
+            // 
             // _lLoginGroupFilter
-            //
+            // 
             this._lLoginGroupFilter.AutoSize = true;
             this._lLoginGroupFilter.Location = new System.Drawing.Point(135, 5);
             this._lLoginGroupFilter.Name = "_lLoginGroupFilter";
-            this._lLoginGroupFilter.Size = new System.Drawing.Size(63, 13);
+            this._lLoginGroupFilter.Size = new System.Drawing.Size(93, 20);
             this._lLoginGroupFilter.TabIndex = 8;
             this._lLoginGroupFilter.Text = "Login group";
             // 
             // _eLoginGroupFilter
             // 
-            this._eLoginGroupFilter.Location = new System.Drawing.Point(135, 21);
+            this._eLoginGroupFilter.Location = new System.Drawing.Point(135, 29);
             this._eLoginGroupFilter.Name = "_eLoginGroupFilter";
-            this._eLoginGroupFilter.Size = new System.Drawing.Size(121, 20);
+            this._eLoginGroupFilter.Size = new System.Drawing.Size(121, 26);
             this._eLoginGroupFilter.TabIndex = 7;
             this._eLoginGroupFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
             this._eLoginGroupFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
@@ -146,12 +148,12 @@ namespace Contal.Cgp.Client
             this._eDisabledFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._eDisabledFilter.FormattingEnabled = true;
             this._eDisabledFilter.Items.AddRange(new object[] {
-            global::Contal.Cgp.Client.Localization_Swedish.GeneralOptionsForm_chbEnableggingSDPSTZChanges,
+            "",
             "true",
             "false"});
-            this._eDisabledFilter.Location = new System.Drawing.Point(262, 21);
+            this._eDisabledFilter.Location = new System.Drawing.Point(262, 29);
             this._eDisabledFilter.Name = "_eDisabledFilter";
-            this._eDisabledFilter.Size = new System.Drawing.Size(70, 21);
+            this._eDisabledFilter.Size = new System.Drawing.Size(70, 28);
             this._eDisabledFilter.TabIndex = 1;
             this._eDisabledFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
             // 
@@ -160,20 +162,20 @@ namespace Contal.Cgp.Client
             this._eExpirationFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._eExpirationFilter.FormattingEnabled = true;
             this._eExpirationFilter.Items.AddRange(new object[] {
-            global::Contal.Cgp.Client.Localization_Swedish.GeneralOptionsForm_chbEnableggingSDPSTZChanges,
+            "",
             "true",
             "false"});
-            this._eExpirationFilter.Location = new System.Drawing.Point(338, 21);
+            this._eExpirationFilter.Location = new System.Drawing.Point(338, 29);
             this._eExpirationFilter.Name = "_eExpirationFilter";
-            this._eExpirationFilter.Size = new System.Drawing.Size(70, 21);
+            this._eExpirationFilter.Size = new System.Drawing.Size(70, 28);
             this._eExpirationFilter.TabIndex = 2;
             this._eExpirationFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
             // 
             // _bFilterClear
             // 
-            this._bFilterClear.Location = new System.Drawing.Point(573, 17);
+            this._bFilterClear.Location = new System.Drawing.Point(573, 25);
             this._bFilterClear.Name = "_bFilterClear";
-            this._bFilterClear.Size = new System.Drawing.Size(75, 23);
+            this._bFilterClear.Size = new System.Drawing.Size(75, 26);
             this._bFilterClear.TabIndex = 4;
             this._bFilterClear.Text = "Clear";
             this._bFilterClear.UseVisualStyleBackColor = true;
@@ -181,9 +183,9 @@ namespace Contal.Cgp.Client
             // 
             // _bRunFilter
             // 
-            this._bRunFilter.Location = new System.Drawing.Point(492, 17);
+            this._bRunFilter.Location = new System.Drawing.Point(492, 25);
             this._bRunFilter.Name = "_bRunFilter";
-            this._bRunFilter.Size = new System.Drawing.Size(75, 23);
+            this._bRunFilter.Size = new System.Drawing.Size(75, 26);
             this._bRunFilter.TabIndex = 3;
             this._bRunFilter.Text = "Filter";
             this._bRunFilter.UseVisualStyleBackColor = true;
@@ -194,7 +196,7 @@ namespace Contal.Cgp.Client
             this._lExpirationSetFilter.AutoSize = true;
             this._lExpirationSetFilter.Location = new System.Drawing.Point(338, 5);
             this._lExpirationSetFilter.Name = "_lExpirationSetFilter";
-            this._lExpirationSetFilter.Size = new System.Drawing.Size(70, 13);
+            this._lExpirationSetFilter.Size = new System.Drawing.Size(105, 20);
             this._lExpirationSetFilter.TabIndex = 6;
             this._lExpirationSetFilter.Text = "Expiration set";
             // 
@@ -203,7 +205,7 @@ namespace Contal.Cgp.Client
             this._lDisabledFilter.AutoSize = true;
             this._lDisabledFilter.Location = new System.Drawing.Point(259, 5);
             this._lDisabledFilter.Name = "_lDisabledFilter";
-            this._lDisabledFilter.Size = new System.Drawing.Size(48, 13);
+            this._lDisabledFilter.Size = new System.Drawing.Size(71, 20);
             this._lDisabledFilter.TabIndex = 5;
             this._lDisabledFilter.Text = "Disabled";
             // 
@@ -212,22 +214,21 @@ namespace Contal.Cgp.Client
             this._lUserNameFilter.AutoSize = true;
             this._lUserNameFilter.Location = new System.Drawing.Point(8, 5);
             this._lUserNameFilter.Name = "_lUserNameFilter";
-            this._lUserNameFilter.Size = new System.Drawing.Size(58, 13);
+            this._lUserNameFilter.Size = new System.Drawing.Size(87, 20);
             this._lUserNameFilter.TabIndex = 4;
             this._lUserNameFilter.Text = "User name";
             // 
             // _eUserNameFilter
             // 
-            this._eUserNameFilter.Location = new System.Drawing.Point(8, 21);
+            this._eUserNameFilter.Location = new System.Drawing.Point(8, 29);
             this._eUserNameFilter.Name = "_eUserNameFilter";
-            this._eUserNameFilter.Size = new System.Drawing.Size(121, 20);
+            this._eUserNameFilter.Size = new System.Drawing.Size(121, 26);
             this._eUserNameFilter.TabIndex = 0;
             this._eUserNameFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
             this._eUserNameFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
             // 
             // LoginsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(824, 385);
             this.Controls.Add(this.panel3);
