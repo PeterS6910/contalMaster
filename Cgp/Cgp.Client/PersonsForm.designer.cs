@@ -105,6 +105,8 @@ namespace Contal.Cgp.Client
             this._cdgvData.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._cdgvData.DataGrid.Size = new System.Drawing.Size(1204, 545);
             this._cdgvData.DataGrid.TabIndex = 0;
+            this._cdgvData.DataGrid.DefaultCellStyle.Font = this.Font;
+            this._cdgvData.DataGrid.ColumnHeadersDefaultCellStyle.Font = this.Font;
             this._cdgvData.DefaultSortColumnName = null;
             this._cdgvData.DefaultSortDirection = System.ComponentModel.ListSortDirection.Ascending;
             this._cdgvData.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -482,8 +484,8 @@ namespace Contal.Cgp.Client
             // 
             // PersonsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1204, 775);
             this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
