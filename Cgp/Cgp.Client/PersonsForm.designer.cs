@@ -31,6 +31,7 @@ namespace Contal.Cgp.Client
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PersonsForm));
+            System.Drawing.Font fixedFont = System.Drawing.SystemFonts.MessageBoxFont;
             this.panel3 = new System.Windows.Forms.Panel();
             this._cdgvData = new Contal.Cgp.Components.CgpDataGridView();
             this._pFilter = new System.Windows.Forms.Panel();
@@ -105,8 +106,8 @@ namespace Contal.Cgp.Client
             this._cdgvData.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._cdgvData.DataGrid.Size = new System.Drawing.Size(1204, 545);
             this._cdgvData.DataGrid.TabIndex = 0;
-            this._cdgvData.DataGrid.DefaultCellStyle.Font = this.Font;
-            this._cdgvData.DataGrid.ColumnHeadersDefaultCellStyle.Font = this.Font;
+            this._cdgvData.DataGrid.DefaultCellStyle.Font = fixedFont;
+            this._cdgvData.DataGrid.ColumnHeadersDefaultCellStyle.Font = fixedFont;
             this._cdgvData.DefaultSortColumnName = null;
             this._cdgvData.DefaultSortDirection = System.ComponentModel.ListSortDirection.Ascending;
             this._cdgvData.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -487,6 +488,7 @@ namespace Contal.Cgp.Client
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1204, 775);
+            this.Font = fixedFont;
             this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
