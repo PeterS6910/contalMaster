@@ -625,7 +625,7 @@ namespace Contal.Cgp.NCAS.Client
             // NCASCarReaderEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(444, 673);
             this.Controls.Add(this._bCancel);
             this.Controls.Add(this._bOk);

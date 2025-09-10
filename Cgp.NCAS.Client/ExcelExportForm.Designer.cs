@@ -232,7 +232,7 @@ namespace Contal.Cgp.NCAS.Client
             // ExcelExportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(664, 202);
             this.Controls.Add(this._pbExport);
             this.Controls.Add(this._bClose);

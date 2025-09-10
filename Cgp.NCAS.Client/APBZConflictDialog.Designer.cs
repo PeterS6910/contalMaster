@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.NCAS.Client
+namespace Contal.Cgp.NCAS.Client
 {
     partial class APBZConflictDialog
     {
@@ -317,7 +317,7 @@
             // 
             this.AcceptButton = this._bOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this._bCancel;
             this.ClientSize = new System.Drawing.Size(838, 456);
             this.Controls.Add(this.tableLayoutPanel1);

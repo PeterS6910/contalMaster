@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.NCAS.Client
+namespace Contal.Cgp.NCAS.Client
 {
     partial class NCASActiveCardReaderForPersonForm
     {
@@ -78,7 +78,7 @@
             // NCASActiveCardReaderForPersonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(416, 328);
             this.Controls.Add(this._pBack);
             this.Name = "NCASActiveCardReaderForPersonForm";

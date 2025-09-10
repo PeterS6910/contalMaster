@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.NCAS.Client
+namespace Contal.Cgp.NCAS.Client
 {
     partial class AddAAInputsDialog
     {
@@ -212,7 +212,7 @@
             // AddAAInputsDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(314, 165);
             this.Controls.Add(this._pbSensorTemporarilyBlockingOnlyInSabotageInfo);
             this.Controls.Add(this._cbSymbolPurpose);

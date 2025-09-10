@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.NCAS.Client
+namespace Contal.Cgp.NCAS.Client
 {
     partial class NCASSecurityTimeZoneEditForm
     {
@@ -151,6 +151,7 @@
             this._cdgvData.DataGrid.AllowUserToDeleteRows = false;
             this._cdgvData.DataGrid.AllowUserToResizeRows = false;
             this._cdgvData.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this._cdgvData.DataGrid.ColumnHeadersHeight = 34;
             this._cdgvData.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.DataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this._cdgvData.DataGrid.Location = new System.Drawing.Point(0, 0);
@@ -952,7 +953,7 @@
             // NCASSecurityTimeZoneEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(906, 610);
         

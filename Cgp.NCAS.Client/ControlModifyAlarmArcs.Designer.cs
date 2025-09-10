@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.NCAS.Client
+namespace Contal.Cgp.NCAS.Client
 {
     partial class ControlModifyAlarmArcs
     {
@@ -138,7 +138,7 @@
             // ControlModifyAlarmArcs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this._tbmAlarmArcs);
             this.Controls.Add(this._lAlarmArcs);
             this.Name = "ControlModifyAlarmArcs";

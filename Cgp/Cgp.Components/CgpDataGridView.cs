@@ -219,6 +219,15 @@ namespace Contal.Cgp.Components
 
             if (_columnsPropertiesSet)
                 SetColumnOrder();
+            _dgvData.AutoResizeColumns();
+        }
+
+        void LocalizationHelper_LanguageChanged()
+        {
+            if (_localizationHelper != null)
+                _localizationHelper.TranslateDataGridViewColumnsHeaders(_dgvData);
+
+            _dgvData.AutoResizeColumns();
         }
 
         public void AddControlColumn(string columnName)
@@ -570,7 +579,6 @@ namespace Contal.Cgp.Components
         /// </summary>
         public void RemoveDataSource()
         {
-            _columnsResized = false;
             _columnsPropertiesSet = false;
             _dgvData.DataSource = null;
         }
@@ -653,11 +661,7 @@ namespace Contal.Cgp.Components
                 {
                 }
 
-                if (!_columnsResized)
-                {
-                    _columnsResized = true;
-                    _dgvData.AutoResizeColumns();
-                }
+                _dgvData.AutoResizeColumns();
                 _dgvData.ResumeLayout();
             }
             catch

@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.NCAS.Client
+namespace Contal.Cgp.NCAS.Client
 {
     partial class CreateDoorsForMultiDoorForm
     {
@@ -83,7 +83,7 @@
             // CreateDoorsForMultiDoorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(284, 73);
             this.Controls.Add(this._lDoorsCount);
             this.Controls.Add(this._eDoorsCount);

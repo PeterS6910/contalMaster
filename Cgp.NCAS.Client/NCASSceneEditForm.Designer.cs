@@ -1,4 +1,4 @@
-﻿using Contal.Cgp.NCAS.WpfGraphicsControl;
+using Contal.Cgp.NCAS.WpfGraphicsControl;
 
 namespace Contal.Cgp.NCAS.Client
 {
@@ -125,7 +125,7 @@ namespace Contal.Cgp.NCAS.Client
             // NCASSceneEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1146, 715);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this._bImportGS);

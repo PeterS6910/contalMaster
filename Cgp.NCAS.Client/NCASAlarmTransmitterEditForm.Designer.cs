@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.NCAS.Client
+namespace Contal.Cgp.NCAS.Client
 {
     partial class NCASAlarmTransmitterEditForm
     {
@@ -229,7 +229,7 @@
             // NCASAlarmTransmitterEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(534, 411);
             this.Controls.Add(this._lOnlineState);
             this.Controls.Add(this._eOnlineState);

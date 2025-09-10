@@ -1,4 +1,4 @@
-﻿namespace Contal.Cgp.NCAS.Client
+namespace Contal.Cgp.NCAS.Client
 {
     partial class CcuConfigurePassword
     {
@@ -133,7 +133,7 @@
             // CcuConfigurePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(224, 214);
             this.Controls.Add(this._gbOldPassword);
             this.Controls.Add(this._gbPassword);

@@ -328,6 +328,10 @@ namespace Contal.Cgp.NCAS.Client
                 CardReaderShort.COLUMN_BLOCKED_STATE,
                 CardReaderShort.COLUMN_DESCRIPTION);
 
+            _cdgvData.DataGrid.ColumnHeadersHeight = 34;
+            _cdgvData.DataGrid.ColumnHeadersHeightSizeMode =
+                DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+
             _cdgvData.DataGrid.Columns[CardReaderShort.COLUMN_BLOCKED_STATE]
                 .DefaultCellStyle.NullValue = null;
 
