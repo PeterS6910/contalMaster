@@ -34,6 +34,7 @@ namespace Contal.Cgp.Client
             this.panel3 = new System.Windows.Forms.Panel();
             this._cdgvData = new Contal.Cgp.Components.CgpDataGridView();
             this._pFilter = new System.Windows.Forms.Panel();
+            this._pFilter.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._lDepartmentFilter = new System.Windows.Forms.Label();
             this._tbmDepartmentFilter = new Contal.IwQuick.UI.TextBoxMenu();
             this._lFullTextSearch = new System.Windows.Forms.Label();
@@ -55,6 +56,7 @@ namespace Contal.Cgp.Client
             this._eSurnameFilter = new System.Windows.Forms.TextBox();
             this._eNameFilter = new System.Windows.Forms.TextBox();
             this._pControl = new System.Windows.Forms.Panel();
+            this._pControl.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._lRecordCount = new System.Windows.Forms.Label();
             this._bAclAssignment = new System.Windows.Forms.Button();
             this._bCSVImport = new System.Windows.Forms.Button();
@@ -147,6 +149,7 @@ namespace Contal.Cgp.Client
             // _lDepartmentFilter
             // 
             this._lDepartmentFilter.AutoSize = true;
+            this._lDepartmentFilter.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._lDepartmentFilter.Location = new System.Drawing.Point(765, 140);
             this._lDepartmentFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lDepartmentFilter.Name = "_lDepartmentFilter";
@@ -157,6 +160,7 @@ namespace Contal.Cgp.Client
             // _tbmDepartmentFilter
             // 
             this._tbmDepartmentFilter.BackColor = System.Drawing.SystemColors.Control;
+            this._tbmDepartmentFilter.Font = System.Drawing.SystemFonts.MessageBoxFont;
             // 
             // 
             // 
@@ -212,6 +216,7 @@ namespace Contal.Cgp.Client
             // _lFullTextSearch
             // 
             this._lFullTextSearch.AutoSize = true;
+            this._lFullTextSearch.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._lFullTextSearch.Location = new System.Drawing.Point(12, 75);
             this._lFullTextSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lFullTextSearch.Name = "_lFullTextSearch";
@@ -220,7 +225,8 @@ namespace Contal.Cgp.Client
             this._lFullTextSearch.Text = "FullTextSearch";
             // 
             // _tbFullTextSearch
-            // 
+            //
+            this._tbFullTextSearch.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._tbFullTextSearch.Location = new System.Drawing.Point(12, 104);
             this._tbFullTextSearch.Margin = new System.Windows.Forms.Padding(4);
             this._tbFullTextSearch.Name = "_tbFullTextSearch";
@@ -233,6 +239,7 @@ namespace Contal.Cgp.Client
             // 
             this._tbdpDateToFilter.addActualTime = false;
             this._tbdpDateToFilter.BackColor = System.Drawing.Color.Transparent;
+            this._tbdpDateToFilter.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._tbdpDateToFilter.ButtonClearDateImage = null;
             this._tbdpDateToFilter.ButtonClearDateText = "";
             this._tbdpDateToFilter.ButtonClearDateWidth = 23;
@@ -261,6 +268,7 @@ namespace Contal.Cgp.Client
             // 
             this._tbdpDateFromFilter.addActualTime = false;
             this._tbdpDateFromFilter.BackColor = System.Drawing.Color.Transparent;
+            this._tbdpDateFromFilter.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._tbdpDateFromFilter.ButtonClearDateImage = null;
             this._tbdpDateFromFilter.ButtonClearDateText = "";
             this._tbdpDateFromFilter.ButtonClearDateWidth = 23;
@@ -288,6 +296,7 @@ namespace Contal.Cgp.Client
             // _lOtherInformationFields
             // 
             this._lOtherInformationFields.AutoSize = true;
+            this._lOtherInformationFields.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._lOtherInformationFields.Location = new System.Drawing.Point(840, 4);
             this._lOtherInformationFields.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lOtherInformationFields.Name = "_lOtherInformationFields";
@@ -299,6 +308,7 @@ namespace Contal.Cgp.Client
             // 
             this._eOtherInformationFiledsFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this._eOtherInformationFiledsFilter.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._eOtherInformationFiledsFilter.Location = new System.Drawing.Point(840, 32);
             this._eOtherInformationFiledsFilter.Margin = new System.Windows.Forms.Padding(4);
             this._eOtherInformationFiledsFilter.Name = "_eOtherInformationFiledsFilter";
@@ -310,6 +320,7 @@ namespace Contal.Cgp.Client
             // _lDateToFilter
             // 
             this._lDateToFilter.AutoSize = true;
+            this._lDateToFilter.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._lDateToFilter.Location = new System.Drawing.Point(382, 75);
             this._lDateToFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lDateToFilter.Name = "_lDateToFilter";
@@ -318,7 +329,8 @@ namespace Contal.Cgp.Client
             this._lDateToFilter.Text = "Date to";
             // 
             // _bFilterClear
-            // 
+            //
+            this._bFilterClear.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._bFilterClear.Location = new System.Drawing.Point(1079, 104);
             this._bFilterClear.Margin = new System.Windows.Forms.Padding(4);
             this._bFilterClear.Name = "_bFilterClear";
@@ -329,7 +341,8 @@ namespace Contal.Cgp.Client
             this._bFilterClear.Click += new System.EventHandler(this._bFilterClear_Click);
             // 
             // _bRunFilter
-            // 
+            //
+            this._bRunFilter.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._bRunFilter.Location = new System.Drawing.Point(958, 104);
             this._bRunFilter.Margin = new System.Windows.Forms.Padding(4);
             this._bRunFilter.Name = "_bRunFilter";
@@ -355,6 +368,7 @@ namespace Contal.Cgp.Client
             // _cbActivePersons
             // 
             this._cbActivePersons.AutoSize = true;
+            this._cbActivePersons.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._cbActivePersons.Location = new System.Drawing.Point(664, 77);
             this._cbActivePersons.Margin = new System.Windows.Forms.Padding(4);
             this._cbActivePersons.Name = "_cbActivePersons";
@@ -368,6 +382,7 @@ namespace Contal.Cgp.Client
             // _lNumberFilter
             // 
             this._lNumberFilter.AutoSize = true;
+            this._lNumberFilter.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._lNumberFilter.Location = new System.Drawing.Point(664, 4);
             this._lNumberFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lNumberFilter.Name = "_lNumberFilter";
@@ -378,6 +393,7 @@ namespace Contal.Cgp.Client
             // _lDateFromFilter
             // 
             this._lDateFromFilter.AutoSize = true;
+            this._lDateFromFilter.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._lDateFromFilter.Location = new System.Drawing.Point(382, 4);
             this._lDateFromFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lDateFromFilter.Name = "_lDateFromFilter";
@@ -388,6 +404,7 @@ namespace Contal.Cgp.Client
             // _lSurnameFilter
             // 
             this._lSurnameFilter.AutoSize = true;
+            this._lSurnameFilter.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._lSurnameFilter.Location = new System.Drawing.Point(202, 4);
             this._lSurnameFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lSurnameFilter.Name = "_lSurnameFilter";
@@ -398,6 +415,7 @@ namespace Contal.Cgp.Client
             // _lNameFilter
             // 
             this._lNameFilter.AutoSize = true;
+            this._lNameFilter.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._lNameFilter.Location = new System.Drawing.Point(12, 4);
             this._lNameFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lNameFilter.Name = "_lNameFilter";
@@ -406,7 +424,8 @@ namespace Contal.Cgp.Client
             this._lNameFilter.Text = "Name";
             // 
             // _eNumberFilter
-            // 
+            //
+            this._eNumberFilter.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._eNumberFilter.Location = new System.Drawing.Point(664, 32);
             this._eNumberFilter.Margin = new System.Windows.Forms.Padding(4);
             this._eNumberFilter.Name = "_eNumberFilter";
@@ -416,7 +435,9 @@ namespace Contal.Cgp.Client
             this._eNumberFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
             // 
             // _eSurnameFilter
-            // 
+            //
+            this._eSurnameFilter.Font = System.Drawing.SystemFonts.MessageBoxFont;
+            this._eNameFilter.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._eSurnameFilter.Location = new System.Drawing.Point(202, 32);
             this._eSurnameFilter.Margin = new System.Windows.Forms.Padding(4);
             this._eSurnameFilter.Name = "_eSurnameFilter";
@@ -426,7 +447,8 @@ namespace Contal.Cgp.Client
             this._eSurnameFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
             // 
             // _eNameFilter
-            // 
+            //
+            this._eNameFilter.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._eNameFilter.Location = new System.Drawing.Point(12, 32);
             this._eNameFilter.Margin = new System.Windows.Forms.Padding(4);
             this._eNameFilter.Name = "_eNameFilter";
@@ -451,6 +473,7 @@ namespace Contal.Cgp.Client
             // 
             this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._lRecordCount.AutoSize = true;
+            this._lRecordCount.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._lRecordCount.Location = new System.Drawing.Point(1010, 16);
             this._lRecordCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lRecordCount.Name = "_lRecordCount";
@@ -459,7 +482,8 @@ namespace Contal.Cgp.Client
             this._lRecordCount.Text = "RecordCount";
             // 
             // _bAclAssignment
-            // 
+            //
+            this._bAclAssignment.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._bAclAssignment.Location = new System.Drawing.Point(136, 9);
             this._bAclAssignment.Margin = new System.Windows.Forms.Padding(4);
             this._bAclAssignment.Name = "_bAclAssignment";
@@ -470,7 +494,8 @@ namespace Contal.Cgp.Client
             this._bAclAssignment.Click += new System.EventHandler(this._bAclAssignment_Click);
             // 
             // _bCSVImport
-            // 
+            //
+            this._bCSVImport.Font = System.Drawing.SystemFonts.MessageBoxFont;
             this._bCSVImport.Location = new System.Drawing.Point(15, 9);
             this._bCSVImport.Margin = new System.Windows.Forms.Padding(4);
             this._bCSVImport.Name = "_bCSVImport";
