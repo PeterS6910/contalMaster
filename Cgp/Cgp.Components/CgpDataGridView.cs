@@ -182,10 +182,9 @@ namespace Contal.Cgp.Components
         private void InitDataGridView()
         {
             InitializeComponent();
-            var fixedFont = System.Drawing.SystemFonts.MessageBoxFont;
+            var fixedFont = System.Windows.Forms.Control.DefaultFont;
             _dgvData.DefaultCellStyle.Font = fixedFont;
             _dgvData.ColumnHeadersDefaultCellStyle.Font = fixedFont;
-            this.Font = fixedFont;
             SetDoubleBuffered();
             CopyOnRightClick = true;
 
