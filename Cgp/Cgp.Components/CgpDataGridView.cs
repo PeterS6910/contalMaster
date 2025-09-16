@@ -182,7 +182,7 @@ namespace Contal.Cgp.Components
         private void InitDataGridView()
         {
             InitializeComponent();
-            var fixedFont = System.Windows.Forms.Control.DefaultFont;
+            var fixedFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             _dgvData.DefaultCellStyle.Font = fixedFont;
             _dgvData.ColumnHeadersDefaultCellStyle.Font = fixedFont;
             SetDoubleBuffered();
