@@ -1,3 +1,5 @@
+using Contal.Cgp.Globals.PlatformPC;
+
 namespace Contal.Cgp.Client
 {
     partial class LoginsForm
@@ -112,6 +114,7 @@ namespace Contal.Cgp.Client
             this._pFilter.Controls.Add(this._eUserNameFilter);
             this._pFilter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this._pFilter.Location = new System.Drawing.Point(0, 320);
+            this._pFilter.Font = CgpUIDesign.Default;
             this._pFilter.Name = "_pFilter";
             this._pFilter.Size = new System.Drawing.Size(824, 65);
             this._pFilter.TabIndex = 1;
@@ -120,6 +123,7 @@ namespace Contal.Cgp.Client
             // 
             this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._lRecordCount.AutoSize = true;
+            this._lRecordCount.Font = CgpUIDesign.Default;
             this._lRecordCount.Location = new System.Drawing.Point(650, 8);
             this._lRecordCount.Name = "_lRecordCount";
             this._lRecordCount.Size = new System.Drawing.Size(0, 20);
@@ -128,6 +132,7 @@ namespace Contal.Cgp.Client
             // _lLoginGroupFilter
             // 
             this._lLoginGroupFilter.AutoSize = true;
+            this._lLoginGroupFilter.Font = CgpUIDesign.Default;
             this._lLoginGroupFilter.Location = new System.Drawing.Point(135, 5);
             this._lLoginGroupFilter.Name = "_lLoginGroupFilter";
             this._lLoginGroupFilter.Size = new System.Drawing.Size(93, 20);
@@ -135,7 +140,8 @@ namespace Contal.Cgp.Client
             this._lLoginGroupFilter.Text = "Login group";
             // 
             // _eLoginGroupFilter
-            // 
+            //
+            this._eLoginGroupFilter.Font = CgpUIDesign.Default;
             this._eLoginGroupFilter.Location = new System.Drawing.Point(135, 29);
             this._eLoginGroupFilter.Name = "_eLoginGroupFilter";
             this._eLoginGroupFilter.Size = new System.Drawing.Size(121, 26);
@@ -151,6 +157,7 @@ namespace Contal.Cgp.Client
             "",
             "true",
             "false"});
+            this._eDisabledFilter.Font = CgpUIDesign.Default;
             this._eDisabledFilter.Location = new System.Drawing.Point(262, 29);
             this._eDisabledFilter.Name = "_eDisabledFilter";
             this._eDisabledFilter.Size = new System.Drawing.Size(70, 28);
@@ -165,6 +172,7 @@ namespace Contal.Cgp.Client
             "",
             "true",
             "false"});
+            this._eExpirationFilter.Font = CgpUIDesign.Default;
             this._eExpirationFilter.Location = new System.Drawing.Point(338, 29);
             this._eExpirationFilter.Name = "_eExpirationFilter";
             this._eExpirationFilter.Size = new System.Drawing.Size(70, 28);
@@ -172,20 +180,22 @@ namespace Contal.Cgp.Client
             this._eExpirationFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
             // 
             // _bFilterClear
-            // 
+            //
+            this._bFilterClear.Font = CgpUIDesign.Default;
             this._bFilterClear.Location = new System.Drawing.Point(573, 25);
             this._bFilterClear.Name = "_bFilterClear";
-            this._bFilterClear.Size = new System.Drawing.Size(75, 26);
+            this._bFilterClear.Size = new System.Drawing.Size(75, 34);
             this._bFilterClear.TabIndex = 4;
             this._bFilterClear.Text = "Clear";
             this._bFilterClear.UseVisualStyleBackColor = true;
             this._bFilterClear.Click += new System.EventHandler(this._bFilterClear_Click);
             // 
             // _bRunFilter
-            // 
+            //
+            this._bRunFilter.Font = CgpUIDesign.Default;
             this._bRunFilter.Location = new System.Drawing.Point(492, 25);
             this._bRunFilter.Name = "_bRunFilter";
-            this._bRunFilter.Size = new System.Drawing.Size(75, 26);
+            this._bRunFilter.Size = new System.Drawing.Size(75, 34);
             this._bRunFilter.TabIndex = 3;
             this._bRunFilter.Text = "Filter";
             this._bRunFilter.UseVisualStyleBackColor = true;
@@ -194,6 +204,7 @@ namespace Contal.Cgp.Client
             // _lExpirationSetFilter
             // 
             this._lExpirationSetFilter.AutoSize = true;
+            this._lExpirationSetFilter.Font = CgpUIDesign.Default;
             this._lExpirationSetFilter.Location = new System.Drawing.Point(338, 5);
             this._lExpirationSetFilter.Name = "_lExpirationSetFilter";
             this._lExpirationSetFilter.Size = new System.Drawing.Size(105, 20);
@@ -203,6 +214,7 @@ namespace Contal.Cgp.Client
             // _lDisabledFilter
             // 
             this._lDisabledFilter.AutoSize = true;
+            this._lDisabledFilter.Font = CgpUIDesign.Default;
             this._lDisabledFilter.Location = new System.Drawing.Point(259, 5);
             this._lDisabledFilter.Name = "_lDisabledFilter";
             this._lDisabledFilter.Size = new System.Drawing.Size(71, 20);
@@ -212,6 +224,7 @@ namespace Contal.Cgp.Client
             // _lUserNameFilter
             // 
             this._lUserNameFilter.AutoSize = true;
+            this._lUserNameFilter.Font = CgpUIDesign.Default;
             this._lUserNameFilter.Location = new System.Drawing.Point(8, 5);
             this._lUserNameFilter.Name = "_lUserNameFilter";
             this._lUserNameFilter.Size = new System.Drawing.Size(87, 20);
@@ -219,7 +232,8 @@ namespace Contal.Cgp.Client
             this._lUserNameFilter.Text = "User name";
             // 
             // _eUserNameFilter
-            // 
+            //
+            this._eUserNameFilter.Font = CgpUIDesign.Default;
             this._eUserNameFilter.Location = new System.Drawing.Point(8, 29);
             this._eUserNameFilter.Name = "_eUserNameFilter";
             this._eUserNameFilter.Size = new System.Drawing.Size(121, 26);
@@ -233,6 +247,7 @@ namespace Contal.Cgp.Client
             this.ClientSize = new System.Drawing.Size(824, 385);
             this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Font = CgpUIDesign.Default;
             this.Name = "LoginsForm";
             this.Text = "User logins";
             this.panel3.ResumeLayout(false);

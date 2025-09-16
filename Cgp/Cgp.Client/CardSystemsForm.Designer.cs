@@ -1,3 +1,5 @@
+using Contal.Cgp.Globals.PlatformPC;
+
 namespace Contal.Cgp.Client
 {
     partial class CardSystemsForm
@@ -60,6 +62,7 @@ namespace Contal.Cgp.Client
             this._pFilter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this._pFilter.Location = new System.Drawing.Point(0, 417);
             this._pFilter.Name = "_pFilter";
+            this._pFilter.Font = CgpUIDesign.Default;
             this._pFilter.Size = new System.Drawing.Size(861, 72);
             this._pFilter.TabIndex = 0;
             // 
@@ -69,6 +72,7 @@ namespace Contal.Cgp.Client
             this._lRecordCount.AutoSize = true;
             this._lRecordCount.Location = new System.Drawing.Point(680, 40);
             this._lRecordCount.Name = "_lRecordCount";
+            this._lRecordCount.Font = CgpUIDesign.Default;
             this._lRecordCount.Size = new System.Drawing.Size(0, 20);
             this._lRecordCount.TabIndex = 5;
             // 
@@ -78,6 +82,7 @@ namespace Contal.Cgp.Client
             this._cbCardTypeFilter.FormattingEnabled = true;
             this._cbCardTypeFilter.Location = new System.Drawing.Point(259, 31);
             this._cbCardTypeFilter.Name = "_cbCardTypeFilter";
+            this._cbCardTypeFilter.Font = CgpUIDesign.Default;
             this._cbCardTypeFilter.Size = new System.Drawing.Size(121, 28);
             this._cbCardTypeFilter.TabIndex = 2;
             this._cbCardTypeFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
@@ -87,6 +92,7 @@ namespace Contal.Cgp.Client
             // 
             this._eCompanyCodeFilter.Location = new System.Drawing.Point(142, 31);
             this._eCompanyCodeFilter.Name = "_eCompanyCodeFilter";
+            this._eCompanyCodeFilter.Font = CgpUIDesign.Default;
             this._eCompanyCodeFilter.Size = new System.Drawing.Size(111, 26);
             this._eCompanyCodeFilter.TabIndex = 1;
             this._eCompanyCodeFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
@@ -97,6 +103,7 @@ namespace Contal.Cgp.Client
             this._lCompanyCodeFilter.AutoSize = true;
             this._lCompanyCodeFilter.Location = new System.Drawing.Point(139, 6);
             this._lCompanyCodeFilter.Name = "_lCompanyCodeFilter";
+            this._lCompanyCodeFilter.Font = CgpUIDesign.Default;
             this._lCompanyCodeFilter.Size = new System.Drawing.Size(115, 20);
             this._lCompanyCodeFilter.TabIndex = 18;
             this._lCompanyCodeFilter.Text = "Company code";
@@ -106,6 +113,7 @@ namespace Contal.Cgp.Client
             this._lCardTypeFilter.AutoSize = true;
             this._lCardTypeFilter.Location = new System.Drawing.Point(256, 6);
             this._lCardTypeFilter.Name = "_lCardTypeFilter";
+            this._lCardTypeFilter.Font = CgpUIDesign.Default;
             this._lCardTypeFilter.Size = new System.Drawing.Size(77, 20);
             this._lCardTypeFilter.TabIndex = 17;
             this._lCardTypeFilter.Text = "Card type";
@@ -123,6 +131,7 @@ namespace Contal.Cgp.Client
             // 
             this._eNameFilter.Location = new System.Drawing.Point(12, 31);
             this._eNameFilter.Name = "_eNameFilter";
+            this._lNameFilter.Font = CgpUIDesign.Default;
             this._eNameFilter.Size = new System.Drawing.Size(124, 26);
             this._eNameFilter.TabIndex = 0;
             this._eNameFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
@@ -132,7 +141,8 @@ namespace Contal.Cgp.Client
             // 
             this._bFilterClear.Location = new System.Drawing.Point(467, 29);
             this._bFilterClear.Name = "_bFilterClear";
-            this._bFilterClear.Size = new System.Drawing.Size(75, 28);
+            this._bFilterClear.Font = CgpUIDesign.Default;
+            this._bFilterClear.Size = new System.Drawing.Size(75, 34);
             this._bFilterClear.TabIndex = 4;
             this._bFilterClear.Text = "Clear";
             this._bFilterClear.UseVisualStyleBackColor = true;
@@ -142,7 +152,8 @@ namespace Contal.Cgp.Client
             // 
             this._bRunFilter.Location = new System.Drawing.Point(386, 29);
             this._bRunFilter.Name = "_bRunFilter";
-            this._bRunFilter.Size = new System.Drawing.Size(75, 28);
+            this._bRunFilter.Font = CgpUIDesign.Default;
+            this._bRunFilter.Size = new System.Drawing.Size(75, 34);
             this._bRunFilter.TabIndex = 3;
             this._bRunFilter.Text = "Filter";
             this._bRunFilter.UseVisualStyleBackColor = true;

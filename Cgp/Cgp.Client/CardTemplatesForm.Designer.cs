@@ -1,3 +1,5 @@
+using Contal.Cgp.Globals.PlatformPC;
+
 namespace Contal.Cgp.Client
 {
     partial class CardTemplatesForm
@@ -58,6 +60,7 @@ namespace Contal.Cgp.Client
             this._pFilter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this._pFilter.Location = new System.Drawing.Point(0, 369);
             this._pFilter.Name = "_pFilter";
+            this._pFilter.Font = CgpUIDesign.Default;
             this._pFilter.Size = new System.Drawing.Size(609, 48);
             this._pFilter.TabIndex = 0;
             //
@@ -67,6 +70,7 @@ namespace Contal.Cgp.Client
             this._lRecordCount.AutoSize = true;
             this._lRecordCount.Location = new System.Drawing.Point(490, 8);
             this._lRecordCount.Name = "_lRecordCount";
+            this._lRecordCount.Font = CgpUIDesign.Default;
             this._lRecordCount.Size = new System.Drawing.Size(0, 13);
             this._lRecordCount.TabIndex = 6;
             this._lRecordCount.Text = "";
@@ -75,6 +79,7 @@ namespace Contal.Cgp.Client
             //
             this._bClone.Location = new System.Drawing.Point(429, 16);
             this._bClone.Name = "_bClone";
+            this._bClone.Font = CgpUIDesign.Default;
             this._bClone.Size = new System.Drawing.Size(75, 23);
             this._bClone.TabIndex = 5;
             this._bClone.Text = "Clone";
@@ -85,6 +90,7 @@ namespace Contal.Cgp.Client
             // 
             this._eCloneName.Location = new System.Drawing.Point(304, 19);
             this._eCloneName.Name = "_eCloneName";
+            this._eCloneName.Font = CgpUIDesign.Default;
             this._eCloneName.Size = new System.Drawing.Size(119, 20);
             this._eCloneName.TabIndex = 4;
             // 
@@ -93,6 +99,7 @@ namespace Contal.Cgp.Client
             this._lCloneName.AutoSize = true;
             this._lCloneName.Location = new System.Drawing.Point(301, 4);
             this._lCloneName.Name = "_lCloneName";
+            this._lCloneName.Font = CgpUIDesign.Default;
             this._lCloneName.Size = new System.Drawing.Size(122, 13);
             this._lCloneName.TabIndex = 3;
             this._lCloneName.Text = "Name for template clone";
@@ -102,6 +109,7 @@ namespace Contal.Cgp.Client
             this._lNameFilter.AutoSize = true;
             this._lNameFilter.Location = new System.Drawing.Point(12, 4);
             this._lNameFilter.Name = "_lNameFilter";
+            this._lNameFilter.Font = CgpUIDesign.Default;
             this._lNameFilter.Size = new System.Drawing.Size(35, 13);
             this._lNameFilter.TabIndex = 2;
             this._lNameFilter.Text = "Name";
@@ -110,7 +118,8 @@ namespace Contal.Cgp.Client
             // 
             this._bFilterClear.Location = new System.Drawing.Point(220, 17);
             this._bFilterClear.Name = "_bFilterClear";
-            this._bFilterClear.Size = new System.Drawing.Size(75, 23);
+            this._bFilterClear.Font = CgpUIDesign.Default;
+            this._bFilterClear.Size = new System.Drawing.Size(75, 34);
             this._bFilterClear.TabIndex = 2;
             this._bFilterClear.Text = "Clear";
             this._bFilterClear.UseVisualStyleBackColor = true;
@@ -120,7 +129,8 @@ namespace Contal.Cgp.Client
             // 
             this._bRunFilter.Location = new System.Drawing.Point(139, 17);
             this._bRunFilter.Name = "_bRunFilter";
-            this._bRunFilter.Size = new System.Drawing.Size(75, 23);
+            this._bRunFilter.Font = CgpUIDesign.Default;
+            this._bRunFilter.Size = new System.Drawing.Size(75, 34);
             this._bRunFilter.TabIndex = 1;
             this._bRunFilter.Text = "Filter";
             this._bRunFilter.UseVisualStyleBackColor = true;

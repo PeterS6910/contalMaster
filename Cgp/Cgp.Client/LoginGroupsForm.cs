@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-
+using Contal.Cgp.Globals.PlatformPC;
 using System.Windows.Forms;
 using Contal.Cgp.BaseLib;
 using Contal.Cgp.Server.Beans;

@@ -1,3 +1,5 @@
+using Contal.Cgp.Globals.PlatformPC;
+
 namespace Contal.Cgp.Client
 {
     partial class CardsForm
@@ -68,6 +70,7 @@ namespace Contal.Cgp.Client
             this._pFilter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this._pFilter.Location = new System.Drawing.Point(0, 403);
             this._pFilter.Name = "_pFilter";
+            this._pFilter.Font = CgpUIDesign.Default;
             this._pFilter.Size = new System.Drawing.Size(960, 73);
             this._pFilter.TabIndex = 1;
             // 
@@ -76,6 +79,8 @@ namespace Contal.Cgp.Client
             this._cbPersonFilter.FormattingEnabled = true;
             this._cbPersonFilter.Location = new System.Drawing.Point(269, 32);
             this._cbPersonFilter.Name = "_cbPersonFilter";
+            this._lPersonFilter.Font = CgpUIDesign.Default;
+            this._cbPersonFilter.Font = CgpUIDesign.Default;
             this._cbPersonFilter.Size = new System.Drawing.Size(121, 28);
             this._cbPersonFilter.TabIndex = 5;
             this._cbPersonFilter.SelectedIndexChanged += new System.EventHandler(this._cbPersonFilter_SelectedIndexChanged);
@@ -97,6 +102,7 @@ namespace Contal.Cgp.Client
             this._cbCardStateFilter.FormattingEnabled = true;
             this._cbCardStateFilter.Location = new System.Drawing.Point(396, 32);
             this._cbCardStateFilter.Name = "_cbCardStateFilter";
+            this._cbCardStateFilter.Font = CgpUIDesign.Default;
             this._cbCardStateFilter.Size = new System.Drawing.Size(121, 28);
             this._cbCardStateFilter.TabIndex = 7;
             this._cbCardStateFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
@@ -107,6 +113,7 @@ namespace Contal.Cgp.Client
             this._lCardState.AutoSize = true;
             this._lCardState.Location = new System.Drawing.Point(393, 6);
             this._lCardState.Name = "_lCardState";
+            this._lCardState.Font = CgpUIDesign.Default;
             this._lCardState.Size = new System.Drawing.Size(83, 20);
             this._lCardState.TabIndex = 6;
             this._lCardState.Text = "Card state";
@@ -117,6 +124,7 @@ namespace Contal.Cgp.Client
             this._cbCardSystemFilter.FormattingEnabled = true;
             this._cbCardSystemFilter.Location = new System.Drawing.Point(142, 32);
             this._cbCardSystemFilter.Name = "_cbCardSystemFilter";
+            this._cbCardSystemFilter.Font = CgpUIDesign.Default;
             this._cbCardSystemFilter.Size = new System.Drawing.Size(121, 28);
             this._cbCardSystemFilter.TabIndex = 3;
             this._cbCardSystemFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
@@ -127,6 +135,7 @@ namespace Contal.Cgp.Client
             this._lCardSystemFilter.AutoSize = true;
             this._lCardSystemFilter.Location = new System.Drawing.Point(139, 6);
             this._lCardSystemFilter.Name = "_lCardSystemFilter";
+            this._lCardSystemFilter.Font = CgpUIDesign.Default;
             this._lCardSystemFilter.Size = new System.Drawing.Size(97, 20);
             this._lCardSystemFilter.TabIndex = 2;
             this._lCardSystemFilter.Text = "Card system";
@@ -136,6 +145,7 @@ namespace Contal.Cgp.Client
             this._lCardNumberFilter.AutoSize = true;
             this._lCardNumberFilter.Location = new System.Drawing.Point(12, 6);
             this._lCardNumberFilter.Name = "_lCardNumberFilter";
+            this._lCardNumberFilter.Font = CgpUIDesign.Default;
             this._lCardNumberFilter.Size = new System.Drawing.Size(101, 20);
             this._lCardNumberFilter.TabIndex = 0;
             this._lCardNumberFilter.Text = "Card number";
@@ -144,6 +154,7 @@ namespace Contal.Cgp.Client
             // 
             this._eCardNumberFilter.Location = new System.Drawing.Point(12, 32);
             this._eCardNumberFilter.Name = "_eCardNumberFilter";
+            this._eCardNumberFilter.Font = CgpUIDesign.Default;
             this._eCardNumberFilter.Size = new System.Drawing.Size(124, 26);
             this._eCardNumberFilter.TabIndex = 1;
             this._eCardNumberFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
@@ -153,7 +164,8 @@ namespace Contal.Cgp.Client
             // 
             this._bFilterClear.Location = new System.Drawing.Point(604, 30);
             this._bFilterClear.Name = "_bFilterClear";
-            this._bFilterClear.Size = new System.Drawing.Size(75, 23);
+            this._bFilterClear.Font = CgpUIDesign.Default;
+            this._bFilterClear.Size = new System.Drawing.Size(75, 34);
             this._bFilterClear.TabIndex = 9;
             this._bFilterClear.Text = "Clear";
             this._bFilterClear.UseVisualStyleBackColor = true;
@@ -163,7 +175,8 @@ namespace Contal.Cgp.Client
             // 
             this._bRunFilter.Location = new System.Drawing.Point(523, 30);
             this._bRunFilter.Name = "_bRunFilter";
-            this._bRunFilter.Size = new System.Drawing.Size(75, 23);
+            this._bRunFilter.Font = CgpUIDesign.Default;
+            this._bRunFilter.Size = new System.Drawing.Size(75, 34);
             this._bRunFilter.TabIndex = 8;
             this._bRunFilter.Text = "Filter";
             this._bRunFilter.UseVisualStyleBackColor = true;
@@ -185,7 +198,8 @@ namespace Contal.Cgp.Client
             // 
             this.bExportExcel.Location = new System.Drawing.Point(188, 6);
             this.bExportExcel.Name = "bExportExcel";
-            this.bExportExcel.Size = new System.Drawing.Size(98, 28);
+            this.bExportExcel.Font = CgpUIDesign.Default;
+            this.bExportExcel.Size = new System.Drawing.Size(98, 34);
             this.bExportExcel.TabIndex = 6;
             this.bExportExcel.Text = "Export To Excel";
             this.bExportExcel.UseVisualStyleBackColor = true;
@@ -197,6 +211,7 @@ namespace Contal.Cgp.Client
             this._lRecordCount.AutoSize = true;
             this._lRecordCount.Location = new System.Drawing.Point(780, 17);
             this._lRecordCount.Name = "_lRecordCount";
+            this._lRecordCount.Font = CgpUIDesign.Default;
             this._lRecordCount.Size = new System.Drawing.Size(104, 20);
             this._lRecordCount.TabIndex = 5;
             this._lRecordCount.Text = "RecordCount";
@@ -206,7 +221,8 @@ namespace Contal.Cgp.Client
             this._bPrint.Enabled = false;
             this._bPrint.Location = new System.Drawing.Point(93, 6);
             this._bPrint.Name = "_bPrint";
-            this._bPrint.Size = new System.Drawing.Size(75, 28);
+            this._bPrint.Font = CgpUIDesign.Default;
+            this._bPrint.Size = new System.Drawing.Size(75, 34);
             this._bPrint.TabIndex = 4;
             this._bPrint.Text = "Print";
             this._bPrint.UseVisualStyleBackColor = true;
@@ -216,7 +232,8 @@ namespace Contal.Cgp.Client
             // 
             this._bCSVImport.Location = new System.Drawing.Point(12, 6);
             this._bCSVImport.Name = "_bCSVImport";
-            this._bCSVImport.Size = new System.Drawing.Size(75, 28);
+            this._bCSVImport.Font = CgpUIDesign.Default;
+            this._bCSVImport.Size = new System.Drawing.Size(75, 34);
             this._bCSVImport.TabIndex = 3;
             this._bCSVImport.Text = "CSV Import";
             this._bCSVImport.UseVisualStyleBackColor = true;

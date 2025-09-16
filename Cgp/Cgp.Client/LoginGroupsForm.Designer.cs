@@ -1,3 +1,5 @@
+using Contal.Cgp.Globals.PlatformPC;
+
 namespace Contal.Cgp.Client
 {
     partial class LoginGroupsForm
@@ -56,6 +58,8 @@ namespace Contal.Cgp.Client
             "",
             "true",
             "false"});
+            this._eDisabledFilter.Font = CgpUIDesign.Default;
+            this._eDisabledFilter.Font = CgpUIDesign.Default;
             this._eDisabledFilter.Location = new System.Drawing.Point(135, 30);
             this._eDisabledFilter.Name = "_eDisabledFilter";
             this._eDisabledFilter.Size = new System.Drawing.Size(70, 28);
@@ -70,6 +74,7 @@ namespace Contal.Cgp.Client
             "",
             "true",
             "false"});
+            this._eExpirationFilter.Font = CgpUIDesign.Default;
             this._eExpirationFilter.Location = new System.Drawing.Point(211, 30);
             this._eExpirationFilter.Name = "_eExpirationFilter";
             this._eExpirationFilter.Size = new System.Drawing.Size(70, 28);
@@ -144,6 +149,7 @@ namespace Contal.Cgp.Client
             // 
             this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._lRecordCount.AutoSize = true;
+            this._lRecordCount.Font = CgpUIDesign.Default;
             this._lRecordCount.Location = new System.Drawing.Point(650, 8);
             this._lRecordCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lRecordCount.Name = "_lRecordCount";
@@ -151,20 +157,22 @@ namespace Contal.Cgp.Client
             this._lRecordCount.TabIndex = 7;
             // 
             // _bFilterClear
-            // 
+            //
+            this._bFilterClear.Font = CgpUIDesign.Default;
             this._bFilterClear.Location = new System.Drawing.Point(573, 26);
             this._bFilterClear.Name = "_bFilterClear";
-            this._bFilterClear.Size = new System.Drawing.Size(75, 26);
+            this._bFilterClear.Size = new System.Drawing.Size(75, 34);
             this._bFilterClear.TabIndex = 4;
             this._bFilterClear.Text = "Clear";
             this._bFilterClear.UseVisualStyleBackColor = true;
             this._bFilterClear.Click += new System.EventHandler(this._bFilterClear_Click);
             // 
             // _bRunFilter
-            // 
+            //
+            this._bRunFilter.Font = CgpUIDesign.Default;
             this._bRunFilter.Location = new System.Drawing.Point(492, 26);
             this._bRunFilter.Name = "_bRunFilter";
-            this._bRunFilter.Size = new System.Drawing.Size(75, 26);
+            this._bRunFilter.Size = new System.Drawing.Size(75, 34);
             this._bRunFilter.TabIndex = 3;
             this._bRunFilter.Text = "Filter";
             this._bRunFilter.UseVisualStyleBackColor = true;
@@ -173,6 +181,7 @@ namespace Contal.Cgp.Client
             // _lExpirationSetFilter
             // 
             this._lExpirationSetFilter.AutoSize = true;
+            this._lExpirationSetFilter.Font = CgpUIDesign.Default;
             this._lExpirationSetFilter.Location = new System.Drawing.Point(211, 5);
             this._lExpirationSetFilter.Name = "_lExpirationSetFilter";
             this._lExpirationSetFilter.Size = new System.Drawing.Size(105, 20);
@@ -182,6 +191,7 @@ namespace Contal.Cgp.Client
             // _lDisabledFilter
             // 
             this._lDisabledFilter.AutoSize = true;
+            this._lDisabledFilter.Font = CgpUIDesign.Default;
             this._lDisabledFilter.Location = new System.Drawing.Point(132, 5);
             this._lDisabledFilter.Name = "_lDisabledFilter";
             this._lDisabledFilter.Size = new System.Drawing.Size(71, 20);
@@ -191,6 +201,7 @@ namespace Contal.Cgp.Client
             // _lLoginGroupNameFilter
             // 
             this._lLoginGroupNameFilter.AutoSize = true;
+            this._lLoginGroupNameFilter.Font = CgpUIDesign.Default;
             this._lLoginGroupNameFilter.Location = new System.Drawing.Point(8, 5);
             this._lLoginGroupNameFilter.Name = "_lLoginGroupNameFilter";
             this._lLoginGroupNameFilter.Size = new System.Drawing.Size(135, 20);
@@ -198,7 +209,8 @@ namespace Contal.Cgp.Client
             this._lLoginGroupNameFilter.Text = "LoginGroupName";
             // 
             // _eLoginGroupNameFilter
-            // 
+            //
+            this._eLoginGroupNameFilter.Font = CgpUIDesign.Default;
             this._eLoginGroupNameFilter.Location = new System.Drawing.Point(8, 30);
             this._eLoginGroupNameFilter.Name = "_eLoginGroupNameFilter";
             this._eLoginGroupNameFilter.Size = new System.Drawing.Size(121, 26);
@@ -212,6 +224,7 @@ namespace Contal.Cgp.Client
             this.ClientSize = new System.Drawing.Size(824, 385);
             this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Font = CgpUIDesign.Default;
             this.Name = "LoginGroupsForm";
             this.Text = "Login groups";
             this.panel3.ResumeLayout(false);

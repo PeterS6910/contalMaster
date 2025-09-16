@@ -1,3 +1,5 @@
+using Contal.Cgp.Globals.PlatformPC;
+
 namespace Contal.Cgp.Client
 {
     partial class DayTypesForm
@@ -108,6 +110,7 @@ namespace Contal.Cgp.Client
             // 
             this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._lRecordCount.AutoSize = true;
+            this._lRecordCount.Font = CgpUIDesign.Default;
             this._lRecordCount.Location = new System.Drawing.Point(520, 8);
             this._lRecordCount.Name = "_lRecordCount";
             this._lRecordCount.Size = new System.Drawing.Size(0, 20);
@@ -117,8 +120,9 @@ namespace Contal.Cgp.Client
             // _bFilterClear
             // 
             this._bFilterClear.Location = new System.Drawing.Point(217, 29);
+            this._bFilterClear.Font = CgpUIDesign.Default;
             this._bFilterClear.Name = "_bFilterClear";
-            this._bFilterClear.Size = new System.Drawing.Size(75, 26);
+            this._bFilterClear.Size = new System.Drawing.Size(75, 34);
             this._bFilterClear.TabIndex = 2;
             this._bFilterClear.Text = "Clear";
             this._bFilterClear.UseVisualStyleBackColor = true;
@@ -127,8 +131,9 @@ namespace Contal.Cgp.Client
             // _bRunFilter
             // 
             this._bRunFilter.Location = new System.Drawing.Point(136, 29);
+            this._bRunFilter.Font = CgpUIDesign.Default;
             this._bRunFilter.Name = "_bRunFilter";
-            this._bRunFilter.Size = new System.Drawing.Size(75, 26);
+            this._bRunFilter.Size = new System.Drawing.Size(75, 34);
             this._bRunFilter.TabIndex = 1;
             this._bRunFilter.Text = "Filter";
             this._bRunFilter.UseVisualStyleBackColor = true;
@@ -137,6 +142,7 @@ namespace Contal.Cgp.Client
             // _lNameFilter
             // 
             this._lNameFilter.AutoSize = true;
+            this._lNameFilter.Font = CgpUIDesign.Default;
             this._lNameFilter.Location = new System.Drawing.Point(8, 5);
             this._lNameFilter.Name = "_lNameFilter";
             this._lNameFilter.Size = new System.Drawing.Size(51, 20);
@@ -144,7 +150,8 @@ namespace Contal.Cgp.Client
             this._lNameFilter.Text = "Name";
             // 
             // _eNameFilter
-            // 
+            //
+            this._eNameFilter.Font = CgpUIDesign.Default;
             this._eNameFilter.Location = new System.Drawing.Point(8, 31);
             this._eNameFilter.Name = "_eNameFilter";
             this._eNameFilter.Size = new System.Drawing.Size(121, 26);
@@ -156,6 +163,7 @@ namespace Contal.Cgp.Client
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(694, 307);
+            this.Font = CgpUIDesign.Default;
             this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DayTypesForm";

@@ -1,3 +1,5 @@
+using Contal.Cgp.Globals.PlatformPC;
+
 namespace Contal.Cgp.Client
 {
     partial class DailyPlansForm
@@ -100,6 +102,7 @@ namespace Contal.Cgp.Client
             this._pFilter.Controls.Add(this._eNameFilter);
             this._pFilter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this._pFilter.Location = new System.Drawing.Point(0, 330);
+            this._pFilter.Font = CgpUIDesign.Default;
             this._pFilter.Name = "_pFilter";
             this._pFilter.Size = new System.Drawing.Size(718, 65);
             this._pFilter.TabIndex = 1;
@@ -108,7 +111,8 @@ namespace Contal.Cgp.Client
             // 
             this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._lRecordCount.AutoSize = true;
-            this._lRecordCount.Location = new System.Drawing.Point(544, 8);
+            this._lRecordCount.Font = CgpUIDesign.Default;
+            this._lRecordCount.Location = new System.Drawing.Point(540, 8);
             this._lRecordCount.Name = "_lRecordCount";
             this._lRecordCount.Size = new System.Drawing.Size(29, 20);
             this._lRecordCount.TabIndex = 3;
@@ -116,20 +120,22 @@ namespace Contal.Cgp.Client
             this._lRecordCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // _bFilterClear
-            // 
+            //
+            this._bFilterClear.Font = CgpUIDesign.Default;
             this._bFilterClear.Location = new System.Drawing.Point(216, 27);
             this._bFilterClear.Name = "_bFilterClear";
-            this._bFilterClear.Size = new System.Drawing.Size(75, 26);
+            this._bFilterClear.Size = new System.Drawing.Size(75, 34);
             this._bFilterClear.TabIndex = 2;
             this._bFilterClear.Text = "Clear";
             this._bFilterClear.UseVisualStyleBackColor = true;
             this._bFilterClear.Click += new System.EventHandler(this._bFilterClear_Click);
             // 
             // _bRunFilter
-            // 
+            //
+            this._bRunFilter.Font = CgpUIDesign.Default;
             this._bRunFilter.Location = new System.Drawing.Point(135, 27);
             this._bRunFilter.Name = "_bRunFilter";
-            this._bRunFilter.Size = new System.Drawing.Size(75, 26);
+            this._bRunFilter.Size = new System.Drawing.Size(75, 34);
             this._bRunFilter.TabIndex = 1;
             this._bRunFilter.Text = "Filter";
             this._bRunFilter.UseVisualStyleBackColor = true;
@@ -138,6 +144,7 @@ namespace Contal.Cgp.Client
             // _lNameFilter
             // 
             this._lNameFilter.AutoSize = true;
+            this._lNameFilter.Font = CgpUIDesign.Default;
             this._lNameFilter.Location = new System.Drawing.Point(8, 5);
             this._lNameFilter.Name = "_lNameFilter";
             this._lNameFilter.Size = new System.Drawing.Size(51, 20);
@@ -145,7 +152,8 @@ namespace Contal.Cgp.Client
             this._lNameFilter.Text = "Name";
             // 
             // _eNameFilter
-            // 
+            //
+            this._eNameFilter.Font = CgpUIDesign.Default;
             this._eNameFilter.Location = new System.Drawing.Point(8, 30);
             this._eNameFilter.Name = "_eNameFilter";
             this._eNameFilter.Size = new System.Drawing.Size(121, 26);
@@ -157,6 +165,7 @@ namespace Contal.Cgp.Client
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(718, 395);
+            this.Font = CgpUIDesign.Default;
             this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DailyPlansForm";
@@ -176,7 +185,7 @@ namespace Contal.Cgp.Client
         private System.Windows.Forms.Button _bFilterClear;
         private System.Windows.Forms.Button _bRunFilter;
         private System.Windows.Forms.Label _lNameFilter;
-        private System.Windows.Forms.TextBox _eNameFilter;        
+        private System.Windows.Forms.TextBox _eNameFilter;
         private Contal.Cgp.Components.CgpDataGridView _cdgvData;
         private System.Windows.Forms.Label _lRecordCount;
     }
