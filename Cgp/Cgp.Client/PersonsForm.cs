@@ -1,5 +1,6 @@
 using Contal.Cgp.BaseLib;
 using Contal.Cgp.Client.PluginSupport;
+using Contal.Cgp.Globals.PlatformPC;
 using Contal.Cgp.Server.Beans;
 using Contal.IwQuick;
 using Contal.IwQuick.Sys;
