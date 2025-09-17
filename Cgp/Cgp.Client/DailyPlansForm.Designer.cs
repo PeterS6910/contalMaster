@@ -124,7 +124,7 @@ namespace Contal.Cgp.Client
             this._bFilterClear.Font = CgpUIDesign.Default;
             this._bFilterClear.Location = new System.Drawing.Point(216, 27);
             this._bFilterClear.Name = "_bFilterClear";
-            this._bFilterClear.Size = new System.Drawing.Size(75, 34);
+            this._bFilterClear.Size = new System.Drawing.Size(75, 32);
             this._bFilterClear.TabIndex = 2;
             this._bFilterClear.Text = "Clear";
             this._bFilterClear.UseVisualStyleBackColor = true;
@@ -135,7 +135,7 @@ namespace Contal.Cgp.Client
             this._bRunFilter.Font = CgpUIDesign.Default;
             this._bRunFilter.Location = new System.Drawing.Point(135, 27);
             this._bRunFilter.Name = "_bRunFilter";
-            this._bRunFilter.Size = new System.Drawing.Size(75, 34);
+            this._bRunFilter.Size = new System.Drawing.Size(75, 32);
             this._bRunFilter.TabIndex = 1;
             this._bRunFilter.Text = "Filter";
             this._bRunFilter.UseVisualStyleBackColor = true;
