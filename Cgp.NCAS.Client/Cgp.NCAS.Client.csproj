@@ -280,9 +280,7 @@
     <Compile Include="NCASAntiPassBackZoneEditForm.Designer.cs">
       <DependentUpon>NCASAntiPassBackZoneEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NCASAntiPassBackZoneEditForm.ViewModel.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="NCASAntiPassBackZoneEditForm.ViewModel.cs" />
     <Compile Include="NCASAntiPassBackZonesForm.cs">
       <SubType>Form</SubType>
     </Compile>

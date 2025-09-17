@@ -46,9 +46,9 @@ namespace Contal.Cgp.Client
             this.SuspendLayout();
             // 
             // _bFilterClear
-            //
-            this._bFilterClear.Font = CgpUIDesign.Default;
-            this._bFilterClear.Location = new System.Drawing.Point(217, 19);
+            // 
+            this._bFilterClear.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this._bFilterClear.Location = new System.Drawing.Point(217, 31);
             this._bFilterClear.Name = "_bFilterClear";
             this._bFilterClear.Size = new System.Drawing.Size(75, 32);
             this._bFilterClear.TabIndex = 2;
@@ -57,9 +57,9 @@ namespace Contal.Cgp.Client
             this._bFilterClear.Click += new System.EventHandler(this.FilterClearClick);
             // 
             // _bRunFilter
-            //
-            this._bRunFilter.Font = CgpUIDesign.Default;
-            this._bRunFilter.Location = new System.Drawing.Point(136, 19);
+            // 
+            this._bRunFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this._bRunFilter.Location = new System.Drawing.Point(136, 31);
             this._bRunFilter.Name = "_bRunFilter";
             this._bRunFilter.Size = new System.Drawing.Size(75, 32);
             this._bRunFilter.TabIndex = 1;
@@ -91,24 +91,27 @@ namespace Contal.Cgp.Client
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             this._cdgvData.DataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this._cdgvData.DataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this._cdgvData.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this._cdgvData.DataGrid.ColumnHeadersHeight = 34;
+            this._cdgvData.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this._cdgvData.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.DataGrid.Location = new System.Drawing.Point(0, 0);
             this._cdgvData.DataGrid.Name = "_dgvData";
             this._cdgvData.DataGrid.ReadOnly = true;
             this._cdgvData.DataGrid.RowHeadersVisible = false;
+            this._cdgvData.DataGrid.RowHeadersWidth = 62;
             this._cdgvData.DataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             this._cdgvData.DataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this._cdgvData.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._cdgvData.DataGrid.Size = new System.Drawing.Size(855, 384);
+            this._cdgvData.DataGrid.Size = new System.Drawing.Size(855, 362);
             this._cdgvData.DataGrid.TabIndex = 0;
+            this._cdgvData.DefaultSortColumnName = null;
+            this._cdgvData.DefaultSortDirection = System.ComponentModel.ListSortDirection.Ascending;
             this._cdgvData.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.LocalizationHelper = null;
             this._cdgvData.Location = new System.Drawing.Point(0, 0);
             this._cdgvData.Name = "_cdgvData";
-            this._cdgvData.Size = new System.Drawing.Size(855, 384);
+            this._cdgvData.Size = new System.Drawing.Size(855, 362);
             this._cdgvData.TabIndex = 2;
             // 
             // _pFilter
@@ -119,48 +122,47 @@ namespace Contal.Cgp.Client
             this._pFilter.Controls.Add(this._lNameFilter);
             this._pFilter.Controls.Add(this._eNameFilter);
             this._pFilter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this._pFilter.Location = new System.Drawing.Point(0, 384);
+            this._pFilter.Location = new System.Drawing.Point(0, 362);
             this._pFilter.Name = "_pFilter";
-            this._pFilter.Size = new System.Drawing.Size(855, 50);
+            this._pFilter.Size = new System.Drawing.Size(855, 72);
             this._pFilter.TabIndex = 1;
+            // 
+            // _lRecordCount
+            // 
+            this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._lRecordCount.AutoSize = true;
+            this._lRecordCount.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this._lRecordCount.Location = new System.Drawing.Point(650, 8);
+            this._lRecordCount.Name = "_lRecordCount";
+            this._lRecordCount.Size = new System.Drawing.Size(117, 25);
+            this._lRecordCount.TabIndex = 3;
+            this._lRecordCount.Text = "Record count";
             // 
             // _lNameFilter
             // 
             this._lNameFilter.AutoSize = true;
-            this._lNameFilter.Font = CgpUIDesign.Default;
+            this._lNameFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
             this._lNameFilter.Location = new System.Drawing.Point(8, 5);
             this._lNameFilter.Name = "_lNameFilter";
-            this._lNameFilter.Size = new System.Drawing.Size(35, 13);
+            this._lNameFilter.Size = new System.Drawing.Size(59, 25);
             this._lNameFilter.TabIndex = 0;
             this._lNameFilter.Text = "Name";
             // 
             // _eNameFilter
-            //
-            this._eNameFilter.Font = CgpUIDesign.Default;
-            this._eNameFilter.Location = new System.Drawing.Point(8, 21);
+            // 
+            this._eNameFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this._eNameFilter.Location = new System.Drawing.Point(8, 33);
             this._eNameFilter.Name = "_eNameFilter";
-            this._eNameFilter.Size = new System.Drawing.Size(121, 20);
+            this._eNameFilter.Size = new System.Drawing.Size(121, 31);
             this._eNameFilter.TabIndex = 0;
             this._eNameFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
-            //
-            // _lRecordCount
-            //
-            this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._lRecordCount.AutoSize = true;
-            this._lRecordCount.Font = CgpUIDesign.Default;
-            this._lRecordCount.Location = new System.Drawing.Point(730, 8);
-            this._lRecordCount.Name = "_lRecordCount";
-            this._lRecordCount.Size = new System.Drawing.Size(72, 13);
-            this._lRecordCount.TabIndex = 3;
-            this._lRecordCount.Text = "Record count";
-            //
+            // 
             // GlobalAlarmInstructionsForm
-            //
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(855, 434);
             this.Controls.Add(this.panel3);
-            this.Font = CgpUIDesign.Default;
+            this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Name = "GlobalAlarmInstructionsForm";
             this.Text = "GlobalAlarmInstructionsForm";
             this.panel3.ResumeLayout(false);

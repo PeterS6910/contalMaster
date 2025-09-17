@@ -57,7 +57,7 @@ namespace Contal.Cgp.Client
             this._pFilter.Controls.Add(this._bRunFilter);
             this._pFilter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this._pFilter.Location = new System.Drawing.Point(0, 655);
-            this._pFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._pFilter.Margin = new System.Windows.Forms.Padding(4);
             this._pFilter.Name = "_pFilter";
             this._pFilter.Size = new System.Drawing.Size(1442, 80);
             this._pFilter.TabIndex = 1;
@@ -66,62 +66,62 @@ namespace Contal.Cgp.Client
             // 
             this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._lRecordCount.AutoSize = true;
-            this._lRecordCount.Font = CgpUIDesign.Default;
+            this._lRecordCount.Font = new System.Drawing.Font("Segoe UI", 9F);
             this._lRecordCount.Location = new System.Drawing.Point(1275, 5);
             this._lRecordCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lRecordCount.Name = "_lRecordCount";
-            this._lRecordCount.Size = new System.Drawing.Size(0, 20);
+            this._lRecordCount.Size = new System.Drawing.Size(0, 25);
             this._lRecordCount.TabIndex = 3;
             // 
             // _lDescriptionFilter
             // 
             this._lDescriptionFilter.AutoSize = true;
-            this._lDescriptionFilter.Font = CgpUIDesign.Default;
+            this._lDescriptionFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
             this._lDescriptionFilter.Location = new System.Drawing.Point(213, 5);
             this._lDescriptionFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lDescriptionFilter.Name = "_lDescriptionFilter";
-            this._lDescriptionFilter.Size = new System.Drawing.Size(89, 20);
+            this._lDescriptionFilter.Size = new System.Drawing.Size(102, 25);
             this._lDescriptionFilter.TabIndex = 22;
             this._lDescriptionFilter.Text = "Description";
             // 
             // _eDescriptionFilter
-            //
-            this._eDescriptionFilter.Font = CgpUIDesign.Default;
-            this._eDescriptionFilter.Location = new System.Drawing.Point(213, 33);
-            this._eDescriptionFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            // 
+            this._eDescriptionFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this._eDescriptionFilter.Location = new System.Drawing.Point(213, 37);
+            this._eDescriptionFilter.Margin = new System.Windows.Forms.Padding(4);
             this._eDescriptionFilter.Name = "_eDescriptionFilter";
-            this._eDescriptionFilter.Size = new System.Drawing.Size(572, 26);
+            this._eDescriptionFilter.Size = new System.Drawing.Size(572, 31);
             this._eDescriptionFilter.TabIndex = 1;
             this._eDescriptionFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
             this._eDescriptionFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
             // 
             // _lNameFilter
-            //
-            this._lNameFilter.Font = CgpUIDesign.Default;
+            // 
             this._lNameFilter.AutoSize = true;
+            this._lNameFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
             this._lNameFilter.Location = new System.Drawing.Point(18, 5);
             this._lNameFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lNameFilter.Name = "_lNameFilter";
-            this._lNameFilter.Size = new System.Drawing.Size(51, 20);
+            this._lNameFilter.Size = new System.Drawing.Size(59, 25);
             this._lNameFilter.TabIndex = 20;
             this._lNameFilter.Text = "Name";
             // 
             // _eNameFilter
-            //
-            this._eNameFilter.Font = CgpUIDesign.Default;
-            this._eNameFilter.Location = new System.Drawing.Point(18, 33);
-            this._eNameFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            // 
+            this._eNameFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this._eNameFilter.Location = new System.Drawing.Point(18, 37);
+            this._eNameFilter.Margin = new System.Windows.Forms.Padding(4);
             this._eNameFilter.Name = "_eNameFilter";
-            this._eNameFilter.Size = new System.Drawing.Size(184, 26);
+            this._eNameFilter.Size = new System.Drawing.Size(184, 31);
             this._eNameFilter.TabIndex = 0;
             this._eNameFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
             this._eNameFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
             // 
             // _bFilterClear
-            //
-            this._bFilterClear.Font = CgpUIDesign.Default;
-            this._bFilterClear.Location = new System.Drawing.Point(918, 27);
-            this._bFilterClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            // 
+            this._bFilterClear.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this._bFilterClear.Location = new System.Drawing.Point(918, 33);
+            this._bFilterClear.Margin = new System.Windows.Forms.Padding(4);
             this._bFilterClear.Name = "_bFilterClear";
             this._bFilterClear.Size = new System.Drawing.Size(112, 34);
             this._bFilterClear.TabIndex = 3;
@@ -130,10 +130,10 @@ namespace Contal.Cgp.Client
             this._bFilterClear.Click += new System.EventHandler(this._bFilterClear_Click);
             // 
             // _bRunFilter
-            //
-            this._bRunFilter.Font = CgpUIDesign.Default;
-            this._bRunFilter.Location = new System.Drawing.Point(796, 27);
-            this._bRunFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            // 
+            this._bRunFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this._bRunFilter.Location = new System.Drawing.Point(796, 33);
+            this._bRunFilter.Margin = new System.Windows.Forms.Padding(4);
             this._bRunFilter.Name = "_bRunFilter";
             this._bRunFilter.Size = new System.Drawing.Size(112, 34);
             this._bRunFilter.TabIndex = 2;
@@ -174,7 +174,7 @@ namespace Contal.Cgp.Client
             this._cdgvData.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.LocalizationHelper = null;
             this._cdgvData.Location = new System.Drawing.Point(0, 0);
-            this._cdgvData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._cdgvData.Margin = new System.Windows.Forms.Padding(4);
             this._cdgvData.Name = "_cdgvData";
             this._cdgvData.Size = new System.Drawing.Size(1442, 655);
             this._cdgvData.TabIndex = 3;
@@ -184,11 +184,11 @@ namespace Contal.Cgp.Client
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1442, 735);
-            this.Font = CgpUIDesign.Default;
             this.Controls.Add(this._cdgvData);
             this.Controls.Add(this._pFilter);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TimeZonesForm";
             this.Text = "TimeZonesForm";
             this._pFilter.ResumeLayout(false);

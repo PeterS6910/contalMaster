@@ -367,7 +367,7 @@ namespace Contal.Cgp.Client
             _pleaseWaitMonitorSplash = new PleaseWaitMonitor(location, PleaseWaitMode.SplashAbout);
 
             base.OnLoad(e);
-
+            Font = CgpUIDesign.Default;
             CgpClient.Singleton.Init();
 
             CgpClientMainFormLoad();
