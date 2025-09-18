@@ -89,9 +89,9 @@ namespace Contal.Cgp.NCAS.Client
             this._pFilter.Controls.Add(this._bRunFilter);
             this._pFilter.Controls.Add(this._lRecordCount);
             this._pFilter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this._pFilter.Location = new System.Drawing.Point(0, 365);
+            this._pFilter.Location = new System.Drawing.Point(0, 337);
             this._pFilter.Name = "_pFilter";
-            this._pFilter.Size = new System.Drawing.Size(980, 112);
+            this._pFilter.Size = new System.Drawing.Size(980, 140);
             this._pFilter.TabIndex = 22;
             // 
             // _gbRuntimeFilter
@@ -181,8 +181,9 @@ namespace Contal.Cgp.NCAS.Client
             "Forcefully set",
             "Blocked by object"});
             this._clbInputControlFilter.Location = new System.Drawing.Point(216, 19);
+            this._clbInputControlFilter.IntegralHeight = false;
             this._clbInputControlFilter.Name = "_clbInputControlFilter";
-            this._clbInputControlFilter.Size = new System.Drawing.Size(220, 64);
+            this._clbInputControlFilter.Size = new System.Drawing.Size(220, this._clbInputControlFilter.ItemHeight * 2);
             this._clbInputControlFilter.TabIndex = 26;
             this._clbInputControlFilter.Tag = new string[] {
         "BlockingType_NotBlocked",
@@ -195,7 +196,7 @@ namespace Contal.Cgp.NCAS.Client
             // 
             this._rbFilterOr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._rbFilterOr.AutoSize = true;
-            this._rbFilterOr.Location = new System.Drawing.Point(7, 90);
+            this._rbFilterOr.Location = new System.Drawing.Point(7, 117);
             this._rbFilterOr.Name = "_rbFilterOr";
             this._rbFilterOr.Size = new System.Drawing.Size(244, 17);
             this._rbFilterOr.TabIndex = 25;
@@ -208,7 +209,7 @@ namespace Contal.Cgp.NCAS.Client
             this._rbFilterAnd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._rbFilterAnd.AutoSize = true;
             this._rbFilterAnd.Checked = true;
-            this._rbFilterAnd.Location = new System.Drawing.Point(320, 90);
+            this._rbFilterAnd.Location = new System.Drawing.Point(320, 117);
             this._rbFilterAnd.Name = "_rbFilterAnd";
             this._rbFilterAnd.Size = new System.Drawing.Size(204, 17);
             this._rbFilterAnd.TabIndex = 24;
@@ -513,7 +514,7 @@ namespace Contal.Cgp.NCAS.Client
             // _bFilterClear
             // 
             this._bFilterClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._bFilterClear.Location = new System.Drawing.Point(902, 83);
+            this._bFilterClear.Location = new System.Drawing.Point(902, 109);
             this._bFilterClear.Name = "_bFilterClear";
             this._bFilterClear.Size = new System.Drawing.Size(75, 23);
             this._bFilterClear.TabIndex = 2;
@@ -524,9 +525,9 @@ namespace Contal.Cgp.NCAS.Client
             // _bRunFilter
             // 
             this._bRunFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._bRunFilter.Location = new System.Drawing.Point(821, 83);
+            this._bRunFilter.Location = new System.Drawing.Point(821, 109);
             this._bRunFilter.Name = "_bRunFilter";
-            this._bRunFilter.Size = new System.Drawing.Size(75, 23);
+            this._bRunFilter.Size = new System.Drawing.Size(75, 32);
             this._bRunFilter.TabIndex = 1;
             this._bRunFilter.Text = "Filter";
             this._bRunFilter.UseVisualStyleBackColor = true;
@@ -535,7 +536,7 @@ namespace Contal.Cgp.NCAS.Client
             // _lRecordCount
             // 
             this._lRecordCount.AutoSize = true;
-            this._lRecordCount.Location = new System.Drawing.Point(642, 92);
+            this._lRecordCount.Location = new System.Drawing.Point(642, 120);
             this._lRecordCount.Name = "_lRecordCount";
             this._lRecordCount.Size = new System.Drawing.Size(75, 13);
             this._lRecordCount.TabIndex = 47;
@@ -566,13 +567,13 @@ namespace Contal.Cgp.NCAS.Client
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             this._cdgvData.DataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this._cdgvData.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._cdgvData.DataGrid.Size = new System.Drawing.Size(980, 365);
+            this._cdgvData.DataGrid.Size = new System.Drawing.Size(980, 337);
             this._cdgvData.DataGrid.TabIndex = 0;
             this._cdgvData.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.LocalizationHelper = null;
             this._cdgvData.Location = new System.Drawing.Point(0, 0);
             this._cdgvData.Name = "_cdgvData";
-            this._cdgvData.Size = new System.Drawing.Size(980, 365);
+            this._cdgvData.Size = new System.Drawing.Size(980, 337);
             this._cdgvData.TabIndex = 23;
             // 
             // NCASInputsForm

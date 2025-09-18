@@ -70,7 +70,6 @@ namespace Contal.Cgp.NCAS.Client
             this._lRecordCount.Name = "_lRecordCount";
             this._lRecordCount.Size = new System.Drawing.Size(109, 20);
             this._lRecordCount.TabIndex = 22;
-            this._lRecordCount.Visible = true;
             this._lRecordCount.Text = "Record count:";
             // 
             // _bCCUsLookUp
@@ -79,7 +78,7 @@ namespace Contal.Cgp.NCAS.Client
             this._bCCUsLookUp.Location = new System.Drawing.Point(1078, 29);
             this._bCCUsLookUp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._bCCUsLookUp.Name = "_bCCUsLookUp";
-            this._bCCUsLookUp.Size = new System.Drawing.Size(165, 35);
+            this._bCCUsLookUp.Size = new System.Drawing.Size(165, 32);
             this._bCCUsLookUp.TabIndex = 6;
             this._bCCUsLookUp.Text = "Look up for CCUs";
             this._bCCUsLookUp.UseVisualStyleBackColor = true;
@@ -130,7 +129,7 @@ namespace Contal.Cgp.NCAS.Client
             this._bFilterClear.Location = new System.Drawing.Point(518, 29);
             this._bFilterClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._bFilterClear.Name = "_bFilterClear";
-            this._bFilterClear.Size = new System.Drawing.Size(112, 35);
+            this._bFilterClear.Size = new System.Drawing.Size(112, 32);
             this._bFilterClear.TabIndex = 5;
             this._bFilterClear.Text = "Clear";
             this._bFilterClear.UseVisualStyleBackColor = true;
@@ -141,7 +140,7 @@ namespace Contal.Cgp.NCAS.Client
             this._bRunFilter.Location = new System.Drawing.Point(396, 29);
             this._bRunFilter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._bRunFilter.Name = "_bRunFilter";
-            this._bRunFilter.Size = new System.Drawing.Size(112, 35);
+            this._bRunFilter.Size = new System.Drawing.Size(112, 32);
             this._bRunFilter.TabIndex = 4;
             this._bRunFilter.Text = "Filter";
             this._bRunFilter.UseVisualStyleBackColor = true;
@@ -161,9 +160,9 @@ namespace Contal.Cgp.NCAS.Client
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             this._cdgvData.DataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this._cdgvData.DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this._cdgvData.DataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;            
-            this._cdgvData.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this._cdgvData.DataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this._cdgvData.DataGrid.ColumnHeadersHeight = 34;
+            this._cdgvData.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this._cdgvData.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.DataGrid.Location = new System.Drawing.Point(0, 0);
             this._cdgvData.DataGrid.Name = "_dgvData";
@@ -188,7 +187,6 @@ namespace Contal.Cgp.NCAS.Client
             // 
             // NCASCCUsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1248, 631);
             this.Controls.Add(this._cdgvData);

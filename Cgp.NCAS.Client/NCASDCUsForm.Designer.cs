@@ -52,18 +52,18 @@ namespace Contal.Cgp.NCAS.Client
             this._pFilter.Controls.Add(this._bFilterClear);
             this._pFilter.Controls.Add(this._bRunFilter);
             this._pFilter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this._pFilter.Location = new System.Drawing.Point(0, 301);
+            this._pFilter.Location = new System.Drawing.Point(0, 284);
             this._pFilter.Name = "_pFilter";
-            this._pFilter.Size = new System.Drawing.Size(713, 53);
+            this._pFilter.Size = new System.Drawing.Size(713, 70);
             this._pFilter.TabIndex = 1;
             // 
             // _cbDcuOnlineState
             // 
             this._cbDcuOnlineState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._cbDcuOnlineState.FormattingEnabled = true;
-            this._cbDcuOnlineState.Location = new System.Drawing.Point(137, 22);
+            this._cbDcuOnlineState.Location = new System.Drawing.Point(137, 30);
             this._cbDcuOnlineState.Name = "_cbDcuOnlineState";
-            this._cbDcuOnlineState.Size = new System.Drawing.Size(172, 21);
+            this._cbDcuOnlineState.Size = new System.Drawing.Size(172, 28);
             this._cbDcuOnlineState.TabIndex = 3;
             this._cbDcuOnlineState.SelectedIndexChanged += new System.EventHandler(this._cbDcuOnlineState_SelectedIndexChanged);
             // 
@@ -72,7 +72,7 @@ namespace Contal.Cgp.NCAS.Client
             this._lDcuState.AutoSize = true;
             this._lDcuState.Location = new System.Drawing.Point(134, 6);
             this._lDcuState.Name = "_lDcuState";
-            this._lDcuState.Size = new System.Drawing.Size(58, 13);
+            this._lDcuState.Size = new System.Drawing.Size(87, 20);
             this._lDcuState.TabIndex = 2;
             this._lDcuState.Text = "DCU State";
             // 
@@ -81,24 +81,24 @@ namespace Contal.Cgp.NCAS.Client
             this._lNameFilter.AutoSize = true;
             this._lNameFilter.Location = new System.Drawing.Point(12, 6);
             this._lNameFilter.Name = "_lNameFilter";
-            this._lNameFilter.Size = new System.Drawing.Size(35, 13);
+            this._lNameFilter.Size = new System.Drawing.Size(51, 20);
             this._lNameFilter.TabIndex = 0;
             this._lNameFilter.Text = "Name";
             // 
             // _eNameFilter
             // 
-            this._eNameFilter.Location = new System.Drawing.Point(12, 22);
+            this._eNameFilter.Location = new System.Drawing.Point(12, 30);
             this._eNameFilter.Name = "_eNameFilter";
-            this._eNameFilter.Size = new System.Drawing.Size(119, 20);
+            this._eNameFilter.Size = new System.Drawing.Size(119, 26);
             this._eNameFilter.TabIndex = 1;
             this._eNameFilter.TextChanged += new System.EventHandler(this.FilterValueChanged);
             this._eNameFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterKeyDown);
             // 
             // _bFilterClear
             // 
-            this._bFilterClear.Location = new System.Drawing.Point(396, 20);
+            this._bFilterClear.Location = new System.Drawing.Point(396, 28);
             this._bFilterClear.Name = "_bFilterClear";
-            this._bFilterClear.Size = new System.Drawing.Size(75, 23);
+            this._bFilterClear.Size = new System.Drawing.Size(75, 32);
             this._bFilterClear.TabIndex = 5;
             this._bFilterClear.Text = "Clear";
             this._bFilterClear.UseVisualStyleBackColor = true;
@@ -106,9 +106,9 @@ namespace Contal.Cgp.NCAS.Client
             // 
             // _bRunFilter
             // 
-            this._bRunFilter.Location = new System.Drawing.Point(315, 20);
+            this._bRunFilter.Location = new System.Drawing.Point(315, 28);
             this._bRunFilter.Name = "_bRunFilter";
-            this._bRunFilter.Size = new System.Drawing.Size(75, 23);
+            this._bRunFilter.Size = new System.Drawing.Size(75, 32);
             this._bRunFilter.TabIndex = 4;
             this._bRunFilter.Text = "Filter";
             this._bRunFilter.UseVisualStyleBackColor = true;
@@ -129,29 +129,31 @@ namespace Contal.Cgp.NCAS.Client
             this._cdgvData.DataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this._cdgvData.DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this._cdgvData.DataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this._cdgvData.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this._cdgvData.DataGrid.ColumnHeadersHeight = 34;
+            this._cdgvData.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this._cdgvData.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.DataGrid.Location = new System.Drawing.Point(0, 0);
             this._cdgvData.DataGrid.Name = "_dgvData";
             this._cdgvData.DataGrid.ReadOnly = true;
             this._cdgvData.DataGrid.RowHeadersVisible = false;
+            this._cdgvData.DataGrid.RowHeadersWidth = 62;
             this._cdgvData.DataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             this._cdgvData.DataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this._cdgvData.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._cdgvData.DataGrid.Size = new System.Drawing.Size(713, 301);
+            this._cdgvData.DataGrid.Size = new System.Drawing.Size(713, 284);
             this._cdgvData.DataGrid.TabIndex = 0;
+            this._cdgvData.DefaultSortColumnName = null;
+            this._cdgvData.DefaultSortDirection = System.ComponentModel.ListSortDirection.Ascending;
             this._cdgvData.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.LocalizationHelper = null;
             this._cdgvData.Location = new System.Drawing.Point(0, 0);
             this._cdgvData.Name = "_cdgvData";
-            this._cdgvData.Size = new System.Drawing.Size(713, 301);
+            this._cdgvData.Size = new System.Drawing.Size(713, 284);
             this._cdgvData.TabIndex = 3;
             // 
             // NCASDCUsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(713, 354);
             this.Controls.Add(this._cdgvData);

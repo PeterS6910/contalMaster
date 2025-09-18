@@ -93,17 +93,17 @@ namespace Contal.Cgp.NCAS.Client
             this._pFilter.Controls.Add(this._bFilterClear);
             this._pFilter.Controls.Add(this._bRunFilter);
             this._pFilter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this._pFilter.Location = new System.Drawing.Point(0, 211);
+            this._pFilter.Location = new System.Drawing.Point(0, 192);
             this._pFilter.Name = "_pFilter";
-            this._pFilter.Size = new System.Drawing.Size(1192, 191);
+            this._pFilter.Size = new System.Drawing.Size(1192, 210);
             this._pFilter.TabIndex = 1;
             // 
             // bExportExcel
             // 
             this.bExportExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bExportExcel.Location = new System.Drawing.Point(1065, 168);
+            this.bExportExcel.Location = new System.Drawing.Point(1065, 170);
             this.bExportExcel.Name = "bExportExcel";
-            this.bExportExcel.Size = new System.Drawing.Size(124, 23);
+            this.bExportExcel.Size = new System.Drawing.Size(124, 32);
             this.bExportExcel.TabIndex = 51;
             this.bExportExcel.Text = "Export to Excel";
             this.bExportExcel.UseVisualStyleBackColor = false;
@@ -137,7 +137,7 @@ namespace Contal.Cgp.NCAS.Client
             this._tsiModify1,
             this._tsiRemove1});
             this._tbmMemberOfAclFilter.ButtonPopupMenu.Name = "";
-            this._tbmMemberOfAclFilter.ButtonPopupMenu.Size = new System.Drawing.Size(118, 48);
+            this._tbmMemberOfAclFilter.ButtonPopupMenu.Size = new System.Drawing.Size(149, 68);
             this._tbmMemberOfAclFilter.ButtonPosition = Contal.IwQuick.UI.MenuPosition.Right;
             this._tbmMemberOfAclFilter.ButtonShowImage = true;
             this._tbmMemberOfAclFilter.ButtonSizeHeight = 20;
@@ -172,10 +172,10 @@ namespace Contal.Cgp.NCAS.Client
             this._tbmMemberOfAclFilter.ImageTextBox.TextBox.Margin = new System.Windows.Forms.Padding(4);
             this._tbmMemberOfAclFilter.ImageTextBox.TextBox.Name = "_tbTextBox";
             this._tbmMemberOfAclFilter.ImageTextBox.TextBox.ReadOnly = true;
-            this._tbmMemberOfAclFilter.ImageTextBox.TextBox.Size = new System.Drawing.Size(208, 13);
+            this._tbmMemberOfAclFilter.ImageTextBox.TextBox.Size = new System.Drawing.Size(208, 19);
             this._tbmMemberOfAclFilter.ImageTextBox.TextBox.TabIndex = 2;
             this._tbmMemberOfAclFilter.ImageTextBox.UseImage = true;
-            this._tbmMemberOfAclFilter.Location = new System.Drawing.Point(8, 56);
+            this._tbmMemberOfAclFilter.Location = new System.Drawing.Point(8, 81);
             this._tbmMemberOfAclFilter.MaximumSize = new System.Drawing.Size(1200, 22);
             this._tbmMemberOfAclFilter.MinimumSize = new System.Drawing.Size(21, 22);
             this._tbmMemberOfAclFilter.Name = "_tbmMemberOfAclFilter";
@@ -189,22 +189,22 @@ namespace Contal.Cgp.NCAS.Client
             // _tsiModify1
             // 
             this._tsiModify1.Name = "_tsiModify1";
-            this._tsiModify1.Size = new System.Drawing.Size(117, 22);
+            this._tsiModify1.Size = new System.Drawing.Size(148, 32);
             this._tsiModify1.Text = "Modify";
             // 
             // _tsiRemove1
             // 
             this._tsiRemove1.Name = "_tsiRemove1";
-            this._tsiRemove1.Size = new System.Drawing.Size(117, 22);
+            this._tsiRemove1.Size = new System.Drawing.Size(148, 32);
             this._tsiRemove1.Text = "Remove";
             // 
             // _lRecordCount
             // 
             this._lRecordCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._lRecordCount.AutoSize = true;
-            this._lRecordCount.Location = new System.Drawing.Point(702, 142);
+            this._lRecordCount.Location = new System.Drawing.Point(1061, 138);
             this._lRecordCount.Name = "_lRecordCount";
-            this._lRecordCount.Size = new System.Drawing.Size(75, 13);
+            this._lRecordCount.Size = new System.Drawing.Size(109, 20);
             this._lRecordCount.TabIndex = 49;
             this._lRecordCount.Text = "Record count:";
             // 
@@ -218,9 +218,9 @@ namespace Contal.Cgp.NCAS.Client
             this._gbRuntimeFilter.Controls.Add(this._clbCurrentSecurityLevel);
             this._gbRuntimeFilter.Controls.Add(this._cbCurrentForcedSecurityLevel);
             this._gbRuntimeFilter.Controls.Add(this._lCurrentForcedSecurityLevel);
-            this._gbRuntimeFilter.Location = new System.Drawing.Point(601, 14);
+            this._gbRuntimeFilter.Location = new System.Drawing.Point(601, 10);
             this._gbRuntimeFilter.Name = "_gbRuntimeFilter";
-            this._gbRuntimeFilter.Size = new System.Drawing.Size(364, 127);
+            this._gbRuntimeFilter.Size = new System.Drawing.Size(364, 150);
             this._gbRuntimeFilter.TabIndex = 47;
             this._gbRuntimeFilter.TabStop = false;
             this._gbRuntimeFilter.Tag = "RealtimeFiltering";
@@ -240,9 +240,9 @@ namespace Contal.Cgp.NCAS.Client
             // _chbBlocked
             // 
             this._chbBlocked.AutoSize = true;
-            this._chbBlocked.Location = new System.Drawing.Point(9, 102);
+            this._chbBlocked.Location = new System.Drawing.Point(9, 120);
             this._chbBlocked.Name = "_chbBlocked";
-            this._chbBlocked.Size = new System.Drawing.Size(219, 17);
+            this._chbBlocked.Size = new System.Drawing.Size(323, 24);
             this._chbBlocked.TabIndex = 29;
             this._chbBlocked.Text = "Blocked (invalid GIN retries limit reached)";
             this._chbBlocked.UseVisualStyleBackColor = true;
@@ -261,9 +261,9 @@ namespace Contal.Cgp.NCAS.Client
             "WaitingForUpgrade",
             "AutoUpgrading",
             "Reseting"});
-            this._cbOnlineStateFilter.Location = new System.Drawing.Point(199, 28);
+            this._cbOnlineStateFilter.Location = new System.Drawing.Point(199, 22);
             this._cbOnlineStateFilter.Name = "_cbOnlineStateFilter";
-            this._cbOnlineStateFilter.Size = new System.Drawing.Size(155, 21);
+            this._cbOnlineStateFilter.Size = new System.Drawing.Size(155, 28);
             this._cbOnlineStateFilter.TabIndex = 7;
             this._cbOnlineStateFilter.Tag = new string[] {
         "",
@@ -280,18 +280,18 @@ namespace Contal.Cgp.NCAS.Client
             // _lOnlineStateFilter
             // 
             this._lOnlineStateFilter.AutoSize = true;
-            this._lOnlineStateFilter.Location = new System.Drawing.Point(196, 13);
+            this._lOnlineStateFilter.Location = new System.Drawing.Point(196, 2);
             this._lOnlineStateFilter.Name = "_lOnlineStateFilter";
-            this._lOnlineStateFilter.Size = new System.Drawing.Size(63, 13);
+            this._lOnlineStateFilter.Size = new System.Drawing.Size(94, 20);
             this._lOnlineStateFilter.TabIndex = 6;
             this._lOnlineStateFilter.Text = "Online state";
             // 
             // _lCurrentSecurityLevelFilter
             // 
             this._lCurrentSecurityLevelFilter.AutoSize = true;
-            this._lCurrentSecurityLevelFilter.Location = new System.Drawing.Point(6, 13);
+            this._lCurrentSecurityLevelFilter.Location = new System.Drawing.Point(6, 30);
             this._lCurrentSecurityLevelFilter.Name = "_lCurrentSecurityLevelFilter";
-            this._lCurrentSecurityLevelFilter.Size = new System.Drawing.Size(105, 13);
+            this._lCurrentSecurityLevelFilter.Size = new System.Drawing.Size(155, 20);
             this._lCurrentSecurityLevelFilter.TabIndex = 27;
             this._lCurrentSecurityLevelFilter.Text = "Current security level";
             // 
@@ -307,9 +307,9 @@ namespace Contal.Cgp.NCAS.Client
             "Card + PIN",
             "Locked",
             "Not used"});
-            this._clbCurrentSecurityLevel.Location = new System.Drawing.Point(9, 28);
+            this._clbCurrentSecurityLevel.Location = new System.Drawing.Point(5, 60);
             this._clbCurrentSecurityLevel.Name = "_clbCurrentSecurityLevel";
-            this._clbCurrentSecurityLevel.Size = new System.Drawing.Size(181, 64);
+            this._clbCurrentSecurityLevel.Size = new System.Drawing.Size(181, 50);
             this._clbCurrentSecurityLevel.TabIndex = 28;
             this._clbCurrentSecurityLevel.Tag = new string[] {
         "SecurityLevelStates_Unlocked",
@@ -332,7 +332,7 @@ namespace Contal.Cgp.NCAS.Client
             "False"});
             this._cbCurrentForcedSecurityLevel.Location = new System.Drawing.Point(199, 71);
             this._cbCurrentForcedSecurityLevel.Name = "_cbCurrentForcedSecurityLevel";
-            this._cbCurrentForcedSecurityLevel.Size = new System.Drawing.Size(155, 21);
+            this._cbCurrentForcedSecurityLevel.Size = new System.Drawing.Size(155, 28);
             this._cbCurrentForcedSecurityLevel.TabIndex = 3;
             this._cbCurrentForcedSecurityLevel.Tag = new string[] {
         "",
@@ -344,9 +344,9 @@ namespace Contal.Cgp.NCAS.Client
             // _lCurrentForcedSecurityLevel
             // 
             this._lCurrentForcedSecurityLevel.AutoSize = true;
-            this._lCurrentForcedSecurityLevel.Location = new System.Drawing.Point(196, 57);
+            this._lCurrentForcedSecurityLevel.Location = new System.Drawing.Point(196, 50);
             this._lCurrentForcedSecurityLevel.Name = "_lCurrentForcedSecurityLevel";
-            this._lCurrentForcedSecurityLevel.Size = new System.Drawing.Size(104, 13);
+            this._lCurrentForcedSecurityLevel.Size = new System.Drawing.Size(152, 20);
             this._lCurrentForcedSecurityLevel.TabIndex = 2;
             this._lCurrentForcedSecurityLevel.Text = "Forced security level";
             // 
@@ -354,9 +354,9 @@ namespace Contal.Cgp.NCAS.Client
             // 
             this._rbFilterOr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._rbFilterOr.AutoSize = true;
-            this._rbFilterOr.Location = new System.Drawing.Point(3, 142);
+            this._rbFilterOr.Location = new System.Drawing.Point(3, 170);
             this._rbFilterOr.Name = "_rbFilterOr";
-            this._rbFilterOr.Size = new System.Drawing.Size(275, 17);
+            this._rbFilterOr.Size = new System.Drawing.Size(411, 24);
             this._rbFilterOr.TabIndex = 32;
             this._rbFilterOr.Text = "Show card readers that match at least one parameter";
             this._rbFilterOr.UseVisualStyleBackColor = true;
@@ -367,9 +367,9 @@ namespace Contal.Cgp.NCAS.Client
             this._rbFilterAnd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._rbFilterAnd.AutoSize = true;
             this._rbFilterAnd.Checked = true;
-            this._rbFilterAnd.Location = new System.Drawing.Point(338, 140);
+            this._rbFilterAnd.Location = new System.Drawing.Point(420, 170);
             this._rbFilterAnd.Name = "_rbFilterAnd";
-            this._rbFilterAnd.Size = new System.Drawing.Size(235, 17);
+            this._rbFilterAnd.Size = new System.Drawing.Size(351, 24);
             this._rbFilterAnd.TabIndex = 31;
             this._rbFilterAnd.TabStop = true;
             this._rbFilterAnd.Text = "Show card readers that match all parameters";
@@ -379,9 +379,9 @@ namespace Contal.Cgp.NCAS.Client
             // _lMemberOfAclFilter
             // 
             this._lMemberOfAclFilter.AutoSize = true;
-            this._lMemberOfAclFilter.Location = new System.Drawing.Point(5, 40);
+            this._lMemberOfAclFilter.Location = new System.Drawing.Point(5, 55);
             this._lMemberOfAclFilter.Name = "_lMemberOfAclFilter";
-            this._lMemberOfAclFilter.Size = new System.Drawing.Size(144, 13);
+            this._lMemberOfAclFilter.Size = new System.Drawing.Size(214, 20);
             this._lMemberOfAclFilter.TabIndex = 29;
             this._lMemberOfAclFilter.Text = "Member of access control list";
             // 
@@ -397,9 +397,9 @@ namespace Contal.Cgp.NCAS.Client
             "Card + PIN",
             "Locked",
             "Sec. time zone / daily plan"});
-            this._clbSecurityLevelFilter.Location = new System.Drawing.Point(401, 19);
+            this._clbSecurityLevelFilter.Location = new System.Drawing.Point(401, 30);
             this._clbSecurityLevelFilter.Name = "_clbSecurityLevelFilter";
-            this._clbSecurityLevelFilter.Size = new System.Drawing.Size(181, 79);
+            this._clbSecurityLevelFilter.Size = new System.Drawing.Size(181, 73);
             this._clbSecurityLevelFilter.TabIndex = 28;
             this._clbSecurityLevelFilter.Tag = new string[] {
         "SecurityLevelStates_Unlocked",
@@ -417,16 +417,16 @@ namespace Contal.Cgp.NCAS.Client
             this._lSecurityLevelFilter.AutoSize = true;
             this._lSecurityLevelFilter.Location = new System.Drawing.Point(398, 4);
             this._lSecurityLevelFilter.Name = "_lSecurityLevelFilter";
-            this._lSecurityLevelFilter.Size = new System.Drawing.Size(70, 13);
+            this._lSecurityLevelFilter.Size = new System.Drawing.Size(101, 20);
             this._lSecurityLevelFilter.TabIndex = 27;
             this._lSecurityLevelFilter.Text = "Security level";
             // 
             // _lDcu
             // 
             this._lDcu.AutoSize = true;
-            this._lDcu.Location = new System.Drawing.Point(241, 40);
+            this._lDcu.Location = new System.Drawing.Point(241, 55);
             this._lDcu.Name = "_lDcu";
-            this._lDcu.Size = new System.Drawing.Size(30, 13);
+            this._lDcu.Size = new System.Drawing.Size(44, 20);
             this._lDcu.TabIndex = 4;
             this._lDcu.Text = "DCU";
             // 
@@ -434,27 +434,27 @@ namespace Contal.Cgp.NCAS.Client
             // 
             this._cbDcu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._cbDcu.FormattingEnabled = true;
-            this._cbDcu.Location = new System.Drawing.Point(244, 54);
+            this._cbDcu.Location = new System.Drawing.Point(244, 77);
             this._cbDcu.Name = "_cbDcu";
-            this._cbDcu.Size = new System.Drawing.Size(151, 21);
+            this._cbDcu.Size = new System.Drawing.Size(151, 28);
             this._cbDcu.TabIndex = 5;
             this._cbDcu.SelectedIndexChanged += new System.EventHandler(this._cbDcu_SelectedIndexChanged);
             // 
             // _lEmergencyCodeFilter
             // 
             this._lEmergencyCodeFilter.AutoSize = true;
-            this._lEmergencyCodeFilter.Location = new System.Drawing.Point(125, 78);
+            this._lEmergencyCodeFilter.Location = new System.Drawing.Point(240, 111);
             this._lEmergencyCodeFilter.Name = "_lEmergencyCodeFilter";
-            this._lEmergencyCodeFilter.Size = new System.Drawing.Size(87, 13);
+            this._lEmergencyCodeFilter.Size = new System.Drawing.Size(128, 20);
             this._lEmergencyCodeFilter.TabIndex = 2;
             this._lEmergencyCodeFilter.Text = "Emergency code";
             // 
             // _lForcedSecurityLevel
             // 
             this._lForcedSecurityLevel.AutoSize = true;
-            this._lForcedSecurityLevel.Location = new System.Drawing.Point(5, 78);
+            this._lForcedSecurityLevel.Location = new System.Drawing.Point(5, 111);
             this._lForcedSecurityLevel.Name = "_lForcedSecurityLevel";
-            this._lForcedSecurityLevel.Size = new System.Drawing.Size(104, 13);
+            this._lForcedSecurityLevel.Size = new System.Drawing.Size(152, 20);
             this._lForcedSecurityLevel.TabIndex = 2;
             this._lForcedSecurityLevel.Text = "Forced security level";
             // 
@@ -463,7 +463,7 @@ namespace Contal.Cgp.NCAS.Client
             this._lCcu.AutoSize = true;
             this._lCcu.Location = new System.Drawing.Point(241, 5);
             this._lCcu.Name = "_lCcu";
-            this._lCcu.Size = new System.Drawing.Size(29, 13);
+            this._lCcu.Size = new System.Drawing.Size(43, 20);
             this._lCcu.TabIndex = 2;
             this._lCcu.Text = "CCU";
             // 
@@ -475,9 +475,9 @@ namespace Contal.Cgp.NCAS.Client
             "",
             "True",
             "False"});
-            this._cbEmergencyCode.Location = new System.Drawing.Point(128, 92);
+            this._cbEmergencyCode.Location = new System.Drawing.Point(244, 137);
             this._cbEmergencyCode.Name = "_cbEmergencyCode";
-            this._cbEmergencyCode.Size = new System.Drawing.Size(112, 21);
+            this._cbEmergencyCode.Size = new System.Drawing.Size(112, 28);
             this._cbEmergencyCode.TabIndex = 3;
             this._cbEmergencyCode.Tag = new string[] {
         "",
@@ -494,9 +494,9 @@ namespace Contal.Cgp.NCAS.Client
             "",
             "True",
             "False"});
-            this._cbForcedSecurityLevel.Location = new System.Drawing.Point(8, 92);
+            this._cbForcedSecurityLevel.Location = new System.Drawing.Point(8, 137);
             this._cbForcedSecurityLevel.Name = "_cbForcedSecurityLevel";
-            this._cbForcedSecurityLevel.Size = new System.Drawing.Size(112, 21);
+            this._cbForcedSecurityLevel.Size = new System.Drawing.Size(112, 28);
             this._cbForcedSecurityLevel.TabIndex = 3;
             this._cbForcedSecurityLevel.Tag = new string[] {
         "",
@@ -509,9 +509,9 @@ namespace Contal.Cgp.NCAS.Client
             // 
             this._cbCcu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._cbCcu.FormattingEnabled = true;
-            this._cbCcu.Location = new System.Drawing.Point(244, 19);
+            this._cbCcu.Location = new System.Drawing.Point(244, 26);
             this._cbCcu.Name = "_cbCcu";
-            this._cbCcu.Size = new System.Drawing.Size(151, 21);
+            this._cbCcu.Size = new System.Drawing.Size(151, 28);
             this._cbCcu.TabIndex = 3;
             this._cbCcu.SelectedIndexChanged += new System.EventHandler(this._cbCcu_SelectedIndexChanged);
             // 
@@ -520,24 +520,24 @@ namespace Contal.Cgp.NCAS.Client
             this._lNameFilter.AutoSize = true;
             this._lNameFilter.Location = new System.Drawing.Point(5, 5);
             this._lNameFilter.Name = "_lNameFilter";
-            this._lNameFilter.Size = new System.Drawing.Size(35, 13);
+            this._lNameFilter.Size = new System.Drawing.Size(51, 20);
             this._lNameFilter.TabIndex = 0;
             this._lNameFilter.Text = "Name";
             // 
             // _eNameFilter
             // 
-            this._eNameFilter.Location = new System.Drawing.Point(8, 19);
+            this._eNameFilter.Location = new System.Drawing.Point(8, 26);
             this._eNameFilter.Name = "_eNameFilter";
-            this._eNameFilter.Size = new System.Drawing.Size(230, 20);
+            this._eNameFilter.Size = new System.Drawing.Size(230, 26);
             this._eNameFilter.TabIndex = 1;
             this._eNameFilter.TextChanged += new System.EventHandler(this._eNameFilter_TextChanged);
             // 
             // _bFilterClear
             // 
             this._bFilterClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._bFilterClear.Location = new System.Drawing.Point(972, 168);
+            this._bFilterClear.Location = new System.Drawing.Point(972, 170);
             this._bFilterClear.Name = "_bFilterClear";
-            this._bFilterClear.Size = new System.Drawing.Size(75, 23);
+            this._bFilterClear.Size = new System.Drawing.Size(75, 32);
             this._bFilterClear.TabIndex = 9;
             this._bFilterClear.Text = "Clear";
             this._bFilterClear.UseVisualStyleBackColor = true;
@@ -546,9 +546,9 @@ namespace Contal.Cgp.NCAS.Client
             // _bRunFilter
             // 
             this._bRunFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._bRunFilter.Location = new System.Drawing.Point(880, 168);
+            this._bRunFilter.Location = new System.Drawing.Point(880, 170);
             this._bRunFilter.Name = "_bRunFilter";
-            this._bRunFilter.Size = new System.Drawing.Size(75, 23);
+            this._bRunFilter.Size = new System.Drawing.Size(75, 32);
             this._bRunFilter.TabIndex = 8;
             this._bRunFilter.Text = "Filter";
             this._bRunFilter.UseVisualStyleBackColor = true;
@@ -569,31 +569,33 @@ namespace Contal.Cgp.NCAS.Client
             this._cdgvData.DataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this._cdgvData.DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this._cdgvData.DataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this._cdgvData.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this._cdgvData.DataGrid.ColumnHeadersHeight = 34;
+            this._cdgvData.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this._cdgvData.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.DataGrid.Location = new System.Drawing.Point(0, 0);
             this._cdgvData.DataGrid.Margin = new System.Windows.Forms.Padding(4);
             this._cdgvData.DataGrid.Name = "_dgvData";
             this._cdgvData.DataGrid.ReadOnly = true;
             this._cdgvData.DataGrid.RowHeadersVisible = false;
+            this._cdgvData.DataGrid.RowHeadersWidth = 62;
             this._cdgvData.DataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             this._cdgvData.DataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this._cdgvData.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._cdgvData.DataGrid.Size = new System.Drawing.Size(1192, 211);
+            this._cdgvData.DataGrid.Size = new System.Drawing.Size(1192, 192);
             this._cdgvData.DataGrid.TabIndex = 0;
+            this._cdgvData.DefaultSortColumnName = null;
+            this._cdgvData.DefaultSortDirection = System.ComponentModel.ListSortDirection.Ascending;
             this._cdgvData.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cdgvData.LocalizationHelper = null;
             this._cdgvData.Location = new System.Drawing.Point(0, 0);
             this._cdgvData.Margin = new System.Windows.Forms.Padding(4);
             this._cdgvData.Name = "_cdgvData";
-            this._cdgvData.Size = new System.Drawing.Size(1192, 211);
+            this._cdgvData.Size = new System.Drawing.Size(1192, 192);
             this._cdgvData.TabIndex = 2;
             // 
             // NCASCardReadersForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1192, 402);
             this.Controls.Add(this._cdgvData);
